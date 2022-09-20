@@ -1,3 +1,27 @@
+
+# Coding Standards
+
+## Java
+1)	Variable names in camelCase
+2)	Only write code that everyone can understand
+3)	If statement – types/notation?
+4)	Function – types/notation
+
+## HTML
+1)	Keep all assets in one folder
+2)	
+
+## CSS
+1)	Keep styles to pixels only 
+
+## General
+  Comments brief explanation of purpose
+
+  Image files – all lowercase separate words by hyphen
+
+  Svelte files – 1 or 2 words - PascalCase
+
+
 # Svelte + Vite
 
 This template should help get you started developing with Svelte in Vite.
