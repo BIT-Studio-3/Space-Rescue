@@ -1,45 +1,57 @@
 <script>
   import svelteLogo from './assets/svelte.svg'
-  import Counter from './lib/Counter.svelte'
+    import TidalStats from './lib/TidalStats.svelte';
+  import Counter from './lib/TidalStats.svelte'
 </script>
 
 <main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank"> 
-      <img src="/vite.svg" class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank"> 
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
+  <div class="appBlocks">
+    <div class="block one"><TidalStats /></div>
+    <div class="block two"></div>
+    <div class="block three"></div>
+    <div class="block four"></div>
   </div>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
-  </div>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
 </main>
 
 <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
+  .appBlocks {
+    display: grid;
+    gap: 20px;
+    background-color: gray;
+
   }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+  .block {
+    width: 600px;
+    height: 300px;
+    border: 2px solid black;
   }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
+  .one {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: aquamarine;
+    color: black;
   }
-  .read-the-docs {
-    color: #888;
+  .two {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: darkslategray;
+  }
+  .three {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: bisque;
+  }
+  .four {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: darkkhaki;
   }
 </style>
