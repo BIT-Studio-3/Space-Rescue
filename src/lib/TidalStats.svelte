@@ -5,7 +5,7 @@
   const options = {
     method: "GET",
     headers: {
-      "x-apikey": "Zqq1PDtLanleKh2fMvYaDGU0FZAJokWJ",
+      "x-apikey": "Zqq1PDtLanleKh2fMvYaDGU0FZAJokWJ", //API Key, provided by Chase
       "Accept": "application/json"
     },
   };
