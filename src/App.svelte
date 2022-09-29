@@ -5,7 +5,7 @@
 </script>
 
 <main>
-
+  <TidalStats />
 </main>
 
 <style>
