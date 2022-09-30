@@ -5,10 +5,10 @@
 <main>
 
  
-  <div class="card">
+ 
     <Weather/>
 
-  </div>
+
   
 
 

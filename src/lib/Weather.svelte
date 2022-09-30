@@ -5,39 +5,38 @@
     // Tidal Fetch API. Example Structure.
     
     
-    const url = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/255042?apikey=H1lM7nG32DTJNGY59xxEOiEdpvAkplAR";
+    const url = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/255042?apikey=H1lM7nG32DTJNGY59xxEOiEdpvAkplAR"; //Link to the API raw Data. Specifies a 5 day forecast , a special location key: at this point it is in Dunedin and an API key.
       const options = {
         method: "GET",
-        headers: {
+        headers: { 
           "x-apikey": "H1lM7nG32DTJNGY59xxEOiEdpvAkplAR",
           "Accept": "application/json"
         },
       };
-      let tide_list = document.createElement("ul");
-      let todaysWeather = 0;
-      fetch(url)
-      .then(response => response.json())
-        .then(values => {
+      let weather_list = document.createElement("ul"); //Creates an Unordered List and stores it inside the variable weather_list. But it is not displayed to the screen yet 
+      fetch(url) //fetches the API at the specified url.
+      .then(response => response.json()) //converts the response into a readable JSON object and stores it inside the values variable
+        .then(values => { 
         
               console.log("Today's Weather")
               console.log(values.DailyForecasts[0].Temperature.Minimum.Value)
               console.log(values.DailyForecasts[0].Temperature.Maximum.Value)
               let todaysHigh = values.DailyForecasts[0].Temperature.Maximum.Value
-              let todaysLow = values.DailyForecasts[0].Temperature.Minimum.Value
-              todaysHigh = Math.round((todaysHigh - 32)*5/9) //Converting the Temperature into Celcius
+              let todaysLow = values.DailyForecasts[0].Temperature.Minimum.Value //Looks at the first index of DailyForecasts which will be "Today" and stores the Max and Min Temperature Values into TodaysHigh and TodaysLow
+              todaysHigh = Math.round((todaysHigh - 32)*5/9) //Converting the Temperature into Celcius and rounds the value to the nearest integer
               todaysLow = Math.round((todaysLow - 32)*5/9)
-            tide_list.append("Todays Weather")
-            let item = document.createElement("li");
-            item.innerHTML = "Min" + " " + todaysLow + " C" + "  :   " + "Max" + " " + todaysHigh + " C"
+            weather_list.append("Todays Weather")
+            let item = document.createElement("li"); //Creates a new List item and stores it inside item.
+            item.innerHTML = "Min" + " " + todaysLow + " C" + "  :   " + "Max" + " " + todaysHigh + " C" //Sets the HTML inside item to a string displaying the High and Low Values
     
-           tide_list.append(item)
+           weather_list.append(item) //adds item to the weather_list
           console.log("5 Day Forecast")
-          tide_list.append("5 Day Forecast")
-          values["DailyForecasts"].forEach(x => {
-               item = document.createElement("li");
+          weather_list.append("5 Day Forecast")
+          values["DailyForecasts"].forEach(x => { //Loops each object inside the DailyForecasts. (At this point Today is also included)
+               item = document.createElement("li"); //Creates a new list item inside the variable list
               console.log(x.Date)
               let temp = x.Temperature;
-              let min = temp.Minimum
+              let min = temp.Minimum //At each index the min and max values are stored into the appropriate variables
               let max = temp.Maximum
               let minCelcius = Math.round((min.Value - 32) * (5/9))
               let maxCelcius = Math.round((max.Value - 32) * (5/9))
@@ -45,7 +44,7 @@
               console.log("Min" + " " + minCelcius + " C")
     
               console.log("Max" + " " + maxCelcius + " C")
-              tide_list.append(item)
+              weather_list.append(item) //At each index in the loop item is added to the list
           });
     
     
@@ -53,7 +52,7 @@
     
     
     
-          document.querySelector("main").append(tide_list);
+          document.querySelector("main").append(weather_list); //Appends the populated weather_list to the screen inside the main element of this component
     
       });
     
