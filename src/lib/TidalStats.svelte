@@ -16,6 +16,10 @@
     .then(values => {
     values["values"].forEach(tide => {
         let item = document.createElement("li");
+        let date = document.createElement("li");
+        let data = document.createElement("li");
+        date.innerHTML = tide.time;
+        data.innerHTML = tide.value;
         item.innerHTML = "Date/Time: " + tide.time + " Tide Height: " + tide.value + "m";
         let testDate = new Date(tide.time) //Date Object
         console.log(testDate.toString()) //Converts to Local Time Zone
@@ -26,7 +30,10 @@
     });
     document.querySelector("body").append(tide_list);
 
-});
+  })
+  .catch(err => {
+      console.error(err);
+    });;
 
 </script>
 
