@@ -1,5 +1,8 @@
+
 <script>
     
+    import locationData from '../assets/locationData.json'
+    let Auckland
 
 
     // Tidal Fetch API. Example Structure.
@@ -41,9 +44,11 @@
               let minCelcius = Math.round((min.Value - 32) * (5/9))
               let maxCelcius = Math.round((max.Value - 32) * (5/9))
               item.innerHTML = "Min" + " " + minCelcius + " C" + "  :   " + "Max" + " " + maxCelcius + " C"
+              
               console.log("Min" + " " + minCelcius + " C")
     
               console.log("Max" + " " + maxCelcius + " C")
+              console.log("AUCKLAND LAT" + locationData["Cities"].Auckland.lat)
               weather_list.append(item) //At each index in the loop item is added to the list
           });
     
@@ -52,8 +57,9 @@
     
     
     
-          document.querySelector("main").append(weather_list); //Appends the populated weather_list to the screen inside the main element of this component
-    
+          document.querySelector(".weatherData").append(weather_list); //Appends the populated weather_list to the screen inside the section element of this component
+          console.log(document.querySelector(".weatherData"))
+          
       });
     
     
@@ -61,6 +67,14 @@
     
     </script>
 
-<main>
+<div class = weatherData>
+  <h2>Weather Data</h2>
+</div>
+<style>
+  .weatherData{
+    color:black;
+    text-align: center;
+  }
 
-</main>
+
+</style>
