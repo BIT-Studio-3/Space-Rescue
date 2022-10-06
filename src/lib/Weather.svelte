@@ -2,13 +2,31 @@
 <script>
     
     import locationData from '../assets/locationData.json' 
-    let Auckland
+    import { onMount } from 'svelte';
+    onMount(() =>{
+      let auck = document.querySelector("button.auck")
+      let dun = document.querySelector("button.dun")
+      dun.addEventListener("click", e=>{
+      document.querySelector(".weatherData").innerHTML = "";
+      let mykey = locationData.Cities.Dunedin.key;
+      fetchWeather(mykey)
+      })
 
+      auck.addEventListener("click", e=>{
+        document.querySelector(".weatherData").innerHTML = "";
+        let mykey = locationData.Cities.Auckland.key;
+      fetchWeather(mykey)
+      })
+
+    })
 
     // Tidal Fetch API. Example Structure.
     
-    
-    const url = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/255042?apikey=H1lM7nG32DTJNGY59xxEOiEdpvAkplAR"; //Link to the API raw Data. Specifies a 5 day forecast , a special location key: at this point it is in Dunedin and an API key.
+    let fetchWeather = (locationKey) =>{
+      const name = 'Tom';
+
+    const result = `Hello, ${locationKey}!`;
+    const url = 'https://dataservice.accuweather.com/forecasts/v1/daily/5day/' + locationKey + '?apikey=8j7t0np4nHcDaTHN6tXFt4eJc8AWJ2ZT'; //Link to the API raw Data. Specifies a 5 day forecast , a special location key: at this point it is in Dunedin and an API key.
       const options = {
         method: "GET",
         headers: { 
@@ -63,8 +81,8 @@
           console.log(document.querySelector(".weatherData"))
           
       });
-    
-    
+    };
+  //Close Here  
     
     
     </script>
@@ -72,3 +90,5 @@
 <div class = weatherData>
 
 </div>
+<button class = "dun">Dunedin</button>
+<button class = "auck">Auckland</button>
