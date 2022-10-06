@@ -4,29 +4,28 @@
     import locationData from '../assets/locationData.json' 
     import { onMount } from 'svelte';
     onMount(() =>{
-      let auck = document.querySelector("button.auck")
+      let auck = document.querySelector("button.auck") //Selected the buttons with class dunedin and auckland
       let dun = document.querySelector("button.dun")
-      dun.addEventListener("click", e=>{
-      document.querySelector(".weatherData").innerHTML = "";
+      dun.addEventListener("click", e=>{ //When the button is clicked
+      document.querySelector(".weatherData").innerHTML = ""; //The data is cleared and runs the fetchWeather function, This takes in a locationkey and a name
       let mykey = locationData.Cities.Dunedin.key;
-      fetchWeather(mykey)
+      fetchWeather(mykey,"Dunedin")
       })
 
       auck.addEventListener("click", e=>{
         document.querySelector(".weatherData").innerHTML = "";
         let mykey = locationData.Cities.Auckland.key;
-      fetchWeather(mykey)
+        
+      fetchWeather(mykey,"Auckland")
       })
 
     })
 
     // Tidal Fetch API. Example Structure.
     
-    let fetchWeather = (locationKey) =>{
-      const name = 'Tom';
+    let fetchWeather = (locationKey,cityName) =>{ //The fetch weather function takes the name and locationkey and uses it to display the correct info
 
-    const result = `Hello, ${locationKey}!`;
-    const url = 'https://dataservice.accuweather.com/forecasts/v1/daily/5day/' + locationKey + '?apikey=8j7t0np4nHcDaTHN6tXFt4eJc8AWJ2ZT'; //Link to the API raw Data. Specifies a 5 day forecast , a special location key: at this point it is in Dunedin and an API key.
+      const url =`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=8j7t0np4nHcDaTHN6tXFt4eJc8AWJ2ZT`; //Link to the API raw Data. Specifies a 5 day forecast , a special location key: at this point it is in Dunedin and an API key.
       const options = {
         method: "GET",
         headers: { 
@@ -36,7 +35,12 @@
       };
 
       let weather_list = document.createElement("ul"); //Creates an Unordered List and stores it inside the variable weather_list. But it is not displayed to the screen yet 
+      weather_list.style.listStyle = "none"
+      weather_list.style.padding = "0"
+      let title = document.createElement("h3")
 
+      title.innerHTML = cityName;
+      weather_list.append(title)
       
       fetch(url) //fetches the API at the specified url.
       .then(response => response.json()) //converts the response into a readable JSON object and stores it inside the values variable
@@ -92,3 +96,10 @@
 </div>
 <button class = "dun">Dunedin</button>
 <button class = "auck">Auckland</button>
+<style>
+  button{
+    color:rgb(63, 58, 58);
+    font-weight: bold;
+    background-color: lightgrey;
+  }
+</style>
