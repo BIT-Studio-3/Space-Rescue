@@ -4,13 +4,7 @@
 
 <main>
 
- 
- 
     <Weather/>
-
-
-  
-
 
 </main>
 

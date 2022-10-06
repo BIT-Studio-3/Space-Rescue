@@ -1,7 +1,7 @@
 
 <script>
     
-    import locationData from '../assets/locationData.json'
+    import locationData from '../assets/locationData.json' 
     let Auckland
 
 
@@ -16,7 +16,10 @@
           "Accept": "application/json"
         },
       };
+
       let weather_list = document.createElement("ul"); //Creates an Unordered List and stores it inside the variable weather_list. But it is not displayed to the screen yet 
+
+      
       fetch(url) //fetches the API at the specified url.
       .then(response => response.json()) //converts the response into a readable JSON object and stores it inside the values variable
         .then(values => { 
@@ -33,6 +36,7 @@
             item.innerHTML = "Min" + " " + todaysLow + " C" + "  :   " + "Max" + " " + todaysHigh + " C" //Sets the HTML inside item to a string displaying the High and Low Values
     
            weather_list.append(item) //adds item to the weather_list
+           weather_list.classList.add("weatherList")
           console.log("5 Day Forecast")
           weather_list.append("5 Day Forecast")
           values["DailyForecasts"].forEach(x => { //Loops each object inside the DailyForecasts. (At this point Today is also included)
@@ -48,10 +52,8 @@
               console.log("Min" + " " + minCelcius + " C")
     
               console.log("Max" + " " + maxCelcius + " C")
-              console.log("AUCKLAND LAT" + locationData["Cities"].Auckland.lat)
               weather_list.append(item) //At each index in the loop item is added to the list
           });
-    
     
     
     
@@ -68,13 +70,5 @@
     </script>
 
 <div class = weatherData>
-  <h2>Weather Data</h2>
+
 </div>
-<style>
-  .weatherData{
-    color:black;
-    text-align: center;
-  }
-
-
-</style>
