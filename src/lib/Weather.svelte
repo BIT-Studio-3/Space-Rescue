@@ -37,7 +37,7 @@
       let weather_list = document.createElement("ul"); //Creates an Unordered List and stores it inside the variable weather_list. But it is not displayed to the screen yet 
       weather_list.style.listStyle = "none"
       weather_list.style.padding = "0"
-      let title = document.createElement("h3")
+      let title = document.createElement("h2")
 
       title.innerHTML = cityName;
       weather_list.append(title)
@@ -53,17 +53,36 @@
               let todaysLow = values.DailyForecasts[0].Temperature.Minimum.Value //Looks at the first index of DailyForecasts which will be "Today" and stores the Max and Min Temperature Values into TodaysHigh and TodaysLow
               todaysHigh = Math.round((todaysHigh - 32)*5/9) //Converting the Temperature into Celcius and rounds the value to the nearest integer
               todaysLow = Math.round((todaysLow - 32)*5/9)
-            weather_list.append("Todays Weather")
+           let title1 = document.createElement("h3")
+
+            title1.innerHTML = "Today's Weather"
+            weather_list.append(title1)
             let item = document.createElement("li"); //Creates a new List item and stores it inside item.
             item.innerHTML = "Min" + " " + todaysLow + " C" + "  :   " + "Max" + " " + todaysHigh + " C" //Sets the HTML inside item to a string displaying the High and Low Values
     
            weather_list.append(item) //adds item to the weather_list
            weather_list.classList.add("weatherList")
           console.log("5 Day Forecast")
-          weather_list.append("5 Day Forecast")
+            let title2 = document.createElement("h3")
+           
+            title2.innerHTML = "5 Day Forecast"
+            weather_list.append(title2)
           values["DailyForecasts"].forEach(x => { //Loops each object inside the DailyForecasts. (At this point Today is also included)
                item = document.createElement("li"); //Creates a new list item inside the variable list
               console.log(x.Date)
+
+              let testDate = new Date(x.Date) //Date Object
+              
+              let dateText = document.createElement("h4")
+              dateText.innerHTML = testDate.toString().slice(0,16)
+              weather_list.append(dateText)
+
+
+
+
+
+
+
               let temp = x.Temperature;
               let min = temp.Minimum //At each index the min and max values are stored into the appropriate variables
               let max = temp.Maximum
