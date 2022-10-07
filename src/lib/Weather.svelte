@@ -3,6 +3,11 @@
     
     import locationData from '../assets/locationData.json' 
     import { onMount } from 'svelte';
+
+    
+    let today = new Date()
+    let todayDay = today.toString().slice(0,16)
+    console.log(todayDay)
     onMount(() =>{
       let auck = document.querySelector("button.auck") //Selected the buttons with class dunedin and auckland
       let dun = document.querySelector("button.dun")
@@ -18,6 +23,7 @@
         
       fetchWeather(mykey,"Auckland")
       })
+
 
     })
 
@@ -55,13 +61,13 @@
               todaysLow = Math.round((todaysLow - 32)*5/9)
            let title1 = document.createElement("h3")
 
-            title1.innerHTML = "Today's Weather"
-            weather_list.append(title1)
+            // title1.innerHTML = "Today's Weather"
+            // weather_list.append(title1)
             let item = document.createElement("li"); //Creates a new List item and stores it inside item.
-            item.innerHTML = "Min" + " " + todaysLow + " C" + "  :   " + "Max" + " " + todaysHigh + " C" //Sets the HTML inside item to a string displaying the High and Low Values
+            // item.innerHTML = "High" + " " + todaysHigh + "°C" + "  :   " + "Low" + " " + todaysLow + "°C" //Sets the HTML inside item to a string displaying the High and Low Values
     
-           weather_list.append(item) //adds item to the weather_list
-           weather_list.classList.add("weatherList")
+          //  weather_list.append(item) //adds item to the weather_list
+          weather_list.classList.add("weatherList")
           console.log("5 Day Forecast")
             let title2 = document.createElement("h3")
            
@@ -75,6 +81,12 @@
               
               let dateText = document.createElement("h4")
               dateText.innerHTML = testDate.toString().slice(0,16)
+              dateText.id = "date"
+              if(dateText.innerHTML == todayDay){
+                console.log(dateText.innerHTML)
+                dateText.classList.add("today")
+                console.log(todayDay)
+              }
               weather_list.append(dateText)
 
 
@@ -88,18 +100,18 @@
               let max = temp.Maximum
               let minCelcius = Math.round((min.Value - 32) * (5/9))
               let maxCelcius = Math.round((max.Value - 32) * (5/9))
-              item.innerHTML = "Min" + " " + minCelcius + " C" + "  :   " + "Max" + " " + maxCelcius + " C"
+              item.innerHTML = "High" + " " + maxCelcius + " °C" + "  /   " + "Low" + " " + minCelcius + "°C"
               
-              console.log("Min" + " " + minCelcius + " C")
+              console.log("Min" + " " + minCelcius + "°C")
     
-              console.log("Max" + " " + maxCelcius + " C")
+              console.log("Max" + " " + maxCelcius + "°C")
               weather_list.append(item) //At each index in the loop item is added to the list
           });
     
     
     
     
-    
+
           document.querySelector(".weatherData").append(weather_list); //Appends the populated weather_list to the screen inside the section element of this component
           console.log(document.querySelector(".weatherData"))
           
