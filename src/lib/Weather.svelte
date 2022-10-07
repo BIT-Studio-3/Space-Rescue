@@ -25,7 +25,7 @@
     
     let fetchWeather = (locationKey,cityName) =>{ //The fetch weather function takes the name and locationkey and uses it to display the correct info
 
-      const url =`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=8j7t0np4nHcDaTHN6tXFt4eJc8AWJ2ZT`; //Link to the API raw Data. Specifies a 5 day forecast , a special location key: at this point it is in Dunedin and an API key.
+      const url =`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=H1lM7nG32DTJNGY59xxEOiEdpvAkplAR`; //Link to the API raw Data. Specifies a 5 day forecast , a special location key: at this point it is in Dunedin and an API key.
       const options = {
         method: "GET",
         headers: { 
@@ -84,10 +84,13 @@
           document.querySelector(".weatherData").append(weather_list); //Appends the populated weather_list to the screen inside the section element of this component
           console.log(document.querySelector(".weatherData"))
           
-      });
+      })
+      .catch(err => {
+      console.error(err)
+    })
     };
   //Close Here  
-    
+
     
     </script>
 
