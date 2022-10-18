@@ -1,19 +1,3 @@
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
-}
-
-
 <h1>%Insert Beach Name%</h1>
 <h3>**Insert some basic beach information**</h3>
 <hr>
@@ -40,9 +24,9 @@ for (i = 0; i < acc.length; i++) {
 
 body {
     font-family: 'rubik', sans-serif;
-  }
+}
   
-  .accordion {
+.accordion {
     background-color: #eee;
     color: #444;
     cursor: pointer;
@@ -53,28 +37,42 @@ body {
     outline: none;
     font-size: 15px;
     transition: 0.4s;
-  }
+}
   
-  .active, .accordion:hover {
+.active, .accordion:hover {
     background-color: #ccc;
-  }
+}
   
-  .panel {
+.panel {
     padding: 0 18px;
     background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-  }
+}
   
-  .panel2 {
+.panel2 {
     padding:  px;
     background-color: white;
     max-height: 0;
     overflow: shown;
-  }
+}
   
-  h1, h3 {
+h1, h3 {
     text-align: center;
-  }
+}
 
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
