@@ -26,14 +26,17 @@
         let finalTime = "Time: " + hrs + ":" + min + " " + AmOrPm;
 
         data.innerHTML = tide.value;
-        item.innerHTML = "Date: " + testDate.toString().slice(0,16) + finalTime + " Tide Height: " + tide.value + "m";
+        item.innerHTML = testDate.toString().slice(0,16) + finalTime + " Tide Height: " + tide.value + "m";
         testDate = new Date(tide.time) //Date Object
         console.log(testDate.toString()) //Converts to Local Time Zone
 
-        console.log(tide.value)
+        console.log(tide.value);
         tide_list.append(item);
       
     });
+    let title = document.createElement("h1");
+    title.innerHTML = "Tidal Information: Dunedin";
+    document.querySelector("body").append(title);
     document.querySelector("body").append(tide_list);
 
   })
