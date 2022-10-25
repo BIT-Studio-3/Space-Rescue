@@ -38,9 +38,7 @@ h1 {
   line-height: 1.1;
 }
 
-.card {
-  padding: 2em;
-}
+
 
 #app {
   max-width: 1280px;
@@ -70,15 +68,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.weatherList {
-  border: solid black thick;
-}
 
-h4#date.today {
-  color: rgb(94, 89, 89);
-
-
-}
 
 
 
