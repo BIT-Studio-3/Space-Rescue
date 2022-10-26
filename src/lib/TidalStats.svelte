@@ -29,7 +29,7 @@
 <ul>
   {#each data.values as tide}
 
-  <li>{new Date(tide.time).toString().slice(0,16)}{convertTime(tide.time)} | Tide Height: {tide.value}</li>
+  <li>{new Date(tide.time).toString().slice(0,16)}{convertTime(tide.time)} | Tide Height: {tide.value}</li> <!-- Cuts off any excess date time formatting to make it more readable-->
   {/each}
 
 </ul>
