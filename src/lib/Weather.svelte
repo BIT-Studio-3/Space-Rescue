@@ -1,10 +1,22 @@
 
 <script>
+    import { loop_guard } from 'svelte/internal';
+
     
     import locationData from '../assets/locationData.json' 
     //Will be adapted to change the locationKey 
-    const url =`https://dataservice.accuweather.com/forecasts/v1/daily/5day/255042?apikey=H1lM7nG32DTJNGY59xxEOiEdpvAkplAR`; //Link to the API raw Data. Specifies a 5 day forecast , a special location key: at this point it is in Dunedin and an API key.
-      const options = {
+	let promise = Promise.resolve([]);
+  let data;
+    let currentCity = "Dunedin"
+	  let currentKey = "255042"
+	 async function handleClick(cityName,cityKey) {
+		currentCity = cityName
+		currentKey = cityKey
+    data = await fetchWeather()
+    return await data
+
+	}
+    const options = {
         method: "GET",
         headers: { 
           "x-apikey": "H1lM7nG32DTJNGY59xxEOiEdpvAkplAR",
@@ -12,13 +24,16 @@
         }
       }
     // Tidal Fetch API. Example Structure.
-    
-    const fetchWeather = (async () => {
-        const res = await fetch(url)
+
+    async function fetchWeather() {
+      const url =`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${currentKey}?apikey=H1lM7nG32DTJNGY59xxEOiEdpvAkplAR`; //Link to the API raw Data. Specifies a 5 day forecast , a special location key: at this point it is in Dunedin and an API key.
+      console.log(currentKey)  
+      const res = await fetch(url)
         const data = await res.json()
+        
         return await data
 
-    })()
+    }
 
     
 
@@ -28,22 +43,38 @@
 <div class = weatherData>
 
   <ul>
-    {#await fetchWeather} <!--Calls the fetchWeather function and waits until the data is finished reading-->
-    <p>Loading Data...</p> <!--While the data is loading-->
-    {:then data}
-    <h2>Dunedin</h2> <!--Change the header when the city changes-->
+    <!--{#await fetchWeather} --> <!--Calls the fetchWeather function and waits until the data is finished reading-->
+    <!-- <p>Loading Data...</p> --> <!--While the data is loading -->
+    <!--{:then data}-->
+    <!--<h2>{currentCity}</h2>--> <!--Change the header when the city changes-->
+    {#if data != undefined}
+    
     <h3>5 day forecast</h3>
-      {#each data.DailyForecasts as weather } <!--Loop through the data and display each data and the temperatures-->
-        <h4>{new Date(weather.Date).toString().slice(0,16)}</h4>
-        <p>Max:{Math.round((weather.Temperature.Maximum.Value -32) * (5/9))} Min:{Math.round((weather.Temperature.Minimum.Value -32) * (5/9))}</p>
+    {#each data.DailyForecasts as weather } <!--Loop through the data and display each data and the temperatures-->
+      <h4>{new Date(weather.Date).toString().slice(0,16)}</h4>
+      <p>Max:{Math.round((weather.Temperature.Maximum.Value -32) * (5/9))}°C Min:{Math.round((weather.Temperature.Minimum.Value -32) * (5/9))}°C</p>
+    
       
-        
 
-      {/each}
-    {/await}
+    {/each}
+    {:else} Please Choose City
+      
+    
+    {/if}
+
+    
+    <!-- {/await} -->
   </ul>
 
 </div>
+
+<button on:click={ () => handleClick("Dunedin","255042")}>
+	Dunedin
+</button>
+
+<button on:click={() =>  handleClick("Auckland","252066")}>
+	Auckland
+</button>
 
 <style>
   .weatherData{
