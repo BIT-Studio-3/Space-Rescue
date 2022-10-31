@@ -46,17 +46,21 @@
     <!--{#await fetchWeather} --> <!--Calls the fetchWeather function and waits until the data is finished reading-->
     <!-- <p>Loading Data...</p> --> <!--While the data is loading -->
     <!--{:then data}-->
-    <!--<h2>{currentCity}</h2>--> <!--Change the header when the city changes-->
     {#if data != undefined}
-    
+    <h2>{currentCity}</h2> <!--Change the header when the city changes-->
+
     <h3>5 day forecast</h3>
+    <div class = "Week">
     {#each data.DailyForecasts as weather } <!--Loop through the data and display each data and the temperatures-->
+      <div>
       <h4>{new Date(weather.Date).toString().slice(0,16)}</h4>
       <p>Max:{Math.round((weather.Temperature.Maximum.Value -32) * (5/9))}°C Min:{Math.round((weather.Temperature.Minimum.Value -32) * (5/9))}°C</p>
-    
+      <p>Brief Description</p>
+      </div>
       
-
+      
     {/each}
+    </div>
     {:else} Please Choose City
       
     
@@ -67,14 +71,13 @@
   </ul>
 
 </div>
-
-<button on:click={ () => handleClick("Dunedin","255042")}>
-	Dunedin
-</button>
-
-<button on:click={() =>  handleClick("Auckland","252066")}>
-	Auckland
-</button>
+  <button on:click={ () => handleClick("Dunedin","255042")}>
+    Dunedin
+  </button>
+  
+  <button on:click={() =>  handleClick("Auckland","252066")}>
+    Auckland
+  </button>
 
 <style>
   .weatherData{
@@ -83,9 +86,23 @@
 
 
 
+
+
 h4 {
   color: rgb(94, 89, 89);
 
 
 }
+.Week{
+  display:flex;
+  gap:5px;
+  
+}
+.Week div{
+  border:1px solid #a4a4a4;
+  background-color: #f1f1f1;;
+  padding: 2px;
+  width:148px
+}
+
 </style>
