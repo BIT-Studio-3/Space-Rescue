@@ -2,50 +2,55 @@
 // Tidal Fetch API.
 
   const url = "https://api.niwa.co.nz/tides/data?lat=-45.875&long=170.509&numberOfDays=5&apikey=Zqq1PDtLanleKh2fMvYaDGU0FZAJokWJ";
-  const options = {
-    method: "GET",
-    headers: {
-      "x-apikey": "Zqq1PDtLanleKh2fMvYaDGU0FZAJokWJ", //API Key, provided by Chase
-      "Accept": "application/json"
-    },
-  };
-  let tide_list = document.createElement("ul");
 
-  fetch(url)
-  .then(response => response.json())
-    .then(values => {
-    values["values"].forEach(tide => {
-        let item = document.createElement("li");
-        let data = document.createElement("li");
-        let testDate = new Date(tide.time) //Date Object
-        
-        let hrs = testDate.getHours();
-        let  min = testDate.getMinutes();
-        let AmOrPm = hrs >= 12 ? "pm" : "am";
-        hrs = (hrs % 12) || 12;
-        let finalTime = "Time: " + hrs + ":" + min + " " + AmOrPm;
+  const fetchTides = (async () => {
+		const response = await fetch(url)
+    return await response.json()
+	})()
 
-        data.innerHTML = tide.value;
-        item.innerHTML = testDate.toString().slice(0,16) + finalTime + " Tide Height: " + tide.value + "m";
-        testDate = new Date(tide.time) //Date Object
-        console.log(testDate.toString()) //Converts to Local Time Zone
+  const convertTime = ( (tide) => {
+    let x = new Date(tide)
 
-        console.log(tide.value);
-        tide_list.append(item);
-      
-    });
-    let title = document.createElement("h1");
-    title.innerHTML = "Tidal Information: Dunedin";
-    document.querySelector("body").append(title);
-    document.querySelector("body").append(tide_list);
+    let hrs = x.getHours();
+    let min = (x.getMinutes()<10?'0':'') + (x.getMinutes());
+    let AmOrPm = hrs >= 12 ? "pm" : "am";
 
+    hrs = (hrs % 12) || 12;
+    let finalTime = hrs + ":" + min + " " + AmOrPm;
+    return finalTime
   })
-  .catch(err => {
-      console.error(err);
-    });
 
 </script>
 
+{#await fetchTides}  <!-- Await the fetchTides function -->
+  <p>loading Tidal data...</p>
+
+{:then data}  <!-- Return the result as "data" -->
+<ul>
+  {#each data.values as tide}
+
+  <li>{new Date(tide.time).toString().slice(0,16)}{convertTime(tide.time)} | Tide Height: {tide.value}</li> <!-- Cuts off any excess date time formatting to make it more readable-->
+  {/each}
+
+</ul>
+
+{:catch error}  <!-- Catch any errors that occur -->
+    <h2>A problem has occured...</h2>
+
+{/await}
+
+
+
 <style>
-    
+  li {
+    text-align: left;
+    font-weight: bold;
+  }
+  ul {
+    display: grid;
+    gap: 15px;
+  }
+  ul li {
+    list-style: none;
+  }
 </style>

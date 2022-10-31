@@ -28,7 +28,6 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -38,24 +37,6 @@ h1 {
   line-height: 1.1;
 }
 
-.card {
-  padding: 2em;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-ul {
-  display: grid;
-  gap: 20px;
-}
-ul li {
-  list-style: none;
-}
 
 @media (prefers-color-scheme: light) {
   :root {
