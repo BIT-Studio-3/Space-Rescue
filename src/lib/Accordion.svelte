@@ -1,7 +1,7 @@
 <script>
 	export let open = false;
 	  import { slide } from 'svelte/transition';
-	  const handleClick = () => open = !open
+	  const handleClick = () => open = !open //handleclick is a toggleable variable
   </script>
   
   <div class="accordion">
@@ -9,14 +9,14 @@
 		  <div class="text">
 			  <slot name="head"></slot>	
 		  </div>
-		  
+		  <!--when button is clicked toggle accordion to be open or closed-->
 		  <button on:click={handleClick} >
 			  +/-
 		  </button>
 	  </div>
 	  
 	  {#if open}
-	  <div class="details" transition:slide>
+	  <div class="details" transition:slide> <!--accordion has a sliding animation when toggled-->
 		  <slot name="details">
 		  </slot>
 	  </div>

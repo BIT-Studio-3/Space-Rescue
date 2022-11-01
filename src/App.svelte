@@ -3,6 +3,7 @@
 </script>
 
 <main>
+  <!--each accordion is a dropdown section that will contain individual components-->
   <Accordion>
     <span slot="head">weather</span>
     <div slot="details">
