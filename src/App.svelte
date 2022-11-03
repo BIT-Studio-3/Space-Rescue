@@ -1,7 +1,8 @@
 <script>
+  import Location from './lib/Location.svelte';
   import Weather from './lib/Weather.svelte'
   import TidalStats from './lib/TidalStats.svelte';
-  import Location from './lib/Location.svelte';
+
   let long
   let lat
   let key
@@ -10,9 +11,13 @@
 </script>
 
 <main>
-  <Weather/>
-  <TidalStats />
   <Location bind:latitude={lat} bind:longitude={long}/>
+
+  {#key temp}
+  <TidalStats lat={lat} long={long}/>
+  <Weather key={key}/>
+  {/key}
+
 </main>
 
 <style>
