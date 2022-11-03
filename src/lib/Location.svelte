@@ -1,6 +1,6 @@
 <script>	
-		export let latitude='-36.850'
-    export let longitude='174.783'
+		export let latitude='something'
+    export let longitude='something2'
     let selection
 		let selectionName
 
