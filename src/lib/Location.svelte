@@ -1,28 +1,15 @@
-<!-- <script>
-
-</script>
-
-<select id="location">
-    <option value="">Select Location</option>
-    <optgroup label="North Island">
-     <option>Auckland</option>
-     <option>Hamilton</option>
-    </optgroup>
-    <optgroup label="South Island">
-      <option>Dunedin</option>
-  </select>
-
-<style>
-
-</style> -->
-
 <script>	
-		let selection
+		export let latitude='-36.850'
+    export let longitude='174.783'
+    let selection
 		let selectionName
+
 		
 		function myFunction(selection){
-			console.log(selection)
+			console.log(selection.lat)
 			selectionName = selection.Name
+      latitude = selection.lat
+      longitude = selection.lng
 		}
 		let Regions = [                                                                         //Co-ordinates represent:
 			{"Beaches":[],"lat":"-35.109","lng":"173.259","key":"","Name":"Northland"},           //Kaitaia
@@ -69,10 +56,10 @@ select{
   margin-right: auto ;
 }
 div1{
-    display: flex;
+  display: flex;
   flex-direction:column;
   gap: 10px;
   justify-content: center;
-    }
+}
 </style>
 

@@ -1,7 +1,8 @@
 <script>
 // Tidal Fetch API.
+export let lat=-45.880, long=170.500;
 
-  const url = "https://api.niwa.co.nz/tides/data?lat=-45.875&long=170.509&numberOfDays=5&apikey=Zqq1PDtLanleKh2fMvYaDGU0FZAJokWJ";
+  const url = `https://api.niwa.co.nz/tides/data?lat=${lat}&long=${long}&numberOfDays=5&apikey=Zqq1PDtLanleKh2fMvYaDGU0FZAJokWJ`;
   const options = {
     method: "GET",
     headers: {
