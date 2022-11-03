@@ -1,9 +1,9 @@
 <script>
-    import TidalStats from './lib/TidalStats.svelte';
+    import Location from './lib/Location.svelte';
 </script>
 
 <main>
-  <TidalStats />
+  <Location />
 </main>
 
 <style>
