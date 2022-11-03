@@ -21,7 +21,7 @@
 			{"Beaches":[],"lat":"-39.933","lng":"175.029","key":"","Name":"Manawatu-Whanganui"},  //Whanganui
 			{"Beaches":[],"lat":"-39.510","lng":"176.876","key":"","Name":"Hawke's Bay"},         //Napier
 			{"Beaches":[],"lat":"-41.300","lng":"174.780","key":"","Name":"Wellington"},          //Wellington City
-      {"Beaches":[],"lat":"-14.108","lng":"173.011","key":"","Name":"Tasman"},              //Motueka
+      {"Beaches":[],"lat":"-41.108","lng":"173.011","key":"","Name":"Tasman"},              //Motueka
       {"Beaches":[],"lat":"-41.299","lng":"173.244","key":"","Name":"Nelson"},              //Nelson City
       {"Beaches":[],"lat":"-41.513","lng":"173.960","key":"","Name":"Marlborough"},         //Blenheim
       {"Beaches":[],"lat":"-41.755","lng":"171.606","key":"","Name":"Northern West Coast"}, //Westport
