@@ -1,8 +1,12 @@
 <script>
+   import Weather from './lib/Weather.svelte'
+  import TidalStats from './lib/TidalStats.svelte';
   import Accordion from './lib/Accordion.svelte'
 </script>
 
 <main>
+  <Weather/>
+  <TidalStats />
   <!--each accordion is a dropdown section that will contain individual components-->
   <Accordion>
     <span slot="head">weather</span>
@@ -41,6 +45,8 @@
   </Accordion>
 </main>
 
+
 <style>
- 
+  
+
 </style>
