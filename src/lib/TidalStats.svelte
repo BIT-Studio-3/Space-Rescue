@@ -43,14 +43,20 @@ export let lat, long;
 
 <style>
   li {
-    text-align: left;
+    text-align: center;
     font-weight: bold;
+    margin-left: auto ;
+    margin-right: auto ;
   }
   ul {
     display: grid;
     gap: 15px;
+    margin-left: auto ;
+    margin-right: auto ;
   }
   ul li {
     list-style: none;
+    margin-left: auto ;
+    margin-right: auto ;
   }
 </style>

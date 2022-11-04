@@ -5,17 +5,18 @@
 
   let long
   let lat
-  let key
+  let importKey
+
  
   $: temp=lat
 </script>
 
 <main>
-  <Location bind:latitude={lat} bind:longitude={long}/>
+  <Location bind:latitude={lat} bind:longitude={long} bind:key={importKey}/>
 
   {#key temp}
   <TidalStats lat={lat} long={long}/>
-  <Weather key={key}/>
+  <Weather exportKey={importKey}/>
   {/key}
 
 </main>
