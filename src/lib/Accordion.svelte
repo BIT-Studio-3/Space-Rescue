@@ -25,22 +25,24 @@
   
   <style>
 	  div.accordion {
-		  margin: 1rem 0;
+		width: 500px;
+		margin: 1rem auto;
 	  }
 	  
 	  div.header {
-		  display:flex;
-		  width:100%;
+		display:flex;
+		width:100%;
+		
 	  }
 	  
 	  div.header .text {
-		  flex: 1;
-		  margin-right: 5px;
+		flex: 1;
+		margin-right: 5px;
 	  }
 	  
 	  div.details {
-		  background-color: #cecece;
-		  padding:1rem;
+		background-color: #cecece;
+		padding:1rem;
 	  }
   </style>
 
