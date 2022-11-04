@@ -61,7 +61,7 @@
 
 
 h4 {
-color: rgb(94, 89, 89);
+color: #ffffff;
 
 
 }
@@ -72,10 +72,10 @@ justify-content:center;
 
 }
 .Week div{
-border:1px solid #a4a4a4;
-background-color: #f1f1f1;;
+border:1px solid #ffffff;
+background-color: #474747;;
 padding: 2px;
-width:148px
+width:160px
 }
 
 </style>
