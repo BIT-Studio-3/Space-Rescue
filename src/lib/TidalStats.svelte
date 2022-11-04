@@ -1,7 +1,7 @@
 <script>
 // Tidal Fetch API.
-
-  const url = "https://api.niwa.co.nz/tides/data?lat=-45.875&long=170.509&numberOfDays=5&apikey=Zqq1PDtLanleKh2fMvYaDGU0FZAJokWJ";
+export let lat, long;
+  const url = `https://api.niwa.co.nz/tides/data?lat=${lat}&long=${long}&numberOfDays=5&apikey=Zqq1PDtLanleKh2fMvYaDGU0FZAJokWJ`;
 
   const fetchTides = (async () => {
 		const response = await fetch(url)
@@ -43,14 +43,20 @@
 
 <style>
   li {
-    text-align: left;
+    text-align: center;
     font-weight: bold;
+    margin-left: auto ;
+    margin-right: auto ;
   }
   ul {
     display: grid;
     gap: 15px;
+    margin-left: auto ;
+    margin-right: auto ;
   }
   ul li {
     list-style: none;
+    margin-left: auto ;
+    margin-right: auto ;
   }
 </style>
