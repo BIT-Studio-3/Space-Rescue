@@ -1,7 +1,9 @@
 <script>
   // Tidal Fetch API.
+
+    export let lat, long;
   
-    const url = "https://api.niwa.co.nz/tides/data?lat=-45.875&long=170.509&numberOfDays=5&apikey=Zqq1PDtLanleKh2fMvYaDGU0FZAJokWJ";
+    const url = `https://api.niwa.co.nz/tides/data?lat=${lat}&long=${long}&numberOfDays=5&apikey=Zqq1PDtLanleKh2fMvYaDGU0FZAJokWJ`;
   
     //Setting The Dates for the next 5 days.
     let today = new Date() 
@@ -116,12 +118,12 @@
   h4 {
     color:rgb(255, 255, 255)
   }
-.Week > div{
-  border:1px solid #ffffff;
-  background-color: #474747;;
-  padding: 2px;
-  width:160px;
-}
+  .Week > div{
+    border:1px solid #ffffff;
+    background-color: #474747;;
+    padding: 2px;
+    width:160px;
+  }
 }
 
 @media (prefers-color-scheme: light) {
