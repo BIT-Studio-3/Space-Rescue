@@ -77,8 +77,8 @@ justify-content:center;
   }
   
 .Week > div{
-  border:1px solid #ffffff;
-  background-color: #474747;;
+  border: 1px solid #0095ff;
+  background-color: #1a3f91;
   padding: 2px;
   width:160px;
 }
@@ -89,8 +89,8 @@ justify-content:center;
     color:rgb(0, 0, 0)
   }
 .Week > div{
-  border:1px solid #000000;
-  background-color: #cacaca;
+  border: 2px solid #62a1ff;
+  background-color: #dbfcff;
   padding: 2px;
   width:160px;
 }

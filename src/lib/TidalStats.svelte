@@ -3,7 +3,7 @@
 
     export let lat, long;
   
-    const url = `https://api.niwa.co.nz/tides/data?lat=${lat}&long=${long}&numberOfDays=5&apikey=Zqq1PDtLanleKh2fMvYaDGU0FZAJokWJ`;
+    const url = `https://api.niwa.co.nz/tides/data?lat=${lat}&long=${long}&numberOfDays=5&apikey=mY69k7hD8nU6Sydobb1S2cyyiJjGEN0f`;
   
     //Setting The Dates for the next 5 days.
     let today = new Date() 
@@ -119,8 +119,8 @@
     color:rgb(255, 255, 255)
   }
   .Week > div{
-    border:1px solid #ffffff;
-    background-color: #474747;;
+    border: 1px solid #0095ff;
+    background-color: #1a3f91;
     padding: 2px;
     width:160px;
   }
@@ -132,8 +132,8 @@
   }
 
 .Week > div{
-  border:1px solid #000000;
-  background-color: #cacaca;
+  border: 2px solid #62a1ff;
+  background-color: #dbfcff;
   padding: 2px;
   width:160px;
 }
