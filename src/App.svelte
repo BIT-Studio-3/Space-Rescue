@@ -7,13 +7,14 @@
   let long
   let lat
   let importKey
+  let importBeaches
 
  
   $: temp=lat
 </script>
 
 <main>
-  <Location bind:latitude={lat} bind:longitude={long} bind:key={importKey}/>
+  <Location bind:latitude={lat} bind:longitude={long} bind:key={importKey} bind:beaches={importBeaches}/>
 
   {#key temp}
   <TidalStats lat={lat} long={long}/>
@@ -48,12 +49,9 @@
   <Accordion>
     <span slot="head">condition</span>
     <div slot="details">
-      <p>
-        These are the second details.
-      </p>
-      <p>
-        This can naturally span multiple lines.
-      </p>
+      {#key temp}
+        {importBeaches}
+      {/key}
     </div>
   </Accordion>
 
