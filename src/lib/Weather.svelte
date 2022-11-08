@@ -61,7 +61,7 @@
 
 
 h4 {
-color: rgb(94, 89, 89);
+color: #000000;
 
 
 }
@@ -71,11 +71,29 @@ gap:5px;
 justify-content:center;
 
 }
-.Week div{
-border:1px solid #a4a4a4;
-background-color: #f1f1f1;;
-padding: 2px;
-width:148px
+@media (prefers-color-scheme: dark) {
+  h4 {
+    color:rgb(255, 255, 255)
+  }
+  
+.Week > div{
+  border: 1px solid #0095ff;
+  background-color: #1a3f91;
+  padding: 2px;
+  width:160px;
+}
+}
+
+@media (prefers-color-scheme: light) {
+  h4 {
+    color:rgb(0, 0, 0)
+  }
+.Week > div{
+  border: 2px solid #62a1ff;
+  background-color: #dbfcff;
+  padding: 2px;
+  width:160px;
+}
 }
 
 </style>
