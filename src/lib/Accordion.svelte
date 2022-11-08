@@ -39,10 +39,21 @@
 		flex: 1;
 		margin-right: 5px;
 	  }
-	  
-	  div.details {
+	  @media (prefers-color-scheme: dark) {
+		div.details {
+		background-color: #3d3b3b;
+		padding:1rem;
+	  }
+		}
+
+	@media (prefers-color-scheme: light) {
+		div.details {
 		background-color: #cecece;
 		padding:1rem;
 	  }
+		}
+
+
+	  
   </style>
 
