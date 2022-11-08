@@ -19,11 +19,11 @@
 		let Regions = [                                                                               //Co-ordinates represent:
 			{"Beaches":["Paengarēhia / Twilight Beach", " Tapotupotu Beach", " Te Werahi Beach", " Pandora Beach", " Ninety Mile Beach", " Rarawa Beach", " Rangiputa Beach", " Colteri Beach", " Henderson Bay Beach"],"lat":"-35.109","lng":"173.259","key":"249763","Name":"Northland"},           //Kaitaia
 			{"Beaches":["Tāwharanui Peninsula"," Pakiri Beach"," Orewa Beach"," Pohutukawa Coast"," Muriwai Beach"," Piha Beach"," Karioitahi Beach"," Te Henga / Bethells Beach"," Karekare Beach"," Awhitu Peninsula"],"lat":"-36.850","lng":"174.783","key":"252066","Name":"Auckland"},            //Auckland City
-			{"Beaches":[],"lat":"-37.780","lng":"175.250","key":"256406","Name":"Waikato"},             //Hamilton           
-			{"Beaches":[],"lat":"-37.959","lng":"176.982","key":"246986","Name":"Bay of Plenty"},       //Whakatane
-			{"Beaches":[],"lat":"-38.664","lng":"178.023","key":"248308","Name":"Gisbourne"},           //Gisbourne City
-			{"Beaches":[],"lat":"-39.057","lng":"174.079","key":"250435","Name":"Taranaki"},            //New Plymouth
-			{"Beaches":[],"lat":"-39.933","lng":"175.029","key":"250818","Name":"Manawatu-Whanganui"},  //Whanganui
+			{"Beaches":["Whangamata Beach"," Whangamata Beach"," Ruapuke Beach"," Ngarunui Beach"," Opoutere Surf Beach"," Whangapoua Beach"," Matarangi Beach"," New Chums Beach"],"lat":"-37.780","lng":"175.250","key":"256406","Name":"Waikato"},             //Hamilton           
+			{"Beaches":["Mt Maunganui Main Beach", " Waiotahe Beach", " Papamoa Beach", " Otarawairere Bay"],"lat":"-37.959","lng":"176.982","key":"246986","Name":"Bay of Plenty"},       //Whakatane
+			{"Beaches":["Makorori Beach"],"lat":"-38.664","lng":"178.023","key":"248308","Name":"Gisbourne"},           //Gisbourne City
+			{"Beaches":["Back Beach"," Oakura Beach"," Opunake Beach"," Oakura Bay"," Ohawe Beach"," Mana Bay", " Waihi Beach"],"lat":"-39.057","lng":"174.079","key":"250435","Name":"Taranaki"},            //New Plymouth
+			{"Beaches":["Kai Iwi Beach"," Foxton Beach", " Castlecliff Beach"],"lat":"-39.933","lng":"175.029","key":"250818","Name":"Manawatu-Whanganui"},  //Whanganui
 			{"Beaches":[],"lat":"-39.510","lng":"176.876","key":"248572","Name":"Hawke's Bay"},         //Napier
 			{"Beaches":["Oriental Bay"," Scorching Bay"," Lyall Bay"," Makara Beach"," Days Bay"," Eastbourne Beach"," Petone Foreshore"," Breaker Bay"," Princess Bay"," Plimmerton Beach"],"lat":"-41.300","lng":"174.780","key":"250938","Name":"Wellington"},          //Wellington City
       {"Beaches":[],"lat":"-41.108","lng":"173.011","key":"250497","Name":"Tasman"},              //Motueka
