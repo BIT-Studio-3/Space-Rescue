@@ -38,7 +38,8 @@
     <div>
     <h4>{new Date(weather.Date).toString().slice(0,16)}</h4>
     <p>Max:{Math.round((weather.Temperature.Maximum.Value -32) * (5/9))}°C Min:{Math.round((weather.Temperature.Minimum.Value -32) * (5/9))}°C</p>
-    <p>Brief Description</p>
+    <p>Day: {weather.Day.IconPhrase}</p>
+    <p>Night: {weather.Night.IconPhrase}</p>
     </div>
     
     
