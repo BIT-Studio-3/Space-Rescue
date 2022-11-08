@@ -25,7 +25,7 @@
   
   <style>
 	  div.accordion {
-		width: 500px;
+		width: 1000px;
 		margin: 1rem auto;
 	  }
 	  

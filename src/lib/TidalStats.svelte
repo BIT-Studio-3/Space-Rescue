@@ -122,7 +122,7 @@
     border: 1px solid #0095ff;
     background-color: #1a3f91;
     padding: 2px;
-    width:160px;
+    width:180px;
   }
 }
 
@@ -135,7 +135,7 @@
   border: 2px solid #62a1ff;
   background-color: #dbfcff;
   padding: 2px;
-  width:160px;
+  width:180px;
 }
 }
 
