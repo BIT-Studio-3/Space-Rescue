@@ -25,22 +25,35 @@
   
   <style>
 	  div.accordion {
-		  margin: 1rem 0;
+		width: 1000px;
+		margin: 1rem auto;
 	  }
 	  
 	  div.header {
-		  display:flex;
-		  width:100%;
+		display:flex;
+		width:100%;
+		
 	  }
 	  
 	  div.header .text {
-		  flex: 1;
-		  margin-right: 5px;
+		flex: 1;
+		margin-right: 5px;
 	  }
+	  @media (prefers-color-scheme: dark) {
+		div.details {
+		background-color: #3d3b3b;
+		padding:1rem;
+	  }
+		}
+
+	@media (prefers-color-scheme: light) {
+		div.details {
+		background-color: #cecece;
+		padding:1rem;
+	  }
+		}
+
+
 	  
-	  div.details {
-		  background-color: #cecece;
-		  padding:1rem;
-	  }
   </style>
 
