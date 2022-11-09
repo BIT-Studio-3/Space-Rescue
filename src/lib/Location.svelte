@@ -29,14 +29,14 @@
       {"Beaches":["Waterfall Bay"," Kaiteriteri Beach"," Split Apple Rock"," Kina Beach"],"lat":"-41.108","lng":"173.011","key":"250497","Name":"Tasman"},              //Motueka
       {"Beaches":["Tahunanui Beach", " Rabbit Island Beach", " Cable Bay"],"lat":"-41.299","lng":"173.244","key":"249048","Name":"Nelson"},              //Nelson City
       {"Beaches":["Bob's Bay"," Whites Bay"," Marfells Beach"," Kohe Beach"],"lat":"-41.513","lng":"173.960","key":"248982","Name":"Marlborough"},         //Blenheim
-      {"Beaches":[],"lat":"-41.755","lng":"171.606","key":"251085","Name":"Northern West Coast"}, //Westport
-      {"Beaches":[],"lat":"-43.860","lng":"169.046","key":"251089","Name":"Southern West Coast"}, //Haast
-			{"Beaches":[],"lat":"-42.340","lng":"173.680","key":"247053","Name":"North Canterbury"},    //Kaikoura
+      {"Beaches":["Scotts Beach"," Karamea Beach"," Shingle Beach"," Little Beach"," Kawatiri Beach"," Punakaiki Beach"," Paparoa Beach"," Karoro Beach"],"lat":"-41.755","lng":"171.606","key":"251085","Name":"Northern West Coast"}, //Westport
+      {"Beaches":["Okarito Beach"," Gilliespies Beach"," Hunt Beach"," Maori Beach"," Murphy Beach"," Monro Beach"," Ship Creek Beach"," Neils Beach"," Three Mile Beach"],"lat":"-43.860","lng":"169.046","key":"251089","Name":"Southern West Coast"}, //Haast
+			{"Beaches":["Okiwi Bay Beach"," Old Beach"," Kaikoura Beach"," Seal Beach"," Luca's Beach"," Black Sand"," Claverley Beach"," Nape Nape Beach"],"lat":"-42.340","lng":"173.680","key":"247053","Name":"North Canterbury"},    //Kaikoura
       {"Beaches":["Sumner Beach"," New Brighton Beach"," Corsair Bay"," Waimairi Beach"," Woodend Beach"],"lat":"-43.532","lng":"172.631","key":"252473","Name":"Christchurch"},        //Christchurch City
-      {"Beaches":[],"lat":"-44.390","lng":"171.237","key":"247033","Name":"South Canterbury"},    //Timaru
+      {"Beaches":["Pendarves Beach"," Wakanui Beach"," Ninety Miles Beach"," Lowcliffe Beach"," Caroline Bay Beach"," South Beach"," Otaio Beach"," Kakanui Beach"],"lat":"-44.390","lng":"171.237","key":"247033","Name":"South Canterbury"},    //Timaru
 			{"Beaches":["Bushy Beach"," Aramoana Beach"," Purakaunui Bay"," St Clair"," Karitane Beach"," Kaka Point"," Warrington Beach"," Waikouaiti Beach"," Allans Beach"," Papatowai Beach"],"lat":"-45.880","lng":"170.500","key":"255042","Name":"Otago"},               //Dunedin
-      {"Beaches":[],"lat":"-46.418","lng":"168.361","key":"250343","Name":"Southland"},           //Invercargill
-      {"Beaches":[],"lat":"-46.898","lng":"168.128","key":"3590175","Name":"Stewart Island"},     //Oban (Stewart Island)
+      {"Beaches":["Kaka Point Beach"," Helena Falls Beach"," Tautuku Beach"," Waipati Beach"," Dummys Beach"," Argyle Beach"," Omaui Beach"," Oreti Beach"," North Kaik Beach"," Gemstone Beach"," Te Whara Beach"],"lat":"-46.418","lng":"168.361","key":"250343","Name":"Southland"},           //Invercargill
+      {"Beaches":["East Ruggedy Beach"," Ringaringa Beach"," Boulder Beach"," West End Beach"," Lonnekers Beach"," Kaipipi Beach"," Dead Man Beach"," Watercress Beach"],"lat":"-46.898","lng":"168.128","key":"3590175","Name":"Stewart Island"},     //Oban (Stewart Island)
 		]
 		
 </script>
