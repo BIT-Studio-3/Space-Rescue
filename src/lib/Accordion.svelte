@@ -1,5 +1,5 @@
 <script>
-	export let open = false;
+	export let open = true;
 	  import { slide } from 'svelte/transition';
 	  const handleClick = () => open = !open //handleclick is a toggleable variable
   </script>
