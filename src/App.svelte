@@ -22,21 +22,21 @@
 
   <!--each accordion is a dropdown section that will contain individual components-->
   <Accordion>
-    <span slot="head">weather</span>
+    <span slot="head">Weather</span>
     <div slot="details">
       <Weather exportKey={importKey}/>
     </div>
   </Accordion>
 
   <Accordion>
-    <span slot="head">tide</span>
+    <span slot="head">Tides</span>
     <div slot="details">
       <TidalStats lat={lat} long={long}/>
     </div>
   </Accordion>
 
   <Accordion>
-    <span slot="head">condition</span>
+    <span slot="head">Beaches</span>
     <div slot="details">
       <p>
         These are the second details.
