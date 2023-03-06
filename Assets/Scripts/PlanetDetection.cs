@@ -10,23 +10,29 @@ public class PlanetDetection : MonoBehaviour
     public Material Complete;
     public Material WithinRadius;
     public Material Normal;
-    public GameObject Object;
+    public GameObject Planet;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (activated)
+            
+
+            print($"P:{GameSettings.RescueCount}");
+
+            if (activated && !TaskComplete) //Test whether the Player is within range of the Planet and if the planet is not been completed
             {
+
                 //Does the Task
                 TaskComplete = true;
-                Object.GetComponent<MeshRenderer> ().material = Complete; //Temp Indicator 
-                print("Planet Rescued");
+                Planet.GetComponent<MeshRenderer> ().material = Complete; //Temp Indicator 
+                GameSettings.RescueCount++;
 
             }
         }
 
     }
+    
     private void OnTriggerEnter(Collider other)  //When the Player enters the Planet Radius that planet will be "activated"
                                                  //This is indicated by colour change   
     {
@@ -35,7 +41,7 @@ public class PlanetDetection : MonoBehaviour
         {
             
             activated = true;
-            Object.GetComponent<MeshRenderer> ().material = WithinRadius; //Temp Indicator 
+            Planet.GetComponent<MeshRenderer> ().material = WithinRadius; //Temp Indicator 
 
         }
         
@@ -47,8 +53,12 @@ public class PlanetDetection : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            activated = false;
-            Object.GetComponent<MeshRenderer> ().material = Normal; //Temp Indicator 
+            if(!TaskComplete) //If the player has not complete the planet it will return to default other wise it will remain Completed.
+            {
+                activated = false;
+                Planet.GetComponent<MeshRenderer> ().material = Normal; //Temp Indicator 
+            }
+            
 
         }
     }
