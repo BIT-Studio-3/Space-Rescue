@@ -5,26 +5,28 @@ using UnityEngine;
 public class PlanetDetection : MonoBehaviour
 {
 
-    public bool activated;
-    public bool TaskComplete;
-    public Material Complete;
-    public Material WithinRadius;
-    public Material Normal;
+    public bool PlayerInsideRadius;
+    public bool PlanetRescued;
+    //Temp Materials
+    public Material Complete; //Color of rescued planet
+    public Material WithinRadius; //Color of planet when within the radius
+    public Material Normal; //Color of normal planet 
+
     public GameObject Planet;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return)) //The user needs to press the enter key to rescue the planet.
         {
             
 
             print($"P:{GameSettings.RescueCount}");
 
-            if (activated && !TaskComplete) //Test whether the Player is within range of the Planet and if the planet is not been completed
+            if (PlayerInsideRadius && !PlanetRescued) //Test whether the Player is within range of the Planet and if the planet is not been rescued
             {
 
                 //Does the Task
-                TaskComplete = true;
+                PlanetRescued = true;
                 Planet.GetComponent<MeshRenderer> ().material = Complete; //Temp Indicator 
                 GameSettings.RescueCount++;
 
@@ -33,14 +35,14 @@ public class PlanetDetection : MonoBehaviour
 
     }
     
-    private void OnTriggerEnter(Collider other)  //When the Player enters the Planet Radius that planet will be "activated"
+    private void OnTriggerEnter(Collider other)  //When the Player enters the Planet Radius the bool will be set to true and the material will be changed
                                                  //This is indicated by colour change   
     {
 
         if (other.CompareTag("Player")) 
         {
             
-            activated = true;
+            PlayerInsideRadius = true;
             Planet.GetComponent<MeshRenderer> ().material = WithinRadius; //Temp Indicator 
 
         }
@@ -53,9 +55,9 @@ public class PlanetDetection : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            if(!TaskComplete) //If the player has not complete the planet it will return to default other wise it will remain Completed.
+            if(!PlanetRescued) //If the player has not complete the planet it will return to default other wise it will remain Completed.
             {
-                activated = false;
+                PlayerInsideRadius = false;
                 Planet.GetComponent<MeshRenderer> ().material = Normal; //Temp Indicator 
             }
             
