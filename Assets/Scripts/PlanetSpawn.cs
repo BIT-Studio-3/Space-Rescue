@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /* To Do
- * - When the game starts, spawn planet prefab
+ * + When the game starts, spawn planet prefab 
  * - Planet position should be random on spawn (In a range)
  * - Random scale
  * - Many planets should exist on spawn
@@ -11,8 +11,11 @@ using UnityEngine;
  */
 public class PlanetSpawn : MonoBehaviour
 {
-    public GameObject planetPrefab;
+    //variables
+    public GameObject planetPrefab; //the planet prefab
     //public Transform planetSpawnPoint;
+    private int spawnRange;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +25,19 @@ public class PlanetSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            SpawningPlanet();
+        }
     }
 
     public void SpawningPlanet()
     {
-        Instantiate(planetPrefab, new Vector3(0, 1, 0), Quaternion.identity);
+        //Destroy(planetPrefab);
+        for (int i = 0; i<3; i++)
+        {
+            spawnRange = Random.Range(-10, 11);
+        }
+        Instantiate(planetPrefab, new Vector3(spawnRange, spawnRange, spawnRange), Quaternion.identity);
     }
 }
