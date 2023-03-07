@@ -14,16 +14,21 @@ public class PlanetSpawn : MonoBehaviour
     //variables
     public GameObject planetPrefab; //the planet prefab - used for manager gameobject
     //public Transform planetSpawnPoint;
+    private GameObject planetTemp;
     private int spawnX;
     private int spawnY;
     private int spawnZ;
+    private string[] planetNames = {"1","2","3","4","5" };
+
 
     // Start is called before the first frame update
     void Start()
     {
+
         for (int i = 0; i < 5; i++)
         {
             SpawningPlanet();
+            planetTemp.name = planetNames[i];
         }
     }
 
@@ -45,6 +50,6 @@ public class PlanetSpawn : MonoBehaviour
         spawnY = Random.Range(1, 11); //temporarily Y:1+ so planets don't spawn inside or  
         spawnZ = Random.Range(-10, 11);
         //}
-        Instantiate(planetPrefab, new Vector3(spawnX, spawnY, spawnZ), Quaternion.identity);
+        planetTemp = Instantiate(planetPrefab, new Vector3(spawnX, spawnY, spawnZ), Quaternion.identity);
     }
 }
