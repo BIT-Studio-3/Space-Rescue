@@ -4,18 +4,18 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class gameEnd : MonoBehaviour
+public class Escape : MonoBehaviour
 {
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            Escape();
+            EscapeScene();
         }
     }
 
-    public void Escape()
+    public void EscapeScene()
     {
         SceneManager.LoadScene("gameEnd");
     }
