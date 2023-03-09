@@ -6,11 +6,9 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager Instance;
     public Text savedNumber;
-    void Awake()
+    void Start()
     {
-        Instance = this;
         UpdateScore();
     }
 
