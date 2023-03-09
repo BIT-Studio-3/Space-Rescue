@@ -17,7 +17,7 @@ public class planemovement : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        float moveUp = Input.GetAxis("Jump");
+        float moveUp = Input.GetAxis("Jump");//maybe to change it later to make boost for ship after touching something
 
         Vector3 movement = new Vector3(moveHorizontal, moveUp, moveVertical);
         rb.AddForce(movement * speed);
