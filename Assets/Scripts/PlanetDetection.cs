@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class planetDetection : MonoBehaviour
+public class PlanetDetection : MonoBehaviour
 {
 
     public bool playerInsideRadius;
@@ -16,31 +16,28 @@ public class planetDetection : MonoBehaviour
 
     public GameObject planet;
 
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
-        if (playerInsideRadius && !planetRescued) //Test whether the Player is within range of the planet and if the planet is not been rescued
+        if (other.CompareTag("Player"))
+        {
+            playerInsideRadius = true;
+            pressKey.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.X)) //The user needs to press the enter key to rescue the planet.
             {
-                if (Input.GetKeyDown(KeyCode.Return)) //The user needs to press the enter key to rescue the planet.
-                { 
-                        //Does the Task
-                        planetRescued = true;
-                        planet.GetComponent<MeshRenderer> ().material = complete; //Temp Indicator the planet will be set to red
-                        GameSettings.RescueCount++;              
-                }
+               planetRescued = true;
+               planet.GetComponent<MeshRenderer> ().material = complete; //Temp Indicator the planet will be set to white
+               GameSettings.Score++;
+               print("abcd");
+            }
+            else if(!planetRescued)
+            {
+              planet.GetComponent<MeshRenderer> ().material = withinRadius; //Temp Indicator the planet will be set to white
             }
 
+
+        }
     }
     
-    private void OnTriggerEnter(Collider other)  //When the Player enters the planet Radius the bool will be set to true and the material will be changed                                                 //This is indicated by colour change   
-    {
-
-        if (other.CompareTag("Player")) 
-        {       
-            pressKey.SetActive(true); //Shows the text prompt when player within range,
-            playerInsideRadius = true;
-            planet.GetComponent<MeshRenderer> ().material = withinRadius; //Temp Indicator the planet will be set to green
-        }       
-    }
 
     private void OnTriggerExit(Collider other)
     //When the player leaves the radius the planet is no longer active.
@@ -48,12 +45,10 @@ public class planetDetection : MonoBehaviour
 
         if (other.CompareTag("Player")) 
         {
-            
+            playerInsideRadius = false;
+            pressKey.SetActive(false); //hides the text prompt when player not within range,       
             if(!planetRescued) //If the player has not complete the planet it will return to default other wise it will remain completed.
             {
-                pressKey.SetActive(false); //Shows the text prompt when player within range,
-
-                playerInsideRadius = false;
                 planet.GetComponent<MeshRenderer> ().material = normal; //Temp Indicator the planet will be set to white
             }
         }
