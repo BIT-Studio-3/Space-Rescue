@@ -36,12 +36,6 @@ public class PlanetSpawn : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     //is called each iteration of that for loop so this describes ONE planet
     public void SpawningPlanet()
     {
