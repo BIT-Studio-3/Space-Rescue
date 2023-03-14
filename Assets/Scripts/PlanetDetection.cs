@@ -22,7 +22,7 @@ public class PlanetDetection : MonoBehaviour
         {
             playerInsideRadius = true;
             pressKey.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.X)) //The user needs to press the enter key to rescue the planet.
+            if (Input.GetKeyDown(KeyCode.Return)) //The user needs to press the enter key to rescue the planet.
             {
                planetRescued = true;
                planet.GetComponent<MeshRenderer> ().material = complete; //Temp Indicator the planet will be set to white
