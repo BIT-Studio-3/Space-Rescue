@@ -27,14 +27,11 @@ public class PlanetDetection : MonoBehaviour
                planetRescued = true;
                planet.GetComponent<MeshRenderer> ().material = complete; //Temp Indicator the planet will be set to white
                GameSettings.Score++;
-               print("abcd");
             }
             else if(!planetRescued)
             {
               planet.GetComponent<MeshRenderer> ().material = withinRadius; //Temp Indicator the planet will be set to white
             }
-
-
         }
     }
     
@@ -42,7 +39,6 @@ public class PlanetDetection : MonoBehaviour
     private void OnTriggerExit(Collider other)
     //When the player leaves the radius the planet is no longer active.
     {
-
         if (other.CompareTag("Player")) 
         {
             playerInsideRadius = false;
