@@ -623,10 +623,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f2df9f43b38794c810be1e3404c46d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetPrefab: {fileID: 0}
+  planetPrefab: {fileID: 5748848403008948943, guid: 936a4d22b00634146a9714303d04af9a, type: 3}
   planets: []
-  planetCount: 0
-  spawnRange: 0
+  planetCount: 10
+  spawnRange: 200
 --- !u!1 &1329740015
 GameObject:
   m_ObjectHideFlags: 0
