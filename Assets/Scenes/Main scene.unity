@@ -620,13 +620,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1152961535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76f2df9f43b38794c810be1e3404c46d, type: 3}
+  m_Script: {fileID: 11500000, guid: e08e312524ba7034d8c7008517c16748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetPrefab: {fileID: 5748848403008948943, guid: 936a4d22b00634146a9714303d04af9a, type: 3}
+  planetPrefab: {fileID: 5748848403008948943, guid: 3eab305ca9ce1fc4188558a7de28a9a9, type: 3}
   planets: []
-  planetCount: 10
-  spawnRange: 200
+  planetCount: 3
+  spawnRange: 100
 --- !u!1 &1329740015
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,6 +827,7 @@ GameObject:
   - component: {fileID: 1436780325}
   - component: {fileID: 1436780324}
   - component: {fileID: 1436780323}
+  - component: {fileID: 1436780330}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -955,6 +956,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1436780330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436780322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a01bbb125572748b4d0377101a82ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2132100980
 GameObject:
   m_ObjectHideFlags: 0
