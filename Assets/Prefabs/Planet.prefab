@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInsideRadius: 0
   planetRescued: 0
-  complete: {fileID: 2100000, guid: ecbc12e31b52f8f498d5f84658ea3a46, type: 2}
+  complete: {fileID: 2100000, guid: 1260a39772f694041a54dfac591e3f2f, type: 2}
   withinRadius: {fileID: 2100000, guid: 370da6a301041764a9f32404c12696ff, type: 2}
   normal: {fileID: 2100000, guid: ea6420fbb24165e48804fc7112c620f0, type: 2}
   planet: {fileID: 5748848403008948943}
