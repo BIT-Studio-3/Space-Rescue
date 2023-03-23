@@ -37,11 +37,15 @@ public class PlanetDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        playerInsideRadius = true;
-        if(!planetRescued)
+        if (other.CompareTag("Player"))
         {
-            planet.GetComponent<MeshRenderer> ().material = withinRadius; //Temp Indicator the planet will be set to green
+            playerInsideRadius = true;
+            if(!planetRescued)
+            {
+                planet.GetComponent<MeshRenderer> ().material = withinRadius; //Temp Indicator the planet will be set to green
+            }
         }
+
     }
     
 
