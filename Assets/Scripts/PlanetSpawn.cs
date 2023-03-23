@@ -14,8 +14,8 @@ public class PlanetSpawn : MonoBehaviour
     private int randScale;
     //private string[] planetNames = {"1","2","3","4","5" }; //placeholder names
     public List<GameObject> planets = new List<GameObject>();
-    private Collider planetCollider, a, b;
     private bool isNotCollision;
+    private int loopCounter;
 
     //inspector editable variables
     public int spawnRange = 10000;
@@ -34,33 +34,41 @@ public class PlanetSpawn : MonoBehaviour
         {
             do
             {
+                //does the random spawn stuff
                 spawnX = Random.Range(-spawnRange, spawnRange);
                 spawnY = Random.Range(1, spawnRange); //temporarily Y:1+ so planets don't spawn inside or under the plane
                 spawnZ = Random.Range(-spawnRange, spawnRange);
                 randScale = Random.Range(50, 101);
+                loopCounter++;
                 
-                //does the random spawn stuff
-                
-                //if the list isn't empty
-                if (planets.Count == 0)
+                if (planets.Count == 0) //if the list is empty
+
                 {
-                    isNotCollision = true;
+                    isNotCollision = true; //set isnotcollided to true
                 }
-                else
+                else //if the list is not empty
                 {
-                    for (int j = 0; j < planets.Count; j++)
+                    
+                    for (int j = 0; j < planets.Count; j++)//checks through the list
                     {
                         if (Mathf.Abs(spawnX - planets[j].transform.position.x) > 100
                         || Mathf.Abs(spawnY - planets[j].transform.position.y) > 100
-                        || Mathf.Abs(spawnZ - planets[j].transform.position.z) > 100)
+                        || Mathf.Abs(spawnZ - planets[j].transform.position.z) > 100) //and compares the distance
                         {
                             isNotCollision = true;
                         }
                     }
                 }
 
-            }while (!isNotCollision);
+                //prevents infinite loop
+                if (loopCounter >= 10)
+                {
+                    break;
+                }
 
+            }while (!isNotCollision); //if its not true then it will try again
+
+            loopCounter = 0;
             planetTemp = Instantiate(planetPrefab, new Vector3(spawnX, spawnY, spawnZ), Quaternion.identity);
             planetTemp.transform.localScale = new Vector3(randScale, randScale, randScale);
             planets.Add(planetTemp);
