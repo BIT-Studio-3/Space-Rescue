@@ -6,5 +6,6 @@ public static class GameSettings
 {
     //Global variable to keep track of amount of rescued planets.
     public static int Score = 0;
+    public static float menuScale = 1f;
 }
 
