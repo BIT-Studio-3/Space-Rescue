@@ -9,7 +9,7 @@ public class BHWarning : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Ship"))
+        if (other.CompareTag("Player"))
         {
             shipWarning.SetActive(false);
         }
@@ -20,7 +20,7 @@ public class BHWarning : MonoBehaviour
         {
             planetWarning.SetActive(true);
         }
-        if (other.CompareTag("Ship"))
+        if (other.CompareTag("Player"))
         {
             shipWarning.SetActive(true);
         }

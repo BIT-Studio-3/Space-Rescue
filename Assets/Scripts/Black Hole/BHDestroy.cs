@@ -16,7 +16,7 @@ public class BHDestroy : MonoBehaviour
             Destroy(other.gameObject, destroyDelay);
         }
         //Ends game with a loss
-        if (other.CompareTag("Ship"))
+        if (other.CompareTag("Player"))
         {
             GameSettings.Winning = false;
             SceneManager.LoadScene("gameEnd");
