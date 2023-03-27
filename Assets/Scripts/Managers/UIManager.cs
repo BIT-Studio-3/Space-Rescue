@@ -29,9 +29,9 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            winningText.text = "You got caught by the black hole\nBetter luck next time!";
             savedNumGO.SetActive(true);
             savedTextGO.SetActive(true);
+            winningText.text = "You got caught by the black hole\nBetter luck next time!";
         }
     }
 }
