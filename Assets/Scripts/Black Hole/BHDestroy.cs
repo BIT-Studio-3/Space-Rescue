@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BHDestroy : MonoBehaviour
 {
-    public int destroyDelay = 10;
+    private int destroyDelay = 30;
 
     private void OnTriggerEnter(Collider other)
     {
