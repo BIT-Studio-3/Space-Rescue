@@ -6,24 +6,30 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    //The text of the number of planets saved
     public Text savedNumber;
+    //Game objects for saved numbers and the text above it
     public GameObject savedNumGO;
     public GameObject savedTextGO;
+    //Text announcing the result
     public Text winningText;
     void Start()
     {
+        //Updates score and winning state when end game state is entered
         UpdateScore();
-        UpdateWinning(GameSettings.Winning);
+        UpdateWinning();
     }
 
+    //Sets the score display to the current game score
     public void UpdateScore()
     {
         savedNumber.text = GameSettings.Score.ToString();
     }
 
-    public void UpdateWinning(bool win)
+    //Updates the text depending on if you escaped or died
+    public void UpdateWinning()
     {
-        if (win)
+        if (GameSettings.Winning)
         {
             winningText.text = "Escaped!";
         }

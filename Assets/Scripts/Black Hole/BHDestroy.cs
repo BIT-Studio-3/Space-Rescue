@@ -6,16 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class BHDestroy : MonoBehaviour
 {
+    //Delay on destroying the planet so the black hole has time to envelop it. Might be changed later to a more natural implementation
     private int destroyDelay = 30;
 
     private void OnTriggerEnter(Collider other)
     {
-        //On collision with a planet it destroys it in a specified amount of seconds. This is a delay so it can get fully enveloped first
+        //On collision with a planet it destroys it in a specified amount of seconds
         if (other.CompareTag("Planet"))
         {
             Destroy(other.gameObject, destroyDelay);
         }
-        //Ends game with a loss
+        //On collision with the player it ends game with a loss
         if (other.CompareTag("Player"))
         {
             GameSettings.Winning = false;
