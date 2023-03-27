@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: cd17a49c306aa694a91a8fee8bb79c06, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 5dc0a00cc309b4644a43072ac3371c69, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.03257911, g: 0.004022466, b: 0.04088818, a: 1}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.032488257, g: 0.004014846, b: 0.040772725, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -622,13 +622,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1152961535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e08e312524ba7034d8c7008517c16748, type: 3}
+  m_Script: {fileID: 11500000, guid: 0080a4cce91f36640b413c6e62a6b12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetPrefab: {fileID: 5748848403008948943, guid: 3eab305ca9ce1fc4188558a7de28a9a9, type: 3}
+  planetPrefab: {fileID: 5748848403008948943, guid: 325369fab33f8ea44b34d91c4a9f4a34, type: 3}
   planets: []
-  planetCount: 3
-  spawnRange: 100
+  planetCount: 4
+  spawnRange: 200
 --- !u!1 &1239359199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,7 +1172,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1810218730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bde6a0e19cbe9b47ae7722b82fabc51, type: 3}
+  m_Script: {fileID: 11500000, guid: fc82c49d04b6ab24486bfebf9f7f87b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planetWarning: {fileID: 1239359199}
@@ -1188,7 +1188,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2018576036
 GameObject:
@@ -1298,8 +1298,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2018576036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aa670e36b2ffed41b5ae97c9c648372, type: 3}
+  m_Script: {fileID: 11500000, guid: 14061e0725c68d149912b8400f432e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScale: 1000
-  timeToReachTarget: 300
+  targetScale: 6000
+  timeToReachTarget: 250
