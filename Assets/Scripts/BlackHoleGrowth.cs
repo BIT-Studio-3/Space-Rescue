@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BlackHoleGrowth : MonoBehaviour
 {
-    public float targetScale; 
-    public float timeToReachTarget; 
+    public float targetScale = 6000; 
+    public float timeToReachTarget = 100; 
     private float startScale;  
     private float percentScaled; 
     // Start is called before the first frame update
