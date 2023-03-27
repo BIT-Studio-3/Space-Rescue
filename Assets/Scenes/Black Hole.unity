@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.032488257, g: 0.004014846, b: 0.040772725, a: 1}
+  m_IndirectSpecularColor: {r: 0.03257911, g: 0.004022466, b: 0.04088818, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -854,7 +854,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 3000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -991,7 +991,7 @@ GameObject:
   - component: {fileID: 1436780323}
   - component: {fileID: 1436780330}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Player
   m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1302,8 +1302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14061e0725c68d149912b8400f432e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScale: 6000
-  timeToReachTarget: 300
 --- !u!114 &2018576046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1316,4 +1314,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c82f70eb0e32144bdbbaf25f228dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyDelay: 5
