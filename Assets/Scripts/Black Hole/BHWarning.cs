@@ -16,7 +16,7 @@ public class BHWarning : MonoBehaviour
     }
     private void OnTriggerStay (Collider other)
     {
-        if (other.CompareTag("Planet")) //Will add something to check if it is saved
+        if (other.CompareTag("Planet")) //Will add something to check if it is saved and to remove warning if no planets are still in area
         {
             planetWarning.SetActive(true);
         }

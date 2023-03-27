@@ -468,7 +468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 37}
+  m_AnchoredPosition: {x: 0, y: 45}
   m_SizeDelta: {x: 360, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &750543805
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetPrefab: {fileID: 5748848403008948943, guid: 325369fab33f8ea44b34d91c4a9f4a34, type: 3}
   planets: []
-  planetCount: 4
+  planetCount: 3
   spawnRange: 200
 --- !u!1 &1239359199
 GameObject:
@@ -662,11 +662,11 @@ RectTransform:
   m_Father: {fileID: 712331497}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 539}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 450, y: 60}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1239359201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,10 +784,10 @@ RectTransform:
   m_Father: {fileID: 712331497}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 487}
-  m_SizeDelta: {x: 519.2, y: 60}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -259.59998, y: -30}
+  m_SizeDelta: {x: 519.19995, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1329740015
 GameObject:
@@ -1203,6 +1203,7 @@ GameObject:
   - component: {fileID: 2018576038}
   - component: {fileID: 2018576037}
   - component: {fileID: 2018576045}
+  - component: {fileID: 2018576046}
   m_Layer: 0
   m_Name: Black Hole
   m_TagString: Black Hole
@@ -1302,4 +1303,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScale: 6000
-  timeToReachTarget: 250
+  timeToReachTarget: 300
+--- !u!114 &2018576046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018576036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c82f70eb0e32144bdbbaf25f228dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyDelay: 5
