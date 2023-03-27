@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 751355210}
   - component: {fileID: 751355209}
   m_Layer: 5
-  m_Name: SettingsButton
+  m_Name: KeybindsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -664,8 +664,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.45490196, g: 0.49411765, b: 0.94509804, a: 1}
-    m_PressedColor: {r: 0.7825645, g: 0.2784314, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.9241207, g: 0.9024564, b: 0.9811321, a: 1}
+    m_PressedColor: {r: 0.9021663, g: 0.7307761, b: 0.9622642, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.63342625, g: 0.5322179, b: 0.9811321, a: 1}
+  m_Color: {r: 0.7205037, g: 0.64907444, b: 0.9622642, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.11372549, g: 0, b: 1, a: 1}
+  m_Color: {r: 0.49019608, g: 0.0039215684, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1192,8 +1192,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.95513254, g: 0.9198113, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.68765575, g: 0.7088697, b: 0.9528302, a: 1}
-    m_PressedColor: {r: 0.5831142, g: 0.27687788, b: 0.9622642, a: 1}
+    m_HighlightedColor: {r: 0.9529412, g: 0.6862745, b: 0.9369132, a: 1}
+    m_PressedColor: {r: 0.972549, g: 0.5921569, b: 0.8185815, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1315,7 +1315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.109848976, g: 0, b: 1, a: 1}
+  m_Color: {r: 0.49019608, g: 0.003921569, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1356,7 +1356,7 @@ GameObject:
   - component: {fileID: 2110343422}
   - component: {fileID: 2110343421}
   m_Layer: 5
-  m_Name: Settings
+  m_Name: Keybinds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1395,7 +1395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.11372549, g: 0, b: 1, a: 1}
+  m_Color: {r: 0.48725247, g: 0.0039215684, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
