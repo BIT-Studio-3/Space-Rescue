@@ -628,7 +628,7 @@ MonoBehaviour:
   planetPrefab: {fileID: 5748848403008948943, guid: 325369fab33f8ea44b34d91c4a9f4a34, type: 3}
   planets: []
   planetCount: 3
-  spawnRange: 200
+  spawnRange: 100
 --- !u!1 &1239359199
 GameObject:
   m_ObjectHideFlags: 0
