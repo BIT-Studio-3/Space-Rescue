@@ -15,10 +15,8 @@ public class PlanetSpawn : MonoBehaviour
     public List<GameObject> planets = new List<GameObject>();
     private bool isNotCollision;
     private int loopCounter;
-
-    //inspector editable variables
-    public int spawnRange = 10000;
-    public int spawnCount = 10;
+    private int spawnRange = 10000;
+    private int spawnCount = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +70,7 @@ public class PlanetSpawn : MonoBehaviour
                 }
 
             }while (!isNotCollision); //if its not true then it will try again
+            //TODO add loop counter to while loop
             loopCounter = 0;
             planetTemp = Instantiate(planetPrefab, new Vector3(spawnX, spawnY, spawnZ), Quaternion.identity);
             planetTemp.transform.localScale = new Vector3(randScale, randScale, randScale);
