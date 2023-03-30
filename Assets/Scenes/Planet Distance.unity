@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -327,12 +327,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1473552710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c094a5390a60cb044b57e359bc9eb4bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c1d990174962364e8797e9ce6003fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetPrefab: {fileID: 5748848403008948943, guid: b15d92b192606e347a808dad68d167f7, type: 3}
+  planetPrefab: {fileID: 5748848403008948943, guid: cace40cffd7e57b41b1475d1de0338c5, type: 3}
   planets: []
-  spawnRange: 1000
+  spawnRange: 10000
   spawnCount: 10
 --- !u!4 &1473552712
 Transform:
