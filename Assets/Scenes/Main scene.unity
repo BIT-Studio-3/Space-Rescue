@@ -620,10 +620,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1152961535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edccf73e3d093ff4ab674f7d8cad5829, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c1d990174962364e8797e9ce6003fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetPrefab: {fileID: 5748848403008948943, guid: d9dae73d331e1fd4b92922e09a6afc9a, type: 3}
+  planetPrefab: {fileID: 5748848403008948943, guid: cace40cffd7e57b41b1475d1de0338c5, type: 3}
   planets: []
   planetCount: 5
   spawnRange: 100
@@ -830,7 +830,7 @@ GameObject:
   - component: {fileID: 1436780330}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
