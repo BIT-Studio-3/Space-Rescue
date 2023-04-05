@@ -5,6 +5,7 @@ using UnityEngine;
 public class FindingPlanets : MonoBehaviour
 {
     public  List<GameObject> planetsNotRescued;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,7 @@ public class FindingPlanets : MonoBehaviour
 
         GameObject tMin = null;
         float minDist = Mathf.Infinity;
-        Vector3 currentPos = transform.position; 
+        Vector3 currentPos = player.transform.position; 
 
         foreach(GameObject planet in planetsNotRescued)
         {
@@ -51,6 +52,11 @@ public class FindingPlanets : MonoBehaviour
 
         }
         GameObject target = tMin;
-       transform.LookAt(target.transform.position);
+        Vector3 targetPostition = new Vector3( target.transform.position.x,target.transform.position.y,target.transform.position.z);
+        transform.LookAt( targetPostition );
+        // Quaternion newRotation = Quaternion.LookRotation(currentPos - target.transform.position, Vector3.forward);
+        // newRotation.x = 0.0f;
+        // newRotation.z = 0.0f;
+        // transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 8);
     }
 }
