@@ -2,9 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class GameEndManager : MonoBehaviour
 {
     //The text of the number of planets saved
     public Text savedNumber;
@@ -40,4 +42,10 @@ public class UIManager : MonoBehaviour
             winningText.text = "You got caught by the black hole\nBetter luck next time!";
         }
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Main scene");
+    }
+
 }
