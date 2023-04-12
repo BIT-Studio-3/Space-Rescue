@@ -20,6 +20,9 @@ public class GameEndManager : MonoBehaviour
         //Updates score and winning state when end game state is entered
         UpdateScore();
         UpdateWinning();
+        //Enable cursor
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     //Sets the score display to the current game score
@@ -45,6 +48,7 @@ public class GameEndManager : MonoBehaviour
 
     public void Restart()
     {
+
         SceneManager.LoadScene("Main scene");
     }
 
