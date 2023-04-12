@@ -48,7 +48,9 @@ public class GameEndManager : MonoBehaviour
 
     public void Restart()
     {
-
+        GameSettings.Score = 0;
+        GameSettings.PlanetDanger = 0;
+        GameSettings.Winning = true;
         SceneManager.LoadScene("Main scene");
     }
 
