@@ -53,5 +53,9 @@ public class GameEndManager : MonoBehaviour
         GameSettings.Winning = true;
         SceneManager.LoadScene("Main scene");
     }
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
 
 }
