@@ -29,7 +29,7 @@ public class FindingPlanets : MonoBehaviour
     void Update()
     {
 
-        GameObject tMin = null;
+        GameObject closestPlanet = null;
         float minDist = Mathf.Infinity;
         Vector3 currentPos = player.transform.position; 
 
@@ -39,7 +39,7 @@ public class FindingPlanets : MonoBehaviour
             float dist = directionToTarget.sqrMagnitude;
             if (dist < minDist)
             {
-                tMin = planet;
+                closestPlanet = planet;
                 minDist = dist;
             }
 
@@ -51,7 +51,7 @@ public class FindingPlanets : MonoBehaviour
             }
 
         }
-        GameObject target = tMin;
+        GameObject target = closestPlanet;
         Vector3 targetPostition = new Vector3( target.transform.position.x,target.transform.position.y,target.transform.position.z);
         transform.LookAt( targetPostition );
         // Quaternion newRotation = Quaternion.LookRotation(currentPos - target.transform.position, Vector3.forward);
