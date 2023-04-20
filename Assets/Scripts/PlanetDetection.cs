@@ -8,6 +8,7 @@ public class PlanetDetection : MonoBehaviour
 
     public bool playerInsideRadius;
     public bool planetRescued;
+    public bool inDanger;
     //Temp Materials
     public Material complete; //Color of rescued planet
     public Material withinRadius; //Color of planet when within the radius
@@ -15,6 +16,7 @@ public class PlanetDetection : MonoBehaviour
    // public GameObject pressKey; //Text indicator for user interface
 
     public GameObject planet; //the planet prefab
+
 
 
 
@@ -30,6 +32,11 @@ public class PlanetDetection : MonoBehaviour
                 planetRescued = true;
                 planet.GetComponent<MeshRenderer> ().material = complete; //Temp Indicator the planet will be set to red
                 GameSettings.Score++;
+                if(inDanger)
+                {
+                    GameSettings.PlanetDanger--;
+                    BHWarning.Instance.PlanetWarning();
+                }
             }
         }
 
@@ -44,6 +51,10 @@ public class PlanetDetection : MonoBehaviour
             {
                 planet.GetComponent<MeshRenderer> ().material = withinRadius; //Temp Indicator the planet will be set to green
             }
+        }
+        if (other.CompareTag("Black Hole Warning"))
+        {
+            inDanger = true;
         }
 
     }
