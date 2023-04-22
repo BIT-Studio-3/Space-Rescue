@@ -52,16 +52,17 @@ void Update() { //2d arrow (working)
     screenMiddle = new Vector3(Screen.width/2, Screen.height/2, 0); 
     crosshair.transform.position = screenMiddle;
     //Compute the angle from screenMiddle to targetPos
-    var tarAngle = (Mathf.Atan2(targetPos.x-screenMiddle.x,Screen.height-targetPos.y-screenMiddle.y) * Mathf.Rad2Deg)+90;
+    float tarAngle = (Mathf.Atan2(targetPos.x-screenMiddle.x,Screen.height-targetPos.y-screenMiddle.y) * Mathf.Rad2Deg)+90;
     if (tarAngle < 0) tarAngle +=360;
 
 
  //Calculate the angle from the camera to the target
- var targetDir = target.transform.position - cam.transform.position;
- var forward = cam.transform.forward;
- var angle = Vector3.Angle(targetDir, forward);
+ Vector3 targetDir = target.transform.position - cam.transform.position;
+ Vector3 forward = cam.transform.forward;
+ float angle = Vector3.Angle(targetDir, forward);
 //  distanceText.text = angle.ToString();
-if(angle < 5 && angle > 0)
+print(angle);
+if(angle < 10 && angle > 0)
 {
     GetComponent<Renderer>().enabled = false;
 }
