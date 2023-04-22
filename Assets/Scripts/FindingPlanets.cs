@@ -9,6 +9,8 @@ public class FindingPlanets : MonoBehaviour
     public  List<GameObject> planetsNotRescued;
     public GameObject player;
     public Text distanceText;
+
+    public Text crosshair;
     // Start is called before the first frame update
 
 
@@ -32,7 +34,7 @@ void Update() { //2d arrow (working)
             {
                 closestPlanet = planet;
                 minDist = dist;
-                distanceText.text = minDist.ToString();
+                distanceText.text = Mathf.Round(minDist/100).ToString();
             }
 
             if(planet == null || planet.GetComponent<PlanetDetection>().planetRescued == true) 
@@ -48,6 +50,7 @@ void Update() { //2d arrow (working)
     targetPos = cam.WorldToScreenPoint (target.transform.position);
     //Get the middle of the screen into a Vector3
     screenMiddle = new Vector3(Screen.width/2, Screen.height/2, 0); 
+    crosshair.transform.position = screenMiddle;
     //Compute the angle from screenMiddle to targetPos
     var tarAngle = (Mathf.Atan2(targetPos.x-screenMiddle.x,Screen.height-targetPos.y-screenMiddle.y) * Mathf.Rad2Deg)+90;
     if (tarAngle < 0) tarAngle +=360;
