@@ -8,6 +8,7 @@ public class FindingPlanets : MonoBehaviour
 {
     public List<GameObject> planetsNotRescued;
     public GameObject player;
+    public GameObject tick;
     public Text distanceText;
 
     public Text crosshair;
@@ -84,13 +85,17 @@ public class FindingPlanets : MonoBehaviour
         float angle = Vector3.Angle(targetDir, forward);
         //  distanceText.text = angle.ToString();
         print(angle);
-        if (angle < 10 && angle > 0) //Range for the crosshair to the planet. This is the value when the arrow will disappear
+        if (angle < 10 && angle > 0) //Range for the crosshair to the planet. 
         {
             GetComponent<Renderer>().enabled = false;
+            tick.SetActive(true);
         }
         else
         {
             GetComponent<Renderer>().enabled = true;
+            tick.SetActive(false);
+
+
         }
 
         //If the angle exceeds 90deg inverse the rotation to point correctly
