@@ -37,12 +37,18 @@ public class KeypressManager : MonoBehaviour
     private void play()
     {
         Time.timeScale = 1;
+        //Disable cursor
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         PausedMessage.SetActive(false);
     }
 
     private void pause()
     {
         Time.timeScale = 0;
+        //Enable cursor
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         PausedMessage.SetActive(true);
     }
 }
