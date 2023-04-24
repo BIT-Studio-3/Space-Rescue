@@ -1253,11 +1253,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5246791220565673788, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.1
+      value: 0.0933
       objectReference: {fileID: 0}
     - target: {fileID: 5246791220565673788, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.075
+      value: -0.0728
       objectReference: {fileID: 0}
     - target: {fileID: 5246791220565673788, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1348,7 +1348,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4
+  m_Text: distance
 --- !u!222 &2041990578
 CanvasRenderer:
   m_ObjectHideFlags: 0
