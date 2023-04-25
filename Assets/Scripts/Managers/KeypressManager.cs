@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class KeypressManager : MonoBehaviour
 {
-    public GameObject PausedMessage;
-    public GameObject QuitButton;
+    public GameObject PauseMenu;
     // Update is called once per frame
     void Update()
     {
@@ -41,9 +40,8 @@ public class KeypressManager : MonoBehaviour
         //Disable cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        PausedMessage.SetActive(false);
-        QuitButton.SetActive(false);
-    }
+        PauseMenu.SetActive(false);
+        }
 
     private void pause()
     {
@@ -51,7 +49,6 @@ public class KeypressManager : MonoBehaviour
         //Enable cursor
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        PausedMessage.SetActive(true);
-        QuitButton.SetActive(true);
+        PauseMenu.SetActive(true);
     }
 }
