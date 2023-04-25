@@ -5,9 +5,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed;
-
+    //public float moveSpeed;
+    public float speed = 5f;
+    public CharacterController controller;
     public float groundDrag;
+    public float smoothTime = 0.1f;
+    float smoothVelo;
 
     [Header("Ground Check")]//needs tweaking!
     public float playerHeight;
@@ -56,7 +59,16 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        rb.AddForce(moveDirection * moveSpeed * 10, ForceMode.Force);
+        //rb.AddForce(moveDirection * moveSpeed * 10, ForceMode.Force);
+        Vector3 direction = new Vector3 (horizontalInput, 0f, verticalInput).normalized; //only x & z
+
+        if (direction.magnitude >= 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref smoothVelo, smoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            controller.Move(direction * speed * Time.deltaTime);
+        }
     }
 
     //Limits the acceleration
@@ -64,9 +76,9 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         
-        if (flatVel.magnitude > moveSpeed)//if faster than movement speed
+        if (flatVel.magnitude > speed)//if faster than movement speed
         {
-            Vector3 limitedVel = flatVel.normalized * moveSpeed;//calculate the max speed
+            Vector3 limitedVel = flatVel.normalized * speed;//calculate the max speed
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);//apply that max speed limit
         }
     }
