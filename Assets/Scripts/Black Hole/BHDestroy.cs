@@ -21,7 +21,7 @@ public class BHDestroy : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameSettings.Winning = false;
-            SceneManager.LoadScene("gameEnd");
+            SceneManager.LoadScene("Game End");
         }
     }
 }

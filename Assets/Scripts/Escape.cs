@@ -17,6 +17,6 @@ public class Escape : MonoBehaviour
 
     public void EscapeScene()
     {
-        SceneManager.LoadScene("gameEnd");
+        SceneManager.LoadScene("Game End");
     }
 }
