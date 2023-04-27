@@ -30,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Update()
@@ -62,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
+
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
         //moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
