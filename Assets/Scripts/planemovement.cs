@@ -10,12 +10,12 @@ public class planemovement : MonoBehaviour
     float horizontalMove;
     float mouseInputX;
     float mouseInputY;
-    //float rollInput;
+    float tiltInput;
 
     //speed
     float speedMult = 1;
     float speedMultAngle = 0.5f;
-    //float speedRollMultiAngle = 0.5f;
+    float speedtiltMultiAngle = 0.1f;
 
     void Start()
     {
@@ -27,7 +27,7 @@ public class planemovement : MonoBehaviour
     {
         verticalMove = Input.GetAxis("Vertical");
         horizontalMove = Input.GetAxis("Horizontal");
-        //rollInput = Input.GetAxis("Rool");
+        tiltInput = Input.GetAxis("Roll");
 
         mouseInputX = Input.GetAxis("Mouse X");
         mouseInputY = Input.GetAxis("Mouse Y");
@@ -43,6 +43,6 @@ public class planemovement : MonoBehaviour
         spaceshipRB.AddTorque(spaceshipRB.transform.right * speedMultAngle * mouseInputY * -1, ForceMode.VelocityChange);
         spaceshipRB.AddTorque(spaceshipRB.transform.up * speedMultAngle * mouseInputX, ForceMode.VelocityChange);
 
-        //spaceshipRB.AddTorque(spaceshipRB.transform.forward * speedRollMultiAngle * rollInput, ForceMode.VelocityChange);
+        spaceshipRB.AddTorque(spaceshipRB.transform.forward * speedtiltMultiAngle * tiltInput, ForceMode.VelocityChange);
     }
 }
