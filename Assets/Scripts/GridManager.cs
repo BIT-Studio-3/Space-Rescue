@@ -30,16 +30,16 @@ public class GridManager : MonoBehaviour
         for (int row = 0; row < GridDimension; row++)
             for (int column = 0; column < GridDimension; column++)
             {
-                List<Sprite> possibleSprites = new List<Sprite>(); // 1
+                List<Sprite> possibleSprites = new List<Sprite>();
 
-                Sprite left1 = GetSpriteAt(column - 1, row); //2
+                Sprite left1 = GetSpriteAt(column - 1, row);
                 Sprite left2 = GetSpriteAt(column - 2, row);
-                if (left2 != null && left1 == left2) // 3
+                if (left2 != null && left1 == left2)
                 {
-                    possibleSprites.Remove(left1); // 4
+                    possibleSprites.Remove(left1);
                 }
 
-                Sprite down1 = GetSpriteAt(column, row - 1); // 5
+                Sprite down1 = GetSpriteAt(column, row - 1);
                 Sprite down2 = GetSpriteAt(column, row - 2);
                 if (down2 != null && down1 == down2)
                 {
@@ -59,7 +59,7 @@ public class GridManager : MonoBehaviour
             }
     }
 
-    public void SwapTiles(Vector2Int tile1Position, Vector2Int tile2Position) // 1
+    public void SwapTiles(Vector2Int tile1Position, Vector2Int tile2Position)
     {
 
         GameObject tile1 = Grid[tile1Position.x, tile1Position.y];
@@ -83,21 +83,21 @@ public class GridManager : MonoBehaviour
 
     bool CheckMatches()
     {
-        HashSet<SpriteRenderer> matchedTiles = new HashSet<SpriteRenderer>(); // 1
+        HashSet<SpriteRenderer> matchedTiles = new HashSet<SpriteRenderer>();
         for (int row = 0; row < GridDimension; row++)
         {
-            for (int column = 0; column < GridDimension; column++) // 2
+            for (int column = 0; column < GridDimension; column++)
             {
-                SpriteRenderer current = GetSpriteRendererAt(column, row); // 3
+                SpriteRenderer current = GetSpriteRendererAt(column, row);
 
-                List<SpriteRenderer> horizontalMatches = FindColumnMatchForTile(column, row, current.sprite); // 4
+                List<SpriteRenderer> horizontalMatches = FindColumnMatchForTile(column, row, current.sprite);
                 if (horizontalMatches.Count >= 2)
                 {
                     matchedTiles.UnionWith(horizontalMatches);
-                    matchedTiles.Add(current); // 5
+                    matchedTiles.Add(current);
                 }
 
-                List<SpriteRenderer> verticalMatches = FindRowMatchForTile(column, row, current.sprite); // 6
+                List<SpriteRenderer> verticalMatches = FindRowMatchForTile(column, row, current.sprite);
                 if (verticalMatches.Count >= 2)
                 {
                     matchedTiles.UnionWith(verticalMatches);
@@ -106,11 +106,11 @@ public class GridManager : MonoBehaviour
             }
         }
 
-        foreach (SpriteRenderer renderer in matchedTiles) // 7
+        foreach (SpriteRenderer renderer in matchedTiles)
         {
             renderer.sprite = null;
         }
-        return matchedTiles.Count > 0; // 8
+        return matchedTiles.Count > 0;
     }
 
     List<SpriteRenderer> FindColumnMatchForTile(int col, int row, Sprite sprite)

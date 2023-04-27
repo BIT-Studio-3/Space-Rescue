@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    private static Tile selected; // 1 
-    private SpriteRenderer Renderer; // 2
+    private static Tile selected;
+    private SpriteRenderer Renderer;
     public Vector2Int Position;
 
-    private void Start() // 3
+    private void Start()
     {
         Renderer = GetComponent<SpriteRenderer>();
     }
 
-    public void Select() // 4
+    public void Select()
     {
         Renderer.color = Color.grey;
     }
 
-    public void Unselect() // 5 
+    public void Unselect()
     {
         Renderer.color = Color.white;
     }
 
-    private void OnMouseDown() //6
+    private void OnMouseDown()
     {
         if (selected != null)
         {
