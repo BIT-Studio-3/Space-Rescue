@@ -8,31 +8,55 @@ public class PlanetDetection : MonoBehaviour
 
     public bool playerInsideRadius;
     public bool planetRescued;
+    public bool inDanger;
     //Temp Materials
     public Material complete; //Color of rescued planet
     public Material withinRadius; //Color of planet when within the radius
     public Material normal; //Color of normal planet 
-    public GameObject pressKey; //Text indicator for user interface
+   // public GameObject pressKey; //Text indicator for user interface
 
-    public GameObject planet;
+    public GameObject planet; //the planet prefab
 
-    private void OnTriggerStay(Collider other)
+
+
+
+
+
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+            if(playerInsideRadius && !planetRescued)
+            {
+                planetRescued = true;
+                planet.GetComponent<MeshRenderer> ().material = complete; //Temp Indicator the planet will be set to red
+                GameSettings.Score++;
+                if(inDanger)
+                {
+                    GameSettings.PlanetDanger--;
+                    BHWarning.Instance.PlanetWarning();
+                }
+            }
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             playerInsideRadius = true;
-            pressKey.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.Return)) //The user needs to press the enter key to rescue the planet.
+            if(!planetRescued)
             {
-               planetRescued = true;
-               planet.GetComponent<MeshRenderer> ().material = complete; //Temp Indicator the planet will be set to white
-               GameSettings.Score++;
-            }
-            else if(!planetRescued)
-            {
-              planet.GetComponent<MeshRenderer> ().material = withinRadius; //Temp Indicator the planet will be set to white
+                planet.GetComponent<MeshRenderer> ().material = withinRadius; //Temp Indicator the planet will be set to green
             }
         }
+        if (other.CompareTag("Black Hole Warning"))
+        {
+            inDanger = true;
+        }
+
     }
     
 
@@ -42,8 +66,7 @@ public class PlanetDetection : MonoBehaviour
         if (other.CompareTag("Player")) 
         {
             playerInsideRadius = false;
-            pressKey.SetActive(false); //hides the text prompt when player not within range,       
-            if(!planetRescued) //If the player has not complete the planet it will return to default other wise it will remain completed.
+            if(!planetRescued) //If the player has not rescued the planet it will return to default other wise it will remain completed.
             {
                 planet.GetComponent<MeshRenderer> ().material = normal; //Temp Indicator the planet will be set to white
             }

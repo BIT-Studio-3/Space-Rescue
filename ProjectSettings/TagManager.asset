@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Planet
+  - Black Hole
+  - Black Hole Warning
   layers:
   - Default
   - TransparentFX
@@ -12,8 +14,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Post-Processing
+  - whatIsGround
+  - 3DUI
   - 
   - 
   - 
