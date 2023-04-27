@@ -16,7 +16,8 @@ public class BHWarning : MonoBehaviour
     //Activates warnings when objects are within the black hole warning area
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Planet"))
+        //This checks if the planet has been rescued when it enters the zone
+        if (other.CompareTag("Planet") && other.gameObject.GetComponent<PlanetDetection>().planetRescued == false)
         {
             GameSettings.PlanetDanger++;
             PlanetWarning();

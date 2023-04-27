@@ -31,7 +31,7 @@ public class KeypressManager : MonoBehaviour
     private void escapeScene()
     {
         play();
-        SceneManager.LoadScene("gameEnd");
+        SceneManager.LoadScene("Game End");
     }
 
     private void play()
