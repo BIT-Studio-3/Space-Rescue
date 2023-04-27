@@ -23,7 +23,6 @@ public class FindingPlanets : MonoBehaviour
     {
         distanceText.text = "";
         GameObject[] allPlanets = GameObject.FindGameObjectsWithTag("Planet"); //have to do this inside  update for now
-        print(allPlanets.Length);
 
         foreach (GameObject planet in allPlanets)
         {
@@ -84,7 +83,6 @@ public class FindingPlanets : MonoBehaviour
         Vector3 forward = cam.transform.forward;
         float angle = Vector3.Angle(targetDir, forward);
         //  distanceText.text = angle.ToString();
-        print(angle);
         if (angle < 10 && angle > 0) //Range for the crosshair to the planet. 
         {
             GetComponent<Renderer>().enabled = false;
