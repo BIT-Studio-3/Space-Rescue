@@ -16,7 +16,7 @@ public class PlanetSpawn : MonoBehaviour
     private bool isNotCollision;
     private int loopCounter;
     private int spawnRange = 2000;
-    private int spawnCount = 10;
+   [SerializeField]  private int spawnCount = 10;
 
     // Start is called before the first frame update
     void Awake()
