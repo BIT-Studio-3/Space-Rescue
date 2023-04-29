@@ -29,19 +29,7 @@ public class KeypressManager : MonoBehaviour
 
         if(GameSettings.Tutorial)
         {
-            if((Input.GetKeyDown(KeyCode.W) ||Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.D)) && GameObject.Find("Movement") != null)
-            {
-                GameObject.Find("Movement").GetComponent<ToolTip>().completed = true;
 
-            }
-            if((Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E)) && GameObject.Find("Rolling") != null)
-            {
-                print("1");
-                GameObject g = GameObject.Find("Rolling");
-                if(g.activeSelf)
-                    print("1b");
-                    GameObject.Find("Rolling").GetComponent<ToolTip>().completed = true;
-            }
         }
     }
 

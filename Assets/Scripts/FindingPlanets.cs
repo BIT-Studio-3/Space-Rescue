@@ -87,6 +87,13 @@ public class FindingPlanets : MonoBehaviour
         {
             GetComponent<Renderer>().enabled = false;
             tick.SetActive(true);
+            if(GameSettings.Tutorial) //Only checks if the tutorial is set to true.
+            {
+                if(GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Finding")
+                {
+                    GameObject.Find("Finding").GetComponent<ToolTip>().completed = true; //The Finding tooltip is marked as true when the player looks at the closest planet.
+                }
+            }
         }
         else
         {

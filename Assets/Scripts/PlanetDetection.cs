@@ -25,7 +25,7 @@ public class PlanetDetection : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetKeyDown(KeyCode.E))
         {
             if(playerInsideRadius && !planetRescued)
             {
