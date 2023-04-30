@@ -15,14 +15,14 @@ public class TutorialManager : MonoBehaviour
     {
         print(i);
         instance = this;
-        GameSettings.Tutorial = true;
+        GameSettings.Tutorial = true; //Set the tutorial true in the GameSettings to alter some behaviours.
         CreateToolTip("Use the WASD keys to move your Ship!","Movement",true); //The tooltips appear in the top left corner of the screen to teach the player the controls of the game and how to play
         CreateToolTip("Use Q & E to Roll your Spaceship!","Rolling");
         CreateToolTip("Use the mouse to look Around","Looking");
         CreateToolTip("The Arrow points in the direction of the Closest Planet \n Look around to find it","Finding");
         CreateToolTip("Reach the Planet","Approaching");
         CreateToolTip("Use 'R' to rescue the planet from the blackhole","Rescue");
-        CreateToolTip("Well Done, You have rescued a planet \n The Blackhole is now active! \n Try and rescue the other Planets \n or press 'Spacebar' to escape!","Escaping");
+        CreateToolTip("Well Done, You have rescued a planet, The Blackhole is now active!, Try and rescue the other Planets or press 'Spacebar' to escape!","Escaping");
 
     }
 
@@ -50,6 +50,11 @@ public class TutorialManager : MonoBehaviour
             if((Input.GetAxis("Mouse X") > 0 || Input.GetAxis("Mouse X") < 0 || Input.GetAxis("Mouse Y") > 0 || Input.GetAxis("Mouse Y") < 0) && toolTips[0].name == "Looking")
             {
                 GameObject.Find("Looking").GetComponent<ToolTip>().completed = true; //tooltip is complete when the player moves the mouse in any direction.
+            }
+
+            if(toolTips[0].name == "Escaping")
+            {
+                GameObject.Find("Black Hole").GetComponent<BlackHoleGrowth>().isActive = true;
             }
     }
 

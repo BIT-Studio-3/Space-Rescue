@@ -25,10 +25,24 @@ public class PlanetDetection : MonoBehaviour
 
     void Update()
     {
+        if(GameSettings.Tutorial)
+        {
+            if(playerInsideRadius && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Approaching")
+            {
+                GameObject.Find("Approaching").GetComponent<ToolTip>().completed = true;
+            }
+        }
         if(Input.GetKeyDown(KeyCode.R))
         {
             if(playerInsideRadius && !planetRescued)
             {
+                if(GameSettings.Tutorial)
+                {
+                    if(playerInsideRadius && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Rescue")
+                    {
+                        GameObject.Find("Rescue").GetComponent<ToolTip>().completed = true;
+                    } 
+                }
                 planetRescued = true;
                 planet.GetComponent<MeshRenderer> ().material = complete; //Temp Indicator the planet will be set to red
                 GameSettings.Score++;
