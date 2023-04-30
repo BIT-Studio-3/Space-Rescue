@@ -21,7 +21,7 @@ public class TutorialManager : MonoBehaviour
         CreateToolTip("Use the mouse to look Around","Looking");
         CreateToolTip("The Arrow points in the direction of the Closest Planet \n Look around to find it","Finding");
         CreateToolTip("Reach the Planet","Approaching");
-        CreateToolTip("Use 'E' to rescue the planet from the blackhole","Rescue");
+        CreateToolTip("Use 'R' to rescue the planet from the blackhole","Rescue");
         CreateToolTip("Well Done, You have rescued a planet \n The Blackhole is now active! \n Try and rescue the other Planets \n or press 'Spacebar' to escape!","Escaping");
 
     }
