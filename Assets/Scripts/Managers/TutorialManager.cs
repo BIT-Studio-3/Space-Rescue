@@ -5,16 +5,11 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 {
     public GameObject toolTipPrefab;
-    public static TutorialManager instance;
     public Canvas canvas;
-    string i = "123 \n 3838";
-
     public List<GameObject> toolTips;
     // Start is called before the first frame update
     void Start()
     {
-        print(i);
-        instance = this;
         GameSettings.Tutorial = true; //Set the tutorial true in the GameSettings to alter some behaviours.
         CreateToolTip("Use the WASD keys to move your Ship!","Movement",true); //The tooltips appear in the top left corner of the screen to teach the player the controls of the game and how to play
         CreateToolTip("Use Q & E to Roll your Spaceship!","Rolling");
