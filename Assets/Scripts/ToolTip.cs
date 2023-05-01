@@ -8,6 +8,7 @@ public class ToolTip : MonoBehaviour
 
     public string prompt;
     public bool completed;
+    private float exitSpeed = 500;
 
     public bool isActive;
 
@@ -30,7 +31,7 @@ public class ToolTip : MonoBehaviour
             GetComponent<Text>().color = Color.green; //when the tooltip is marked as complete it will start sliding off screen removed from the list and then destoryed.
             if(transform.localPosition.x > -1100)
             {
-                transform.localPosition -= new Vector3(150*Time.deltaTime,0,0);
+                transform.localPosition -= new Vector3(exitSpeed*Time.deltaTime,0,0);
             }
             else 
             {
