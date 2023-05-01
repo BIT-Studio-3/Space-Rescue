@@ -278,15 +278,16 @@ MonoBehaviour:
 
     Movement:
 
-    -
+    -----------------------
 
     Roll Left:
 
-    -
+    -----------------------
 
-    Roll Right:
+    Roll
+    Right:
 
-    -
+    -----------------------
 
     Camera:
 
@@ -1073,17 +1074,18 @@ MonoBehaviour:
 
     A S D
 
-    -
+    -----------------------
 
     Q
 
-    -
+    -----------------------
 
     e
 
-    -
+    -----------------------
 
-    Rotate Mouse
+    Rotate
+    Mouse
 
     -
 
