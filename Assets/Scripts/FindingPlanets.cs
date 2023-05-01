@@ -14,7 +14,7 @@ public class FindingPlanets : MonoBehaviour
     public Text crosshair;
     // Start is called before the first frame update
 
-
+    
     public Camera cam;  //Camera to use
     private Vector3 targetPos; //Target position on screen
     private Vector3 screenMiddle; //Middle of the screen
@@ -22,7 +22,7 @@ public class FindingPlanets : MonoBehaviour
     void Start()
     {
         distanceText.text = "";
-        GameObject[] allPlanets = GameObject.FindGameObjectsWithTag("Planet"); //have to do this inside  update for now
+        GameObject[] allPlanets= GameObject.FindGameObjectsWithTag("Planet"); //have to do this inside  update for now
 
         foreach (GameObject planet in allPlanets)
         {
@@ -38,33 +38,35 @@ public class FindingPlanets : MonoBehaviour
         GameObject closestPlanet = null;
         float minDist = Mathf.Infinity;
         Vector3 currentPos = player.transform.position;
-
-        foreach (GameObject planet in planetsNotRescued) //finds the closest planet to the player that hasn't already been rescued.
-        {
-            Vector3 directionToTarget = planet.transform.position - currentPos;
-            float dist = directionToTarget.sqrMagnitude;
-            if (dist < minDist)
+        if(planetsNotRescued.Count > 0)
+        {   
+            foreach (GameObject planet in planetsNotRescued) //finds the closest planet to the player that hasn't already been rescued.
             {
-                closestPlanet = planet;
-                minDist = dist;
-                if(minDist < 3000000) //test if the distance to the closest exceeds the limit
+                Vector3 directionToTarget = planet.transform.position - currentPos;
+                float dist = directionToTarget.sqrMagnitude;
+                if (dist < minDist)
                 {
-                    distanceText.text = Mathf.Round(minDist / 100).ToString(); //round the distance to a whole number for readability 
+                    closestPlanet = planet;
+                    minDist = dist;
+                    if(minDist < 3000000) //test if the distance to the closest exceeds the limit
+                    {
+                        distanceText.text = Mathf.Round(minDist / 100).ToString(); //round the distance to a whole number for readability 
+                    }
+                    else 
+                    {
+                        distanceText.text = "Out of Range!";
+                    }
                 }
-                else 
+
+                if (planet == null || planet.GetComponent<PlanetDetection>().planetRescued == true)
                 {
-                    distanceText.text = "Out of Range!";
+
+                    planetsNotRescued.Remove(planet); //Remove saved planets from the list
+                    break;
                 }
+
             }
-
-            if (planet == null || planet.GetComponent<PlanetDetection>().planetRescued == true)
-            {
-
-                planetsNotRescued.Remove(planet); //Remove saved planets from the list
-                break;
-            }
-
-        }
+        
         GameObject target = closestPlanet;
         //Get the targets position on screen into a Vector3
         targetPos = cam.WorldToScreenPoint(target.transform.position);
@@ -113,6 +115,7 @@ public class FindingPlanets : MonoBehaviour
             transform.localRotation = Quaternion.Euler(tarAngle, 270, 90);
         }
 
+    }
     }
 
 }
