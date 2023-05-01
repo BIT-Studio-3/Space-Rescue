@@ -29,4 +29,12 @@ public class AnimalController : MonoBehaviour
             entered = true;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            entered = false;
+        }
+    }
 }
