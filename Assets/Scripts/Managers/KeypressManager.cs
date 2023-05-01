@@ -12,7 +12,18 @@ public class KeypressManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            escapeScene();
+             if(GameSettings.Tutorial)
+            {
+                if(GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Escaping")
+                {
+                    escapeScene();
+                }
+            }
+            else
+            {
+                escapeScene();
+            }
+           
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -27,10 +38,7 @@ public class KeypressManager : MonoBehaviour
             }
         }
 
-        if(GameSettings.Tutorial)
-        {
 
-        }
     }
 
     private void escapeScene()
