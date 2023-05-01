@@ -23,6 +23,9 @@ public class GameEndManager : MonoBehaviour
         //Enable cursor
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        if(GameSettings.Tutorial)
+            GameObject.Find("Restart").GetComponent<Text>().text = "Continue";
+ 
     }
 
     //Sets the score display to the current game score
@@ -37,12 +40,20 @@ public class GameEndManager : MonoBehaviour
         if (GameSettings.Winning)
         {
             winningText.text = "Escaped!";
+            if(GameSettings.Tutorial)
+            {
+                winningText.text = "You Completed the Tutorial! \n Press the button below \nto play the game!";
+            }
         }
         else
         {
             savedNumGO.SetActive(false);
             savedTextGO.SetActive(false);
             winningText.text = "You got caught by the black hole\nBetter luck next time!";
+            if(GameSettings.Tutorial)
+            {
+                winningText.text = "You Completed the Tutorial! \n Press the button below \nto play the game!";
+            }
         }
     }
 
@@ -51,6 +62,7 @@ public class GameEndManager : MonoBehaviour
         GameSettings.Score = 0;
         GameSettings.PlanetDanger = 0;
         GameSettings.Winning = true;
+        GameSettings.Tutorial = false;
         SceneManager.LoadScene("Main scene");
     }
     public void QuitButton()
