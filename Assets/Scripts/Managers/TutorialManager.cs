@@ -19,7 +19,7 @@ public class TutorialManager : MonoBehaviour
         CreateToolTip("The Arrow points in the direction of the Closest Planet \n Look around to find it","Finding");
         CreateToolTip("Reach the Planet","Approaching");
         CreateToolTip("Use 'R' to rescue the planet from the Blackhole","Rescue");
-        CreateToolTip("Well Done, You have rescued a planet, The Blackhole is now active!, Try and rescue the other Planets or press 'Spacebar' to escape!","Escaping",true);
+        CreateToolTip("Well Done, You have rescued a planet, The Blackhole is now active!, Try and rescue the other Planets or press 'Spacebar' to escape!","Escaping");
 
 
     }
