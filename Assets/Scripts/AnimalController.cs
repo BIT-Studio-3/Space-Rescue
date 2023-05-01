@@ -2,31 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Script controls each individual animal after spawn
 public class AnimalController : MonoBehaviour
 {
-    public bool entered = false;
+    public bool inRange = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (entered == true && Input.GetKeyDown(KeyCode.Space))
+        if (inRange == true && Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("Interacted");
         }
-        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            entered = true;
+            inRange = true;
         }
     }
 
@@ -34,7 +34,7 @@ public class AnimalController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            entered = false;
+            inRange = false;
         }
     }
 }
