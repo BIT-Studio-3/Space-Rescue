@@ -37,6 +37,7 @@ public class MenuManager : MonoBehaviour
     public void BackButton()
     {
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 1;
     }
 
 }
