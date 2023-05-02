@@ -1251,6 +1251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetPrefab: {fileID: 5748848403008948943, guid: cace40cffd7e57b41b1475d1de0338c5, type: 3}
   planets: []
+  spawnCount: 10
 --- !u!1 &1161758950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,8 +1925,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc82c49d04b6ab24486bfebf9f7f87b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetWarning: {fileID: 0}
-  shipWarning: {fileID: 0}
+  planetWarning: {fileID: 455317980}
+  shipWarning: {fileID: 189582643}
 --- !u!135 &1810218733
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2278,6 +2279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14061e0725c68d149912b8400f432e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 1
 --- !u!114 &2018576046
 MonoBehaviour:
   m_ObjectHideFlags: 0
