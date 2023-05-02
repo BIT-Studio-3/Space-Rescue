@@ -13,6 +13,7 @@ public class KeypressManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             escapeScene();
+            Time.timeScale = 1;
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
