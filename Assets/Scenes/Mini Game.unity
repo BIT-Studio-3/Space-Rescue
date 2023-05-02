@@ -331,16 +331,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sprites:
-  - {fileID: 21300000, guid: affeade9874cf2347abb155e8d0db4d8, type: 3}
-  - {fileID: 21300000, guid: 0029170d14ce6c04c9f45c22cdae5559, type: 3}
-  - {fileID: 21300000, guid: 36e6970b84831434a9eac79abd03700b, type: 3}
-  - {fileID: 21300000, guid: c8a69ecdf54ac8e4b873466605de27ff, type: 3}
-  - {fileID: 21300000, guid: cdb88fdb0cf46b244a667edaff21c7df, type: 3}
-  - {fileID: 21300000, guid: c9ed6d6ea2f9657409bfa068d4846139, type: 3}
-  - {fileID: 21300000, guid: 3494dc956dfd7174abc07060940a2848, type: 3}
+  - {fileID: 21300000, guid: 83ee70cddebee534a8c39685ba3f6333, type: 3}
+  - {fileID: 21300000, guid: bfeb4f3208d6771418c286333b7eadd0, type: 3}
+  - {fileID: 21300000, guid: 42b822c826a686e489fbd15db6d2adc1, type: 3}
+  - {fileID: 21300000, guid: 6ab34ff611f1fed4ea1c17a6e0704711, type: 3}
+  - {fileID: 21300000, guid: 6c270714450500b4da294c3f39fbe6f2, type: 3}
+  - {fileID: 21300000, guid: 576ab37898c85864985118f3b522b9a0, type: 3}
+  - {fileID: 21300000, guid: 7fdcd5974e62fcd409aa43d66c1b0fa1, type: 3}
   TilePrefab: {fileID: 8240428727968202350, guid: c929e0262eb1b474f9723c89bdf94ddb, type: 3}
   GridDimension: 8
-  Distance: 1
+  Distance: 1.1
 --- !u!4 &1109727465
 Transform:
   m_ObjectHideFlags: 0
