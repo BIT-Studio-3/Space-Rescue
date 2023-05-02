@@ -29,7 +29,7 @@ public class ToolTip : MonoBehaviour
         {
       
             GetComponent<Text>().color = Color.green; //when the tooltip is marked as complete it will start sliding off screen removed from the list and then destoryed.
-            if(transform.localPosition.x > -1100)
+            if(transform.localPosition.x > -1200)
             {
                 transform.localPosition -= new Vector3(exitSpeed*Time.deltaTime,0,0);
             }
