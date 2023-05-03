@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -291,16 +291,16 @@ MonoBehaviour:
 
     Camera:
 
-    -
+    -----------------------
 
     escape:
 
-    -
+    -----------------------
 
     Rescue
     Planet:
 
-    -
+    -----------------------
 
     Pause:'
 --- !u!222 &271121427
@@ -1087,15 +1087,15 @@ MonoBehaviour:
     Rotate
     Mouse
 
-    -
+    -----------------------
 
     Spacebar
 
-    -
+    -----------------------
 
     R
 
-    -
+    -----------------------
 
     eSC'
 --- !u!222 &2140397888
