@@ -57,14 +57,14 @@ Material:
     - _CastShadows: 1
     - _Cull: 0
     - _DistortionAmount: 1.06
-    - _DistortionScale: 50
+    - _DistortionScale: 29.6
     - _DstBlend: 10
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RotationAmount: 1
+    - _RotationAmount: -1
     - _SrcBlend: 5
     - _Surface: 1
-    - _TwirlStrength: 12.96
+    - _TwirlStrength: 31.53
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
