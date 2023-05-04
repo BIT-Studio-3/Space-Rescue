@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3729879669798142831
+--- !u!114 &-2100319418104039477
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,36 +9,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
-  m_Name: Bloom
+  m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
+  m_Name: DepthOfField
   m_EditorClassIdentifier: 
   active: 1
-  threshold:
-    m_OverrideState: 1
-    m_Value: 1.94
-  intensity:
-    m_OverrideState: 1
-    m_Value: 2.54
-  scatter:
-    m_OverrideState: 1
-    m_Value: 0.644
-  clamp:
-    m_OverrideState: 0
-    m_Value: 65472
-  tint:
-    m_OverrideState: 1
-    m_Value: {r: 0.03875934, g: 0.08186417, b: 0.122641504, a: 1}
-  highQualityFiltering:
+  mode:
     m_OverrideState: 0
     m_Value: 0
-  skipIterations:
+  gaussianStart:
+    m_OverrideState: 0
+    m_Value: 10
+  gaussianEnd:
+    m_OverrideState: 0
+    m_Value: 30
+  gaussianMaxRadius:
     m_OverrideState: 0
     m_Value: 1
-  dirtTexture:
+  highQualitySampling:
     m_OverrideState: 0
-    m_Value: {fileID: 0}
-    dimension: 1
-  dirtIntensity:
+    m_Value: 0
+  focusDistance:
+    m_OverrideState: 0
+    m_Value: 10
+  aperture:
+    m_OverrideState: 0
+    m_Value: 5.6
+  focalLength:
+    m_OverrideState: 0
+    m_Value: 50
+  bladeCount:
+    m_OverrideState: 0
+    m_Value: 5
+  bladeCurvature:
+    m_OverrideState: 0
+    m_Value: 1
+  bladeRotation:
     m_OverrideState: 0
     m_Value: 0
 --- !u!114 &11400000
@@ -51,7 +56,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Global Volume Profile
+  m_Name: Sphere Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: -3729879669798142831}
+  - {fileID: -2100319418104039477}
