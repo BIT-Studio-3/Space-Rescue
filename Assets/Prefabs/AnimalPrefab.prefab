@@ -501,6 +501,7 @@ GameObject:
   - component: {fileID: 8768842384551100011}
   - component: {fileID: 8768842384551100008}
   - component: {fileID: 8768842384551100009}
+  - component: {fileID: 5009408339583897693}
   m_Layer: 0
   m_Name: AnimalPrefab
   m_TagString: Untagged
@@ -554,4 +555,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inRange: 0
-  saved: 
+--- !u!114 &5009408339583897693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8768842384551100010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87badc66a7d0d6f49859a4a0e434f52e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  idleTime: 0
+  doneMove: 0
