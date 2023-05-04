@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+//using UnityEditor.EditorApplication;
 
 public class GridManager : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class GridManager : MonoBehaviour
     public static GridManager Instance { get; private set; }
     void Awake() { Instance = this; }
 
+    float timeLeft = 10.0f;
+
     void Start()
     {
         Grid = new GameObject[GridDimension, GridDimension];
@@ -21,8 +25,25 @@ public class GridManager : MonoBehaviour
 
     void Update()
     {
-        
+        timeLeft -= Time.deltaTime;
+        if(timeLeft < 0)
+        {
+            Debug.Log("Time Has run out");
+            UnityEditor.EditorApplication.isPlaying = false;
+            //EditorApplication.Exit();
+        }
     }
+
+    //public void ExitGame() {
+     //   //Application.Quit();  //only when game is build
+    //    if UnityEditor {
+    //        UnityEditor.EditorApplication.isPlaying = false;
+     //   }
+     //   else{
+     //       Application.Quit ();
+      //  }
+
+    //}
 
     void InitGrid()
     {
