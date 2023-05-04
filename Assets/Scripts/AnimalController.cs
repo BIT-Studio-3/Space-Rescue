@@ -6,7 +6,6 @@ using UnityEngine;
 public class AnimalController : MonoBehaviour
 {
     public bool inRange = false;
-    public bool doneMove= false;
     public float speed = 10;
     public bool exist = true;
 
@@ -19,7 +18,7 @@ public class AnimalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inRange == true && Input.GetKeyDown(KeyCode.Return))
+        if (inRange == true && Input.GetKeyDown(KeyCode.R))
         {
             Debug.Log("Interacted");
             Destroy(gameObject);
