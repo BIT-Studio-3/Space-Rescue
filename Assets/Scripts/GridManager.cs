@@ -15,7 +15,7 @@ public class GridManager : MonoBehaviour
     public static GridManager Instance { get; private set; }
     void Awake() { Instance = this; }
 
-    float timeLeft = 10.0f;
+    float timeLeft = 15.0f;
 
     void Start()
     {
