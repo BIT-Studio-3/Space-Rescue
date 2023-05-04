@@ -51,6 +51,7 @@ public class AnimalController : MonoBehaviour
             while (transform.position != pos) //while the animal is not at their desired position
             {
                 transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime); //move them to it!
+                transform.LookAt(pos + transform.position * Time.deltaTime);
                 yield return 0; //used to let the engine wait for a frame which breaks an endless broken loop
             }
         yield return new WaitForSeconds(Random.Range(4, 11)); //pause for a random time and then go again
