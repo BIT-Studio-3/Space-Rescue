@@ -30,21 +30,14 @@ public class GridManager : MonoBehaviour
         {
             Debug.Log("Time Has run out");
             UnityEditor.EditorApplication.isPlaying = false;
-            //EditorApplication.Exit();
         }
     }
-
-    //public void ExitGame() {
-     //   //Application.Quit();  //only when game is build
-    //    if UnityEditor {
-    //        UnityEditor.EditorApplication.isPlaying = false;
-     //   }
-     //   else{
-     //       Application.Quit ();
-      //  }
-
-    //}
-
+    /*
+    public void ExitGame() {
+        
+        Application.Quit ();
+    }
+    */
     void InitGrid()
     {
         Vector3 positionOffset = transform.position - new Vector3(GridDimension * Distance / 2.0f, GridDimension * Distance / 2.0f, 0);
