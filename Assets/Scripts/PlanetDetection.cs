@@ -27,7 +27,7 @@ public class PlanetDetection : MonoBehaviour
     {
         if(GameSettings.Tutorial)
         {
-            if(playerInsideRadius && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Approaching")
+            if(playerInsideRadius && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Approaching" &&  GameObject.Find("Approaching") != null )
             {
                 GameObject.Find("Approaching").GetComponent<ToolTip>().completed = true;
             }
@@ -38,7 +38,7 @@ public class PlanetDetection : MonoBehaviour
             {
                 if(GameSettings.Tutorial)
                 {
-                    if(playerInsideRadius && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Rescue")
+                    if(playerInsideRadius && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Rescue" &&  GameObject.Find("Rescue") != null)
                     {
                         GameObject.Find("Rescue").GetComponent<ToolTip>().completed = true;
                     } 

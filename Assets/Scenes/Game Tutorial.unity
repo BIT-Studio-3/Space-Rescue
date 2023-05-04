@@ -1793,11 +1793,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5246791220565673788, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.59999996
+      value: 0.59999985
       objectReference: {fileID: 0}
     - target: {fileID: 5246791220565673788, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.59999996
+      value: 0.59999985
       objectReference: {fileID: 0}
     - target: {fileID: 5246791220565673788, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1809,7 +1809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5246791220565673788, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.04
+      value: 0.04000001
       objectReference: {fileID: 0}
     - target: {fileID: 5246791220565673788, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1821,19 +1821,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5246791220565673788, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5246791220565673788, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5246791220565673788, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0933
+      value: 0.09326172
       objectReference: {fileID: 0}
     - target: {fileID: 5246791220565673788, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0728
+      value: -0.07269287
       objectReference: {fileID: 0}
     - target: {fileID: 5246791220565673788, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1927,6 +1927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 8277950153324914531, guid: 61e2bcde8ac89644f8b96df57399ed50, type: 3}
   canvas: {fileID: 712331500}
+  minMovement: 1300
   toolTips: []
 --- !u!1 &1810218730
 GameObject:

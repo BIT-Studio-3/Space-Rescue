@@ -7,7 +7,7 @@ public class TutorialManager : MonoBehaviour
 {
     public GameObject toolTipPrefab;
     public Canvas canvas;
-
+    public float minMovement = 1300;
     private float mouseDistance = 0;
     private Vector3 lastPosition;
     public List<GameObject> toolTips;
@@ -16,7 +16,7 @@ public class TutorialManager : MonoBehaviour
     {
         GameSettings.Tutorial = true; //Set the tutorial true in the GameSettings to alter some behaviours.
 
-        CreateToolTip("Use the WASD keys to move your Ship!","Movement",true); //The tooltips appear in the top left corner of the screen to teach the player the controls of the game and how to play
+        CreateToolTip("Use the WASD keys to move your Ship!","Movement"); //The tooltips appear in the top left corner of the screen to teach the player the controls of the game and how to play
         CreateToolTip("Use Q & E to Roll your Spaceship!","Rolling");
         CreateToolTip("Use the mouse to look Around","Looking");
         CreateToolTip("The Arrow points in the direction of the Closest Planet \n Look around to find it","Finding");
@@ -39,24 +39,23 @@ public class TutorialManager : MonoBehaviour
             toolTips[0].GetComponent<ToolTip>().isActive = true;
         }
 
-        if((Input.GetKeyDown(KeyCode.W) ||Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.D)) && toolTips[0].name == "Movement")
+        if((Input.GetKeyDown(KeyCode.W) ||Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.D)) && toolTips[0].name == "Movement" &&  GameObject.Find("Movement") != null)
         {
             GameObject.Find("Movement").GetComponent<ToolTip>().completed = true; //The movement tooltip is complete when the player moves
 
         }
-        if((Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E)) && toolTips[0].name == "Rolling")
+        if((Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E)) && toolTips[0].name == "Rolling" && GameObject.Find("Rolling") != null)
         {
             GameObject.Find("Rolling").GetComponent<ToolTip>().completed = true; //tooltip is complete when the player rolls
         }
-
-
-        if(toolTips[0].name == "Looking")
+    if(toolTips[0].name == "Looking"  && GameObject.Find("Rolling") != null)
         {
-            var newPosition = Input.mousePosition;
+            Vector3 newPosition = Input.mousePosition;
 
             mouseDistance += (newPosition - lastPosition).magnitude;
-            lastPosition = newPosition;             //Tracks the distance the mouse has moved
-            if(mouseDistance > 1500) //When the mouse has moved a distance of 1500 the objective is completed. 
+            lastPosition = newPosition;          
+            //Tracks the distance the mouse has moved
+            if(mouseDistance >= minMovement) //When the mouse has moved a distance of 1300 the objective is completed. 
             //I decided to add a set value because sometimes it is completed to quickly.
             {
                  
@@ -65,10 +64,10 @@ public class TutorialManager : MonoBehaviour
         }
    
 
-        if(toolTips[0].name == "Escaping")
+        if(toolTips[0].name == "Escaping"  && GameObject.Find("Escaping") != null)
         {
             GameObject.Find("Black Hole").GetComponent<BlackHoleGrowth>().isActive = true;
-            toolTips[0].GetComponent<Text>().text = "(i)" + toolTips[0].GetComponent<ToolTip>().prompt + " " + GameSettings.Score + "/3 Planets Rescued!";
+            toolTips[0].GetComponent<Text>().text = "(i) " + toolTips[0].GetComponent<ToolTip>().prompt + " " + GameSettings.Score + "/3 Planets Rescued!";
 
             if (GameSettings.Score == 3 || Input.GetKeyDown(KeyCode.Space) )
             {

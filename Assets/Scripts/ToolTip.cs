@@ -5,12 +5,10 @@ using UnityEngine.UI;
 
 public class ToolTip : MonoBehaviour
 {
-
-    public string prompt;
-    public bool completed;
-    private float exitSpeed = 500;
-
-    public bool isActive;
+    public string prompt; //The message prompt that will be displayed
+    public bool completed; //Has the objective been completed
+    private float exitSpeed = 500; //Speed at which the tooltip moves offscreen when completed
+    public bool isActive; //Is this the currently active tooltip
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +25,6 @@ public class ToolTip : MonoBehaviour
         //Checks if the tooltip is active and completed
         if(isActive && completed)
         {
-      
             GetComponent<Text>().color = Color.green; //when the tooltip is marked as complete it will start sliding off screen removed from the list and then destoryed.
             if(transform.localPosition.x > -1200)
             {
