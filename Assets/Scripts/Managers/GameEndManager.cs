@@ -39,31 +39,38 @@ public class GameEndManager : MonoBehaviour
     {
         if (GameSettings.Winning)
         {
-            winningText.text = "Escaped!";
             if(GameSettings.Tutorial)
             {
                 winningText.text = "You Completed the Tutorial! \n Press the button below \nto play the game!";
+            }
+            else
+            { 
+                winningText.text = "Escaped!";
             }
         }
         else
         {
             savedNumGO.SetActive(false);
             savedTextGO.SetActive(false);
-            winningText.text = "You got caught by the black hole\nBetter luck next time!";
-            if(GameSettings.Tutorial)
-            {
-                winningText.text = "You Completed the Tutorial! \n Press the button below \nto play the game!";
-            }
+
+            
+      
         }
     }
 
     public void Restart()
     {
-        GameSettings.Score = 0;
-        GameSettings.PlanetDanger = 0;
-        GameSettings.Winning = true;
-        GameSettings.Tutorial = false;
-        SceneManager.LoadScene("Main scene");
+
+    
+            GameSettings.Score = 0;
+            GameSettings.PlanetDanger = 0;
+            GameSettings.Winning = true;
+            GameSettings.Tutorial = false;
+          SceneManager.LoadScene("Main scene");
+        
+ 
+ 
+
     }
     public void QuitButton()
     {

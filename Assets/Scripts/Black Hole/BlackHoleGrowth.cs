@@ -12,25 +12,18 @@ public class BlackHoleGrowth : MonoBehaviour
     private float startScale;  
     //The percent of the way to the target it has been scaled
     private float percentScaled;
-    public bool isActive = true;
 
     // Start is called before the first frame update
     void Start()
     {
         //Setting the current scale
         startScale = transform.localScale.x;
-        if(GameSettings.Tutorial)
-        {
-            timeToReachTarget = 3000;
-            isActive = false;
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isActive)
-        {
+        
             //If it isn't fully scaled
         if (percentScaled < 1f) 
         {
@@ -41,7 +34,7 @@ public class BlackHoleGrowth : MonoBehaviour
             //Setting the new size
             transform.localScale = new Vector3(scale, scale, scale); 
         }
-        }
+        
         
     }
 }

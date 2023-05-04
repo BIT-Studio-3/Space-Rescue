@@ -22,7 +22,7 @@ public class TutorialManager : MonoBehaviour
         CreateToolTip("The Arrow points in the direction of the Closest Planet \n Look around to find it","Finding");
         CreateToolTip("Reach the Planet","Approaching");
         CreateToolTip("Use 'R' to rescue the planet from the Blackhole","Rescue");
-        CreateToolTip("Well Done, You have rescued a planet, The Blackhole is now active!, Try and rescue the other Planets or press 'Spacebar' to escape!","Escaping");
+        CreateToolTip("Well Done, You have rescued a planet, Rescue the other Planets or press 'Spacebar' to escape!","Escaping");
 
 
     }
@@ -66,7 +66,6 @@ public class TutorialManager : MonoBehaviour
 
         if(toolTips[0].name == "Escaping"  && GameObject.Find("Escaping") != null)
         {
-            GameObject.Find("Black Hole").GetComponent<BlackHoleGrowth>().isActive = true;
             toolTips[0].GetComponent<Text>().text = "(i) " + toolTips[0].GetComponent<ToolTip>().prompt + " " + GameSettings.Score + "/3 Planets Rescued!";
 
             if (GameSettings.Score == 3 || Input.GetKeyDown(KeyCode.Space) )
