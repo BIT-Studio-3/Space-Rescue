@@ -47,13 +47,7 @@ public class AnimalController : MonoBehaviour
             Vector3 pos = new Vector3(Random.Range(-50,50), 0f, Random.Range(-50, 50));
             transform.position = pos;
             
-            /*if (transform.position == pos)
-            {
-                doneMove = true;
-            }*/
-        //doneMove = false;
-            yield return new WaitForSeconds(5);
-           // doneMove = true;
+            yield return new WaitForSeconds(Random.Range(4, 11));
         }
     }
 }
