@@ -7,6 +7,9 @@ public class TutorialManager : MonoBehaviour
 {
     public GameObject toolTipPrefab;
     public Canvas canvas;
+
+    private float mouseDistance = 0;
+    private Vector3 lastPosition;
     public List<GameObject> toolTips;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,8 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Time.timeScale != 0) //Checks the timescale to make sure the game isn't paused to complete the objectives
+        {
         //Tests whether the first tooltip is hidden, IF it is the tooltip is shown and set to active.
         if(toolTips[0].activeSelf == false)
         {
@@ -43,10 +48,22 @@ public class TutorialManager : MonoBehaviour
         {
             GameObject.Find("Rolling").GetComponent<ToolTip>().completed = true; //tooltip is complete when the player rolls
         }
-        if((Input.GetAxis("Mouse X") > 0 || Input.GetAxis("Mouse X") < 0 || Input.GetAxis("Mouse Y") > 0 || Input.GetAxis("Mouse Y") < 0) && toolTips[0].name == "Looking")
+
+
+        if(toolTips[0].name == "Looking")
         {
-            GameObject.Find("Looking").GetComponent<ToolTip>().completed = true; //tooltip is complete when the player moves the mouse in any direction.
+            var newPosition = Input.mousePosition;
+
+            mouseDistance += (newPosition - lastPosition).magnitude;
+            lastPosition = newPosition;             //Tracks the distance the mouse has moved
+            if(mouseDistance > 1500) //When the mouse has moved a distance of 1500 the objective is completed. 
+            //I decided to add a set value because sometimes it is completed to quickly.
+            {
+                 
+                 GameObject.Find("Looking").GetComponent<ToolTip>().completed = true;
+            }
         }
+   
 
         if(toolTips[0].name == "Escaping")
         {
@@ -58,6 +75,7 @@ public class TutorialManager : MonoBehaviour
                 GameObject.Find("Escaping").GetComponent<ToolTip>().completed = true; //
             }
 
+        }
         }
     }
 

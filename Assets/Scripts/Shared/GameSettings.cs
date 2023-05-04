@@ -13,5 +13,8 @@ public static class GameSettings
     //Variable to see how many planets are in danger
     //Need to add -- to this variable when planet is saved
     public static int PlanetDanger = 0;
+
+
+
 }
 
