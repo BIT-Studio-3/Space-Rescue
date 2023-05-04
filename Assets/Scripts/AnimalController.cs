@@ -8,6 +8,7 @@ public class AnimalController : MonoBehaviour
     public bool inRange = false;
     public bool doneMove= false;
     public float speed = 10;
+    public bool exist = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,8 @@ public class AnimalController : MonoBehaviour
         if (inRange == true && Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("Interacted");
+            Destroy(gameObject);
+            exist = false;
         }
     }
 
@@ -42,7 +45,7 @@ public class AnimalController : MonoBehaviour
 
     IEnumerator wait()
     {
-        for (int i=0;i<10;i++) //avoiding while cos it crashes unity
+        while (exist) //avoiding while cos it crashes unity
         {
             Vector3 pos = new Vector3(Random.Range(-50,50), 0, Random.Range(-50, 50)); //picks a random position to move to
 
@@ -57,5 +60,4 @@ public class AnimalController : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(4, 11)); //pause for a random time and then go again
         }
     }
-
 }
