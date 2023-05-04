@@ -1340,19 +1340,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161758950}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.3305144, y: -0, z: -0, w: 0.9438009}
+  m_LocalPosition: {x: 0, y: 0, z: 359.28003}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 349858585}
   - {fileID: 1454773975}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 2011061704}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 37.740223}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1161758953
@@ -2167,7 +2167,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.67, z: -7.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1161758952}
   m_Father: {fileID: 1961573932}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2238,7 +2239,8 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras: []
+  m_Cameras:
+  - {fileID: 1161758951}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -2270,7 +2272,7 @@ GameObject:
   - component: {fileID: 2018576045}
   - component: {fileID: 2018576046}
   m_Layer: 0
-  m_Name: Black Hole
+  m_Name: Black Hole old
   m_TagString: Black Hole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2513,7 +2515,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8616284537789148552, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8616284537789148552, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
       propertyPath: m_LocalScale.x
