@@ -7,8 +7,6 @@ public class TutorialManager : MonoBehaviour
 {
     public GameObject toolTipPrefab;
     public Canvas canvas;
-    public float minMovement = 1300;
-    private float mouseDistance = 0;
     private Vector3 lastPosition;
     public List<GameObject> toolTips;
     // Start is called before the first frame update
@@ -32,11 +30,14 @@ public class TutorialManager : MonoBehaviour
     {
         if(Time.timeScale != 0) //Checks the timescale to make sure the game isn't paused to complete the objectives
         {
-        //Tests whether the first tooltip is hidden, IF it is the tooltip is shown and set to active.
-        if(toolTips[0].activeSelf == false)
+        if(toolTips.Count !=0)
         {
-            toolTips[0].SetActive(true);
-            toolTips[0].GetComponent<ToolTip>().isActive = true;
+            //Tests whether the first tooltip is hidden, IF it is the tooltip is shown and set to active.
+            if(toolTips[0].activeSelf == false)
+            {
+                toolTips[0].SetActive(true);
+                toolTips[0].GetComponent<ToolTip>().isActive = true;
+            }
         }
 
         if((Input.GetKeyDown(KeyCode.W) ||Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.D)) && toolTips[0].name == "Movement" &&  GameObject.Find("Movement") != null)
@@ -48,21 +49,24 @@ public class TutorialManager : MonoBehaviour
         {
             GameObject.Find("Rolling").GetComponent<ToolTip>().completed = true; //tooltip is complete when the player rolls
         }
-    if(toolTips[0].name == "Looking"  && GameObject.Find("Rolling") != null)
-        {
-            Vector3 newPosition = Input.mousePosition;
-
-            mouseDistance += (newPosition - lastPosition).magnitude;
-            lastPosition = newPosition;          
-            //Tracks the distance the mouse has moved
-            if(mouseDistance >= minMovement) //When the mouse has moved a distance of 1300 the objective is completed. 
-            //I decided to add a set value because sometimes it is completed to quickly.
-            {
-                 
-                 GameObject.Find("Looking").GetComponent<ToolTip>().completed = true;
-            }
-        }
    
+        
+   if((Input.GetAxis("Mouse X") > 0 || Input.GetAxis("Mouse X") < 0 || Input.GetAxis("Mouse Y") > 0 || Input.GetAxis("Mouse Y") < 0) && toolTips[0].name == "Looking")
+        {
+
+        if(toolTips[0].name == "Looking")
+        {
+            GameObject.Find("Looking").GetComponent<ToolTip>().completed = true; //tooltip is complete when the player moves the mouse in any direction.
+
+        }
+        }
+
+
+
+
+
+
+
 
         if(toolTips[0].name == "Escaping"  && GameObject.Find("Escaping") != null)
         {
