@@ -52,7 +52,7 @@ public class GameEndManager : MonoBehaviour
         {
             savedNumGO.SetActive(false);
             savedTextGO.SetActive(false);
-
+            winningText.text = "You got caught by the black hole\nBetter luck next time!";
             
       
         }
