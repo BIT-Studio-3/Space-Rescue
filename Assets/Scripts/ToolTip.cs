@@ -25,7 +25,18 @@ public class ToolTip : MonoBehaviour
         //Checks if the tooltip is active and completed
         if(isActive && completed)
         {
-            GetComponent<Text>().color = Color.green; //when the tooltip is marked as complete it will start sliding off screen removed from the list and then destoryed.
+   
+        StartCoroutine(delay());
+        }
+
+       
+    }
+
+
+    IEnumerator delay()
+    {
+        GetComponent<Text>().color = Color.green; //when the tooltip is marked as complete it will start sliding off screen removed from the list and then destoryed.
+        yield return new WaitForSeconds(2.5f);
             if(transform.localPosition.x > -1200)
             {
                 transform.localPosition -= new Vector3(exitSpeed*Time.deltaTime,0,0);
@@ -34,10 +45,7 @@ public class ToolTip : MonoBehaviour
             {
                 GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips.Remove(gameObject);
                 Destroy(gameObject);
-            }     
-        
-        }
-
-       
+            }  
     }
 }
+
