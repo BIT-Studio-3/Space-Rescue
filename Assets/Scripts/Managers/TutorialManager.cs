@@ -7,6 +7,7 @@ public class TutorialManager : MonoBehaviour
 {
     public GameObject toolTipPrefab;
     public Canvas canvas;
+    
     private Vector3 lastPosition;
     public List<GameObject> toolTips;
     // Start is called before the first frame update
@@ -86,7 +87,8 @@ public class TutorialManager : MonoBehaviour
     {
         GameObject toolTip;
         toolTip = Instantiate(toolTipPrefab,new Vector3(0,0,0), Quaternion.identity);
-        toolTip.transform.SetParent(canvas.transform);
+        
+        toolTip.transform.SetParent(GameObject.Find("Tooltips").transform);
         toolTip.transform.localPosition = new Vector3(-400,350,0);
 
         toolTip.GetComponent<ToolTip>().prompt = prompt;
