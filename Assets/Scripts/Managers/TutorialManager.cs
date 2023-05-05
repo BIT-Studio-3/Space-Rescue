@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class TutorialManager : MonoBehaviour
 {
     public GameObject toolTipPrefab;
-    public Canvas canvas;
-    
-    private Vector3 lastPosition;
+    public GameObject progressBarPrefab;
+
+    GameObject movementBar;
+    private int movementProgress = 0;
+   private List<KeyCode> movementKeys = new List<KeyCode>() {KeyCode.W,KeyCode.A,KeyCode.S,KeyCode.D};
+    private int totalMovementProgress = 4;
     public List<GameObject> toolTips;
     // Start is called before the first frame update
     void Start()
@@ -41,9 +44,63 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        if((Input.GetKeyDown(KeyCode.W) ||Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.D)) && toolTips[0].name == "Movement" &&  GameObject.Find("Movement") != null)
+        if( toolTips[0].name == "Movement" &&  GameObject.Find("Movement") != null)
         {
-            GameObject.Find("Movement").GetComponent<ToolTip>().completed = true; //The movement tooltip is complete when the player moves
+                if(GameObject.Find("MovementProgress") == null)
+                {
+                movementBar = GameObject.Instantiate(progressBarPrefab,new Vector3(0,0,0),Quaternion.identity);
+                movementBar.transform.SetParent(GameObject.Find("Movement").transform);
+                movementBar.transform.localPosition = new Vector3(-90,-50,0);
+                movementBar.transform.localScale = new Vector3(8,0.5f,1);
+                movementBar.name = "MovementProgress";
+
+                }
+                
+            
+                if(Input.GetKeyDown(KeyCode.W) && movementKeys.Contains(KeyCode.W))
+                {
+                    movementProgress++;
+                    print(movementProgress);
+                    movementKeys[0] = KeyCode.None;
+                }
+                if(Input.GetKeyDown(KeyCode.A) && movementKeys.Contains(KeyCode.A))
+                {
+                    movementProgress++;
+                    print(movementProgress);
+                    movementKeys[1] = KeyCode.None;
+
+                }
+                if(Input.GetKeyDown(KeyCode.S) && movementKeys.Contains(KeyCode.S))
+                {
+                    movementProgress++;
+                    print(movementProgress);
+                     movementKeys[2] = KeyCode.None;
+                   
+
+                }
+                if(Input.GetKeyDown(KeyCode.D) && movementKeys.Contains(KeyCode.D))
+                {
+                    movementProgress++;
+                    print(movementProgress);
+                       movementKeys[3] = KeyCode.None;
+                 
+                }
+
+                movementBar.transform.Find("Progress").GetComponent<ProgressBar>().targetScale =  ( (float) movementProgress / totalMovementProgress) * 100;
+
+            // print(( (float) movementProgress / totalMovementProgress) * 100);
+
+
+
+            
+            if(movementProgress == totalMovementProgress)
+            {
+                GameObject.Find("Movement").GetComponent<ToolTip>().completed = true; //The movement tooltip is complete when the player moves
+            }
+
+
+
+
 
         }
         if((Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E)) && toolTips[0].name == "Rolling" && GameObject.Find("Rolling") != null)
@@ -71,6 +128,7 @@ public class TutorialManager : MonoBehaviour
 
         if(toolTips[0].name == "Escaping"  && GameObject.Find("Escaping") != null)
         {
+
             toolTips[0].GetComponent<Text>().text = "(i) " + toolTips[0].GetComponent<ToolTip>().prompt + " " + GameSettings.Score + "/3 Planets Rescued!";
 
             if (GameSettings.Score == 3 || Input.GetKeyDown(KeyCode.Space) )

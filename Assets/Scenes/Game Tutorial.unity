@@ -1963,7 +1963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 8277950153324914531, guid: 61e2bcde8ac89644f8b96df57399ed50, type: 3}
-  canvas: {fileID: 712331500}
+  progressBarPrefab: {fileID: 531777540006721006, guid: 0dab6d0ed114d0d44a6da6f1146214ec, type: 3}
   toolTips: []
 --- !u!1 &1810218730
 GameObject:
