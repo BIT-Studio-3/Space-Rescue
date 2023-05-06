@@ -28,6 +28,8 @@ public class ToolTip : MonoBehaviour
             {
                 transform.localPosition += new Vector3(exitSpeed*Time.deltaTime,0,0);
             }
+            else
+                isActive = true;
         //Checks if the tooltip is active and completed
         if(isActive && completed)
         {

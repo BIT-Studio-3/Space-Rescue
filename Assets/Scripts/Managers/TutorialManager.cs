@@ -43,11 +43,11 @@ public class TutorialManager : MonoBehaviour
                 if (toolTips[0].activeSelf == false)
                 {
                     toolTips[0].SetActive(true);
-                    toolTips[0].GetComponent<ToolTip>().isActive = true;
+                    // toolTips[0].GetComponent<ToolTip>().isActive = true;
                 }
             }
 
-            if (toolTips[0].name == "Movement" && GameObject.Find("Movement") != null)
+            if (toolTips[0].name == "Movement" && GameObject.Find("Movement") != null && GameObject.Find("Movement").GetComponent<ToolTip>().isActive)
             {
                 if (GameObject.Find("MovementProgress") == null)
                 {
@@ -106,7 +106,7 @@ public class TutorialManager : MonoBehaviour
 
 
             }
-            if (toolTips[0].name == "Rolling" && GameObject.Find("Rolling") != null)
+            if (toolTips[0].name == "Rolling" && GameObject.Find("Rolling") != null && GameObject.Find("Rolling").GetComponent<ToolTip>().isActive)
             {
                 if (GameObject.Find("RollProgress") == null)
                 {
@@ -138,7 +138,7 @@ public class TutorialManager : MonoBehaviour
 
 
 
-            if ((Input.GetAxis("Mouse X") > 0 || Input.GetAxis("Mouse X") < 0 || Input.GetAxis("Mouse Y") > 0 || Input.GetAxis("Mouse Y") < 0) && toolTips[0].name == "Looking")
+            if ((Input.GetAxis("Mouse X") > 0 || Input.GetAxis("Mouse X") < 0 || Input.GetAxis("Mouse Y") > 0 || Input.GetAxis("Mouse Y") < 0) && toolTips[0].name == "Looking" && GameObject.Find("Looking").GetComponent<ToolTip>().isActive) 
             {
 
                 if (toolTips[0].name == "Looking")
@@ -155,7 +155,7 @@ public class TutorialManager : MonoBehaviour
 
 
 
-            if (toolTips[0].name == "Escaping" && GameObject.Find("Escaping") != null)
+            if (toolTips[0].name == "Escaping" && GameObject.Find("Escaping") != null && GameObject.Find("Escaping").GetComponent<ToolTip>().isActive)
             {
 
                 toolTips[0].GetComponent<Text>().text = "(i) " + toolTips[0].GetComponent<ToolTip>().prompt + " " + GameSettings.Score + "/3 Planets Rescued!";
@@ -181,7 +181,7 @@ public class TutorialManager : MonoBehaviour
         toolTip.GetComponent<ToolTip>().prompt = prompt;
         toolTip.name = name;
         toolTip.SetActive(active);
-        toolTip.GetComponent<ToolTip>().isActive = active;
+        // toolTip.GetComponent<ToolTip>().isActive = active;
         toolTips.Add(toolTip);
         return toolTip;
 
