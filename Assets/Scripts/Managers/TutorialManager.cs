@@ -45,7 +45,7 @@ public class TutorialManager : MonoBehaviour
                     toolTips[0].SetActive(true);
                     // toolTips[0].GetComponent<ToolTip>().isActive = true;
                 }
-            }
+            
 
             if (toolTips[0].name == "Movement" && GameObject.Find("Movement") != null && GameObject.Find("Movement").GetComponent<ToolTip>().isActive)
             {
@@ -166,6 +166,7 @@ public class TutorialManager : MonoBehaviour
                 }
 
             }
+        }
         }
     }
 

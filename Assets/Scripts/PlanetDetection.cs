@@ -25,8 +25,9 @@ public class PlanetDetection : MonoBehaviour
 
     void Update()
     {
-        if(GameSettings.Tutorial)
+        if(GameSettings.Tutorial && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips.Count != 0)
         {
+
             if(playerInsideRadius && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Approaching" &&  GameObject.Find("Approaching") != null && GameObject.Find("Approaching").GetComponent<ToolTip>().isActive)
             {
                 GameObject.Find("Approaching").GetComponent<ToolTip>().completed = true;
