@@ -16,36 +16,44 @@ public class ToolTip : MonoBehaviour
         //The text of the tooltip is set to the provided prompt with an (i) added to the front.
         GetComponent<Text>().text = "(i) " + prompt;
         tag = "Tooltip";
+
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!completed)
+            if(transform.localPosition.x < -400)
+            {
+                transform.localPosition += new Vector3(exitSpeed*Time.deltaTime,0,0);
+            }
         //Checks if the tooltip is active and completed
         if(isActive && completed)
         {
-   
-        StartCoroutine(delay());
+            StartCoroutine(MoveOffScreen());
         }
+   
 
        
     }
 
 
-    IEnumerator delay()
+    IEnumerator MoveOffScreen()
     {
         GetComponent<Text>().color = Color.green; //when the tooltip is marked as complete it will start sliding off screen removed from the list and then destoryed.
         yield return new WaitForSeconds(2.5f);
-            if(transform.localPosition.x > -1200)
-            {
-                transform.localPosition -= new Vector3(exitSpeed*Time.deltaTime,0,0);
-            }
-            else 
-            {
-                GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips.Remove(gameObject);
-                Destroy(gameObject);
-            }  
+        if(transform.localPosition.x > -1500)
+        {
+            transform.localPosition -= new Vector3(exitSpeed*Time.deltaTime,0,0);
+        }
+        else 
+        {
+            GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips.Remove(gameObject);
+            Destroy(gameObject);
+        }  
     }
+
+
 }
 

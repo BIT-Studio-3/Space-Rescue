@@ -21,7 +21,6 @@ public class ProgressBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {     
-        float scale = Mathf.Lerp(startScale, targetScale, percentScaled); 
         progressBar.sizeDelta = Vector2.Lerp(new Vector2(progressBar.sizeDelta.x,progressBar.sizeDelta.y),new Vector2(targetScale,progressBar.sizeDelta.y),barSpeed  * Time.deltaTime);
     }
 
