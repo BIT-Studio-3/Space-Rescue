@@ -63,20 +63,17 @@ public class TutorialManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.W) && movementKeys.Contains(KeyCode.W))
                 {
                     movementProgress++;
-                    print(movementProgress);
                     movementKeys[movementKeys.IndexOf(KeyCode.W)] = KeyCode.None;
                 }
                 if (Input.GetKeyDown(KeyCode.A) && movementKeys.Contains(KeyCode.A))
                 {
                     movementProgress++;
-                    print(movementProgress);
                     movementKeys[movementKeys.IndexOf(KeyCode.A)] = KeyCode.None;
 
                 }
                 if (Input.GetKeyDown(KeyCode.S) && movementKeys.Contains(KeyCode.S))
                 {
                     movementProgress++;
-                    print(movementProgress);
                     movementKeys[movementKeys.IndexOf(KeyCode.S)] = KeyCode.None;
 
 
@@ -84,14 +81,12 @@ public class TutorialManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.D) && movementKeys.Contains(KeyCode.D))
                 {
                     movementProgress++;
-                    print(movementProgress);
                     movementKeys[movementKeys.IndexOf(KeyCode.D)] = KeyCode.None;
 
                 }
 
                 objectiveProgress.transform.Find("Progress").GetComponent<ProgressBar>().targetScale = ((float)movementProgress / totalMovementProgress) * 100;
 
-                // print(( (float) movementProgress / totalMovementProgress) * 100);
 
 
 
