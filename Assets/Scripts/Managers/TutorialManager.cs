@@ -8,10 +8,13 @@ public class TutorialManager : MonoBehaviour
     public GameObject toolTipPrefab;
     public GameObject progressBarPrefab;
 
-    GameObject movementBar;
+    private GameObject objectiveProgress;
     private int movementProgress = 0;
+    private int rollingProgress = 0;
    private List<KeyCode> movementKeys = new List<KeyCode>() {KeyCode.W,KeyCode.A,KeyCode.S,KeyCode.D};
+   private List<KeyCode> rollKeys = new List<KeyCode>() {KeyCode.Q,KeyCode.E};
     private int totalMovementProgress = 4;
+    private int totalRollingProgress = 2;
     public List<GameObject> toolTips;
     // Start is called before the first frame update
     void Start()
@@ -48,11 +51,11 @@ public class TutorialManager : MonoBehaviour
         {
                 if(GameObject.Find("MovementProgress") == null)
                 {
-                movementBar = GameObject.Instantiate(progressBarPrefab,new Vector3(0,0,0),Quaternion.identity);
-                movementBar.transform.SetParent(GameObject.Find("Movement").transform);
-                movementBar.transform.localPosition = new Vector3(-90,-50,0);
-                movementBar.transform.localScale = new Vector3(8,0.5f,1);
-                movementBar.name = "MovementProgress";
+                objectiveProgress = GameObject.Instantiate(progressBarPrefab,new Vector3(0,0,0),Quaternion.identity);
+                objectiveProgress.transform.SetParent(GameObject.Find("Movement").transform);
+                objectiveProgress.transform.localPosition = new Vector3(-90,-50,0);
+                objectiveProgress.transform.localScale = new Vector3(8,0.5f,1);
+                objectiveProgress.name = "MovementProgress";
 
                 }
                 
@@ -61,20 +64,20 @@ public class TutorialManager : MonoBehaviour
                 {
                     movementProgress++;
                     print(movementProgress);
-                    movementKeys[0] = KeyCode.None;
+                    movementKeys[movementKeys.IndexOf(KeyCode.W)] = KeyCode.None;
                 }
                 if(Input.GetKeyDown(KeyCode.A) && movementKeys.Contains(KeyCode.A))
                 {
                     movementProgress++;
                     print(movementProgress);
-                    movementKeys[1] = KeyCode.None;
+                    movementKeys[movementKeys.IndexOf(KeyCode.A)] = KeyCode.None;
 
                 }
                 if(Input.GetKeyDown(KeyCode.S) && movementKeys.Contains(KeyCode.S))
                 {
                     movementProgress++;
                     print(movementProgress);
-                     movementKeys[2] = KeyCode.None;
+                     movementKeys[movementKeys.IndexOf(KeyCode.S)] = KeyCode.None;
                    
 
                 }
@@ -82,11 +85,11 @@ public class TutorialManager : MonoBehaviour
                 {
                     movementProgress++;
                     print(movementProgress);
-                       movementKeys[3] = KeyCode.None;
+                       movementKeys[movementKeys.IndexOf(KeyCode.D)] = KeyCode.None;
                  
                 }
 
-                movementBar.transform.Find("Progress").GetComponent<ProgressBar>().targetScale =  ( (float) movementProgress / totalMovementProgress) * 100;
+                objectiveProgress.transform.Find("Progress").GetComponent<ProgressBar>().targetScale =  ( (float) movementProgress / totalMovementProgress) * 100;
 
             // print(( (float) movementProgress / totalMovementProgress) * 100);
 
@@ -103,10 +106,36 @@ public class TutorialManager : MonoBehaviour
 
 
         }
-        if((Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E)) && toolTips[0].name == "Rolling" && GameObject.Find("Rolling") != null)
+        if(toolTips[0].name == "Rolling" && GameObject.Find("Rolling") != null)
         {
+            if(GameObject.Find("RollProgress") == null)
+            {
+                objectiveProgress = GameObject.Instantiate(progressBarPrefab,new Vector3(0,0,0),Quaternion.identity);
+                objectiveProgress.transform.SetParent(GameObject.Find("Rolling").transform);
+                objectiveProgress.transform.localPosition = new Vector3(-90,-50,0);
+                objectiveProgress.transform.localScale = new Vector3(8,0.5f,1);
+                objectiveProgress.name = "RollProgress";
+            }
+            if(Input.GetKeyDown(KeyCode.Q) && rollKeys.Contains(KeyCode.Q))
+            {
+                rollingProgress++;
+                rollKeys[rollKeys.IndexOf(KeyCode.Q)] = KeyCode.None;
+            }
+            if(Input.GetKeyDown(KeyCode.E) && rollKeys.Contains(KeyCode.E))
+            {
+                rollingProgress++;
+                rollKeys[rollKeys.IndexOf(KeyCode.E)] = KeyCode.None;
+            }
+
+
+            objectiveProgress.transform.Find("Progress").GetComponent<ProgressBar>().targetScale =  ( (float) rollingProgress / totalRollingProgress) * 100;
+
+            if(rollingProgress == totalRollingProgress)
+            {            
             GameObject.Find("Rolling").GetComponent<ToolTip>().completed = true; //tooltip is complete when the player rolls
+            }
         }
+
    
         
    if((Input.GetAxis("Mouse X") > 0 || Input.GetAxis("Mouse X") < 0 || Input.GetAxis("Mouse Y") > 0 || Input.GetAxis("Mouse Y") < 0) && toolTips[0].name == "Looking")
