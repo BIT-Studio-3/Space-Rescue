@@ -28,6 +28,7 @@ public class TutorialManager : MonoBehaviour
         CreateToolTip("Reach the Planet", "Approaching");
         CreateToolTip("Use 'R' to rescue the planet from the Blackhole", "Rescue");
         CreateToolTip("Well Done, You have rescued a planet, Rescue the other Planets or press 'Spacebar' to escape!", "Escaping");
+        CreateToolTip("Tutorial Completed! Press Spacebar to escape", "Complete");
 
 
     }

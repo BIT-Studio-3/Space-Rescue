@@ -13,18 +13,12 @@ public class KeypressManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (GameSettings.Tutorial)
-            {
-                if (GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips.Count != 0)
-                {
-                    if (GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Escaping")
-                    {
-                        escapeScene();
-                    }
-                }
-                else
+            {         
+                if (GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Escaping" || GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Complete" )
                 {
                     escapeScene();
                 }
+                 
             }
             else
             {
