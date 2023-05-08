@@ -1924,8 +1924,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc82c49d04b6ab24486bfebf9f7f87b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetWarning: {fileID: 0}
-  shipWarning: {fileID: 0}
+  planetWarning: {fileID: 455317980}
+  shipWarning: {fileID: 189582643}
 --- !u!135 &1810218733
 SphereCollider:
   m_ObjectHideFlags: 0
