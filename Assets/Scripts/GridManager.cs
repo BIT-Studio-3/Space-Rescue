@@ -10,17 +10,17 @@ public class GridManager : MonoBehaviour
     public List<Sprite> Sprites = new List<Sprite>();
     public GameObject TilePrefab;
     public int GridDimension = 8;
-    public float Distance = 1.0f;
+    public float Distance = 1.0f; // distance between each block
     private GameObject[,] Grid;
     public static GridManager Instance { get; private set; }
     void Awake() { Instance = this; }
 
-    float timeLeft = 15.0f;
+    float timeLeft = 30.0f; //Timer remaning time
 
     void Start()
     {
         Grid = new GameObject[GridDimension, GridDimension];
-        InitGrid();
+        InitGrid(); //calls grid making function
     }
 
     void Update()
@@ -29,16 +29,12 @@ public class GridManager : MonoBehaviour
         if(timeLeft < 0)
         {
             Debug.Log("Time Has run out");
-            UnityEditor.EditorApplication.isPlaying = false;
+            UnityEditor.EditorApplication.isPlaying = false; //only works in unity editor
+                                                             //to make it work in the actual game not in editor it needs to be changed 
+            //Application.Quit  //for the main game  
         }
     }
-    /*
-    public void ExitGame() {
-        
-        Application.Quit ();
-    }
-    */
-    void InitGrid()
+    void InitGrid() //makes the grid
     {
         Vector3 positionOffset = transform.position - new Vector3(GridDimension * Distance / 2.0f, GridDimension * Distance / 2.0f, 0);
         for (int row = 0; row < GridDimension; row++)
