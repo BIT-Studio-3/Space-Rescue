@@ -40,7 +40,16 @@ public class TutorialManager : MonoBehaviour
         {
             if (toolTips.Count != 0)
             {
-                //Tests whether the first tooltip is hidden, IF it is the tooltip is shown and set to active.
+                TestObjectives();
+            }
+        }
+    }
+
+
+
+    private void TestObjectives()
+    {
+                    //Tests whether the first tooltip is hidden, IF it is the tooltip is shown and set to active.
                 if (toolTips[0].activeSelf == false)
                 {
                     toolTips[0].SetActive(true);
@@ -154,10 +163,7 @@ public class TutorialManager : MonoBehaviour
                 }
 
             }
-        }
-        }
     }
-
 
     public GameObject CreateToolTip(string prompt, string name, bool active = false) //Creates a Tooltip, Requires a prompt that will be the message, a name and whether it is active which is false by default
     {
