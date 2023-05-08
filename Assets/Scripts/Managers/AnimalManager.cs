@@ -10,6 +10,8 @@ public class AnimalManager : MonoBehaviour
     private Vector3	range; 
 
     private const float AREA = 50;
+    private const int MIN = 2;
+    private const int MAX = 11;
 
     // Start is called before the first frame update
     void Start()
@@ -17,17 +19,11 @@ public class AnimalManager : MonoBehaviour
         AnimalSpawn();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void AnimalSpawn()
     {
-        for (int i = 0; i < Random.Range(2, 11); i++)
+        for (int i = 0; i < Random.Range(MIN, MAX); i++)
         {
-            range = new Vector3(Random.Range(-area, area), 0f, Random.Range(-area, area));
+            range = new Vector3(Random.Range(-AREA, AREA), 0f, Random.Range(-AREA, AREA));
             Instantiate(animalPrefab, range, Quaternion.identity);
         }
     }
