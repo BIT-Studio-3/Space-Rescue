@@ -44,7 +44,7 @@ public class AnimalController : MonoBehaviour
 
     IEnumerator wait()
     {
-        while (exist) //avoiding while cos it crashes unity
+        while (true) //avoiding while cos it crashes unity
         {
             Vector3 pos = new Vector3(Random.Range(-50,50), 0, Random.Range(-50, 50)); //picks a random position to move to
 
