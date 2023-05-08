@@ -44,7 +44,6 @@ public class TutorialManager : MonoBehaviour
                 if (toolTips[0].activeSelf == false)
                 {
                     toolTips[0].SetActive(true);
-                    // toolTips[0].GetComponent<ToolTip>().isActive = true;
                 }
             
 
@@ -89,17 +88,10 @@ public class TutorialManager : MonoBehaviour
                 objectiveProgress.transform.Find("Progress").GetComponent<ProgressBar>().targetScale = ((float)movementProgress / totalMovementProgress) * 100;
 
 
-
-
-
                 if (movementProgress == totalMovementProgress)
                 {
                     GameObject.Find("Movement").GetComponent<ToolTip>().completed = true; //The movement tooltip is complete when the player moves
                 }
-
-
-
-
 
             }
             if (toolTips[0].name == "Rolling" && GameObject.Find("Rolling") != null && GameObject.Find("Rolling").GetComponent<ToolTip>().isActive)
@@ -112,10 +104,10 @@ public class TutorialManager : MonoBehaviour
                     objectiveProgress.transform.localScale = new Vector3(8, 0.5f, 1);
                     objectiveProgress.name = "RollProgress";
                 }
-                if (Input.GetKeyDown(KeyCode.Q) && rollKeys.Contains(KeyCode.Q))
+                if (Input.GetKeyDown(KeyCode.Q) && rollKeys.Contains(KeyCode.Q)) //If the key is pressed and the list still contains the key
                 {
                     rollingProgress++;
-                    rollKeys[rollKeys.IndexOf(KeyCode.Q)] = KeyCode.None;
+                    rollKeys[rollKeys.IndexOf(KeyCode.Q)] = KeyCode.None;  //Sets the key index to None so it is not detected again
                 }
                 if (Input.GetKeyDown(KeyCode.E) && rollKeys.Contains(KeyCode.E))
                 {
@@ -158,7 +150,7 @@ public class TutorialManager : MonoBehaviour
 
                 if (GameSettings.Score == 3 || Input.GetKeyDown(KeyCode.Space))
                 {
-                    GameObject.Find("Escaping").GetComponent<ToolTip>().completed = true; //
+                    GameObject.Find("Escaping").GetComponent<ToolTip>().completed = true; //The Escaping Game Object is marked as complete when 3 planets are rescued or space is pressed.
                 }
 
             }
@@ -167,20 +159,19 @@ public class TutorialManager : MonoBehaviour
     }
 
 
-    public GameObject CreateToolTip(string prompt, string name, bool active = false) //Creates a Tooltip, Requaires a prompt that will be the message, a name and whether it is active which is false by default
+    public GameObject CreateToolTip(string prompt, string name, bool active = false) //Creates a Tooltip, Requires a prompt that will be the message, a name and whether it is active which is false by default
     {
         GameObject toolTip;
-        toolTip = Instantiate(toolTipPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        toolTip = Instantiate(toolTipPrefab, new Vector3(0, 0, 0), Quaternion.identity); //Instantiates the tooltip game object
 
-        toolTip.transform.SetParent(GameObject.Find("Tooltips").transform);
-        toolTip.transform.localPosition = new Vector3(-1500, 350, 0);
+        toolTip.transform.SetParent(GameObject.Find("Tooltips").transform); //Adds the tooltip as a child to the Tooltips game object
+        toolTip.transform.localPosition = new Vector3(-1500, 350, 0); //sets the starting position 
 
-        toolTip.GetComponent<ToolTip>().prompt = prompt;
-        toolTip.name = name;
-        toolTip.SetActive(active);
-        // toolTip.GetComponent<ToolTip>().isActive = active;
-        toolTips.Add(toolTip);
-        return toolTip;
+        toolTip.GetComponent<ToolTip>().prompt = prompt; //Sets the Prompt
+        toolTip.name = name; //Sets the name
+        toolTip.SetActive(active); //Hides or shows the tooltip
+        toolTips.Add(toolTip); //Adds to the list
+        return toolTip; //Returns the tooltip as a Game Object for easy reference
 
 
     }
