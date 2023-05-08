@@ -13,6 +13,7 @@ public class GameEndManager : MonoBehaviour
     //Game objects for saved numbers and the text above it
     public GameObject savedNumGO;
     public GameObject savedTextGO;
+    public GameObject menuButton;
     //Text announcing the result
     public Text winningText;
     void Start()
@@ -25,6 +26,7 @@ public class GameEndManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         if(GameSettings.Tutorial)
             GameObject.Find("Restart").GetComponent<Text>().text = "Continue";
+            menuButton.SetActive(true);
  
     }
 
@@ -67,6 +69,10 @@ public class GameEndManager : MonoBehaviour
     public void QuitButton()
     {
         Application.Quit();
+    }
+    public void MenuButton()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
 }
