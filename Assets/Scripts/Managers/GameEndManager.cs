@@ -72,6 +72,7 @@ public class GameEndManager : MonoBehaviour
     }
     public void MenuButton()
     {
+        GameSettings.Tutorial = false;
         SceneManager.LoadScene("Menu");
     }
 

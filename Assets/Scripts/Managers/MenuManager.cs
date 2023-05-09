@@ -22,6 +22,7 @@ public class MenuManager : MonoBehaviour
 
     public void PlayButton()
     {
+        GameSettings.Tutorial = false;
         SceneManager.LoadScene("Main scene");
     }
 
