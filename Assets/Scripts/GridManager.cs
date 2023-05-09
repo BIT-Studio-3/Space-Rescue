@@ -110,6 +110,13 @@ public class GridManager : MonoBehaviour
             renderer1.sprite = renderer2.sprite;
             renderer2.sprite = temp;
         }
+        else
+        {
+            do
+            {
+                FillBlocks();
+            } while (CheckMatches());
+        }
     }
 
     bool CheckMatches()
@@ -175,7 +182,7 @@ public class GridManager : MonoBehaviour
         return result;
     }
 
-    void FillHoles()
+    void FillBlocks()
     {
         for (int column = 0; column < GridDimension; column++)
             for (int row = 0; row < GridDimension; row++)
