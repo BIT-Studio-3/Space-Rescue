@@ -23,7 +23,8 @@ public class BlackHoleGrowth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //If it isn't fully scaled
+        
+            //If it isn't fully scaled
         if (percentScaled < 1f) 
         {
             //Weird thing with keeping a consistant time even if the frame rate fluctuates
@@ -33,5 +34,7 @@ public class BlackHoleGrowth : MonoBehaviour
             //Setting the new size
             transform.localScale = new Vector3(scale, scale, scale); 
         }
+        
+        
     }
 }

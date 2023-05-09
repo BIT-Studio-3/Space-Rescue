@@ -39,5 +39,9 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
         Time.timeScale = 1;
     }
+    public void TutorialButton()
+    {
+        SceneManager.LoadScene("Game Tutorial");
+    }
 
 }
