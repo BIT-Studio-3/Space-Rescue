@@ -358,7 +358,7 @@ Transform:
   - {fileID: 2058944450}
   - {fileID: 975731935}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &455317980
 GameObject:
@@ -966,7 +966,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &975731933
 GameObject:
@@ -1272,6 +1272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetPrefab: {fileID: 5748848403008948943, guid: cace40cffd7e57b41b1475d1de0338c5, type: 3}
   planets: []
+  spawnRange: 2000
   spawnCount: 10
 --- !u!1 &1161758950
 GameObject:
@@ -1650,7 +1651,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1383905941
 GameObject:
@@ -1748,7 +1749,7 @@ RectTransform:
   - {fileID: 673605162}
   - {fileID: 522776790}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2014,8 +2015,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2018576040}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1810218732
 MonoBehaviour:
@@ -2185,7 +2186,7 @@ Transform:
   m_Children:
   - {fileID: 2011061704}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 51.4, y: 0, z: 0}
 --- !u!1 &2011061703
 GameObject:
@@ -2199,6 +2200,7 @@ GameObject:
   - component: {fileID: 2011061706}
   - component: {fileID: 2011061705}
   - component: {fileID: 2011061707}
+  - component: {fileID: 2011061708}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2279,20 +2281,19 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018576036}
+  m_GameObject: {fileID: 2011061703}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14061e0725c68d149912b8400f432e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
---- !u!114 &2018576046
+--- !u!114 &2011061708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018576036}
+  m_GameObject: {fileID: 2011061703}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
