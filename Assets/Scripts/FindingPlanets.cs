@@ -14,7 +14,7 @@ public class FindingPlanets : MonoBehaviour
     public Text crosshair;
     // Start is called before the first frame update
 
-    
+
     public Camera cam;  //Camera to use
     private Vector3 targetPos; //Target position on screen
     private Vector3 screenMiddle; //Middle of the screen
@@ -22,7 +22,7 @@ public class FindingPlanets : MonoBehaviour
     void Start()
     {
         distanceText.text = "";
-        GameObject[] allPlanets= GameObject.FindGameObjectsWithTag("Planet"); //have to do this inside  update for now
+        GameObject[] allPlanets = GameObject.FindGameObjectsWithTag("Planet"); //have to do this inside  update for now
 
         foreach (GameObject planet in allPlanets)
         {
@@ -38,35 +38,33 @@ public class FindingPlanets : MonoBehaviour
         GameObject closestPlanet = null;
         float minDist = Mathf.Infinity;
         Vector3 currentPos = player.transform.position;
-        if(planetsNotRescued.Count > 0)
-        {   
-            foreach (GameObject planet in planetsNotRescued) //finds the closest planet to the player that hasn't already been rescued.
+
+        foreach (GameObject planet in planetsNotRescued) //finds the closest planet to the player that hasn't already been rescued.
+        {
+            Vector3 directionToTarget = planet.transform.position - currentPos;
+            float dist = directionToTarget.sqrMagnitude;
+            if (dist < minDist)
             {
-                Vector3 directionToTarget = planet.transform.position - currentPos;
-                float dist = directionToTarget.sqrMagnitude;
-                if (dist < minDist)
+                closestPlanet = planet;
+                minDist = dist;
+                if(minDist < 3000000) //test if the distance to the closest exceeds the limit
                 {
-                    closestPlanet = planet;
-                    minDist = dist;
-                    if(minDist < 3000000) //test if the distance to the closest exceeds the limit
-                    {
-                        distanceText.text = Mathf.Round(minDist / 100).ToString(); //round the distance to a whole number for readability 
-                    }
-                    else 
-                    {
-                        distanceText.text = "Out of Range!";
-                    }
+                    distanceText.text = Mathf.Round(minDist / 100).ToString(); //round the distance to a whole number for readability 
                 }
-
-                if (planet == null || planet.GetComponent<PlanetDetection>().planetRescued == true)
+                else 
                 {
-
-                    planetsNotRescued.Remove(planet); //Remove saved planets from the list
-                    break;
+                    distanceText.text = "Out of Range!";
                 }
-
             }
-        
+
+            if (planet == null || planet.GetComponent<PlanetDetection>().planetRescued == true)
+            {
+
+                planetsNotRescued.Remove(planet); //Remove saved planets from the list
+                break;
+            }
+
+        }
         GameObject target = closestPlanet;
         //Get the targets position on screen into a Vector3
         targetPos = cam.WorldToScreenPoint(target.transform.position);
@@ -89,13 +87,6 @@ public class FindingPlanets : MonoBehaviour
         {
             GetComponent<Renderer>().enabled = false;
             tick.SetActive(true);
-            if(GameSettings.Tutorial) //Only checks if the tutorial is set to true.
-            {
-                if(GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Finding" && GameObject.Find("Finding") != null && GameObject.Find("Finding").GetComponent<ToolTip>().isActive )
-                {
-                    GameObject.Find("Finding").GetComponent<ToolTip>().completed = true; //The Finding tooltip is marked as true when the player looks at the closest planet.
-                }
-            }
         }
         else
         {
@@ -115,7 +106,6 @@ public class FindingPlanets : MonoBehaviour
             transform.localRotation = Quaternion.Euler(tarAngle, 270, 90);
         }
 
-    }
     }
 
 }
