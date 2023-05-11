@@ -28,7 +28,7 @@ public class MenuManager : MonoBehaviour
 
     public void SettingsButton()
     {
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadScene("Controls");
     }
 
     public void QuitButton()
