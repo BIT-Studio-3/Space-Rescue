@@ -7,7 +7,6 @@ TagManager:
   - Planet
   - Black Hole
   - Black Hole Warning
-  - Tooltip
   layers:
   - Default
   - TransparentFX
@@ -18,7 +17,7 @@ TagManager:
   - Post-Processing
   - whatIsGround
   - 3DUI
-  - 
+  - HeatDistortionEffect
   - 
   - 
   - 

@@ -12,18 +12,7 @@ public class KeypressManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Time.timeScale = 1;
-            if (GameSettings.Tutorial)
-            {         
-                if (GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Escaping" || GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Complete" )
-                {
-                    escapeScene();
-                }           
-            }
-            else
-            {
-                    escapeScene();
-            }
+            escapeScene();
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -52,7 +41,7 @@ public class KeypressManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         PauseMenu.SetActive(false);
-    }
+        }
 
     private void pause()
     {
