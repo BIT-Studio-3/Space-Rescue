@@ -275,7 +275,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Movement: W,A,S,D\nCamera: Rotate With Mouse\nEscape:\tSpacebar\nRescue
-    Planet: Enter\nPause: Escape\nRoll Left: Q\nRoll Right: E"
+    Planet: R\nPause: Escape\nRoll Left: Q\nRoll Right: E"
 --- !u!222 &271121427
 CanvasRenderer:
   m_ObjectHideFlags: 0

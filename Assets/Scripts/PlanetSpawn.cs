@@ -15,9 +15,9 @@ public class PlanetSpawn : MonoBehaviour
     public List<GameObject> planets = new List<GameObject>();
     private bool isNotCollision;
     private int loopCounter;
-    private int spawnRange = 3000;
+    [SerializeField] private int spawnRange = 2000;
+    [SerializeField]  private int spawnCount = 10;
     private int YZone = 100;
-    private int spawnCount = 10;
 
     // Start is called before the first frame update
     void Awake()
