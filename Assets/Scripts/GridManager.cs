@@ -34,6 +34,7 @@ public class GridManager : MonoBehaviour
         }
     }
     public TextMeshProUGUI ScoreText;
+    public TextMeshProUGUI timerText;
 
     void Start()
     {
@@ -44,7 +45,8 @@ public class GridManager : MonoBehaviour
     void Update()
     {
         timeLeft -= Time.deltaTime;
-        if(timeLeft < 0)
+        timerText.text = timeLeft.ToString();
+        if (timeLeft < 0)
         {
             Debug.Log("Time Has run out");
             UnityEditor.EditorApplication.isPlaying = false; //only works in unity editor
@@ -56,6 +58,7 @@ public class GridManager : MonoBehaviour
     void InitGrid() //makes the grid
     {
         Vector3 positionOffset = transform.position - new Vector3(GridDimension * Distance / 2.0f, GridDimension * Distance / 2.0f, 0);
+
         for (int row = 0; row < GridDimension; row++)
             for (int column = 0; column < GridDimension; column++)
             {
@@ -63,8 +66,8 @@ public class GridManager : MonoBehaviour
 
                 List<Sprite> possibleSprites = new List<Sprite>();
 
-                Sprite left1 = GetSpriteAt(column - 1, row);
-                Sprite left2 = GetSpriteAt(column - 2, row);
+                Sprite left1 = GetSpriteAt(column - 1, row); //choose sprite/image for block
+                Sprite left2 = GetSpriteAt(column - 2, row); //choose sprite/image for block
                 if (left2 != null && left1 == left2)
                 {
                     possibleSprites.Remove(left1);
