@@ -13,6 +13,7 @@ public class GameEndManager : MonoBehaviour
     //Game objects for saved numbers and the text above it
     public GameObject savedNumGO;
     public GameObject savedTextGO;
+    public GameObject menuButton;
     //Text announcing the result
     public Text winningText;
     void Start()
@@ -23,6 +24,10 @@ public class GameEndManager : MonoBehaviour
         //Enable cursor
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        if(GameSettings.Tutorial)
+            GameObject.Find("Restart").GetComponent<Text>().text = "Continue";
+            menuButton.SetActive(true);
+ 
     }
 
     //Sets the score display to the current game score
@@ -36,7 +41,14 @@ public class GameEndManager : MonoBehaviour
     {
         if (GameSettings.Winning)
         {
-            winningText.text = "Escaped!";
+            if(GameSettings.Tutorial)
+            {
+                winningText.text = "You Completed the Tutorial! \n Press the button below \nto play the game!";
+            }
+            else
+            { 
+                winningText.text = "Escaped!";
+            }
         }
         else
         {
@@ -51,11 +63,17 @@ public class GameEndManager : MonoBehaviour
         GameSettings.Score = 0;
         GameSettings.PlanetDanger = 0;
         GameSettings.Winning = true;
+        GameSettings.Tutorial = false;
         SceneManager.LoadScene("Main scene");
     }
     public void QuitButton()
     {
         Application.Quit();
+    }
+    public void MenuButton()
+    {
+        GameSettings.Tutorial = false;
+        SceneManager.LoadScene("Menu");
     }
 
 }

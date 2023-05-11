@@ -15,8 +15,9 @@ public class PlanetSpawn : MonoBehaviour
     public List<GameObject> planets = new List<GameObject>();
     private bool isNotCollision;
     private int loopCounter;
-    private int spawnRange = 2000;
-    private int spawnCount = 10;
+    [SerializeField] private int spawnRange = 3000;
+    [SerializeField]  private int spawnCount = 10;
+    private int YZone = 100;
 
     // Start is called before the first frame update
     void Awake()
@@ -33,7 +34,7 @@ public class PlanetSpawn : MonoBehaviour
             {
                 //does the random spawn stuff
                 spawnX = Random.Range(-spawnRange, spawnRange);
-                spawnY = Random.Range(-spawnRange, spawnRange);
+                spawnY = Random.Range(-YZone, YZone);
                 spawnZ = Random.Range(-spawnRange, spawnRange);
                 randScale = Random.Range(100, 300);
                 loopCounter++;

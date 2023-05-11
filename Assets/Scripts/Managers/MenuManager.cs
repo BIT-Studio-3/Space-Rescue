@@ -22,12 +22,13 @@ public class MenuManager : MonoBehaviour
 
     public void PlayButton()
     {
+        GameSettings.Tutorial = false;
         SceneManager.LoadScene("Main scene");
     }
 
     public void SettingsButton()
     {
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadScene("Controls");
     }
 
     public void QuitButton()
@@ -37,6 +38,11 @@ public class MenuManager : MonoBehaviour
     public void BackButton()
     {
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 1;
+    }
+    public void TutorialButton()
+    {
+        SceneManager.LoadScene("Game Tutorial");
     }
 
 }
