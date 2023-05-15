@@ -9,11 +9,7 @@ public class PlanetDetection : MonoBehaviour
     public bool playerInsideRadius;
     public bool planetRescued;
     public bool inDanger;
-    //Temp Materials
-    public Material complete; //Color of rescued planet
-    public Material withinRadius; //Color of planet when within the radius
-    public Material normal; //Color of normal planet 
-   // public GameObject pressKey; //Text indicator for user interface
+
 
     public GameObject planet; //the planet prefab
 
@@ -53,7 +49,6 @@ public class PlanetDetection : MonoBehaviour
                 }
             }
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,27 +56,18 @@ public class PlanetDetection : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInsideRadius = true;
-            if(!planetRescued)
-            {
-            }
         }
         if (other.CompareTag("Black Hole Warning"))
         {
             inDanger = true;
         }
-
     }
-    
-
     private void OnTriggerExit(Collider other)
     //When the player leaves the radius the planet is no longer active.
     {
         if (other.CompareTag("Player")) 
         {
             playerInsideRadius = false;
-            if(!planetRescued) //If the player has not rescued the planet it will return to default other wise it will remain completed.
-            {
-            }
         }
     }
 }
