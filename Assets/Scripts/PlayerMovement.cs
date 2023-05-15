@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform cam;
     Rigidbody rb;
 
+    private Vector3 moveDir;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,10 +30,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        MovePlayer();
+        //MovePlayer();
+        moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
     }
 
-    private void MovePlayer()
+    void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + transform.TransformDirection(moveDir) * speed * Time.deltaTime);
+    }
+
+    /*private void MovePlayer()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
@@ -46,5 +54,5 @@ public class PlayerMovement : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward; //follows camera
             controller.Move(moveDir * speed * Time.deltaTime);
         }
-    }
+    }*/
 }
