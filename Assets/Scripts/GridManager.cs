@@ -49,6 +49,7 @@ public class GridManager : MonoBehaviour
         if (timeLeft < 0)
         {
             Debug.Log("Time Has run out");
+            
             UnityEditor.EditorApplication.isPlaying = false; //only works in unity editor
                                                              //to make it work in the actual game not in editor it needs to be changed 
             //Application.Quit  //for the main game  
