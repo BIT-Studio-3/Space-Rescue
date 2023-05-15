@@ -23,6 +23,7 @@ public class PlanetSpawn : MonoBehaviour
     void Awake()
     {
         GameSettings.planetPrefabs = Resources.LoadAll<GameObject>("Planets");
+        
         SpawningPlanet();
     }
 
