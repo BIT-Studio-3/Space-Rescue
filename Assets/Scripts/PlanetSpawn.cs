@@ -22,6 +22,7 @@ public class PlanetSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        GameSettings.planetPrefabs = Resources.LoadAll<GameObject>("Planets");
         SpawningPlanet();
     }
 
@@ -76,6 +77,7 @@ public class PlanetSpawn : MonoBehaviour
             planetTemp = Instantiate(planetPrefab, new Vector3(spawnX, spawnY, spawnZ), Quaternion.identity);
             planetTemp.transform.localScale = new Vector3(randScale, randScale, randScale);
             planets.Add(planetTemp);
+
             isNotCollision = false;
         }
         

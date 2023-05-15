@@ -14,6 +14,9 @@ public static class GameSettings
     //Need to add -- to this variable when planet is saved
     public static int PlanetDanger = 0;
 
+    //
+    public static GameObject[] planetPrefabs;
+
 
 
 }
