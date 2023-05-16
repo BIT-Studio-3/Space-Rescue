@@ -58,6 +58,12 @@ public class PlanetDetection : MonoBehaviour
         {
             o.GetComponent<FindingPlanets>().planetsNotRescued.Remove(gameObject);
         }
+        GameObject a = GameObject.Find("PlanetManager");
+        if(a != null)
+        {
+            int i = a.GetComponent<PlanetSpawn>().planets.IndexOf(gameObject);
+            a.GetComponent<PlanetSpawn>().planets[i] = null;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
