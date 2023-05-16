@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
 {
     public Material rescued;
     public Material destroyed;
+    public Material danger;
     public Text planetsRemaining;
     public Text planetsSaved;
     public List<GameObject> planetUI;
@@ -29,6 +30,11 @@ public class ScoreManager : MonoBehaviour
             if(p == null)
             {
                 planetUI[planets.IndexOf(p)].GetComponent<MeshRenderer>().material = destroyed;
+            }
+            else if(p.GetComponent<PlanetDetection>().inDanger == true && p.GetComponent<PlanetDetection>().planetRescued != true)
+            {
+                planetUI[planets.IndexOf(p)].GetComponent<MeshRenderer>().material = danger;
+
             }
             else if(p.GetComponent<PlanetDetection>().planetRescued == true)
             {
