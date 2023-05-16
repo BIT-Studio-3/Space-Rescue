@@ -3156,6 +3156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rescued: {fileID: 2100000, guid: e7643c0e83612284ba7fae12c95211c0, type: 2}
   destroyed: {fileID: 2100000, guid: b4f282c5e9a565144a2b62d2d894de9d, type: 2}
+  danger: {fileID: 2100000, guid: b4f99034fa7ebcd49815567962b933f1, type: 2}
   planetsRemaining: {fileID: 1527388309}
   planetsSaved: {fileID: 873087671}
   planetUI: []
@@ -3857,6 +3858,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2004005289, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2004005291, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
       propertyPath: shipWarning
       value: 
