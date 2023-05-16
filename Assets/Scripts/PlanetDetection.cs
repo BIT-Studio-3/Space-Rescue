@@ -51,6 +51,15 @@ public class PlanetDetection : MonoBehaviour
         }
     }
 
+    private void OnDestroy() 
+    {
+        GameObject o = GameObject.Find("arrow");
+        if (o != null)
+        {
+            o.GetComponent<FindingPlanets>().planetsNotRescued.Remove(gameObject);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
