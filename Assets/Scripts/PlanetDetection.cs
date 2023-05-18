@@ -10,9 +10,6 @@ public class PlanetDetection : MonoBehaviour
     public bool planetRescued;
     public bool inDanger;
     //Temp Materials
-    public Material complete; //Color of rescued planet
-    public Material withinRadius; //Color of planet when within the radius
-    public Material normal; //Color of normal planet 
    // public GameObject pressKey; //Text indicator for user interface
 
     public GameObject planet; //the planet prefab
@@ -45,7 +42,6 @@ public class PlanetDetection : MonoBehaviour
                     } 
                 }
                 planetRescued = true;
-                planet.GetComponent<MeshRenderer> ().material = complete; //Temp Indicator the planet will be set to red
                 GameSettings.Score++;
                 if(inDanger)
                 {
@@ -62,10 +58,7 @@ public class PlanetDetection : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInsideRadius = true;
-            if(!planetRescued)
-            {
-                planet.GetComponent<MeshRenderer> ().material = withinRadius; //Temp Indicator the planet will be set to green
-            }
+
         }
         if (other.CompareTag("Black Hole Warning"))
         {
@@ -81,10 +74,7 @@ public class PlanetDetection : MonoBehaviour
         if (other.CompareTag("Player")) 
         {
             playerInsideRadius = false;
-            if(!planetRescued) //If the player has not rescued the planet it will return to default other wise it will remain completed.
-            {
-                planet.GetComponent<MeshRenderer> ().material = normal; //Temp Indicator the planet will be set to white
-            }
+ 
         }
     }
 }
