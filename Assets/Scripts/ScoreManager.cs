@@ -6,11 +6,8 @@ using System.Linq;
 
 public class ScoreManager : MonoBehaviour
 {
-    public Material rescued;
-    public Material destroyed;
-    public Material danger;
-    [HideInInspector] public List<GameObject> planetUI;
-    [HideInInspector] public List<GameObject> planets;
+    private List<GameObject> planetUI;
+    private List<GameObject> planets;
     private List<bool> planetStatus;
     // Start is called before the first frame update
     void Start()
