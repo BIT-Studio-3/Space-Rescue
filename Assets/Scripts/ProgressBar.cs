@@ -15,15 +15,10 @@ public class ProgressBar : MonoBehaviour
     {
         progressBar = gameObject.GetComponent<RectTransform>();
         startScale = progressBar.sizeDelta.x;
-
     }
-
     // Update is called once per frame
     void Update()
     {     
         progressBar.sizeDelta = Vector2.Lerp(new Vector2(progressBar.sizeDelta.x,progressBar.sizeDelta.y),new Vector2(targetScale,progressBar.sizeDelta.y),barSpeed  * Time.deltaTime);
     }
-
-
-
 }
