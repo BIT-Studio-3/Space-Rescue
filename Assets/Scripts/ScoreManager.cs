@@ -9,10 +9,8 @@ public class ScoreManager : MonoBehaviour
     public Material rescued;
     public Material destroyed;
     public Material danger;
-    public Text planetsRemaining;
-    public Text planetsSaved;
-    public List<GameObject> planetUI;
-    public List<GameObject> planets;
+    [HideInInspector] public List<GameObject> planetUI;
+    [HideInInspector] public List<GameObject> planets;
     private List<bool> planetStatus;
     // Start is called before the first frame update
     void Start()
@@ -29,8 +27,6 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        planetsSaved.text = "Rescued: " + GameSettings.Score.ToString();
-        planetsRemaining.text = "Remaining: " + GameObject.Find("arrow").GetComponent<FindingPlanets>().planetsNotRescued.Count.ToString();
         foreach(GameObject p in planets)
         {
    
