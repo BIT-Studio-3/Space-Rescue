@@ -9,8 +9,7 @@ public class PlanetDetection : MonoBehaviour
     public bool playerInsideRadius;
     public bool planetRescued;
     public bool inDanger;
-    //Temp Materials
-   // public GameObject pressKey; //Text indicator for user interface
+
 
     public GameObject planet; //the planet prefab
 
@@ -50,7 +49,21 @@ public class PlanetDetection : MonoBehaviour
                 }
             }
         }
+    }
 
+    private void OnDestroy() 
+    {
+        GameObject o = GameObject.Find("arrow");
+        if (o != null)
+        {
+            o.GetComponent<FindingPlanets>().planetsNotRescued.Remove(gameObject);
+        }
+        GameObject a = GameObject.Find("PlanetManager");
+        if(a != null)
+        {
+            int i = a.GetComponent<PlanetSpawn>().planets.IndexOf(gameObject);
+            a.GetComponent<PlanetSpawn>().planets[i] = null;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -58,23 +71,18 @@ public class PlanetDetection : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInsideRadius = true;
-
         }
         if (other.CompareTag("Black Hole Warning"))
         {
             inDanger = true;
         }
-
     }
-    
-
     private void OnTriggerExit(Collider other)
     //When the player leaves the radius the planet is no longer active.
     {
         if (other.CompareTag("Player")) 
         {
             playerInsideRadius = false;
- 
         }
     }
 }
