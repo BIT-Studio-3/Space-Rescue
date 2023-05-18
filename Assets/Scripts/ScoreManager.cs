@@ -44,6 +44,8 @@ public class ScoreManager : MonoBehaviour
             if(p == null && planetStatus[planets.IndexOf(p)] != true)
             {
                 planetUI[planets.IndexOf(p)].transform.Find("cross").gameObject.SetActive(true);
+                planetUI[planets.IndexOf(p)].transform.Find("warning").gameObject.SetActive(false);
+
             }
         } 
     }
