@@ -18,6 +18,9 @@ public class GravityBody : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        attractor.Attract(myTransform);
+        if(attractor)
+        {
+            attractor.Attract(myTransform);
+        }
     }
 }
