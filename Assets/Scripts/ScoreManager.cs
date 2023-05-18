@@ -29,36 +29,25 @@ public class ScoreManager : MonoBehaviour
     {
         foreach(GameObject p in planets)
         {
-   
             if(p != null)
             {
                 planetStatus[planets.IndexOf(p)] = planets[planets.IndexOf(p)].GetComponent<PlanetDetection>().planetRescued;
+                if(p.GetComponent<PlanetDetection>().inDanger == true && p.GetComponent<PlanetDetection>().planetRescued != true)
+                {
+                    planetUI[planets.IndexOf(p)].transform.Find("warning").gameObject.SetActive(true);
+                }
+                
+                else if(p.GetComponent<PlanetDetection>().planetRescued == true)
+                {
+                    planetUI[planets.IndexOf(p)].transform.Find("tick").gameObject.SetActive(true);
+                    planetUI[planets.IndexOf(p)].transform.Find("warning").gameObject.SetActive(false);
 
-            if(p.GetComponent<PlanetDetection>().inDanger == true && p.GetComponent<PlanetDetection>().planetRescued != true)
-            {
-                planetUI[planets.IndexOf(p)].GetComponent<MeshRenderer>().material = danger;
-
+                }
             }
-            else if(p.GetComponent<PlanetDetection>().planetRescued == true)
-            {
-                planetUI[planets.IndexOf(p)].GetComponent<MeshRenderer>().material = rescued;
-            }
-            }
-            
             if(p == null && planetStatus[planets.IndexOf(p)] != true)
             {
-                planetUI[planets.IndexOf(p)].GetComponent<MeshRenderer>().material = destroyed;
+                planetUI[planets.IndexOf(p)].transform.Find("cross").gameObject.SetActive(true);
             }
-            // else if(p.GetComponent<PlanetDetection>().inDanger == true && p.GetComponent<PlanetDetection>().planetRescued != true)
-            // {
-            //     planetUI[planets.IndexOf(p)].GetComponent<MeshRenderer>().material = danger;
-
-            // }
-            // else if(p.GetComponent<PlanetDetection>().planetRescued == true)
-            // {
-            //     planetUI[planets.IndexOf(p)].GetComponent<MeshRenderer>().material = rescued;
-            // }
-        }
-        
+        } 
     }
 }
