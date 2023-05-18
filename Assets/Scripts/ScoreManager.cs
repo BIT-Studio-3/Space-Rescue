@@ -20,7 +20,6 @@ public class ScoreManager : MonoBehaviour
             planetStatus.Add( planets[i].GetComponent<PlanetDetection>().planetRescued);
         }
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -33,19 +32,16 @@ public class ScoreManager : MonoBehaviour
                 {
                     planetUI[planets.IndexOf(p)].transform.Find("warning").gameObject.SetActive(true);
                 }
-                
                 else if(p.GetComponent<PlanetDetection>().planetRescued == true)
                 {
                     planetUI[planets.IndexOf(p)].transform.Find("tick").gameObject.SetActive(true);
                     planetUI[planets.IndexOf(p)].transform.Find("warning").gameObject.SetActive(false);
-
                 }
             }
             if(p == null && planetStatus[planets.IndexOf(p)] != true)
             {
                 planetUI[planets.IndexOf(p)].transform.Find("cross").gameObject.SetActive(true);
                 planetUI[planets.IndexOf(p)].transform.Find("warning").gameObject.SetActive(false);
-
             }
         } 
     }

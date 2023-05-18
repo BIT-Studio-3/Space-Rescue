@@ -5,22 +5,20 @@ using UnityEngine.UI;
 
 public class PlanetTextureGenerator : MonoBehaviour
 {
-   // public List<GameObject> planetTextures;
   
     // Start is called before the first frame update
     void Start()
     {
-
      GenerateTexture();
     }
 
-    public void GenerateTexture()
+    public void GenerateTexture() //Reads in the global array in planetsettings and picks a random prefab, 
+                                  //instantiates the chosen prefab in game and on the UI
     {
         int r;
         do
         {
             r = Random.Range(0,GameSettings.planetPrefabs.Length);
-
         }while(GameSettings.planetPrefabs[r] == null);
         int index = GameObject.Find("PlanetManager").GetComponent<PlanetSpawn>().planets.IndexOf(gameObject);
         GameObject[] planetUIobjects = GameObject.FindGameObjectsWithTag("PlanetUI");
@@ -35,14 +33,8 @@ public class PlanetTextureGenerator : MonoBehaviour
         p_UI.AddComponent<Canvas>();
         p_UI.GetComponent<Canvas>().worldCamera = GameObject.Find("PlanetUI").GetComponent<Canvas>().worldCamera;
         p_UI.AddComponent<CanvasRenderer>();
-        p_UI.layer = 7;
-
-        GameObject t = GameSettings.planetPrefabs[r];
-        GameSettings.planetPrefabs[r] = null;
-        
-
-        
-        
+        p_UI.layer = 7; //3dui layer
+        GameSettings.planetPrefabs[r] = null; //setting the chosen index in the array to null so it cant be chosen again
     }
 
 }
