@@ -16,9 +16,10 @@ public class PlayerMovement : MonoBehaviour
     public Transform cam;
     Rigidbody rb;
 
-    private Vector3 direction;
-    private Vector3 eulerAngleVelocity;
+    Vector3 moveAmo;
+    Vector3 smoothMoveVel;
 
+    public Vector3 direction;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,43 +29,25 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        eulerAngleVelocity = new Vector3(1, 1, 1);
     }
 
     void Update()
     {
         direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-       // MovePlayer();
+        Vector3 targetMove = direction * speed;
+        moveAmo = Vector3.SmoothDamp(moveAmo, targetMove, ref smoothMoveVel, .15f);
+
+        /*if (direction != Vector3.zero)
+        {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction, Vector3.up), Time.deltaTime * 50f);
+        }
+        rb.MovePosition(rb.position + transform.TransformDirection(direction) * speed * Time.deltaTime);
+        */
     }
 
     void FixedUpdate()
     {
-        //MovePlayer();
-        rb.MovePosition(rb.position + transform.TransformDirection(direction) * speed * Time.deltaTime);
-        Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.fixedDeltaTime);
-        rb.MoveRotation(rb.rotation * deltaRotation);
-
-        //float targetAngle = Mathf.Atan2(moveDir.x, moveDir.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-        //float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref smoothVelo, smoothTime);
+        Vector3 localMove = transform.TransformDirection(moveAmo) * Time.fixedDeltaTime;
+		rb.MovePosition(rb.position + localMove);
     }
-
-    /*private void MovePlayer()
-    {
-        //horizontalInput = Input.GetAxisRaw("Horizontal");
-        //verticalInput = Input.GetAxisRaw("Vertical");
-        //Vector3 direction = new Vector3 (horizontalInput, 0f, verticalInput).normalized; //only x & z
-
-        if (direction.magnitude >= 0.1f)
-        {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref smoothVelo, smoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
-            //Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.up;
-            rb.MovePosition(rb.position + transform.TransformDirection(moveDir) * speed * Time.deltaTime);
-
-            //Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward; //follows camera
-            //controller.Move(moveDir * speed * Time.deltaTime);
-        }
-    }*/
 }

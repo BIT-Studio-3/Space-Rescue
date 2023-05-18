@@ -6,21 +6,22 @@ public class GravityBody : MonoBehaviour
 {
     public GravityAttractor attractor;
     private Transform myTransform;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-        GetComponent<Rigidbody>().useGravity = false;
-        myTransform = transform;
+        rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        //GetComponent<Rigidbody>().useGravity = false;
+        //myTransform = transform;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(attractor)
-        {
-            attractor.Attract(myTransform);
-        }
+        attractor.Attract(rb);
     }
 }
