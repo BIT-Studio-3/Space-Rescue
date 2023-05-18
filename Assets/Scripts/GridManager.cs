@@ -45,7 +45,7 @@ public class GridManager : MonoBehaviour
     void Update()
     {
         timeLeft -= Time.deltaTime;
-        timerText.text = timeLeft.ToString();
+        timerText.text = Mathf.Round(timeLeft).ToString();
         if (timeLeft < 0)
         {
             Debug.Log("Time Has run out");
