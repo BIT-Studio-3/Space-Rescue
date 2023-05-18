@@ -7,28 +7,26 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-
+    private GameObject menu;
+    public static MenuManager Instance;
+    
     // Start is called before the first frame update
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        Instance = this;
+        menu = GameObject.Find("Menu Parent");
     }
 
     public void PlayButton()
     {
         GameSettings.Tutorial = false;
-        SceneManager.LoadScene("Main scene");
+        SceneManager.LoadScene("Main Scene");
     }
 
     public void SettingsButton()
     {
-        SceneManager.LoadScene("Controls");
+        menu.SetActive(false);
+        SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
     }
 
     public void QuitButton()
@@ -37,7 +35,8 @@ public class MenuManager : MonoBehaviour
     }
     public void BackButton()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.UnloadSceneAsync("Controls");
+        menu.SetActive(true);
         Time.timeScale = 1;
     }
     public void TutorialButton()
