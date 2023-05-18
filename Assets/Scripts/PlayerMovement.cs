@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
         Vector3 targetMove = direction * speed;
-        moveAmo = Vector3.SmoothDamp(moveAmo, targetMove, ref smoothMoveVel, .15f);
+        moveAmo = Vector3.SmoothDamp(moveAmo, targetMove, ref smoothMoveVel, .1f);
 
         /*if (direction != Vector3.zero)
         {
