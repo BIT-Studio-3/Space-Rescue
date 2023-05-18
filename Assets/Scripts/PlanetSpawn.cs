@@ -22,7 +22,7 @@ public class PlanetSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        GameSettings.planetPrefabs = Resources.LoadAll<GameObject>("Planets2");
+        GameSettings.planetPrefabs = Resources.LoadAll<GameObject>("Planets");
         
         SpawningPlanet();
     }
