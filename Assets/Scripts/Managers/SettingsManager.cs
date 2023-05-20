@@ -9,6 +9,7 @@ public class SettingsManager : MonoBehaviour
     {
         Scene main = SceneManager.GetSceneByName("Main Scene");
         Scene menu = SceneManager.GetSceneByName("Menu");
+        Scene tutorial = SceneManager.GetSceneByName("Game Tutorial");
         if (menu.IsValid())
         {
             MenuManager.Instance.BackButton();
@@ -16,6 +17,10 @@ public class SettingsManager : MonoBehaviour
         if (main.IsValid())
         {
             GameMenuManager.Instance.ReturnButton();
+        }
+        if (tutorial.IsValid())
+        {
+            TutMenuManager.Instance.ReturnButton();
         }
     }
 }

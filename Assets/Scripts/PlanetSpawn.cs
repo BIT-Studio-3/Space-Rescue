@@ -8,6 +8,7 @@ public class PlanetSpawn : MonoBehaviour
     //variables
     public GameObject planetPrefab; //the planet prefab - used for manager gameobject
     private GameObject planetTemp;
+    private GameObject planetParent;
     private int spawnX;
     private int spawnY;
     private int spawnZ;
@@ -27,6 +28,7 @@ public class PlanetSpawn : MonoBehaviour
 
     private void SpawningPlanet()
     {
+        planetParent = GameObject.Find("Planet Parent");
         //however many x number of planets
         for (int i = 0; i < spawnCount; i++)
         {
@@ -75,6 +77,7 @@ public class PlanetSpawn : MonoBehaviour
             loopCounter = 0;
             planetTemp = Instantiate(planetPrefab, new Vector3(spawnX, spawnY, spawnZ), Quaternion.identity);
             planetTemp.transform.localScale = new Vector3(randScale, randScale, randScale);
+            planetTemp.transform.parent = planetParent.transform;
             planets.Add(planetTemp);
             isNotCollision = false;
         }
