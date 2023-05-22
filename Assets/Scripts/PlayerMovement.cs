@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
     Vector3 moveAmo;
-    Vector3 smoothMoveVel;
+    Vector3 smoothMoveVel = Vector3.zero;
 
     public Vector3 direction;
     // Start is called before the first frame update
