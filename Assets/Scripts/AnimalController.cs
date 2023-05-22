@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using System;
 
 //Script controls each individual animal after spawn
 public class AnimalController : MonoBehaviour
@@ -8,13 +9,14 @@ public class AnimalController : MonoBehaviour
     private bool inRange = false;
     private float speed = 10;
 
-    private const int RANGE = 50;
+    private float RANGE;
     private const int MINWAIT = 4;
     private const int MAXWAIT = 11;
 
     // Start is called before the first frame update
     void Start()
     {
+        RANGE = 4 * Mathf.PI * 25 * 25;
         StartCoroutine(wait());
     }
 
