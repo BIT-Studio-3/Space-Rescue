@@ -50,7 +50,7 @@ public class GridManager : MonoBehaviour
         {
             //UnityEditor.EditorApplication.isPlaying = false; //only works in unity editor
                                                              //to make it work in the actual game not in editor it needs to be changed 
-            Application.Quit  //for the main game  
+            Application.Quit();  //for the main game  
         }
     }
 
