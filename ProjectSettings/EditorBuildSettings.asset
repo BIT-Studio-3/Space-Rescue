@@ -12,12 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Controls.unity
     guid: 9090bda3f41d8584eba32cbe4d698ac4
   - enabled: 1
-    path: Assets/Scenes/Main Scene.unity
+    path: Assets/Scenes/Game Tutorial.unity
+    guid: 8bb36dff8cbbf3d41b70f60428644549
+  - enabled: 1
+    path: Assets/Scenes/Main scene.unity
     guid: 23d42cd4553f5b742b7810e89f06b771
   - enabled: 1
     path: Assets/Scenes/Game End.unity
     guid: ac3bf1db81269e04fae298e8dd8c8904
   - enabled: 1
-    path: Assets/Scenes/Game Tutorial.unity
-    guid: 8bb36dff8cbbf3d41b70f60428644549
+    path: Assets/Scenes/Mini Game.unity
+    guid: f62ddeaf884f8894e9271f7e284bb3b1
+  - enabled: 1
+    path: Assets/Scenes/Planet Exploration.unity
+    guid: e6be1434f7a5d2a44b22489b7d589ea4
   m_configObjects: {}

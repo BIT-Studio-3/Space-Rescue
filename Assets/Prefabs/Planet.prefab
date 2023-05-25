@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3933345139217522775}
   - component: {fileID: 1465809472240493112}
   - component: {fileID: 9173007900431462682}
+  - component: {fileID: 3791640524103179786}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -51,7 +52,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5748848403008948943}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -134,3 +135,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
+--- !u!114 &3791640524103179786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5748848403008948943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235e4a35adbb4d848b2942cd9dcc62ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetTextures:
+  - {fileID: 897267628903016922, guid: 3860d73fb76918c4fa7db82eaf6adf87, type: 3}
+  - {fileID: 7312837243298340745, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+  - {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
+  - {fileID: 5251406827822045083, guid: 19835273963b43d46828cf3e32897744, type: 3}
+  - {fileID: 4279440348758284192, guid: eae9621b053642946945a85587e01aa8, type: 3}
+  - {fileID: 3964950637588362778, guid: db67789fb615e5a459a954de1402122d, type: 3}

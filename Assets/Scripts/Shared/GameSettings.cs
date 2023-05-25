@@ -14,6 +14,9 @@ public static class GameSettings
     //Need to add -- to this variable when planet is saved
     public static int PlanetDanger = 0;
 
+    //Global Array that will be populated with the variety of planet prefabs in the resources folder
+    public static GameObject[] planetPrefabs;
+
 
 
 }
