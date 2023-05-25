@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlanetDetection : MonoBehaviour
@@ -39,6 +40,10 @@ public class PlanetDetection : MonoBehaviour
                     {
                         GameObject.Find("Rescue").GetComponent<ToolTip>().completed = true;
                     } 
+                }
+                if(!GameSettings.Tutorial)
+                {
+                    GameMenuManager.Instance.Planet();
                 }
                 planetRescued = true;
                 GameSettings.Score++;

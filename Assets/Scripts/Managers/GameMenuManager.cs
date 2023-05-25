@@ -36,4 +36,10 @@ public class GameMenuManager : MonoBehaviour
         SceneManager.UnloadSceneAsync("Controls");
         MainScene.SetActive(true);
     }
+    
+    public void Planet()
+    {
+        MainScene.SetActive(false);
+        SceneManager.LoadScene("Spherical Planet", LoadSceneMode.Additive);
+    }
 }
