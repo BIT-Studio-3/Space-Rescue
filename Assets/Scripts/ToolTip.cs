@@ -16,8 +16,6 @@ public class ToolTip : MonoBehaviour
         //The text of the tooltip is set to the provided prompt with an (i) added to the front.
         GetComponent<Text>().text = "(i) " + prompt;
         tag = "Tooltip";
-
-        
     }
 
     // Update is called once per frame
@@ -35,9 +33,6 @@ public class ToolTip : MonoBehaviour
         {
             StartCoroutine(MoveOffScreen());
         }
-   
-
-       
     }
 
 
