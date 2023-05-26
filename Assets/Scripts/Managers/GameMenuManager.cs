@@ -11,6 +11,7 @@ public class GameMenuManager : MonoBehaviour
     void Start()
     {
         Instance = this;
+        GameSettings.Score = 0;
         MainScene = GameObject.Find("MainParent");
     }
 
