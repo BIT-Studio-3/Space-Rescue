@@ -40,6 +40,8 @@ public class GridManager : MonoBehaviour
     {
         Grid = new GameObject[GridDimension, GridDimension];
         InitGrid(); //calls grid making function
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void Update()
@@ -48,9 +50,15 @@ public class GridManager : MonoBehaviour
         timerText.text = Mathf.Round(timeLeft).ToString();
         if (timeLeft < 0)
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            GameSettings.Score += Score;
+            PlanetManager.Instance.ReturnMiniGame();
+            //Note from Palin. This will eventually need to have some sort of end screen. I just set it to kick you back to the planet
+
             //UnityEditor.EditorApplication.isPlaying = false; //only works in unity editor
                                                              //to make it work in the actual game not in editor it needs to be changed 
-            Application.Quit();  //for the main game  
+            //Application.Quit();  //for the main game  
         }
     }
 

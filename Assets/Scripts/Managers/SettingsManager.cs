@@ -16,7 +16,7 @@ public class SettingsManager : MonoBehaviour
         }
         if (main.IsValid())
         {
-            GameMenuManager.Instance.ReturnButton();
+            GameMenuManager.Instance.ReturntoScene("Controls");
         }
         if (tutorial.IsValid())
         {

@@ -17,7 +17,7 @@ public class AnimalController : MonoBehaviour
     void Start()
     {
         RANGE = 4 * Mathf.PI * 25 * 25;
-        StartCoroutine(wait());
+        //StartCoroutine(wait()); NOTE: Disabled by Palin so as to not have the animal bouncing until fixed.
     }
 
     // Update is called once per frame
@@ -27,6 +27,7 @@ public class AnimalController : MonoBehaviour
         {
             Debug.Log("Interacted");
             Destroy(gameObject);
+            PlanetManager.Instance.LoadMiniGame();
         }
     }
 

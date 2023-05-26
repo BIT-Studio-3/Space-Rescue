@@ -25,21 +25,20 @@ public class GameMenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void KeybindsButton()
+    public void ControlsButton()
     {
-        MainScene.SetActive(false);
-        SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
+        LoadNewScene("Controls");
     }
 
-    public void ReturnButton()
+    public void LoadNewScene(string scene)
     {
-        SceneManager.UnloadSceneAsync("Controls");
-        MainScene.SetActive(true);
-    }
-    
-    public void Planet()
-    {
+        SceneManager.LoadScene(scene, LoadSceneMode.Additive);
         MainScene.SetActive(false);
-        SceneManager.LoadScene("Spherical Planet", LoadSceneMode.Additive);
+    }
+
+    public void ReturntoScene(string scene)
+    {
+        SceneManager.UnloadSceneAsync(scene);
+        MainScene.SetActive(true);
     }
 }

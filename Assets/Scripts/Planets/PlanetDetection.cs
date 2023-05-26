@@ -43,10 +43,10 @@ public class PlanetDetection : MonoBehaviour
                 }
                 if(!GameSettings.Tutorial)
                 {
-                    GameMenuManager.Instance.Planet();
+                    planetRescued = true;
+                    GameMenuManager.Instance.LoadNewScene("Spherical Planet");
                 }
-                planetRescued = true;
-                GameSettings.Score++;
+                
                 if(inDanger)
                 {
                     GameSettings.PlanetDanger--;
