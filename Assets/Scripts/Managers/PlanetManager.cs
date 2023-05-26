@@ -16,7 +16,7 @@ public class PlanetManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && planetParent.activeSelf)
         {
             GameMenuManager.Instance.ReturntoScene("Spherical Planet");
         }
