@@ -1235,7 +1235,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Planets saved:'
+  m_Text: 'Animals saved:'
 --- !u!1 &1315361715
 GameObject:
   m_ObjectHideFlags: 0
