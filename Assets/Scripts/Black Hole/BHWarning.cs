@@ -20,6 +20,7 @@ public class BHWarning : MonoBehaviour
         if (other.CompareTag("Planet") && other.gameObject.GetComponent<PlanetDetection>().planetRescued == false)
         {
             GameSettings.PlanetDanger++;
+            other.gameObject.GetComponent<PlanetDetection>().inDanger = true;
             PlanetWarning();
         }
         if (other.CompareTag("Player"))
