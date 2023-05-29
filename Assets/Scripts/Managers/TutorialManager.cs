@@ -171,8 +171,11 @@ public class TutorialManager : MonoBehaviour
         toolTip = Instantiate(toolTipPrefab, new Vector3(0, 0, 0), Quaternion.identity); //Instantiates the tooltip game object
 
         toolTip.transform.SetParent(GameObject.Find("Tooltips").transform); //Adds the tooltip as a child to the Tooltips game object
-        toolTip.transform.localPosition = new Vector3(-1500, 350, 0); //sets the starting position 
-
+        // toolTip.transform.localPosition = new Vector3(-1500, 350, 0); //sets the starting position 
+        toolTip.GetComponent<RectTransform>().anchorMin = new Vector2(0,1);
+        toolTip.GetComponent<RectTransform>().anchorMax = new Vector2(0,1);
+        toolTip.GetComponent<RectTransform>().pivot = new Vector2(0,1);
+        toolTip.GetComponent<RectTransform>().anchoredPosition = new Vector3(0,0,0);
         toolTip.GetComponent<ToolTip>().prompt = prompt; //Sets the Prompt
         toolTip.name = name; //Sets the name
         toolTip.SetActive(active); //Hides or shows the tooltip

@@ -14,6 +14,11 @@ public class ProgressBar : MonoBehaviour
     void Start()
     {
         progressBar = gameObject.GetComponent<RectTransform>();
+        RectTransform b = gameObject.transform.parent.GetComponent<RectTransform>();
+        b.anchorMin = new Vector2(0,0);
+        b.anchorMax = new Vector2(0,0);
+        b.pivot = new Vector2(0,0);
+        b.anchoredPosition = new Vector3(0,0,0);
         startScale = progressBar.sizeDelta.x;
     }
     // Update is called once per frame
