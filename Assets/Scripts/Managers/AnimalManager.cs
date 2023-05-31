@@ -23,7 +23,7 @@ public class AnimalManager : MonoBehaviour
     {
         for (int i = 0; i < Random.Range(MIN, MAX); i++)
         {
-            range = new Vector3(Random.Range(-AREA, AREA), 0f, Random.Range(-AREA, AREA));
+            range = new Vector3(Random.Range(-AREA, AREA), Random.Range(-AREA, AREA), Random.Range(-AREA, AREA));
             Instantiate(animalPrefab, range, Quaternion.identity);
         }
     }
