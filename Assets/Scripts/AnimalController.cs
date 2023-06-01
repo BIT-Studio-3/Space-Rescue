@@ -52,14 +52,13 @@ public class AnimalController : MonoBehaviour
         {
             //Vector3 pos = new Vector3(Random.Range(-RANGE,RANGE), Random.Range(-RANGE, RANGE), Random.Range(-RANGE, RANGE)); //picks a random position to move to
             Vector3 pos = Random.onUnitSphere * RADIUS; //picks a random point on the surface of a sphere with the radius
-            Debug.Log(pos);
+            transform.LookAt(pos, transform.position * Time.deltaTime); //makes them face the direction they will move to
 
             //https://forum.unity.com/threads/help-using-coroutine-to-move-game-object-to-position-wait-then-return-to-original-position.1122784/
             //BLESSED UNITY FORUMS
             while (transform.position != pos) //while the animal is not at their desired position
             {
                 transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime); //move them to it!
-                //transform.LookAt(pos + transform.position * Time.deltaTime); //makes them face the direction they will move to
                 yield return 0; //used to let the engine wait for a frame which breaks an endless broken loop
             }
         yield return new WaitForSeconds(Random.Range(MINWAIT, MAXWAIT)); //pause for a random time and then go again
