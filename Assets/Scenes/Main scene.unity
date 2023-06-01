@@ -2183,7 +2183,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 250.00008, z: -250.00005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2011061704}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 51.4, y: 0, z: 0}
@@ -2215,13 +2216,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011061703}
-  m_LocalRotation: {x: 0.43365908, y: -0, z: -0, w: 0.90107703}
-  m_LocalPosition: {x: 0, y: 257.2394, z: -253.64227}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.6699982, z: -7.9299994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1961573932}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &2011061705
 AudioListener:
@@ -2333,6 +2334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1961573932}
+  rotationSpeed: 1
+  distanceFromTarget: 3
 --- !u!1 &2058944449
 GameObject:
   m_ObjectHideFlags: 0
