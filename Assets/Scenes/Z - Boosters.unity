@@ -2345,6 +2345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2333569641422922414, guid: 0ec627f363295e644872f77860511ab8, type: 3}
+      propertyPath: thrust
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 2333569641422922419, guid: 0ec627f363295e644872f77860511ab8, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2404,6 +2408,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2333569641422922419, guid: 0ec627f363295e644872f77860511ab8, type: 3}
   m_PrefabInstance: {fileID: 1349442010}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1349442012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2333569642393514052, guid: 0ec627f363295e644872f77860511ab8, type: 3}
+  m_PrefabInstance: {fileID: 1349442010}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1349442013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349442012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b1f191ab0dd6a41bc9628ed30f36e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFOV: 90
+  transitionDuration: 1
 --- !u!1 &1360513387
 GameObject:
   m_ObjectHideFlags: 0

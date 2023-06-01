@@ -37,7 +37,11 @@ public class planemovement : MonoBehaviour
                 
         if(Input.GetKey(KeyCode.LeftShift))
         {
-            spaceshipRB.AddRelativeForce(Vector3.forward * thrust);
+            SpeedEffect.Instance.SpeedControl(true);
+        }
+        else
+        {
+            SpeedEffect.Instance.SpeedControl(false);
         }
     }
     
