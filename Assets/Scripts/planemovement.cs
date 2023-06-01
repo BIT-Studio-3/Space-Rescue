@@ -17,6 +17,9 @@ public class planemovement : MonoBehaviour
     float speedMultAngle = 0.5f;
     float speedtiltMultiAngle = 0.1f;
 
+    //Thrusters amount
+    public float thrust = 1000;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked; //keep mouse in the game
@@ -31,7 +34,11 @@ public class planemovement : MonoBehaviour
 
         mouseInputX = Input.GetAxis("Mouse X");
         mouseInputY = Input.GetAxis("Mouse Y");
-
+                
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            spaceshipRB.AddRelativeForce(Vector3.forward * thrust);
+        }
     }
     
     void FixedUpdate()
@@ -44,5 +51,6 @@ public class planemovement : MonoBehaviour
         spaceshipRB.AddTorque(spaceshipRB.transform.up * speedMultAngle * mouseInputX, ForceMode.VelocityChange);
 
         spaceshipRB.AddTorque(spaceshipRB.transform.forward * speedtiltMultiAngle * tiltInput, ForceMode.VelocityChange);
+
     }
 }
