@@ -6,9 +6,9 @@ using System.Linq;
 
 public class ScoreManager : MonoBehaviour
 {
-    private List<GameObject> planetUI;
-    private List<GameObject> planets;
-    private List<bool> planetStatus;
+   [SerializeField] private List<GameObject> planetUI;
+    [SerializeField] private List<GameObject> planets;
+    [SerializeField] private List<bool> planetStatus;
     // Start is called before the first frame update
     void Start()
     {
