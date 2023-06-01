@@ -7,6 +7,8 @@ public class AnimalManager : MonoBehaviour
 {
     [SerializeField]
     public GameObject animalPrefab;
+    public GameObject animalParent;
+    private GameObject animal;
     private Vector3 area;
 
     private const int MIN = 2;
@@ -15,6 +17,7 @@ public class AnimalManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animalParent = GameObject.Find("AnimalParent");
         AnimalSpawn();
     }
 
@@ -23,7 +26,8 @@ public class AnimalManager : MonoBehaviour
         for (int i = 0; i < Random.Range(MIN, MAX); i++)
         {
             area = Random.onUnitSphere * 25;
-            Instantiate(animalPrefab, area, Quaternion.identity);
+            animal = Instantiate(animalPrefab, area, Quaternion.identity);
+            animal.transform.parent = animalParent.transform;
         }
     }
 }
