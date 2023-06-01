@@ -7,9 +7,8 @@ public class AnimalManager : MonoBehaviour
 {
     [SerializeField]
     public GameObject animalPrefab;
-    private Vector3	range; 
+    private Vector3 area;
 
-    private const float AREA = 50;
     private const int MIN = 2;
     private const int MAX = 11;
 
@@ -23,8 +22,8 @@ public class AnimalManager : MonoBehaviour
     {
         for (int i = 0; i < Random.Range(MIN, MAX); i++)
         {
-            range = new Vector3(Random.Range(-AREA, AREA), Random.Range(-AREA, AREA), Random.Range(-AREA, AREA));
-            Instantiate(animalPrefab, range, Quaternion.identity);
+            area = Random.onUnitSphere * 25;
+            Instantiate(animalPrefab, area, Quaternion.identity);
         }
     }
 }
