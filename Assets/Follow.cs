@@ -4,37 +4,41 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
-    [SerializeField] private Transform target; // follow target
+    public Transform target; // Reference to the object to look around
+    public float rotationSpeed = 3f; // Adjust this value to control the rotation speed
+    public float distanceFromTarget = 5f; // Adjust this value to control the distance from the target object
 
-    private float cameraHeight = 0.25f;
-    private float distance = 12.0f;
-    private float rotationSpeed = 3.0f;
-    private float smoothTime = 0.2f;
+    private bool isRotating = false;
+    private Quaternion originalRotation;
+    private Vector3 originalPosition;
 
-    private Vector3 cameraPos;
-    private Vector3 velocity;
-
-    private Transform thisTransform;
-
-    private float angle;
-
-    private void Start() => thisTransform = gameObject.transform;
-
-    void LateUpdate()
+    private void Start()
     {
-        FollowPlayer();
+        originalRotation = transform.rotation;
+        originalPosition = transform.position;
     }
-
-    private void FollowPlayer()
+    void Update()
     {
-        // Calculate position.
-        cameraPos = target.position - (target.forward * distance) + target.up * distance * cameraHeight;
+        if (Input.GetMouseButtonDown(0)) // Left mouse button click
+        {
+            isRotating = true;
+        }
 
-        thisTransform.position = Vector3.SmoothDamp(thisTransform.position, cameraPos, ref velocity, smoothTime);
+        if (Input.GetMouseButtonUp(0)) // Left mouse button release
+        {
+            isRotating = false;
+            transform.rotation = originalRotation;
+            transform.position = target.position - transform.forward * distanceFromTarget;
+        }
 
-        // Calculate angle for rotation smoothing.
-        angle = Mathf.Abs(Quaternion.Angle(thisTransform.rotation, target.rotation));
+        if (isRotating)
+        {
+            float rotationX = Input.GetAxis("Mouse X") * rotationSpeed;
+            float rotationY = Input.GetAxis("Mouse Y") * rotationSpeed;
 
-        thisTransform.rotation = Quaternion.RotateTowards(from: thisTransform.rotation, to: target.rotation, maxDegreesDelta: (angle * rotationSpeed) * Time.deltaTime);
+            transform.LookAt(target); // Look at the target object
+            transform.RotateAround(target.position, Vector3.up, rotationX); // Rotate horizontally around the target
+            transform.RotateAround(target.position, transform.right, -rotationY); // Rotate vertically around the target
+        }
     }
 }
