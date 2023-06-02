@@ -18,8 +18,8 @@ public class planemovement : MonoBehaviour
     float speedtiltMultiAngle = 0.1f;
 
     //Thrusters - Set to private after testing is done and ideal speed is found
-    public float thrust = 10000;
-    public float boostDuration = 10000f;//Frames the boost can be active for
+    public float thrust = 10000; //Amount of boost power
+    public float boostDuration = 10000f; //Frames the boost can be active for
 
     void Start()
     {
@@ -52,8 +52,6 @@ public class planemovement : MonoBehaviour
                 Debug.Log("Empty");
                 //Effect for empty boost
             }
-
-
         }
         else //If not boosting
         {

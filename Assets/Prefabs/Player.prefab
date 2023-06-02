@@ -4912,6 +4912,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baad0255730f0a243902b0e3691aff68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrust: 1000
+  boostDuration: 10000
 --- !u!54 &2333569641422922415
 Rigidbody:
   m_ObjectHideFlags: 0
