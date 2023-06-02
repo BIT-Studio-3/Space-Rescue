@@ -8,8 +8,9 @@ public class AnimalController : MonoBehaviour
 {
     private bool inRange = false;
     private float speed = 10;
+    private Vector3 velocity = Vector3.zero;
 
-    private float RADIUS = 25;
+    private float RADIUS = 26;
     private const int MINWAIT = 4;
     private const int MAXWAIT = 11;
 
@@ -58,7 +59,11 @@ public class AnimalController : MonoBehaviour
             //BLESSED UNITY FORUMS
             while (transform.position != pos) //while the animal is not at their desired position
             {
+                //Debug.Log(pos);
                 transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime); //move them to it!
+                //transform.position = Vector3.Lerp(transform.position, pos, speed * Time.deltaTime); //move them to it!
+                //transform.position = Vector3.SmoothDamp(transform.position, pos, ref velocity, .1f); //move them to it!
+
                 yield return 0; //used to let the engine wait for a frame which breaks an endless broken loop
             }
         yield return new WaitForSeconds(Random.Range(MINWAIT, MAXWAIT)); //pause for a random time and then go again

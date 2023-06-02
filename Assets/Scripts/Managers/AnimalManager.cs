@@ -25,7 +25,7 @@ public class AnimalManager : MonoBehaviour
     {
         for (int i = 0; i < Random.Range(MIN, MAX); i++)
         {
-            area = Random.onUnitSphere * 25;
+            area = Random.onUnitSphere * 26;
             animal = Instantiate(animalPrefab, area, Quaternion.identity);
             animal.transform.parent = animalParent.transform;
         }
