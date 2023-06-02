@@ -18,7 +18,7 @@ public class planemovement : MonoBehaviour
     float speedtiltMultiAngle = 0.1f;
 
     //Thrusters amount
-    public float thrust = 1000;
+    private float thrust = 10000;
 
     void Start()
     {
