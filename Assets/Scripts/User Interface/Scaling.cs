@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Scaling : MonoBehaviour
 {
-    private float scaleFactor = 1f;
+    private float scaleFactor = 1f; //Scales the minigame by this value;
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.transform.localScale = new Vector3(1, 1, 1);
+        gameObject.transform.localScale = new Vector3(1, 1, 1); //set the initial size to 1;
         
     }
 
@@ -16,15 +16,15 @@ public class Scaling : MonoBehaviour
     void Update()
     {
         float ratio = 0;
-        if(Screen.width > Screen.height)
+        if(Screen.width > Screen.height) //check if the screen is horizontal or vertical
         {
              ratio = (float) Screen.height / Screen.width; //Horizontal
-             scaleFactor = 1.75f; //
+             scaleFactor = 1.75f; //the minigame ui will scale to fit most horizontal screens
         }
         else if(Screen.width < Screen.height)
         {
              ratio = (float) Screen.width / Screen.height; //Vertical
-             scaleFactor = 1f; //
+             scaleFactor = 1f; ///the minigame ui will scale to fit most vertical screens
         }
         ratio = scaleFactor * ratio;
         
