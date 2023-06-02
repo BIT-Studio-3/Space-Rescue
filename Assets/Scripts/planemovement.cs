@@ -17,8 +17,9 @@ public class planemovement : MonoBehaviour
     float speedMultAngle = 0.5f;
     float speedtiltMultiAngle = 0.1f;
 
-    //Thrusters amount
+    //Thrusters - Set to private after testing is done and ideal speed is found
     public float thrust = 10000;
+    public float boostDuration = 10000f;//Frames the boost can be active for
 
     void Start()
     {
@@ -37,10 +38,24 @@ public class planemovement : MonoBehaviour
                 
         if(Input.GetKey(KeyCode.LeftShift))
         {
-            SpeedEffect.Instance.SpeedControl(true);
-            spaceshipRB.AddRelativeForce(Vector3.forward * thrust);
+            if (boostDuration > 0) //If boosting and having boost left
+            {
+                SpeedEffect.Instance.SpeedControl(true);
+                spaceshipRB.AddRelativeForce(Vector3.forward * thrust);
+                boostDuration -= 1;
+                Debug.Log(boostDuration);
+                //Visual boost bar reducing
+            }
+            else //If boosting but empty
+            {
+                SpeedEffect.Instance.SpeedControl(false);
+                Debug.Log("Empty");
+                //Effect for empty boost
+            }
+
+
         }
-        else
+        else //If not boosting
         {
             SpeedEffect.Instance.SpeedControl(false);
         }
