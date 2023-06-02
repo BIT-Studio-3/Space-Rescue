@@ -18,7 +18,7 @@ public class planemovement : MonoBehaviour
     float speedtiltMultiAngle = 0.1f;
 
     //Thrusters amount
-    private float thrust = 10000;
+    public float thrust = 10000;
 
     void Start()
     {
@@ -38,6 +38,7 @@ public class planemovement : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftShift))
         {
             SpeedEffect.Instance.SpeedControl(true);
+            spaceshipRB.AddRelativeForce(Vector3.forward * thrust);
         }
         else
         {
