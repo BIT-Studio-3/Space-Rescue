@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShipMovement : MonoBehaviour
 {
+    public static ShipMovement Instance;
 
     private Rigidbody spaceshipRB;
     float verticalMove;
@@ -18,16 +19,17 @@ public class ShipMovement : MonoBehaviour
     float speedtiltMultiAngle = 0.1f;
 
     //Thrusters - Set to private after testing is done and ideal speed is found
-    private float thrust = 2500f; //Amount of boost power
+    public float thrust = 2500f; //Amount of boost power
     private float boostDuration; //Frames the boost can be active for
-    private const float CAP = 5000f; //Max amount of boost duration that can be held
+    public float Cap = 2500f; //Max amount of boost duration that can be held
     private float recharge = .25f; //Amount recharged. .25 means you recharge at a quarter of the speed you use it
 
     void Start()
     {
+        Instance = this;
         Cursor.lockState = CursorLockMode.Locked; //keep mouse in the game
         spaceshipRB = GetComponent<Rigidbody>();
-        ResetBoost(); //Sets boost to cap
+        ResetBoost(); //Sets boost to Cap
     }
     // Update is called once per frame
     void Update()
@@ -72,7 +74,7 @@ public class ShipMovement : MonoBehaviour
     private void rechargeBoost() //Recharging boost
     {
         SpeedEffect.Instance.SpeedControl(false);
-            if (boostDuration < CAP)
+            if (boostDuration < Cap)
             {
                 boostDuration += recharge; //Slowly refilling boost
                 Debug.Log(boostDuration);
@@ -81,7 +83,7 @@ public class ShipMovement : MonoBehaviour
 
     public void ResetBoost()
     {
-        boostDuration = CAP;
+        boostDuration = Cap;
     }
     
     void FixedUpdate()
