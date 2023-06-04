@@ -16,6 +16,9 @@ public class TutorialManager : MonoBehaviour
     private int totalMovementProgress = 4;
     private int totalRollingProgress = 2;
     public List<GameObject> toolTips;
+
+
+    [HideInInspector] public int planetRescued = 0; //temp fix for tutorial until fully integrated
     // Start is called before the first frame update
     void Start()
     {
@@ -155,9 +158,9 @@ public class TutorialManager : MonoBehaviour
             if (toolTips[0].name == "Escaping" && GameObject.Find("Escaping") != null && GameObject.Find("Escaping").GetComponent<ToolTip>().isActive)
             {
 
-                toolTips[0].GetComponent<Text>().text = "(i) " + toolTips[0].GetComponent<ToolTip>().prompt + " " + GameSettings.Score + "/3 Planets Rescued!";
+                toolTips[0].GetComponent<Text>().text = "(i) " + toolTips[0].GetComponent<ToolTip>().prompt + " " + planetRescued + "/3 Planets Rescued!";
 
-                if (GameSettings.Score == 3 || Input.GetKeyDown(KeyCode.Space))
+                if (planetRescued == 3 || Input.GetKeyDown(KeyCode.Space))
                 {
                     GameObject.Find("Escaping").GetComponent<ToolTip>().completed = true; //The Escaping Game Object is marked as complete when 3 planets are rescued or space is pressed.
                 }

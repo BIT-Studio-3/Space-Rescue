@@ -39,7 +39,16 @@ public class PlanetDetection : MonoBehaviour
                     if(playerInsideRadius && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Rescue" &&  GameObject.Find("Rescue") != null && GameObject.Find("Rescue").GetComponent<ToolTip>().isActive)
                     {
                         GameObject.Find("Rescue").GetComponent<ToolTip>().completed = true;
+                        planetRescued = true; //Note from Chase - Temp fix for tutorial until updated with planet and minigame scenes
+                        GameObject.Find("TutorialManager").GetComponent<TutorialManager>().planetRescued++;
                     } 
+                    else if(playerInsideRadius && !planetRescued && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Escaping" &&  GameObject.Find("Escaping") != null && GameObject.Find("Escaping").GetComponent<ToolTip>().isActive)
+                    {
+                        planetRescued = true; //Note from Chase - Temp fix for tutorial until updated with planet and minigame scenes
+                        GameObject.Find("TutorialManager").GetComponent<TutorialManager>().planetRescued++; //Counts ammount of rescued planets, so the tutorial can count the rescued planets properly
+
+
+                    }
                 }
                 if(!GameSettings.Tutorial)
                 {
