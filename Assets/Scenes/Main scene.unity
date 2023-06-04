@@ -2603,6 +2603,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1927107647}
     m_Modifications:
+    - target: {fileID: 2146963835525676933, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146963836343637830, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_Name
       value: PlanetUI
