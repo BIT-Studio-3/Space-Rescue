@@ -4823,9 +4823,9 @@ GameObject:
   - component: {fileID: 2333569641422922419}
   - component: {fileID: 2333569641422922416}
   - component: {fileID: 2333569641422922417}
-  - component: {fileID: 2333569641422922414}
   - component: {fileID: 2333569641422922415}
   - component: {fileID: 2333569641422922412}
+  - component: {fileID: 8476803455249810064}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4900,20 +4900,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2333569641422922414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2333569641422922413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baad0255730f0a243902b0e3691aff68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrust: 1000
-  boostDuration: 10000
 --- !u!54 &2333569641422922415
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4943,6 +4929,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 18.83, y: 19.5, z: 56.5}
   m_Center: {x: -0.0001001358, y: -0.06250001, z: -0.062449463}
+--- !u!114 &8476803455249810064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2333569641422922413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d97bdf99ab1c747bad582571d803b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 1000
+  boostDuration: 10000
 --- !u!1 &2333569642393514052
 GameObject:
   m_ObjectHideFlags: 0

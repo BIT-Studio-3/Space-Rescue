@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class planemovement : MonoBehaviour
+public class ShipMovement : MonoBehaviour
 {
 
     private Rigidbody spaceshipRB;
@@ -18,17 +18,22 @@ public class planemovement : MonoBehaviour
     float speedtiltMultiAngle = 0.1f;
 
     //Thrusters - Set to private after testing is done and ideal speed is found
-    public float thrust = 1000; //Amount of boost power
-    public float boostDuration = 10000f; //Frames the boost can be active for
+    private float thrust = 2500f; //Amount of boost power
+    private float boostDuration; //Frames the boost can be active for
+    private const float CAP = 5000f; //Max amount of boost duration that can be held
+    private float recharge = .25f; //Amount recharged. .25 means you recharge at a quarter of the speed you use it
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked; //keep mouse in the game
         spaceshipRB = GetComponent<Rigidbody>();
+        ResetBoost(); //Sets boost to cap
     }
     // Update is called once per frame
     void Update()
     {
+        if(Time.timeScale == 0)return; //This instantly returns from update when the game is paused
+
         verticalMove = Input.GetAxis("Vertical");
         horizontalMove = Input.GetAxis("Horizontal");
         tiltInput = Input.GetAxis("Roll");
@@ -36,9 +41,19 @@ public class planemovement : MonoBehaviour
         mouseInputX = Input.GetAxis("Mouse X");
         mouseInputY = Input.GetAxis("Mouse Y");
                 
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift)) //If boosting
         {
-            if (boostDuration > 0) //If boosting and having boost left
+            useBoost();
+        }
+        else //If not boosting
+        {
+            rechargeBoost();
+        }
+    }
+
+    private void useBoost() //Boosting
+    {
+        if (boostDuration >= 1) //If boosting and having boost left
             {
                 SpeedEffect.Instance.SpeedControl(true);
                 spaceshipRB.AddRelativeForce(Vector3.forward * thrust);
@@ -52,11 +67,21 @@ public class planemovement : MonoBehaviour
                 Debug.Log("Empty");
                 //Effect for empty boost
             }
-        }
-        else //If not boosting
-        {
-            SpeedEffect.Instance.SpeedControl(false);
-        }
+    }
+
+    private void rechargeBoost() //Recharging boost
+    {
+        SpeedEffect.Instance.SpeedControl(false);
+            if (boostDuration < CAP)
+            {
+                boostDuration += recharge; //Slowly refilling boost
+                Debug.Log(boostDuration);
+            }
+    }
+
+    public void ResetBoost()
+    {
+        boostDuration = CAP;
     }
     
     void FixedUpdate()
