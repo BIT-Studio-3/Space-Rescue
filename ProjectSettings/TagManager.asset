@@ -9,6 +9,7 @@ TagManager:
   - Black Hole Warning
   - Tooltip
   - PlanetUI
+  - EnergyBarFull
   layers:
   - Default
   - TransparentFX

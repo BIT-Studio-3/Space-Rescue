@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShipMovement : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class ShipMovement : MonoBehaviour
     private float boostDuration; //Frames the boost can be active for
     public float Cap = 2500f; //Max amount of boost duration that can be held
     private float recharge = .25f; //Amount recharged. .25 means you recharge at a quarter of the speed you use it
+
+    //Energy bars to edit
+    public Image[] Bars;
 
     void Start()
     {
@@ -51,6 +55,8 @@ public class ShipMovement : MonoBehaviour
         {
             rechargeBoost();
         }
+
+        energyBar(boostDuration/Cap); //Gives a value of boost left between 0 and 1
     }
 
     private void useBoost() //Boosting
@@ -81,9 +87,17 @@ public class ShipMovement : MonoBehaviour
             }
     }
 
-    public void ResetBoost()
+    public void ResetBoost() //Sets the boost to max
     {
         boostDuration = Cap;
+    }
+
+    private void energyBar(float percentage) //Takes a value between 0 and 1 and fills the image appropriately
+    {
+        foreach (var image in Bars)
+        {
+            image.fillAmount = percentage;
+        }
     }
     
     void FixedUpdate()
