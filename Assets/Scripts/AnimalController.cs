@@ -51,7 +51,6 @@ public class AnimalController : MonoBehaviour
     {
         while (true) //while its running (forever)
         {
-            //Vector3 pos = new Vector3(Random.Range(-RANGE,RANGE), Random.Range(-RANGE, RANGE), Random.Range(-RANGE, RANGE)); //picks a random position to move to
             Vector3 pos = Random.onUnitSphere * RADIUS; //picks a random point on the surface of a sphere with the radius
             transform.LookAt(pos, transform.position * Time.deltaTime); //makes them face the direction they will move to
 
@@ -61,8 +60,6 @@ public class AnimalController : MonoBehaviour
             {
                 //Debug.Log(pos);
                 transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime); //move them to it!
-                //transform.position = Vector3.Lerp(transform.position, pos, speed * Time.deltaTime); //move them to it!
-                //transform.position = Vector3.SmoothDamp(transform.position, pos, ref velocity, .1f); //move them to it!
 
                 yield return 0; //used to let the engine wait for a frame which breaks an endless broken loop
             }
