@@ -28,7 +28,13 @@ public class PlanetTextureGenerator : MonoBehaviour
         p.transform.localPosition = new Vector3(0,0,0);
         p.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
         p_UI.transform.SetParent(planetUIobjects[index].transform);
+        RectTransform b = p_UI.AddComponent<RectTransform>();
         p_UI.transform.localPosition = new Vector3(0,0,0);
+        b.anchorMin = new Vector2(0,0.5f);
+        b.anchorMax = new Vector2(0,0.5f);
+        b.pivot = new Vector2(0,0.5f);
+        b.anchoredPosition = new Vector3(0,0,0);
+
         p_UI.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
         p_UI.AddComponent<Canvas>();
         p_UI.GetComponent<Canvas>().worldCamera = GameObject.Find("PlanetUI").GetComponent<Canvas>().worldCamera;

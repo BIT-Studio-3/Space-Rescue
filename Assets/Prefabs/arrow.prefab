@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2977114449748218300}
   - component: {fileID: 4693851059210643223}
   - component: {fileID: 5076022850750125993}
+  - component: {fileID: 1454773977}
   m_Layer: 5
   m_Name: arrow
   m_TagString: Untagged
@@ -119,3 +120,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1454773977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625443474289160297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e72d72e2e187c241a72a0a644ff4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetsNotRescued: []
+  player: {fileID: 0}
+  tick: {fileID: 0}
+  distanceText: {fileID: 0}
+  crosshair: {fileID: 0}
+  cam: {fileID: 0}
