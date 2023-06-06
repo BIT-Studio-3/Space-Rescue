@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalPrefab: {fileID: 8768842384551100010, guid: a856aef0cf1ee684fab26ff0de94a268, type: 3}
-  animalParent: {fileID: 0}
 --- !u!4 &310667744
 Transform:
   m_ObjectHideFlags: 0

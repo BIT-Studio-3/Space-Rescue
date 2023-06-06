@@ -5,7 +5,8 @@ using UnityEngine;
 //Script is used for global animals / animals before spawn
 public class AnimalManager : MonoBehaviour
 {
-    private GameObject animalPrefab;
+    [SerializeField]
+    public GameObject animalPrefab; //needs to be public to be assigned
     private GameObject animalParent;
     private GameObject animal;
     private Vector3 area;
