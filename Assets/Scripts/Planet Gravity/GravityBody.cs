@@ -7,7 +7,7 @@ public class GravityBody : MonoBehaviour
     public GravityAttractor attractor;
     private Transform myTransform;
     private Rigidbody rb;
-    public GameObject planet;
+    private GameObject planet;
 
     // Start is called before the first frame update
     void Awake()

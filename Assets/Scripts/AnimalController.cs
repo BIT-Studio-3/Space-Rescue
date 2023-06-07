@@ -9,6 +9,7 @@ public class AnimalController : MonoBehaviour
     private bool inRange = false;
     private float speed = 10;
     private Vector3 velocity = Vector3.zero;
+    private Rigidbody rb;
 
     private float RADIUS = 26;
     private const int MINWAIT = 4;
@@ -17,6 +18,7 @@ public class AnimalController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         StartCoroutine(wait()); //NOTE: Disabled by Palin so as to not have the animal bouncing until fixed.
     }
 
@@ -36,6 +38,7 @@ public class AnimalController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = true;
+            //rb.isKinematic = true;
         }
     }
 
@@ -44,6 +47,7 @@ public class AnimalController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
+            //rb.isKinematic = false;
         }
     }
 
