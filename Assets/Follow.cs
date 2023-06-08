@@ -9,13 +9,13 @@ public class Follow : MonoBehaviour
     public float distanceFromTarget = 5f; // Adjust this value to control the distance from the target object
 
     private bool isRotating = false;
-    private Quaternion originalRotation;
-    private Vector3 originalPosition;
+    private Quaternion originalLocalRotation;
+    private Vector3 originalLocalPosition;
 
     private void Start()
     {
-        originalRotation = transform.rotation;
-        originalPosition = transform.position;
+        originalLocalRotation = transform.localRotation;
+        originalLocalPosition = transform.localPosition;
     }
     void Update()
     {
@@ -27,8 +27,8 @@ public class Follow : MonoBehaviour
         if (Input.GetMouseButtonUp(0)) // Left mouse button release
         {
             isRotating = false;
-            transform.rotation = originalRotation;
-            transform.position = target.position - transform.forward * distanceFromTarget;
+            transform.localRotation = originalLocalRotation;
+            transform.localPosition = originalLocalPosition;
         }
 
         if (isRotating)
