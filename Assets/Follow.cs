@@ -44,5 +44,6 @@ public class Follow : MonoBehaviour
                 transform.RotateAround(target.position, transform.right, -rotationY);
             }
         }
+
     }
 }
