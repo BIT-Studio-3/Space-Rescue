@@ -8,7 +8,7 @@ public class Follow : MonoBehaviour
     public float rotationSpeed = 3f; // Adjust this value to control the rotation speed
     public float distanceFromTarget = 5f; // Adjust this value to control the distance from the target object
 
-    private bool isRotating = false;
+    public bool isRotating = false;
     private Quaternion originalLocalRotation;
     private Vector3 originalLocalPosition;
 
