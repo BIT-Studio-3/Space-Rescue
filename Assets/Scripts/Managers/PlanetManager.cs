@@ -18,6 +18,7 @@ public class PlanetManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && planetParent.activeSelf)
         {
+            ShipMovement.Instance.ResetBoost(); //This resets the ships boost before it goes back to the main scene
             GameMenuManager.Instance.ReturntoScene("Spherical Planet");
         }
     }
