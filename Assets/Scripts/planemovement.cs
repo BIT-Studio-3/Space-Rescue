@@ -29,8 +29,11 @@ public class planemovement : MonoBehaviour
         horizontalMove = Input.GetAxis("Horizontal");
         tiltInput = Input.GetAxis("Roll");
 
-        mouseInputX = Input.GetAxis("Mouse X");
-        mouseInputY = Input.GetAxis("Mouse Y");
+        if (!GameObject.Find("Main Camera").GetComponent<Follow>().isRotating)
+        {
+            mouseInputX = Input.GetAxis("Mouse X");
+            mouseInputY = Input.GetAxis("Mouse Y");
+        }
 
     }
     
