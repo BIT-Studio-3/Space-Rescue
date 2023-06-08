@@ -12,6 +12,9 @@ public class Follow : MonoBehaviour
     private Quaternion originalLocalRotation;
     private Vector3 originalLocalPosition;
 
+    public float cameraSpeed = 5f;
+    public Transform camTransform;
+
     private void Start()
     {
         originalLocalRotation = transform.localRotation;
@@ -30,6 +33,11 @@ public class Follow : MonoBehaviour
             isRotating = false;
             transform.localRotation = originalLocalRotation;
             transform.localPosition = originalLocalPosition;
+
+            Vector3 camPos = new Vector3(camTransform.position.x, camTransform.position.y + (cameraSpeed * Time.deltaTime), camTransform.position.z);
+ 
+            camTransform.position = Vector3.Lerp(camTransform.position, camPos, cameraSpeed);
+
         }
 
         if (isRotating)

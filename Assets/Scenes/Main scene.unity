@@ -2337,6 +2337,8 @@ MonoBehaviour:
   rotationSpeed: 1
   distanceFromTarget: 3
   isRotating: 1
+  cameraSpeed: 5
+  camTransform: {fileID: 2011061704}
 --- !u!1 &2058944449
 GameObject:
   m_ObjectHideFlags: 0
