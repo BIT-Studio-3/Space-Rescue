@@ -27,13 +27,14 @@ public class planemovement : MonoBehaviour
     {
         verticalMove = Input.GetAxis("Vertical");       // Get vertical input value
         horizontalMove = Input.GetAxis("Horizontal");   // Get horizontal input value
-        tiltInput = Input.GetAxis("Roll");              // Get roll input value
+        
 
         // Check if the Main Camera is not rotating (controlled by Follow script)
         if (!GameObject.Find("Main Camera").GetComponent<Follow>().isRotating)
         {
             mouseInputX = Input.GetAxis("Mouse X");   // Get mouse X-axis input
             mouseInputY = Input.GetAxis("Mouse Y");   // Get mouse Y-axis input
+            tiltInput = Input.GetAxis("Roll");        // Get roll input value
         }
 
     }
@@ -46,13 +47,17 @@ public class planemovement : MonoBehaviour
         // Apply rightward force based on horizontal movement input
         spaceshipRB.AddForce(spaceshipRB.transform.TransformDirection(Vector3.right) * horizontalMove * speedMult, ForceMode.VelocityChange);
 
-        // Apply torque (rotation) around the spaceship's right axis based on mouse Y-axis input
-        spaceshipRB.AddTorque(spaceshipRB.transform.right * speedMultAngle * mouseInputY * -1, ForceMode.VelocityChange);
-
-        // Apply torque (rotation) around the spaceship's up axis based on mouse X-axis input
-        spaceshipRB.AddTorque(spaceshipRB.transform.up * speedMultAngle * mouseInputX, ForceMode.VelocityChange);
-
         // Apply torque (rotation) around the spaceship's forward axis based on tilt input
         spaceshipRB.AddTorque(spaceshipRB.transform.forward * speedtiltMultiAngle * tiltInput, ForceMode.VelocityChange);
+
+        // Check if the Main Camera is not rotating (controlled by Follow script)
+        if (!GameObject.Find("Main Camera").GetComponent<Follow>().isRotating)
+        {
+            // Apply torque (rotation) around the spaceship's right axis based on mouse Y-axis input
+            spaceshipRB.AddTorque(spaceshipRB.transform.right * speedMultAngle * mouseInputY * -1, ForceMode.VelocityChange);
+
+            // Apply torque (rotation) around the spaceship's up axis based on mouse X-axis input
+            spaceshipRB.AddTorque(spaceshipRB.transform.up * speedMultAngle * mouseInputX, ForceMode.VelocityChange);
+        }
     }
 }

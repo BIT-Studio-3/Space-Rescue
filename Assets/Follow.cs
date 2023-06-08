@@ -17,6 +17,7 @@ public class Follow : MonoBehaviour
         originalLocalRotation = transform.localRotation;
         originalLocalPosition = transform.localPosition;
     }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) // Left mouse button click
@@ -36,9 +37,12 @@ public class Follow : MonoBehaviour
             float rotationX = Input.GetAxis("Mouse X") * rotationSpeed;
             float rotationY = Input.GetAxis("Mouse Y") * rotationSpeed;
 
-            transform.LookAt(target); // Look at the target object
-            transform.RotateAround(target.position, Vector3.up, rotationX); // Rotate horizontally around the target
-            transform.RotateAround(target.position, transform.right, -rotationY); // Rotate vertically around the target
+            if (rotationX != 0f || rotationY != 0f) // Check if there is any rotation input
+            {
+                transform.LookAt(target);
+                transform.RotateAround(target.position, Vector3.up, rotationX);
+                transform.RotateAround(target.position, transform.right, -rotationY);
+            }
         }
     }
 }
