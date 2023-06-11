@@ -27,10 +27,9 @@ public class planemovement : MonoBehaviour
     {
         verticalMove = Input.GetAxis("Vertical");       // Get vertical input value
         horizontalMove = Input.GetAxis("Horizontal");   // Get horizontal input value
-        
 
         // Check if the Main Camera is not rotating (controlled by Follow script)
-        if (!GameObject.Find("Main Camera").GetComponent<Follow>().isRotating)
+        if (!GameObject.Find("Main Camera").GetComponent<CameraFollow>().isRotating)
         {
             mouseInputX = Input.GetAxis("Mouse X");   // Get mouse X-axis input
             mouseInputY = Input.GetAxis("Mouse Y");   // Get mouse Y-axis input
@@ -51,7 +50,7 @@ public class planemovement : MonoBehaviour
         spaceshipRB.AddTorque(spaceshipRB.transform.forward * speedtiltMultiAngle * tiltInput, ForceMode.VelocityChange);
 
         // Check if the Main Camera is not rotating (controlled by Follow script)
-        if (!GameObject.Find("Main Camera").GetComponent<Follow>().isRotating)
+        if (!GameObject.Find("Main Camera").GetComponent<CameraFollow>().isRotating)
         {
             // Apply torque (rotation) around the spaceship's right axis based on mouse Y-axis input
             spaceshipRB.AddTorque(spaceshipRB.transform.right * speedMultAngle * mouseInputY * -1, ForceMode.VelocityChange);
