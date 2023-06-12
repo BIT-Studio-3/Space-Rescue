@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+
         //transform direction transforms direction from local to world
         Vector3 localMove = transform.TransformDirection(moveAmo) * Time.fixedDeltaTime;
         //changes the position (Vector3)
