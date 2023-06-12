@@ -27,7 +27,6 @@ public class AnimalController : MonoBehaviour
     {
         if (inRange == true && Input.GetKeyDown(KeyCode.R))
         {
-            Debug.Log("Interacted");
             Destroy(gameObject);
             PlanetManager.Instance.LoadMiniGame();
         }
@@ -38,7 +37,6 @@ public class AnimalController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = true;
-            //rb.isKinematic = true;
         }
     }
 
@@ -47,7 +45,6 @@ public class AnimalController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
-            //rb.isKinematic = false;
         }
     }
 
@@ -62,7 +59,6 @@ public class AnimalController : MonoBehaviour
             //BLESSED UNITY FORUMS
             while (transform.position != pos) //while the animal is not at their desired position
             {
-                //Debug.Log(pos);
                 transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime); //move them to it!
 
                 yield return 0; //used to let the engine wait for a frame which breaks an endless broken loop
