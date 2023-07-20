@@ -89,6 +89,9 @@ public class FindingPlanets : MonoBehaviour
         {
             GetComponent<Renderer>().enabled = false;
             tick.SetActive(true);
+            HudBehaviour.instance.ShowPlanetInfo(target.GetComponent<PlanetDetection>());
+
+
             if(GameSettings.Tutorial) //Only checks if the tutorial is set to true.
             {
                 if(GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Finding" && GameObject.Find("Finding") != null && GameObject.Find("Finding").GetComponent<ToolTip>().isActive )
