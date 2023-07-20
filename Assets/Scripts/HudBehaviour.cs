@@ -7,6 +7,7 @@ public class HudBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     public static HudBehaviour instance;
+    public GameObject status;
     void Awake()
     {
         instance = this;
@@ -15,14 +16,21 @@ public class HudBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void ShowPlanetInfo(PlanetDetection planet)
     {
-        GameObject status = GameObject.Find("Status");
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        status.GetComponent<Text>().enabled = true;
         status.GetComponent<Text>().text = "Status: " + planet.planetRescued;
-        gameObject.SetActive(true);
 
+    }
+
+
+    public void HidePlanetInfo()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        status.GetComponent<Text>().enabled = false;
     }
 }

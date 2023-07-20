@@ -56,6 +56,10 @@ public class FindingPlanets : MonoBehaviour
                     {
                         distanceText.text = "Out of Range!";
                     }
+
+
+                    
+
                 }
 
                 if (planet == null || planet.GetComponent<PlanetDetection>().planetRescued == true)
@@ -66,6 +70,30 @@ public class FindingPlanets : MonoBehaviour
                 }
 
             }
+
+
+            //Reworking the HUD
+                    RaycastHit hit;
+                    
+                    Vector3 fwd = cam.transform.forward;
+                    screenMiddle = new Vector3(Screen.width / 2, Screen.height / 2, cam.nearClipPlane);
+                    
+
+                    if (Physics.Raycast(cam.ScreenPointToRay(screenMiddle),out hit, Mathf.Infinity) && hit.transform.tag == "Planet") 
+                    {
+                        print("Ray Hit the Planet");
+                        Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                        HudBehaviour.instance.ShowPlanetInfo(hit.transform.GetComponent<PlanetDetection>());
+
+
+                    }
+                    else{
+                        Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * 1000, Color.red);
+                        HudBehaviour.instance.HidePlanetInfo();
+
+
+                    }
+
         
         GameObject target = closestPlanet;
         //Get the targets position on screen into a Vector3
@@ -104,6 +132,8 @@ public class FindingPlanets : MonoBehaviour
         {
             GetComponent<Renderer>().enabled = true;
             tick.SetActive(false);
+            //HudBehaviour.instance.HidePlanetInfo(target.GetComponent<PlanetDetection>());
+
 
 
         }
