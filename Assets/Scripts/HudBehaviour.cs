@@ -7,7 +7,7 @@ public class HudBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     public static HudBehaviour instance;
-    public GameObject status;
+    public GameObject Status,Name,Distance;
     void Awake()
     {
         instance = this;
@@ -19,11 +19,17 @@ public class HudBehaviour : MonoBehaviour
 
     }
 
-    public void ShowPlanetInfo(PlanetDetection planet)
+    public void ShowPlanetInfo(PlanetDetection planetStatus,float planetDistance, string planetName)
     {
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        status.GetComponent<Text>().enabled = true;
-        status.GetComponent<Text>().text = "Status: " + planet.planetRescued;
+        Status.GetComponent<Text>().enabled = true;
+        Status.GetComponent<Text>().color = (planetStatus.planetRescued ? Color.green : Color.red);
+        Status.GetComponent<Text>().text = "Status: " + (planetStatus.planetRescued ? "Rescued" : "Not Rescued");
+        Distance.GetComponent<Text>().enabled = true;
+        Distance.GetComponent<Text>().text = "Distance: " + planetDistance.ToString();
+        Name.GetComponent<Text>().enabled = true;
+        Name.GetComponent<Text>().text = planetName;
+
 
     }
 
@@ -31,6 +37,9 @@ public class HudBehaviour : MonoBehaviour
     public void HidePlanetInfo()
     {
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        status.GetComponent<Text>().enabled = false;
+        Status.GetComponent<Text>().enabled = false;
+        Name.GetComponent<Text>().enabled = false;
+        Distance.GetComponent<Text>().enabled = false;
+
     }
 }

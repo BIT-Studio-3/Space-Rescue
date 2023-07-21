@@ -83,7 +83,11 @@ public class FindingPlanets : MonoBehaviour
                     {
                         print("Ray Hit the Planet");
                         Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                        HudBehaviour.instance.ShowPlanetInfo(hit.transform.GetComponent<PlanetDetection>());
+                          Vector3 directionToPlanet = hit.transform.position - currentPos;
+                        float dist = directionToPlanet.sqrMagnitude;
+            string x = hit.transform.gameObject.transform.GetChild(0).name.Substring(0,hit.transform.gameObject.transform.GetChild(0).gameObject.name.Length-7);
+
+                        HudBehaviour.instance.ShowPlanetInfo(hit.transform.GetComponent<PlanetDetection>(),Mathf.Round(dist/100),x);
 
 
                     }
@@ -117,8 +121,7 @@ public class FindingPlanets : MonoBehaviour
         {
             GetComponent<Renderer>().enabled = false;
             tick.SetActive(true);
-            HudBehaviour.instance.ShowPlanetInfo(target.GetComponent<PlanetDetection>());
-
+  
 
             if(GameSettings.Tutorial) //Only checks if the tutorial is set to true.
             {
