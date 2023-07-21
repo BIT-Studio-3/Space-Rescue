@@ -17,7 +17,10 @@ public class PlanetDetection : MonoBehaviour
 
 
 
-
+ void Start()
+ {
+       
+ }
 
 
     void Update()
@@ -63,6 +66,24 @@ public class PlanetDetection : MonoBehaviour
                 }
             }
         }
+ 
+
+    }
+
+    public float PlanetDistanceToBlackHole()
+    {
+                                    RaycastHit hit;
+                                Vector3 blackHoleLocation = GameObject.Find("Black Hole").gameObject.transform.position;
+                        Vector3 PlanetdirectionToBlackHole = blackHoleLocation - gameObject.transform.position;
+                                float distBlackHole = PlanetdirectionToBlackHole.sqrMagnitude;
+
+                        if(Physics.Raycast(gameObject.transform.position,PlanetdirectionToBlackHole,out hit,distBlackHole) && hit.transform.name == "WarningBox")
+                        {
+                            print(gameObject.transform.name + " |---->| " + Mathf.Round(hit.distance) + "units " + hit.transform.name);
+                            
+                            Debug.DrawRay(gameObject.transform.position,PlanetdirectionToBlackHole,Color.blue,Mathf.Infinity);
+                        }
+                return Mathf.Round(hit.distance);
     }
 
     private void OnDestroy() 

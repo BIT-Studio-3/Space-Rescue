@@ -84,9 +84,11 @@ public class FindingPlanets : MonoBehaviour
                             Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                           Vector3 directionToPlanet = hit.transform.position - currentPos;
                         float dist = directionToPlanet.sqrMagnitude;
+                 
+                        float distBlackHole = hit.transform.gameObject.GetComponent<PlanetDetection>().PlanetDistanceToBlackHole();
                         string x = hit.transform.gameObject.transform.GetChild(0).name.Substring(0,hit.transform.gameObject.transform.GetChild(0).gameObject.name.Length-7);
 
-                        HudBehaviour.instance.ShowPlanetInfo(hit.transform.GetComponent<PlanetDetection>(),Mathf.Round(dist/100),x);
+                        HudBehaviour.instance.ShowPlanetInfo(hit.transform.GetComponent<PlanetDetection>(),Mathf.Round(dist/100),distBlackHole,x);
 
 
                     }
