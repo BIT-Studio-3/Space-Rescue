@@ -81,11 +81,10 @@ public class FindingPlanets : MonoBehaviour
 
                     if (Physics.Raycast(cam.ScreenPointToRay(screenMiddle),out hit, Mathf.Infinity) && hit.transform.tag == "Planet") 
                     {
-                        print("Ray Hit the Planet");
-                        Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                            Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                           Vector3 directionToPlanet = hit.transform.position - currentPos;
                         float dist = directionToPlanet.sqrMagnitude;
-            string x = hit.transform.gameObject.transform.GetChild(0).name.Substring(0,hit.transform.gameObject.transform.GetChild(0).gameObject.name.Length-7);
+                        string x = hit.transform.gameObject.transform.GetChild(0).name.Substring(0,hit.transform.gameObject.transform.GetChild(0).gameObject.name.Length-7);
 
                         HudBehaviour.instance.ShowPlanetInfo(hit.transform.GetComponent<PlanetDetection>(),Mathf.Round(dist/100),x);
 

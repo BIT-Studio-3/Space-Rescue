@@ -7,10 +7,12 @@ public class HudBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     public static HudBehaviour instance;
-    public GameObject Status,Name,Distance;
+    public GameObject planetStatus,planetName,playerPlanetDistance,blackHolePlanetDist,planetLand;
+    private List<GameObject> hudItems;
     void Awake()
     {
         instance = this;
+        hudItems = new List<GameObject> {planetStatus,planetName,playerPlanetDistance,blackHolePlanetDist,planetLand};
     }
 
     // Update is called once per frame
@@ -19,16 +21,20 @@ public class HudBehaviour : MonoBehaviour
 
     }
 
-    public void ShowPlanetInfo(PlanetDetection planetStatus,float planetDistance, string planetName)
+    public void ShowPlanetInfo(PlanetDetection status,float dist, string name)
     {
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        Status.GetComponent<Text>().enabled = true;
-        Status.GetComponent<Text>().color = (planetStatus.planetRescued ? Color.green : Color.red);
-        Status.GetComponent<Text>().text = "Status: " + (planetStatus.planetRescued ? "Rescued" : "Not Rescued");
-        Distance.GetComponent<Text>().enabled = true;
-        Distance.GetComponent<Text>().text = "Distance: " + planetDistance.ToString();
-        Name.GetComponent<Text>().enabled = true;
-        Name.GetComponent<Text>().text = planetName;
+        planetStatus.GetComponent<Text>().enabled = true;
+        planetStatus.GetComponent<Text>().color = (status.planetRescued ? Color.green : Color.red);
+        planetStatus.GetComponent<Text>().text = "Status: " + (status.planetRescued ? "Rescued" : "Not Rescued");
+        playerPlanetDistance.GetComponent<Text>().enabled = true;
+        playerPlanetDistance.GetComponent<Text>().text = "Distance: " + dist.ToString();
+        planetName.GetComponent<Text>().enabled = true;
+        planetName.GetComponent<Text>().text = name;
+        planetLand.GetComponent<Text>().enabled = true;
+        planetLand.GetComponent<Text>().text = (status.playerInsideRadius ? "Ready to Land" : "Fly Closer to Land");
+        planetLand.GetComponent<Text>().color = (status.playerInsideRadius ? Color.green : planetName.GetComponent<Text>().color);
+
 
 
     }
@@ -37,9 +43,17 @@ public class HudBehaviour : MonoBehaviour
     public void HidePlanetInfo()
     {
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        Status.GetComponent<Text>().enabled = false;
-        Name.GetComponent<Text>().enabled = false;
-        Distance.GetComponent<Text>().enabled = false;
+        // planetStatus.GetComponent<Text>().enabled = false;
+        // planetName.GetComponent<Text>().enabled = false;
+        // playerPlanetDistance.GetComponent<Text>().enabled = false;
+        // planetLand.GetComponent<Text>().enabled = false;
+        // blackHolePlanetDist.GetComponent<Text>().enabled = false;
+
+        foreach(GameObject hudItem in hudItems)
+        {
+            hudItem.GetComponent<Text>().enabled = false;
+        }
+
 
     }
 }
