@@ -27,9 +27,28 @@ public class HudBehaviour : MonoBehaviour
         planetStatus.GetComponent<Text>().color = (status.planetRescued ? Color.green : Color.red);
         planetStatus.GetComponent<Text>().text = "Status: " + (status.planetRescued ? "Rescued" : "Not Rescued");
         playerPlanetDistance.GetComponent<Text>().text = "Distance: " + dist.ToString();
-        blackHolePlanetDist.GetComponent<Text>().text = "Black Hole: ";
-        planetName.GetComponent<Text>().text = name;
+        blackHolePlanetDist.GetComponent<Text>().text = "Black Hole: " + distBlackHole.ToString();
+        if(status.inDanger)
+        {
+            if(distBlackHole < 150f)
+            {
+                blackHolePlanetDist.GetComponent<Text>().color = Color.red;
 
+            }
+            else
+            {
+            blackHolePlanetDist.GetComponent<Text>().color = new Color(1.0f, 0.64f, 0.0f);
+
+            }
+
+        }
+        else
+        {
+            blackHolePlanetDist.GetComponent<Text>().color =  planetName.GetComponent<Text>().color;
+        }
+        
+        planetName.GetComponent<Text>().text = name;
+        
         planetLand.GetComponent<Text>().text = (status.playerInsideRadius ? "Ready to Land" : "Fly Closer to Land");
         planetLand.GetComponent<Text>().color = (status.playerInsideRadius ? Color.green : planetName.GetComponent<Text>().color);
 

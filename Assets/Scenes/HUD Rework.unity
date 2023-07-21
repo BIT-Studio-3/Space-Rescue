@@ -4540,6 +4540,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 935375956}
     m_Modifications:
+    - target: {fileID: 2004005289, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2004005291, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
       propertyPath: shipWarning
       value: 

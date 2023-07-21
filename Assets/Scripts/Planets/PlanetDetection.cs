@@ -77,12 +77,16 @@ public class PlanetDetection : MonoBehaviour
                         Vector3 PlanetdirectionToBlackHole = blackHoleLocation - gameObject.transform.position;
                                 float distBlackHole = PlanetdirectionToBlackHole.sqrMagnitude;
 
-                        if(Physics.Raycast(gameObject.transform.position,PlanetdirectionToBlackHole,out hit,distBlackHole) && hit.transform.name == "WarningBox")
+                        int layerMask = 1 << 2;
+                        layerMask = ~layerMask;
+                        if(Physics.Raycast(gameObject.transform.position,PlanetdirectionToBlackHole,out hit,distBlackHole,layerMask) && hit.transform.name == "DistortionHitbox")
                         {
                             print(gameObject.transform.name + " |---->| " + Mathf.Round(hit.distance) + "units " + hit.transform.name);
+                            print(distBlackHole + " || " + hit.distance);
                             
-                            Debug.DrawRay(gameObject.transform.position,PlanetdirectionToBlackHole,Color.blue,Mathf.Infinity);
+                            Debug.DrawRay(gameObject.transform.position,PlanetdirectionToBlackHole ,Color.blue,Mathf.Infinity);
                         }
+      
                 return Mathf.Round(hit.distance);
     }
 
