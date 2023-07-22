@@ -11,8 +11,8 @@ public class TutorialManager : MonoBehaviour
     private GameObject objectiveProgress;
     private int movementProgress = 0;
     private int rollingProgress = 0;
-    private List<KeyCode> movementKeys = new List<KeyCode>() { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D };
-    private List<KeyCode> rollKeys = new List<KeyCode>() { KeyCode.Q, KeyCode.E };
+    private List<KeyCode> movementKeys = new List<KeyCode>() { Keybinds.Forward, Keybinds.Left, Keybinds.Back, Keybinds.Right};
+    private List<KeyCode> rollKeys = new List<KeyCode>() { Keybinds.RollLeft, Keybinds.RollRight };
     private int totalMovementProgress = 4;
     private int totalRollingProgress = 2;
     public List<GameObject> toolTips;
@@ -72,28 +72,28 @@ public class TutorialManager : MonoBehaviour
                 }
 
 
-                if (Input.GetKeyDown(KeyCode.W) && movementKeys.Contains(KeyCode.W))
+                if (Input.GetKeyDown(Keybinds.Forward) && movementKeys.Contains(Keybinds.Forward))
                 {
                     movementProgress++;
-                    movementKeys[movementKeys.IndexOf(KeyCode.W)] = KeyCode.None;
+                    movementKeys[movementKeys.IndexOf(Keybinds.Forward)] = KeyCode.None;
                 }
-                if (Input.GetKeyDown(KeyCode.A) && movementKeys.Contains(KeyCode.A))
+                if (Input.GetKeyDown(Keybinds.Left) && movementKeys.Contains(Keybinds.Left))
                 {
                     movementProgress++;
-                    movementKeys[movementKeys.IndexOf(KeyCode.A)] = KeyCode.None;
+                    movementKeys[movementKeys.IndexOf(Keybinds.Left)] = KeyCode.None;
 
                 }
-                if (Input.GetKeyDown(KeyCode.S) && movementKeys.Contains(KeyCode.S))
+                if (Input.GetKeyDown(Keybinds.Back) && movementKeys.Contains(Keybinds.Back))
                 {
                     movementProgress++;
-                    movementKeys[movementKeys.IndexOf(KeyCode.S)] = KeyCode.None;
+                    movementKeys[movementKeys.IndexOf(Keybinds.Back)] = KeyCode.None;
 
 
                 }
-                if (Input.GetKeyDown(KeyCode.D) && movementKeys.Contains(KeyCode.D))
+                if (Input.GetKeyDown(Keybinds.Right) && movementKeys.Contains(Keybinds.Right))
                 {
                     movementProgress++;
-                    movementKeys[movementKeys.IndexOf(KeyCode.D)] = KeyCode.None;
+                    movementKeys[movementKeys.IndexOf(Keybinds.Right)] = KeyCode.None;
 
                 }
 
@@ -116,15 +116,15 @@ public class TutorialManager : MonoBehaviour
                     objectiveProgress.transform.localScale = new Vector3(8, 0.5f, 1);
                     objectiveProgress.name = "RollProgress";
                 }
-                if (Input.GetKeyDown(KeyCode.Q) && rollKeys.Contains(KeyCode.Q)) //If the key is pressed and the list still contains the key
+                if (Input.GetKeyDown(Keybinds.RollLeft) && rollKeys.Contains(Keybinds.RollLeft)) //If the key is pressed and the list still contains the key
                 {
                     rollingProgress++;
-                    rollKeys[rollKeys.IndexOf(KeyCode.Q)] = KeyCode.None;  //Sets the key index to None so it is not detected again
+                    rollKeys[rollKeys.IndexOf(Keybinds.RollLeft)] = KeyCode.None;  //Sets the key index to None so it is not detected again
                 }
-                if (Input.GetKeyDown(KeyCode.E) && rollKeys.Contains(KeyCode.E))
+                if (Input.GetKeyDown(Keybinds.RollRight) && rollKeys.Contains(Keybinds.RollRight))
                 {
                     rollingProgress++;
-                    rollKeys[rollKeys.IndexOf(KeyCode.E)] = KeyCode.None;
+                    rollKeys[rollKeys.IndexOf(Keybinds.RollRight)] = KeyCode.None;
                 }
 
 
