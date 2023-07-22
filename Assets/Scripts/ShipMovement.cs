@@ -47,7 +47,7 @@ public class ShipMovement : MonoBehaviour
         mouseInputX = Input.GetAxis("Mouse X");
         mouseInputY = Input.GetAxis("Mouse Y");
                 
-        if(Input.GetKey(KeyCode.LeftShift)) //If boosting
+        if(Input.GetKey(Keybinds.Boost)) //If boosting
         {
             useBoost();
         }
