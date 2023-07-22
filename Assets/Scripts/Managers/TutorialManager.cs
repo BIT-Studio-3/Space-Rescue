@@ -29,9 +29,9 @@ public class TutorialManager : MonoBehaviour
         CreateToolTip("Use the mouse to look Around", "Looking");
         CreateToolTip("The Arrow points in the direction of the Closest Planet \n Look around to find it", "Finding");
         CreateToolTip("Reach the Planet", "Approaching");
-        CreateToolTip("Use 'R' to rescue the planet from the Blackhole", "Rescue");
-        CreateToolTip("Well Done, You have rescued a planet, Rescue the other Planets or press 'Spacebar' to escape!", "Escaping");
-        CreateToolTip("Tutorial Completed! Press Spacebar to escape", "Complete");
+        CreateToolTip("Use 'Left Mouse Button' to rescue the planet from the Blackhole", "Rescue");
+        CreateToolTip("Well Done, You have rescued a planet, Rescue the other Planets or press 'Enter' to escape!", "Escaping");
+        CreateToolTip("Tutorial Completed! Press Enter to escape", "Complete");
 
 
     }
@@ -160,7 +160,7 @@ public class TutorialManager : MonoBehaviour
 
                 toolTips[0].GetComponent<Text>().text = "(i) " + toolTips[0].GetComponent<ToolTip>().prompt + " " + planetRescued + "/3 Planets Rescued!";
 
-                if (planetRescued == 3 || Input.GetKeyDown(KeyCode.Space))
+                if (planetRescued == 3 || Input.GetKeyDown(Keybinds.Leave))
                 {
                     GameObject.Find("Escaping").GetComponent<ToolTip>().completed = true; //The Escaping Game Object is marked as complete when 3 planets are rescued or space is pressed.
                 }

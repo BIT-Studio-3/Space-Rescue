@@ -30,7 +30,7 @@ public class PlanetDetection : MonoBehaviour
                 GameObject.Find("Approaching").GetComponent<ToolTip>().completed = true;
             }
         }
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(Keybinds.Interact))
         {
             if(playerInsideRadius && !planetRescued)
             {
