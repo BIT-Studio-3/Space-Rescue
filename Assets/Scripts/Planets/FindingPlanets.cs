@@ -80,25 +80,33 @@ public class FindingPlanets : MonoBehaviour
                     
 
                     if (Physics.Raycast(cam.ScreenPointToRay(screenMiddle),out hit, Mathf.Infinity) && hit.transform.tag == "Planet") 
+                    //Sends out a raycast, returns true if an object is hit and that object has the Planet tag.
                     {
-                            Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                          Vector3 directionToPlanet = hit.transform.position - currentPos;
-                        float dist = directionToPlanet.sqrMagnitude;
+                        //For Debugging purposes in scene view. Draws the ray in yellow
+                            Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow); //Note: the editor doesn't draw the ray as expected likely due to the 3dgui camera , however data works as expected
+                          Vector3 directionToPlanet = hit.transform.position - currentPos; //Finds the direction between the player and the target planet
+                        float dist = directionToPlanet.sqrMagnitude; //calculates the distance from this direction
                  
-                        float distBlackHole = hit.transform.gameObject.GetComponent<PlanetDetection>().PlanetDistanceToBlackHole();
-                        string x = hit.transform.gameObject.transform.GetChild(0).name.Substring(0,hit.transform.gameObject.transform.GetChild(0).gameObject.name.Length-7);
+                        float distBlackHole = hit.transform.gameObject.GetComponent<PlanetDetection>().PlanetDistanceToBlackHole(); //Gets the planets approx distance from the blackhole (the distortion hitbox)
+                        //Accesses the child of the planet object which is the model. Takes the name and removes 7 characters from the end to remove the (Clone) from the name
+                        //This way each planet has a unique identifier in the HUD
+                        string name = hit.transform.gameObject.transform.GetChild(0).name.Substring(0,hit.transform.gameObject.transform.GetChild(0).gameObject.name.Length-7);
 
-                        HudBehaviour.instance.ShowPlanetInfo(hit.transform.GetComponent<PlanetDetection>(),Mathf.Round(dist/100),distBlackHole,x);
+                        //Calls the showplanetInfo method for the planet
+                        HudBehaviour.instance.ShowPlanetInfo(hit.transform.GetComponent<PlanetDetection>(),Mathf.Round(dist/100),distBlackHole,name);
 
 
                     }
-                    else{
+                    
+                    else{ //Hides the planet info panel and creates a "failed" raycast
                         Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * 1000, Color.red);
                         HudBehaviour.instance.HidePlanetInfo();
 
 
                     }
 
+
+//The arrow still finds the closest planet and points to it as in previous iterations
         
         GameObject target = closestPlanet;
         //Get the targets position on screen into a Vector3
