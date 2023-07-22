@@ -66,13 +66,11 @@ public class ShipMovement : MonoBehaviour
                 SpeedEffect.Instance.SpeedControl(true);
                 spaceshipRB.AddRelativeForce(Vector3.forward * thrust);
                 boostDuration -= 1;
-                Debug.Log(boostDuration);
                 //Visual boost bar reducing
             }
             else //If boosting but empty
             {
                 SpeedEffect.Instance.SpeedControl(false);
-                Debug.Log("Empty");
                 //Effect for empty boost
             }
     }
@@ -83,7 +81,6 @@ public class ShipMovement : MonoBehaviour
             if (boostDuration < Cap)
             {
                 boostDuration += recharge; //Slowly refilling boost
-                Debug.Log(boostDuration);
             }
     }
 
