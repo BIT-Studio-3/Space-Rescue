@@ -6,8 +6,7 @@ using UnityEngine;
 
 public static class Keybinds
 {
-    //These are currently just here to be used in the tutorial tooltips. Need to figure out how to get them used for the actual movement?
-    //Movement
+    //Movement. This is just for the tutorial tooltips at the moment
     public static KeyCode Forward = KeyCode.W;
     public static KeyCode Left = KeyCode.A;
     public static KeyCode Right = KeyCode.D;
@@ -15,8 +14,6 @@ public static class Keybinds
     //Rolling
     public static KeyCode RollLeft = KeyCode.Q;
     public static KeyCode RollRight = KeyCode.E;
-
-    //Also need to do mouse movement. This will help if we ever make the game compatable with controllers or touchpads
 
     //Figure out how movement works and if it can be added?
     public static KeyCode Boost = KeyCode.LeftShift;
