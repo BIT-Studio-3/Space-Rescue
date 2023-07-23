@@ -7,12 +7,10 @@ public class HudBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     public static HudBehaviour instance;
-    public GameObject planetStatus,planetName,playerPlanetDistance,blackHolePlanetDist,planetLand; //The HUD Text Objects
-    private List<GameObject> hudItems; //Holds the list of hudItems to quickly show and hide them
+    public GameObject planetStatus,objectName,distFromPlayer,blackHolePlanetDist,planetLand; //The HUD Text Objects
     void Awake()
     {
         instance = this;
-        hudItems = new List<GameObject> {planetStatus,planetName,playerPlanetDistance,blackHolePlanetDist,planetLand};
     }
 
 
@@ -22,15 +20,11 @@ public class HudBehaviour : MonoBehaviour
 
     public void ShowPlanetInfo(PlanetDetection status,float dist,float distBlackHole, string name)
     {
-        gameObject.GetComponent<SpriteRenderer>().enabled = true; //shows the panel sprite
 
-        foreach(GameObject hudItem in hudItems) //loops through the list of hudItems and shows each one
-        {
-            hudItem.GetComponent<Text>().enabled = true;
-        }
+        ShowHudItems(true);
         planetStatus.GetComponent<Text>().color = (status.planetRescued ? Color.green : Color.red);
         planetStatus.GetComponent<Text>().text = "Status: " + (status.planetRescued ? "Rescued" : "Not Rescued");
-        playerPlanetDistance.GetComponent<Text>().text = "Distance: " + dist.ToString();
+        distFromPlayer.GetComponent<Text>().text = "Distance: " + dist.ToString();
         blackHolePlanetDist.GetComponent<Text>().text = "Black Hole: " + distBlackHole.ToString();
         if(status.inDanger) //If the planet is inside the warning area of the black hole
         {
@@ -48,28 +42,42 @@ public class HudBehaviour : MonoBehaviour
         }
         else
         {
-            blackHolePlanetDist.GetComponent<Text>().color =  planetName.GetComponent<Text>().color; //If the planet is out of danger the distance returns to the standard color
+            blackHolePlanetDist.GetComponent<Text>().color =  objectName.GetComponent<Text>().color; //If the planet is out of danger the distance returns to the standard color
         }
         
-        planetName.GetComponent<Text>().text = name;
+        objectName.GetComponent<Text>().text = name;
         
         planetLand.GetComponent<Text>().text = (status.playerInsideRadius ? "Ready to Land" : "Fly Closer to Land"); //Tooltip about when the player can land 
-        planetLand.GetComponent<Text>().color = (status.playerInsideRadius ? Color.green : planetName.GetComponent<Text>().color); //sets color to green or standard blue
+        planetLand.GetComponent<Text>().color = (status.playerInsideRadius ? Color.green : objectName.GetComponent<Text>().color); //sets color to green or standard blue
 
 
 
     }
 
 
-    public void HidePlanetInfo()
+    public void ShowBlackholeInfo(float dist) //Shows the Panel with the distance from the blackhole
     {
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = true; //show or hide the panel sprite
 
-        foreach(GameObject hudItem in hudItems)
-        {
-            hudItem.GetComponent<Text>().enabled = false;
-        }
+        objectName.GetComponent<Text>().enabled = true;
+        distFromPlayer.GetComponent<Text>().enabled = true;
+        objectName.GetComponent<Text>().text = "Black Hole";
+        distFromPlayer.GetComponent<Text>().text = "Distance: " + dist.ToString();
+    }
 
+    public void HideInfoPanel()
+    {
+        ShowHudItems(false);
+    }
 
+    public void ShowHudItems(bool visible) //Shows or hides all the hudItems
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = visible; //show or hide the panel sprite
+
+        planetStatus.GetComponent<Text>().enabled = visible;
+        objectName.GetComponent<Text>().enabled = visible;
+        distFromPlayer.GetComponent<Text>().enabled = visible;
+        blackHolePlanetDist.GetComponent<Text>().enabled = visible;
+        planetLand.GetComponent<Text>().enabled = visible;
     }
 }

@@ -226,8 +226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetStatus: {fileID: 368449750}
-  planetName: {fileID: 127497622}
-  playerPlanetDistance: {fileID: 758338123}
+  objectName: {fileID: 127497622}
+  distFromPlayer: {fileID: 758338123}
   blackHolePlanetDist: {fileID: 1091377306}
   planetLand: {fileID: 1661041951}
 --- !u!1 &127497622

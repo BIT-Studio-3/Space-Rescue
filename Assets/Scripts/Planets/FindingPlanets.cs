@@ -78,6 +78,8 @@ public class FindingPlanets : MonoBehaviour
                     Vector3 fwd = cam.transform.forward;
                     screenMiddle = new Vector3(Screen.width / 2, Screen.height / 2, cam.nearClipPlane);
                     
+                    int layerMask = 1 << 2; //the layer mask is set to layer 2
+                    layerMask = ~layerMask; // the ~ symbol inverts this so the ray will ignore layer 2 ("this layer is called ignore raycast") I set the warning sphere to this layer 
 
                     if (Physics.Raycast(cam.ScreenPointToRay(screenMiddle),out hit, Mathf.Infinity) && hit.transform.tag == "Planet") 
                     //Sends out a raycast, returns true if an object is hit and that object has the Planet tag.
@@ -97,12 +99,19 @@ public class FindingPlanets : MonoBehaviour
 
 
                     }
+                    else if(Physics.Raycast(cam.ScreenPointToRay(screenMiddle),out hit, Mathf.Infinity,layerMask) && hit.transform.name == "DistortionHitbox")
+                    {
+                        Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green); //Note: the editor doesn't draw the ray as expected likely due to the 3dgui camera , however data works as expected
+                        Vector3 directionToPlanet = hit.transform.position - currentPos; //Finds the direction between the player and the target planet
+                        float dist = directionToPlanet.sqrMagnitude; //calculates the distance from this direction
+                 
+                        HudBehaviour.instance.ShowBlackholeInfo(Mathf.Round(hit.distance));
+                    }
                     
-                    else{ //Hides the planet info panel and creates a "failed" raycast
+                    else
+                    { //Hides the planet info panel and creates a "failed" raycast
                         Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * 1000, Color.red);
-                        HudBehaviour.instance.HidePlanetInfo();
-
-
+                        HudBehaviour.instance.HideInfoPanel();
                     }
 
 
