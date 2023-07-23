@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GravitySource : MonoBehaviour
+public class PlanetOrbit : MonoBehaviour
 {
     private float rotationSpeed = 3.0f;
     // Start is called before the first frame update
