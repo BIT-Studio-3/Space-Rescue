@@ -81,6 +81,7 @@ public class FindingPlanets : MonoBehaviour
                     int layerMask = 1 << 2; //the layer mask is set to layer 2
                     layerMask = ~layerMask; // the ~ symbol inverts this so the ray will ignore layer 2 ("this layer is called ignore raycast") I set the warning sphere to this layer 
 
+
                     if (Physics.Raycast(cam.ScreenPointToRay(screenMiddle),out hit, Mathf.Infinity) && hit.transform.tag == "Planet") 
                     //Sends out a raycast, returns true if an object is hit and that object has the Planet tag.
                     {

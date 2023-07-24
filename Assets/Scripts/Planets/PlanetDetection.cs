@@ -84,10 +84,8 @@ public class PlanetDetection : MonoBehaviour
         //The ray is fired from the planet towards the blackhole the hit object is returned as hit, ignores the layermask value and returns true if the object is DistortionHitbox
         if (Physics.Raycast(gameObject.transform.position, PlanetdirectionToBlackHole, out hit, distBlackHole, layerMask) && hit.transform.name == "DistortionHitbox")
         {
-            print(gameObject.transform.name + " |---->| " + Mathf.Round(hit.distance) + "units " + hit.transform.name);
             Debug.DrawRay(gameObject.transform.position, PlanetdirectionToBlackHole, Color.blue, Mathf.Infinity);
         }
-
         return Mathf.Round(hit.distance); //hit.distance is the length of the raycast the value is then rounded to a whole number
     }
 
