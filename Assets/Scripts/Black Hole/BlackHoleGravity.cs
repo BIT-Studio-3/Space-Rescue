@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlackHoleGravity : MonoBehaviour
 {
     private float planetGravity = .00005f;
-    private float playerGravity = .05f;
+    private float playerGravity = .03f;
     private float radius;
     // Start is called before the first frame update
     void Start()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlanetOrbit : MonoBehaviour
 {
+    [SerializeField]
     private float rotationSpeed = 3.0f;
     // Start is called before the first frame update
     void Start()
