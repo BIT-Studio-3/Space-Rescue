@@ -39,11 +39,13 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
     }
+
     public void BackButton()
     {
-        SceneManager.UnloadSceneAsync("Controls");
-        menu.SetActive(true);
-        Time.timeScale = 1;
+        //SceneManager.UnloadSceneAsync("Controls");
+        title.SetActive(true);
+        settings.SetActive(false);
+        //Time.timeScale = 1;
     }
     public void TutorialButton()
     {
