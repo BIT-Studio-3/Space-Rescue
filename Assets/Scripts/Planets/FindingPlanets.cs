@@ -9,6 +9,7 @@ public class FindingPlanets : MonoBehaviour
     public List<GameObject> planetsNotRescued;
     public GameObject player;
     public GameObject tick;
+    public GameObject blackHole;
     public Text distanceText;
 
     public Text crosshair;
@@ -48,14 +49,7 @@ public class FindingPlanets : MonoBehaviour
                 {
                     closestPlanet = planet;
                     minDist = dist;
-                    if(minDist < 3000000) //test if the distance to the closest exceeds the limit
-                    {
-                        distanceText.text = Mathf.Round(minDist / 100).ToString(); //round the distance to a whole number for readability 
-                    }
-                    else 
-                    {
-                        distanceText.text = "Out of Range!";
-                    }
+
 
 
                     
@@ -82,7 +76,7 @@ public class FindingPlanets : MonoBehaviour
                     layerMask = ~layerMask; // the ~ symbol inverts this so the ray will ignore layer 2 ("this layer is called ignore raycast") I set the warning sphere to this layer 
 
 
-                    if (Physics.Raycast(cam.ScreenPointToRay(screenMiddle),out hit, Mathf.Infinity) && hit.transform.tag == "Planet") 
+                    if (Physics.Raycast(cam.ScreenPointToRay(screenMiddle),out hit, Mathf.Infinity) && hit.transform.tag == "Planet") //Ray that tests when the player is looking at a planet
                     //Sends out a raycast, returns true if an object is hit and that object has the Planet tag.
                     {
                         //For Debugging purposes in scene view. Draws the ray in yellow
@@ -94,19 +88,30 @@ public class FindingPlanets : MonoBehaviour
                         //Accesses the child of the planet object which is the model. Takes the name and removes 7 characters from the end to remove the (Clone) from the name
                         //This way each planet has a unique identifier in the HUD
                         string name = hit.transform.gameObject.transform.GetChild(0).name.Substring(0,hit.transform.gameObject.transform.GetChild(0).gameObject.name.Length-7);
+                        if(Physics.Raycast(player.transform.position,hit.transform.position - player.transform.position,out hit, Mathf.Infinity,layerMask) ) //This raycast is fired from the player and finds the distance between the player and the planet
+                        {
+                            Debug.DrawRay(player.transform.position, hit.transform.position - player.transform.position,Color.white,5f,false);
+                            Debug.Log(hit.distance + " Ray from the player to the " + hit.transform.name + " Old dist was " + (hit.transform.position - player.transform.position).sqrMagnitude);
+                            HudBehaviour.instance.ShowPlanetInfo(hit.transform.GetComponent<PlanetDetection>(),Mathf.Round(hit.distance),distBlackHole,name);
 
+                        }
                         //Calls the showplanetInfo method for the planet
-                        HudBehaviour.instance.ShowPlanetInfo(hit.transform.GetComponent<PlanetDetection>(),Mathf.Round(dist/100),distBlackHole,name);
 
 
                     }
-                    else if(Physics.Raycast(cam.ScreenPointToRay(screenMiddle),out hit, Mathf.Infinity,layerMask) && hit.transform.name == "DistortionHitbox")
+                    else if(Physics.Raycast(cam.ScreenPointToRay(screenMiddle),out hit, Mathf.Infinity,layerMask) && hit.transform.name == "DistortionHitbox") //Ray that tests when the player is looking at the black hole
                     {
-                        Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green); //Note: the editor doesn't draw the ray as expected likely due to the 3dgui camera , however data works as expected
+                        //Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green); //Note: the editor doesn't draw the ray as expected likely due to the 3dgui camera , however data works as expected
                         Vector3 directionToPlanet = hit.transform.position - currentPos; //Finds the direction between the player and the target planet
                         float dist = directionToPlanet.sqrMagnitude; //calculates the distance from this direction
-                 
-                        HudBehaviour.instance.ShowBlackholeInfo(Mathf.Round(hit.distance));
+                        //Debug.DrawLine(player.transform.position,hit.transform.position, Color.red,25f);
+                        if(Physics.Raycast(player.transform.position,blackHole.transform.position - player.transform.position,out hit, Mathf.Infinity,layerMask) ) //ray that is fired from the player to find the distance to the black hole
+                        {
+                            Debug.DrawRay(player.transform.position, hit.transform.position - player.transform.position,Color.white,5f,false);
+                            Debug.Log(hit.distance + " Ray from the player to the " + hit.transform.name + " Old dist was " + (hit.transform.position - player.transform.position).sqrMagnitude);
+                            HudBehaviour.instance.ShowBlackholeInfo(Mathf.Round(hit.distance));
+
+                        }
                     }
                     
                     else
@@ -114,6 +119,7 @@ public class FindingPlanets : MonoBehaviour
                         Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * 1000, Color.red);
                         HudBehaviour.instance.HideInfoPanel();
                     }
+             
 
 
 //The arrow still finds the closest planet and points to it as in previous iterations

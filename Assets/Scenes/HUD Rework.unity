@@ -1248,7 +1248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &673605162
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2040,6 +2040,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1407732688}
     - target: {fileID: 1454773977, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
+      propertyPath: blackHole
+      value: 
+      objectReference: {fileID: 1394259678}
+    - target: {fileID: 1454773977, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 522776788}
@@ -2727,6 +2731,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1394259678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8616284537789148559, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
+  m_PrefabInstance: {fileID: 8616284537842477892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1407732688 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2333569641422922413, guid: 0ec627f363295e644872f77860511ab8, type: 3}
