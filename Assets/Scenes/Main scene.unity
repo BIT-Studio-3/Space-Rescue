@@ -123,23 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &62058537 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2004005289, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
-  m_PrefabInstance: {fileID: 8616284537842477892}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &62058543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62058537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df82535d53108d4bbfd6b1ae752e7f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &189582643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,6 +1310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93842c713b2771409e0178de3165700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 3
 --- !u!1 &787568501
 GameObject:
   m_ObjectHideFlags: 0
@@ -3977,19 +3961,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 935375956}
     m_Modifications:
-    - target: {fileID: 110410536, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 482167633, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2004005291, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
+    - target: {fileID: 7775607799929779950, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
       propertyPath: shipWarning
       value: 
       objectReference: {fileID: 189582643}
-    - target: {fileID: 2004005291, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
+    - target: {fileID: 7775607799929779950, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
       propertyPath: planetWarning
       value: 
       objectReference: {fileID: 455317980}
