@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalPrefab: {fileID: 8768842384551100010, guid: a856aef0cf1ee684fab26ff0de94a268, type: 3}
+  animalPrefab: {fileID: 2806176413448291229, guid: 3edcf70af3303894482eb673a57b1198, type: 3}
 --- !u!4 &310667744
 Transform:
   m_ObjectHideFlags: 0
