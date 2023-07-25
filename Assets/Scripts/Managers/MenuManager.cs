@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     private GameObject menu;
+    private GameObject title;
+    private GameObject settings;
     public static MenuManager Instance;
     
     // Start is called before the first frame update
@@ -15,6 +17,9 @@ public class MenuManager : MonoBehaviour
     {
         Instance = this;
         menu = GameObject.Find("Menu Parent");
+        title = GameObject.Find("TitleParent");
+        settings = GameObject.Find("SettingsParent");
+        settings.SetActive(false);
     }
 
     public void PlayButton()
@@ -25,8 +30,9 @@ public class MenuManager : MonoBehaviour
 
     public void SettingsButton()
     {
-        menu.SetActive(false);
-        SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
+        title.SetActive(false);
+        settings.SetActive(true);
+        //SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
     }
 
     public void QuitButton()
