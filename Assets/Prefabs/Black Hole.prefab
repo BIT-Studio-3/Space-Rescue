@@ -1,37 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &110410536
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 110410537}
-  m_Layer: 0
-  m_Name: AllHitbox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &110410537
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 110410536}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1946518840}
-  m_Father: {fileID: 8616284537789148552}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1946518839
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946518839}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 110410537}
-  m_RootOrder: 0
+  m_Father: {fileID: 8616284537789148552}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1946518841
 SphereCollider:
@@ -100,7 +68,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2004005290}
   - component: {fileID: 2246950311176472731}
-  - component: {fileID: 2004005291}
   - component: {fileID: 2004005293}
   - component: {fileID: 62058543}
   m_Layer: 0
@@ -138,20 +105,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2004005291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004005289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc82c49d04b6ab24486bfebf9f7f87b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planetWarning: {fileID: 0}
-  shipWarning: {fileID: 0}
 --- !u!114 &2004005293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 0
-  priority: 0
+  priority: 3
   blendDistance: 100
   weight: 1
   sharedProfile: {fileID: 11400000, guid: f535c957bf6610141bbbbaaa5462ee6a, type: 2}
@@ -181,8 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df82535d53108d4bbfd6b1ae752e7f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetGravity: 0.00005
-  playerGravity: 0.03
+  planetGravity: 0.0001
+  playerGravity: 0.06
 --- !u!1 &270369289285038385
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +214,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 100
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: f535c957bf6610141bbbbaaa5462ee6a, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 0160aa2589e8e3349be146dbb3ec41ae, type: 2}
 --- !u!114 &3643828742465134357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,8 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df82535d53108d4bbfd6b1ae752e7f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetGravity: 0.00005
-  playerGravity: 0.03
+  planetGravity: 0.0005
+  playerGravity: 0.001
 --- !u!1 &4740637488430976033
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +239,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4747011861239322253}
   - component: {fileID: 388386949355037270}
-  - component: {fileID: 2351549008966403066}
   - component: {fileID: 5529188775719723766}
   - component: {fileID: 4306235338226730024}
   m_Layer: 0
@@ -324,20 +276,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.4
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2351549008966403066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4740637488430976033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc82c49d04b6ab24486bfebf9f7f87b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planetWarning: {fileID: 0}
-  shipWarning: {fileID: 0}
 --- !u!114 &5529188775719723766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,10 +289,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 0
-  priority: 0
+  priority: 1
   blendDistance: 100
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: f535c957bf6610141bbbbaaa5462ee6a, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 68cb0d9d28a7bb541ab115c4dba28595, type: 2}
 --- !u!114 &4306235338226730024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,8 +305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df82535d53108d4bbfd6b1ae752e7f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetGravity: 0.00005
-  playerGravity: 0.03
+  planetGravity: 0.00000005
+  playerGravity: 0.04
 --- !u!1 &8616284536444373871
 GameObject:
   m_ObjectHideFlags: 0
@@ -5315,7 +5253,7 @@ Transform:
   - {fileID: 8616284536444373864}
   - {fileID: 8616284537522010229}
   - {fileID: 8616284537802399871}
-  - {fileID: 110410537}
+  - {fileID: 1946518840}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

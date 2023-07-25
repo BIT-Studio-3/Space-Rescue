@@ -20,16 +20,14 @@ public class BlackHoleGravity : MonoBehaviour
         if(other.attachedRigidbody)
         {
             float gravityIntensity = Vector3.Distance(transform.position, other.transform.position) / radius;
-            float tempGravity;
-            if (other.transform.CompareTag("Player")) //Checks if it should use the player or planet gravity
+            if (other.transform.CompareTag("Planet")) //Checks if it should use the player or planet gravity
             {
-                tempGravity = playerGravity;
+                other.attachedRigidbody.AddForce((transform.position - other.transform.position) * gravityIntensity * other.attachedRigidbody.mass * planetGravity * Time.smoothDeltaTime);
             }
-            else
+            else if (!SpeedEffect.Instance.boosters) // If boosters are off. This is so that the gravity can be threatening but also able to escape it with boosters
             {
-                tempGravity = planetGravity;
+                other.attachedRigidbody.AddForce((transform.position - other.transform.position) * gravityIntensity * other.attachedRigidbody.mass * playerGravity * Time.smoothDeltaTime);
             }
-            other.attachedRigidbody.AddForce((transform.position - other.transform.position) * gravityIntensity * other.attachedRigidbody.mass * tempGravity * Time.smoothDeltaTime);
             Debug.DrawRay(other.transform.position, transform.position - other.transform.position); //To show what it's targetting
         }
     }
