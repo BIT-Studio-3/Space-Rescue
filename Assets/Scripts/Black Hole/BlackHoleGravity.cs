@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BlackHoleGravity : MonoBehaviour
 {
+    [SerializeField]
     private float planetGravity = .00005f;
+    [SerializeField]
     private float playerGravity = .03f;
     private float radius;
     // Start is called before the first frame update
@@ -19,7 +21,6 @@ public class BlackHoleGravity : MonoBehaviour
         {
             float gravityIntensity = Vector3.Distance(transform.position, other.transform.position) / radius;
             float tempGravity;
-            Debug.Log(other.transform.CompareTag("Player"));
             if (other.transform.CompareTag("Player")) //Checks if it should use the player or planet gravity
             {
                 tempGravity = playerGravity;
