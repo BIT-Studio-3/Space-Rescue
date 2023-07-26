@@ -1,0 +1,24 @@
+name: Create Build and Release
+
+on:
+    pull_request:
+        types:
+            - closed
+        branches:
+            - main
+
+jobs:
+    build:
+        name: Build my Project
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check if the pull request was merged #This Step Is Checking whether the linked PR was merged into main and not just closed
+              id: check_merge
+              run: |
+                if [ "${{ github.event.pull_request.merged }}" == "true" ]; then
+                    echo "Pull request was merged!"
+                else
+                    echo "Error: Pull request to main branch was closed but not merged."
+                    exit 1
+                fi
+
