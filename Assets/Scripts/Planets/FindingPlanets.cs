@@ -12,7 +12,7 @@ public class FindingPlanets : MonoBehaviour
     public GameObject blackHole;
     public Text distanceText;
 
-    public Text crosshair;
+    public GameObject crosshair;
     // Start is called before the first frame update
 
     
