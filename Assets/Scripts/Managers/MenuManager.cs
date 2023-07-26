@@ -10,6 +10,8 @@ public class MenuManager : MonoBehaviour
     private GameObject menu;
     private GameObject title;
     private GameObject settings;
+    private GameObject controlsMenu;
+    private GameObject otherMenu;
     public static MenuManager Instance;
     
     // Start is called before the first frame update
@@ -18,7 +20,9 @@ public class MenuManager : MonoBehaviour
         Instance = this;
         menu = GameObject.Find("Menu Parent");
         title = GameObject.Find("TitleParent");
-        settings = GameObject.Find("SettingsParent");
+        settings = GameObject.Find("Settings Parent");
+        controlsMenu = GameObject.Find("Controls Menu");
+        otherMenu = GameObject.Find("Other Button");
         settings.SetActive(false);
     }
 
@@ -50,6 +54,20 @@ public class MenuManager : MonoBehaviour
     public void TutorialButton()
     {
         SceneManager.LoadScene("Game Tutorial");
+    }
+
+    //Switches to the controls/keybinds menu
+    public void ControlsButton()
+    {
+        controlsMenu.SetActive(true);
+        otherMenu.SetActive(false);
+    }
+
+    //Placeholder button
+    public void OtherButton()
+    {
+        controlsMenu.SetActive(false);
+        otherMenu.SetActive(true);
     }
 
 }
