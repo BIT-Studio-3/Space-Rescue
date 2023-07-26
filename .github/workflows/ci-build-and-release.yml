@@ -12,7 +12,7 @@ jobs:
         name: Build my Project
         runs-on: ubuntu-latest
         steps:
-            - name: Check if the pull request was merged #This Step Is Checking whether the linked PR was merged into main and not just closed
+            - name: Check if the pull request was merged #This Step Is Checking whether the closed PR was merged into main and not just closed
               id: check_merge
               run: |
                 if [ "${{ github.event.pull_request.merged }}" == "true" ]; then
@@ -74,3 +74,23 @@ jobs:
                 type: zip
                 filename: build.zip
 
+            - name: Check if file exists
+              id: check_file
+              run: |
+                if test -e /home/runner/work/Space-Rescue/Space-Rescue/build.zip; then
+                echo "File exists"
+                mkdir -p release
+                mv /home/runner/work/Space-Rescue/Space-Rescue/build.zip release/build.zip
+                cd release
+                echo pwd
+                ls .
+                else
+                echo "Non existent file requested"
+                fi
+
+            - name: Create Changelog.md
+              uses: larp/create-a-file-action@0.2
+              with:
+                path: /release
+                file: changelog.md
+                content: ${{ github.event.pull_request.body }} #Body of the merged PR
