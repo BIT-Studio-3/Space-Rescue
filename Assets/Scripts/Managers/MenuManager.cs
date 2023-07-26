@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
     private GameObject settings;
     private GameObject controlsMenu;
     private GameObject otherMenu;
+    private GameObject credits;
     public static MenuManager Instance;
     
     // Start is called before the first frame update
@@ -20,9 +21,10 @@ public class MenuManager : MonoBehaviour
         Instance = this;
         menu = GameObject.Find("Menu Parent");
         title = GameObject.Find("TitleParent");
-        settings = GameObject.Find("Settings Parent");
+        settings = GameObject.Find("SettingsParent");
         controlsMenu = GameObject.Find("Controls Menu");
-        otherMenu = GameObject.Find("Other Button");
+        credits = GameObject.Find("Credits Menu");
+
         settings.SetActive(false);
     }
 
@@ -36,6 +38,7 @@ public class MenuManager : MonoBehaviour
     {
         title.SetActive(false);
         settings.SetActive(true);
+        credits.SetActive(false);
         //SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
     }
 
@@ -60,14 +63,14 @@ public class MenuManager : MonoBehaviour
     public void ControlsButton()
     {
         controlsMenu.SetActive(true);
-        otherMenu.SetActive(false);
+        credits.SetActive(false);
     }
 
     //Placeholder button
     public void OtherButton()
     {
         controlsMenu.SetActive(false);
-        otherMenu.SetActive(true);
+        credits.SetActive(true);
     }
 
 }
