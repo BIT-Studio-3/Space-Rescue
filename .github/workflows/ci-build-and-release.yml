@@ -36,5 +36,19 @@ jobs:
                 restore-keys: |
                   Library-
       
+            # Build
+            - name: Build Project #Builds the unity Project
+              uses: game-ci/unity-builder@v2
+              env:
+                UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }} #Explained in Wiki, required for validation and to build the project
+                UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+                UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+              with:
+                targetPlatform: StandaloneWindows
+                allowDirtyBuild: true #Allows the build to modify the repo, I had to enable this for the workflow to run
+                buildName: SpaceRescue
+
             
+
+
 
