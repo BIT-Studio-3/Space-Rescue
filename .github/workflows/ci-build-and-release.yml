@@ -94,3 +94,20 @@ jobs:
                 path: /release
                 file: changelog.md
                 content: ${{ github.event.pull_request.body }} #Body of the merged PR
+            - name: Bump Version and Push Tag
+              id: tag_version
+              uses: mathiedutour/github-tag-action@v6.1
+              with:
+                github_token: ${{ secrets.REPO_TOKEN }}
+                default_bump: minor
+            - name: Create a GitHub Release
+              id: new_release
+              uses: ncipollo/release-action@v1
+              with:
+                token: ${{ secrets.REPO_TOKEN }} 
+                tag:  ${{ steps.tag_version.outputs.new_tag }}
+                name: Release ${{ steps.tag_version.outputs.new_tag }}
+                bodyFile: /home/runner/work/Space-Rescue/Space-Rescue/release/changelog.md
+            - name: Upload to GitHub Release
+              uses: actions/upload-release-asset@v1
+              
