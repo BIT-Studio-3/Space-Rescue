@@ -8,7 +8,7 @@ on:
             - main
 
 jobs:
-    build:
+    build-project:
         name: Build my Project
         runs-on: ubuntu-latest
         steps:
@@ -53,6 +53,18 @@ jobs:
               with:
                 name: build #the name of the artifact is build
                 path: build/StandaloneWindows
+
+        #Between the two jobs, the 'runner' clears the directory and is starting blank again
+    
+    release-project:
+        name: Release Project
+        runs-on: ubuntu-latest
+        needs: build-project #Ensures that the release job will only run when the build job is successful
+        steps:
+            - uses: actions/download-artifact@v3
+              id: download
+              with:
+                name: build #the name is required to specify which artifact is needed
 
 
 
