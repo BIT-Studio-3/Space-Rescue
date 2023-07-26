@@ -48,7 +48,11 @@ jobs:
                 allowDirtyBuild: true #Allows the build to modify the repo, I had to enable this for the workflow to run
                 buildName: SpaceRescue
 
-            
+            # Upload Artifact
+            - uses: actions/upload-artifact@v3 #Uploads files in specified path that can be used in later jobs
+              with:
+                name: build #the name of the artifact is build
+                path: build/StandaloneWindows
 
 
 
