@@ -74,7 +74,7 @@ jobs:
                 type: zip
                 filename: build.zip
 
-            - name: Check if file exists
+            - name: Check if file exists #Makes sure the build.zip was created successfully
               id: check_file
               run: |
                 if test -e /home/runner/work/Space-Rescue/Space-Rescue/build.zip; then
@@ -94,7 +94,7 @@ jobs:
                 path: /release
                 file: changelog.md
                 content: ${{ github.event.pull_request.body }} #Body of the merged PR
-            - name: Bump Version and Push Tag
+            - name: Bump Version and Push Tag #Creates a new tag based on the existing tag, this can be accessed in the step outputs
               id: tag_version
               uses: mathiedutour/github-tag-action@v6.1
               with:
@@ -105,15 +105,15 @@ jobs:
               uses: ncipollo/release-action@v1
               with:
                 token: ${{ secrets.REPO_TOKEN }} 
-                tag:  ${{ steps.tag_version.outputs.new_tag }}
+                tag:  ${{ steps.tag_version.outputs.new_tag }} #the tag of the new release from the previous step
                 name: Release ${{ steps.tag_version.outputs.new_tag }}
-                bodyFile: /home/runner/work/Space-Rescue/Space-Rescue/release/changelog.md
+                bodyFile: /home/runner/work/Space-Rescue/Space-Rescue/release/changelog.md #the file with the markdown formattted body for the changelog
             - name: Upload to GitHub Release
               uses: actions/upload-release-asset@v1
               env:
                 GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
               with: 
-                upload_url: ${{ steps.new_release.outputs.upload_url }}
+                upload_url: ${{ steps.new_release.outputs.upload_url }} #using the output of the link to the created release from the create release step
                 asset_path: /home/runner/work/Space-Rescue/Space-Rescue/release/build.zip
-                asset_name: build-${{ steps.tag_version.outputs.new_tag}}.zip
+                asset_name: build-${{ steps.tag_version.outputs.new_tag}}.zip #Renames the build zip to an appropriate name
                 asset_content_type: application/zip
