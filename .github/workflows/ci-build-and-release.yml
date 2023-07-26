@@ -89,14 +89,14 @@ jobs:
                 fi
 
             - name: Create Changelog.md
-              uses: larp/create-a-file-action@0.2
+              uses: 1arp/create-a-file-action@0.2
               with:
                 path: /release
                 file: changelog.md
                 content: ${{ github.event.pull_request.body }} #Body of the merged PR
             - name: Bump Version and Push Tag #Creates a new tag based on the existing tag, this can be accessed in the step outputs
               id: tag_version
-              uses: mathiedutour/github-tag-action@v6.1
+              uses: mathieudutour/github-tag-action@v6.1
               with:
                 github_token: ${{ secrets.REPO_TOKEN }}
                 default_bump: minor
