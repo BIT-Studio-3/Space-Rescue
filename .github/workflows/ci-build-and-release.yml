@@ -21,4 +21,10 @@ jobs:
                     echo "Error: Pull request to main branch was closed but not merged."
                     exit 1
                 fi
+            # Checkout
+            - name: Checkout Repo #Checkouts to the Repository
+              uses: actions/checkout@v3
+              with:
+                lfs: true # Whether to download Git-LFS files 
+            
 
