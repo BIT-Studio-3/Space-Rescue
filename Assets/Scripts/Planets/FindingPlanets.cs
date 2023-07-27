@@ -116,7 +116,7 @@ public class FindingPlanets : MonoBehaviour
 
 
 
-    }
+        }
 
 
 
@@ -129,59 +129,59 @@ public class FindingPlanets : MonoBehaviour
 
 
 
-    //The arrow still finds the closest planet and points to it as in previous iterations
+        //The arrow still finds the closest planet and points to it as in previous iterations
 
-    GameObject target = closestPlanet;
-    //Get the targets position on screen into a Vector3
-    targetPos = cam.WorldToScreenPoint(target.transform.position);
+        GameObject target = closestPlanet;
+        //Get the targets position on screen into a Vector3
+        targetPos = cam.WorldToScreenPoint(target.transform.position);
         //Get the middle of the screen into a Vector3
         screenMiddle = new Vector3(Screen.width / 2, Screen.height / 2, 0);
-    crosshair.transform.position = screenMiddle;
+        crosshair.transform.position = screenMiddle;
         //Compute the angle from screenMiddle to targetPos
         float tarAngle = (Mathf.Atan2(targetPos.x - screenMiddle.x, Screen.height - targetPos.y - screenMiddle.y) * Mathf.Rad2Deg) + 90;
-        if (tarAngle< 0)
+        if (tarAngle < 0)
         {
             tarAngle += 360;
         }
 
-//Calculate the angle from the camera to the target
-Vector3 targetDir = target.transform.position - cam.transform.position;
-Vector3 forward = cam.transform.forward;
-float angle = Vector3.Angle(targetDir, forward);
-//  distanceText.text = angle.ToString();
-if (angle < 10 && angle > 0) //Range for the crosshair to the planet. 
-{
-    GetComponent<Renderer>().enabled = false;
-    tick.SetActive(true);
-
-
-    if (GameSettings.Tutorial) //Only checks if the tutorial is set to true.
-    {
-        if (GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Finding" && GameObject.Find("Finding") != null && GameObject.Find("Finding").GetComponent<ToolTip>().isActive)
+        //Calculate the angle from the camera to the target
+        Vector3 targetDir = target.transform.position - cam.transform.position;
+        Vector3 forward = cam.transform.forward;
+        float angle = Vector3.Angle(targetDir, forward);
+        //  distanceText.text = angle.ToString();
+        if (angle < 10 && angle > 0) //Range for the crosshair to the planet. 
         {
-            GameObject.Find("Finding").GetComponent<ToolTip>().completed = true; //The Finding tooltip is marked as true when the player looks at the closest planet.
+            GetComponent<Renderer>().enabled = false;
+            tick.SetActive(true);
+
+
+            if (GameSettings.Tutorial) //Only checks if the tutorial is set to true.
+            {
+                if (GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Finding" && GameObject.Find("Finding") != null && GameObject.Find("Finding").GetComponent<ToolTip>().isActive)
+                {
+                    GameObject.Find("Finding").GetComponent<ToolTip>().completed = true; //The Finding tooltip is marked as true when the player looks at the closest planet.
+                }
+            }
         }
-    }
-}
-else
-{
-    GetComponent<Renderer>().enabled = true;
-    tick.SetActive(false);
-    //HudBehaviour.instance.HidePlanetInfo(target.GetComponent<PlanetDetection>());
+        else
+        {
+            GetComponent<Renderer>().enabled = true;
+            tick.SetActive(false);
+            //HudBehaviour.instance.HidePlanetInfo(target.GetComponent<PlanetDetection>());
 
 
 
-}
+        }
 
-//If the angle exceeds 90deg inverse the rotation to point correctly
-if (angle > 90)
-{
-    transform.localRotation = Quaternion.Euler(-tarAngle, 90, 270);
-}
-else
-{
-    transform.localRotation = Quaternion.Euler(tarAngle, 270, 90);
-}
+        //If the angle exceeds 90deg inverse the rotation to point correctly
+        if (angle > 90)
+        {
+            transform.localRotation = Quaternion.Euler(-tarAngle, 90, 270);
+        }
+        else
+        {
+            transform.localRotation = Quaternion.Euler(tarAngle, 270, 90);
+        }
 
     }
 }
