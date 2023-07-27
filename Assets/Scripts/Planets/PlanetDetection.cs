@@ -74,7 +74,6 @@ public class PlanetDetection : MonoBehaviour
 
     public float PlanetDistanceToBlackHole() //The Planet fires a raycast to find it's approx distance from the black hole
     {
-        RaycastHit hit;
         Vector3 blackHoleLocation = GameObject.Find("Black Hole").gameObject.transform.position;
         Vector3 PlanetdirectionToBlackHole = blackHoleLocation - gameObject.transform.position;
         float distBlackHole = PlanetdirectionToBlackHole.sqrMagnitude; //This is not the correct value because the black hole remains at 0 0 0. this distance does not change which is why the raycast is needed
@@ -89,7 +88,7 @@ public class PlanetDetection : MonoBehaviour
         if(hits.Length > 0)
             hits = hits.Where(hit => hit.transform.name != "WarningBox").ToArray();
             hits = hits.Where(hit => hit.transform.name == "DistortionHitbox").ToArray();
-            Debug.DrawRay(gameObject.transform.position, PlanetdirectionToBlackHole, Color.blue, Mathf.Infinity);
+            Debug.DrawRay(gameObject.transform.position, PlanetdirectionToBlackHole, Color.blue, 5f);
             Debug.Log(" Planet New Raycast: "+ hits[0].transform.name);
 
         return Mathf.Round(hits[0].distance); //hit.distance is the length of the raycast the value is then rounded to a whole number
