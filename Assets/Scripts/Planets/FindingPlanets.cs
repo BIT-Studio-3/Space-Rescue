@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 
 public class FindingPlanets : MonoBehaviour
@@ -99,6 +100,11 @@ public class FindingPlanets : MonoBehaviour
 
 
                     }
+  
+    // Filter out e.g. using Linq
+   
+              
+                    
                     else if(Physics.Raycast(cam.ScreenPointToRay(screenMiddle),out hit, Mathf.Infinity,layerMask) && hit.transform.name == "DistortionHitbox") //Ray that tests when the player is looking at the black hole
                     {
                         //Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green); //Note: the editor doesn't draw the ray as expected likely due to the 3dgui camera , however data works as expected
@@ -108,7 +114,7 @@ public class FindingPlanets : MonoBehaviour
                         if(Physics.Raycast(player.transform.position,blackHole.transform.position - player.transform.position,out hit, Mathf.Infinity,layerMask) ) //ray that is fired from the player to find the distance to the black hole
                         {
                             Debug.DrawRay(player.transform.position, hit.transform.position - player.transform.position,Color.white,5f,false);
-                            Debug.Log(hit.distance + " Ray from the player to the " + hit.transform.name + " Old dist was " + (hit.transform.position - player.transform.position).sqrMagnitude);
+                            //Debug.Log(hit.distance + " Ray from the player to the " + hit.transform.name + " Old dist was " + (hit.transform.position - player.transform.position).sqrMagnitude);
                             HudBehaviour.instance.ShowBlackholeInfo(Mathf.Round(hit.distance));
 
                         }
@@ -120,6 +126,11 @@ public class FindingPlanets : MonoBehaviour
                         HudBehaviour.instance.HideInfoPanel();
                     }
              
+                    RaycastHit[] hits = (Physics.RaycastAll(cam.ScreenPointToRay(screenMiddle),Mathf.Infinity));
+                    if(hits.Length > 0)
+                        hits = hits.Where(hit => hit.transform.name != "WarningBox").ToArray();
+                         foreach(RaycastHit hito in hits)
+                            Debug.Log(hito.transform.name);
 
 
 //The arrow still finds the closest planet and points to it as in previous iterations
