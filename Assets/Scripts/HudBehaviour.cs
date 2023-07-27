@@ -49,7 +49,9 @@ public class HudBehaviour : MonoBehaviour
         objectName.GetComponent<Text>().text = name;
         
         planetLand.GetComponent<Text>().text = (status.playerInsideRadius ? "Ready to Land" : "Fly Closer to Land"); //Tooltip about when the player can land 
+
         planetLand.GetComponent<Text>().color = (status.playerInsideRadius ? Color.green : objectName.GetComponent<Text>().color); //sets color to green or standard blue
+        planetLand.GetComponent<Text>().enabled = (status.planetRescued ? false : true); //hides the landing prompt if the planet is rescued
 
 
 
