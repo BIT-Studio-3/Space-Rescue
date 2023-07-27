@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Linq;
+
 
 public class PlanetDetection : MonoBehaviour
 {
@@ -82,11 +84,15 @@ public class PlanetDetection : MonoBehaviour
         //so the raycast would hit the danger hitbox and not the warning sphere.
 
         //The ray is fired from the planet towards the blackhole the hit object is returned as hit, ignores the layermask value and returns true if the object is DistortionHitbox
-        if (Physics.Raycast(gameObject.transform.position, PlanetdirectionToBlackHole, out hit, distBlackHole, layerMask) && hit.transform.name == "DistortionHitbox")
-        {
+
+        RaycastHit[] hits = (Physics.RaycastAll(gameObject.transform.position, PlanetdirectionToBlackHole*distBlackHole,  distBlackHole));
+        if(hits.Length > 0)
+            hits = hits.Where(hit => hit.transform.name != "WarningBox").ToArray();
+            hits = hits.Where(hit => hit.transform.name == "DistortionHitbox").ToArray();
             Debug.DrawRay(gameObject.transform.position, PlanetdirectionToBlackHole, Color.blue, Mathf.Infinity);
-        }
-        return Mathf.Round(hit.distance); //hit.distance is the length of the raycast the value is then rounded to a whole number
+            Debug.Log(" Planet New Raycast: "+ hits[0].transform.name);
+
+        return Mathf.Round(hits[0].distance); //hit.distance is the length of the raycast the value is then rounded to a whole number
     }
 
     private void OnDestroy()

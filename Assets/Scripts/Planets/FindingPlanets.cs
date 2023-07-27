@@ -23,6 +23,8 @@ public class FindingPlanets : MonoBehaviour
 
     void Start()
     {
+        //Hides the planet info panel;
+        HudBehaviour.instance.HideInfoPanel();
         distanceText.text = "";
         GameObject[] allPlanets= GameObject.FindGameObjectsWithTag("Planet"); //have to do this inside  update for now
 
@@ -36,7 +38,6 @@ public class FindingPlanets : MonoBehaviour
     }
     void Update()
     { 
-
         GameObject closestPlanet = null;
         float minDist = Mathf.Infinity;
         Vector3 currentPos = player.transform.position;
@@ -50,10 +51,6 @@ public class FindingPlanets : MonoBehaviour
                 {
                     closestPlanet = planet;
                     minDist = dist;
-
-
-
-                    
 
                 }
 
@@ -101,36 +98,41 @@ public class FindingPlanets : MonoBehaviour
 
                     }
   
-    // Filter out e.g. using Linq
-   
-              
-                    
-                    else if(Physics.Raycast(cam.ScreenPointToRay(screenMiddle),out hit, Mathf.Infinity,layerMask) && hit.transform.name == "DistortionHitbox") //Ray that tests when the player is looking at the black hole
-                    {
-                        //Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green); //Note: the editor doesn't draw the ray as expected likely due to the 3dgui camera , however data works as expected
-                        Vector3 directionToPlanet = hit.transform.position - currentPos; //Finds the direction between the player and the target planet
-                        float dist = directionToPlanet.sqrMagnitude; //calculates the distance from this direction
-                        //Debug.DrawLine(player.transform.position,hit.transform.position, Color.red,25f);
-                        if(Physics.Raycast(player.transform.position,blackHole.transform.position - player.transform.position,out hit, Mathf.Infinity,layerMask) ) //ray that is fired from the player to find the distance to the black hole
-                        {
-                            Debug.DrawRay(player.transform.position, hit.transform.position - player.transform.position,Color.white,5f,false);
-                            //Debug.Log(hit.distance + " Ray from the player to the " + hit.transform.name + " Old dist was " + (hit.transform.position - player.transform.position).sqrMagnitude);
-                            HudBehaviour.instance.ShowBlackholeInfo(Mathf.Round(hit.distance));
-
-                        }
-                    }
-                    
                     else
-                    { //Hides the planet info panel and creates a "failed" raycast
-                        Debug.DrawRay(screenMiddle, transform.TransformDirection(Vector3.forward) * 1000, Color.red);
-                        HudBehaviour.instance.HideInfoPanel();
+                    {
+                        RaycastHit[] hits;
+                        hits = (Physics.RaycastAll(cam.ScreenPointToRay(screenMiddle),Mathf.Infinity));
+                        if(hits.Length > 0)
+                        {
+                            hits = hits.Where(hit => hit.transform.name != "WarningBox").ToArray();
+                            hits = hits.Where(hit => hit.transform.name == "DistortionHitbox").ToArray();
+                        }
+                        else 
+                        {
+                            HudBehaviour.instance.HideInfoPanel();
+                        }
+
+                        if(hits.Length > 0 && hits[0].transform.name == "DistortionHitbox")
+                        {
+                            RaycastHit[] playerhits;
+                            playerhits = (Physics.RaycastAll(player.transform.position,(hits[0].transform.position - player.transform.position),hits[0].distance));
+                            if(playerhits.Length > 0)
+                            {
+                                playerhits = playerhits.Where(hit => hit.transform.name != "WarningBox").ToArray();
+                                playerhits = playerhits.Where(hit => hit.transform.name == "DistortionHitbox").ToArray();
+                                Debug.DrawRay(player.transform.position,(hits[0].transform.position - player.transform.position),Color.green,10f);
+                                HudBehaviour.instance.ShowBlackholeInfo(Mathf.Round(playerhits[0].distance));
+                            }
+                        }
+                        
                     }
+              
+
+                    
+                    
+  
              
-                    RaycastHit[] hits = (Physics.RaycastAll(cam.ScreenPointToRay(screenMiddle),Mathf.Infinity));
-                    if(hits.Length > 0)
-                        hits = hits.Where(hit => hit.transform.name != "WarningBox").ToArray();
-                         foreach(RaycastHit hito in hits)
-                            Debug.Log(hito.transform.name);
+
 
 
 //The arrow still finds the closest planet and points to it as in previous iterations

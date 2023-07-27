@@ -11,6 +11,7 @@ public class HudBehaviour : MonoBehaviour
     void Awake()
     {
         instance = this;
+        HideInfoPanel();
     }
 
 
@@ -57,6 +58,7 @@ public class HudBehaviour : MonoBehaviour
 
     public void ShowBlackholeInfo(float dist) //Shows the Panel with the distance from the blackhole
     {
+        HideInfoPanel();
         gameObject.GetComponent<SpriteRenderer>().enabled = true; //show or hide the panel sprite
 
         objectName.GetComponent<Text>().enabled = true;
