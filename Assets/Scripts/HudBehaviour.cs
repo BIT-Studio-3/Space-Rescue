@@ -7,7 +7,7 @@ public class HudBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     public static HudBehaviour instance;
-    public GameObject planetStatus,objectName,distFromPlayer,blackHolePlanetDist,planetLand; //The HUD Text Objects
+    public GameObject planetStatus, objectName, distFromPlayer, blackHolePlanetDist, planetLand; //The HUD Text Objects
     void Awake()
     {
         instance = this;
@@ -19,7 +19,7 @@ public class HudBehaviour : MonoBehaviour
     //PlanetDetection status: the Planet Detection script attached to the planet has info about whether the planet has been rescued and if the player is close enough to land
     //dist: the distance between the player and the planet distBlackHole: distance between planet and blackhole, name: name of the planet
 
-    public void ShowPlanetInfo(PlanetDetection status,float dist,float distBlackHole, string name)
+    public void ShowPlanetInfo(PlanetDetection status, float dist, float distBlackHole, string name)
     {
 
         ShowHudItems(true);
@@ -27,27 +27,27 @@ public class HudBehaviour : MonoBehaviour
         planetStatus.GetComponent<Text>().text = "Status: " + (status.planetRescued ? "Rescued" : "Not Rescued");
         distFromPlayer.GetComponent<Text>().text = "Distance: " + dist.ToString();
         blackHolePlanetDist.GetComponent<Text>().text = "Black Hole: " + distBlackHole.ToString();
-        if(status.inDanger) //If the planet is inside the warning area of the black hole
+        if (status.inDanger) //If the planet is inside the warning area of the black hole
         {
-            if(distBlackHole < 150f) //When the distance is under 150 the text turns red as a severe warning
+            if (distBlackHole < 150f) //When the distance is under 150 the text turns red as a severe warning
             {
                 blackHolePlanetDist.GetComponent<Text>().color = Color.red;
 
             }
             else
             {
-            blackHolePlanetDist.GetComponent<Text>().color = new Color(1.0f, 0.64f, 0.0f); //otherwise it is orange
+                blackHolePlanetDist.GetComponent<Text>().color = new Color(1.0f, 0.64f, 0.0f); //otherwise it is orange
 
             }
 
         }
         else
         {
-            blackHolePlanetDist.GetComponent<Text>().color =  objectName.GetComponent<Text>().color; //If the planet is out of danger the distance returns to the standard color
+            blackHolePlanetDist.GetComponent<Text>().color = objectName.GetComponent<Text>().color; //If the planet is out of danger the distance returns to the standard color
         }
-        
+
         objectName.GetComponent<Text>().text = name;
-        
+
         planetLand.GetComponent<Text>().text = (status.playerInsideRadius ? "Ready to Land" : "Fly Closer to Land"); //Tooltip about when the player can land 
 
         planetLand.GetComponent<Text>().color = (status.playerInsideRadius ? Color.green : objectName.GetComponent<Text>().color); //sets color to green or standard blue
