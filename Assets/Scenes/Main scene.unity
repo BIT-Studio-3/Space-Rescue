@@ -1310,7 +1310,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93842c713b2771409e0178de3165700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 3
+  orbitSpeed: 3
+  minSpin: -4
+  maxSpin: -10
 --- !u!1 &787568501
 GameObject:
   m_ObjectHideFlags: 0
@@ -3968,6 +3970,10 @@ PrefabInstance:
     - target: {fileID: 3643828742465134357, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
       propertyPath: planetGravity
       value: 0.00005
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643828742465134357, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
+      propertyPath: playerGravity
+      value: 0.002
       objectReference: {fileID: 0}
     - target: {fileID: 4306235338226730024, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
       propertyPath: planetGravity

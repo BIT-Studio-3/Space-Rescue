@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df82535d53108d4bbfd6b1ae752e7f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetGravity: 0.001
+  planetGravity: 0.0001
   playerGravity: 0.06
 --- !u!1 &270369289285038385
 GameObject:
@@ -227,8 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df82535d53108d4bbfd6b1ae752e7f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetGravity: 0.0005
-  playerGravity: 0.001
+  planetGravity: 0.00005
+  playerGravity: 0.002
 --- !u!1 &4740637488430976033
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df82535d53108d4bbfd6b1ae752e7f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetGravity: 0.0008
+  planetGravity: 0.00008
   playerGravity: 0.04
 --- !u!1 &8616284536444373871
 GameObject:
