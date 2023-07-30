@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour
     private GameObject controlsMenu;
     private GameObject otherMenu;
     private GameObject credits;
+    public GameObject cam;
     public static MenuManager Instance;
     
     // Start is called before the first frame update
