@@ -14,6 +14,10 @@ public class MenuManager : MonoBehaviour
     private GameObject otherMenu;
     private GameObject credits;
     public GameObject cam;
+    private GameObject controlsTab;
+    private GameObject creditsTab;
+    private Button controlsButton;
+    private Button creditsButton;
     public static MenuManager Instance;
     
     // Start is called before the first frame update
@@ -25,6 +29,11 @@ public class MenuManager : MonoBehaviour
         settings = GameObject.Find("SettingsParent");
         controlsMenu = GameObject.Find("Controls Menu");
         credits = GameObject.Find("Credits Menu");
+        controlsTab = GameObject.Find("Controls Button");
+        creditsTab = GameObject.Find("Credits Button");
+
+        controlsButton = controlsTab.GetComponent<Button>();
+        creditsButton = creditsTab.GetComponent<Button>();
 
         settings.SetActive(false);
     }
@@ -65,6 +74,8 @@ public class MenuManager : MonoBehaviour
     {
         controlsMenu.SetActive(true);
         credits.SetActive(false);
+        controlsButton.interactable = false;
+        creditsButton.interactable = true;
     }
 
     //Placeholder button
@@ -72,6 +83,8 @@ public class MenuManager : MonoBehaviour
     {
         controlsMenu.SetActive(false);
         credits.SetActive(true);
+        controlsButton.interactable = true;
+        creditsButton.interactable = false;
     }
 
 }
