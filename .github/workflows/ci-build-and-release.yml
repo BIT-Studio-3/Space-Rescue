@@ -89,7 +89,7 @@ jobs:
                 fi
 
             - name: Create Changelog.md
-              uses: 1arp/create-a-file-action@0.2
+              uses: fertrig/create-file-action@1.0.2
               with:
                 path: /release
                 file: changelog.md
@@ -109,7 +109,7 @@ jobs:
                 name: Release ${{ steps.tag_version.outputs.new_tag }}
                 bodyFile: /home/runner/work/Space-Rescue/Space-Rescue/release/changelog.md #the file with the markdown formattted body for the changelog
             - name: Upload to GitHub Release
-              uses: actions/upload-release-asset@v1
+              uses: fiddlermikey/upload-release-assets@main
               env:
                 GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
               with: 
