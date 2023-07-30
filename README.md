@@ -29,8 +29,8 @@ When it is downloaded unzip the folder and run the SpaceRescue.exe file.
 
 ## How to play
 
-The goal of this game is to rescue animals off each planet and escape the area before the black hole swallows everyone. As the game is still very early in development the gameplay loop is still being iterated on.
-<!-- Need to have a more detailed explanation of the gameplay loop when it is finshed -->
+The goal of this game is to rescue animals off each planet and escape the area before the black hole swallows everyone. As the game is very early in development the gameplay loop is still being iterated on.
+<!-- More detailed explanation of the gameplay loop when it is finshed -->
 
 The controls are shown in game when opening the menu. The current controls are as follows:
 
