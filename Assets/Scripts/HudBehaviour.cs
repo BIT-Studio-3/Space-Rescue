@@ -32,12 +32,10 @@ public class HudBehaviour : MonoBehaviour
             if (distBlackHole < 150f) //When the distance is under 150 the text turns red as a severe warning
             {
                 blackHolePlanetDist.GetComponent<Text>().color = Color.red;
-
             }
             else
             {
                 blackHolePlanetDist.GetComponent<Text>().color = new Color(1.0f, 0.64f, 0.0f); //otherwise it is orange
-
             }
 
         }
@@ -47,13 +45,9 @@ public class HudBehaviour : MonoBehaviour
         }
 
         objectName.GetComponent<Text>().text = name;
-
         planetLand.GetComponent<Text>().text = (status.playerInsideRadius ? "Ready to Land" : "Fly Closer to Land"); //Tooltip about when the player can land 
-
         planetLand.GetComponent<Text>().color = (status.playerInsideRadius ? Color.green : objectName.GetComponent<Text>().color); //sets color to green or standard blue
         planetLand.GetComponent<Text>().enabled = (status.planetRescued ? false : true); //hides the landing prompt if the planet is rescued
-
-
 
     }
 
@@ -62,7 +56,6 @@ public class HudBehaviour : MonoBehaviour
     {
         HideInfoPanel();
         gameObject.GetComponent<SpriteRenderer>().enabled = true; //show or hide the panel sprite
-
         objectName.GetComponent<Text>().enabled = true;
         distFromPlayer.GetComponent<Text>().enabled = true;
         objectName.GetComponent<Text>().text = "Black Hole";
@@ -77,7 +70,6 @@ public class HudBehaviour : MonoBehaviour
     public void ShowHudItems(bool visible) //Shows or hides all the hudItems
     {
         gameObject.GetComponent<SpriteRenderer>().enabled = visible; //show or hide the panel sprite
-
         planetStatus.GetComponent<Text>().enabled = visible;
         objectName.GetComponent<Text>().enabled = visible;
         distFromPlayer.GetComponent<Text>().enabled = visible;
