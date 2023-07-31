@@ -13,9 +13,6 @@ public class MenuManager : MonoBehaviour
     private GameObject controlsMenu;
     private GameObject otherMenu;
     private GameObject credits;
-    public GameObject cam;
-    private GameObject controlsTab;
-    private GameObject creditsTab;
     private Button controlsButton;
     private Button creditsButton;
     public static MenuManager Instance;
@@ -29,11 +26,8 @@ public class MenuManager : MonoBehaviour
         settings = GameObject.Find("SettingsParent");
         controlsMenu = GameObject.Find("Controls Menu");
         credits = GameObject.Find("Credits Menu");
-        controlsTab = GameObject.Find("Controls Button");
-        creditsTab = GameObject.Find("Credits Button");
-
-        controlsButton = controlsTab.GetComponent<Button>();
-        creditsButton = creditsTab.GetComponent<Button>();
+        controlsButton = GameObject.Find("Controls Button").GetComponent<Button>();
+        creditsButton = GameObject.Find("Credits Button").GetComponent<Button>();
 
         settings.SetActive(false);
     }
@@ -49,6 +43,7 @@ public class MenuManager : MonoBehaviour
         title.SetActive(false);
         settings.SetActive(true);
         credits.SetActive(false);
+        controlsButton.interactable = false; //makes controls tab automatically "selected"
         //SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
     }
 
@@ -79,7 +74,7 @@ public class MenuManager : MonoBehaviour
     }
 
     //Placeholder button
-    public void OtherButton()
+    public void Credits()
     {
         controlsMenu.SetActive(false);
         credits.SetActive(true);
