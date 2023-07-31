@@ -22,7 +22,7 @@ public class ShipMovement : MonoBehaviour
     //Thrusters - Set to private after testing is done and ideal speed is found
     private float thrust = 2500f; //Amount of boost power
     private float boostDuration; //Frames the boost can be active for
-    public float Cap = 2500f; //Max amount of boost duration that can be held
+    private float Cap = 2500f; //Max amount of boost duration that can be held
     private float recharge = .25f; //Amount recharged. .25 means you recharge at a quarter of the speed you use it
 
     //Energy bars to edit
