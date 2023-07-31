@@ -62,19 +62,19 @@ public class ShipMovement : MonoBehaviour
     private void useBoost() //Boosting
     {
         if (boostDuration >= 1) //If boosting and having boost left
-            {
-                SpeedEffect.Instance.SpeedControl(true);
-                spaceshipRB.AddRelativeForce(Vector3.forward * thrust);
-                boostDuration -= 1;
-                Debug.Log(boostDuration);
-                //Visual boost bar reducing
-            }
-            else //If boosting but empty
-            {
-                SpeedEffect.Instance.SpeedControl(false);
-                Debug.Log("Empty");
-                //Effect for empty boost
-            }
+        {
+            SpeedEffect.Instance.SpeedControl(true);
+            spaceshipRB.AddRelativeForce(Vector3.forward * thrust);
+            boostDuration -= 1;
+            Debug.Log(boostDuration);
+            //Visual boost bar reducing
+        }
+        else //If boosting but empty
+        {
+            SpeedEffect.Instance.SpeedControl(false);
+            Debug.Log("Empty");
+            //Effect for empty boost
+        }
     }
 
     private void rechargeBoost() //Recharging boost
