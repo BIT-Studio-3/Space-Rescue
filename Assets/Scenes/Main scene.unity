@@ -4097,38 +4097,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 935375956}
     m_Modifications:
-    - target: {fileID: 62058543, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
-      propertyPath: planetGravity
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 2004005289, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 270369289285038385, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108341184672426219, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3643828742465134357, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
-      propertyPath: planetGravity
-      value: 0.00005
-      objectReference: {fileID: 0}
-    - target: {fileID: 3643828742465134357, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
-      propertyPath: playerGravity
-      value: 0.002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4306235338226730024, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
-      propertyPath: planetGravity
-      value: 0.00008
-      objectReference: {fileID: 0}
-    - target: {fileID: 4740637488430976033, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7775607799929779950, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
       propertyPath: shipWarning
       value: 
