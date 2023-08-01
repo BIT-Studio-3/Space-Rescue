@@ -300,6 +300,7 @@ MonoBehaviour:
 
     interact:
 
+
     -----------------------
 
     Pause:
@@ -1116,11 +1117,12 @@ MonoBehaviour:
 
     -----------------------
 
-    Spacebar
+    Enter
 
     -----------------------
 
-    R
+    Left
+    Mouse Click
 
     -----------------------
 

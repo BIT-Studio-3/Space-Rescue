@@ -10,7 +10,7 @@ public class KeypressManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(Keybinds.Leave))
         {
             Time.timeScale = 1;
             if (GameSettings.Tutorial)
@@ -25,7 +25,7 @@ public class KeypressManager : MonoBehaviour
                     escapeScene();
             }
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(Keybinds.Pause))
         {
             //Checks if it is currently paused or playing
             if (Time.timeScale == 0)
