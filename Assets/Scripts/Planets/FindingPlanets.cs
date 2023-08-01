@@ -72,18 +72,16 @@ public class FindingPlanets : MonoBehaviour
 
 
 
-
+            LayerMask layerAsLayerMask = (1 << 0);
             RaycastHit[] hits;
             hits = (Physics.RaycastAll(cam.ScreenPointToRay(screenMiddle), Mathf.Infinity));
             if (hits.Length > 0)
-            {
-                hits = hits.Where(hit => hit.transform.name != "WarningBox").ToArray();
+            {            
                 hits = hits.OrderBy(hit => hit.distance).ToArray();
-
                 if (hits.Length > 0)
                 {
                     RaycastHit[] playerhits;
-                    playerhits = (Physics.RaycastAll(player.transform.position, (hits[0].transform.position - player.transform.position), hits[0].distance));
+                    playerhits = (Physics.RaycastAll(player.transform.position, (hits[0].transform.position - player.transform.position), hits[0].distance,layerAsLayerMask));
                     if (playerhits.Length > 0)
                     {
                         playerhits = playerhits.Where(hit => hit.transform.gameObject == hits[0].transform.gameObject).ToArray();
@@ -91,7 +89,8 @@ public class FindingPlanets : MonoBehaviour
 
                         if (playerhits.Length > 0)
                         {
-                            if (playerhits[0].transform.name == "DistortionHitbox") //Because of the gravity feature changing some aspects of the black hole this will be later changed to the physcial game object of the black hole hit box
+                            print(hits[0].transform.name);
+                            if (playerhits[0].transform.name == "SphereHitbox") //Because of the gravity feature changing some aspects of the black hole this will be later changed to the physcial game object of the black hole hit box
                             {
                                 Debug.DrawRay(player.transform.position, (playerhits[0].transform.position - player.transform.position), Color.green, 0.5f);
                                 HudBehaviour.instance.ShowBlackholeInfo(Mathf.Round(playerhits[0].distance));
@@ -99,7 +98,7 @@ public class FindingPlanets : MonoBehaviour
                             else if (playerhits[0].transform.name == "Planet(Clone)")
                             {
                                 float distBlackHole = playerhits[0].transform.gameObject.GetComponent<PlanetDetection>().PlanetDistanceToBlackHole();
-                                string name = playerhits[0].transform.gameObject.transform.GetChild(0).name.Substring(0, playerhits[0].transform.gameObject.transform.GetChild(0).gameObject.name.Length - 7);
+                                string name = playerhits[0].transform.gameObject.transform.GetChild(1).name.Substring(0, playerhits[0].transform.gameObject.transform.GetChild(1).gameObject.name.Length - 7);
                                 Debug.DrawRay(player.transform.position, (playerhits[0].transform.position - player.transform.position), Color.white, 0.5f);
                                 Debug.Log(playerhits[0].transform.name);
                                 HudBehaviour.instance.ShowPlanetInfo(playerhits[0].transform.GetComponent<PlanetDetection>(), Mathf.Round(playerhits[0].distance), distBlackHole, name);

@@ -4480,7 +4480,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2004005289, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2004005291, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
       propertyPath: shipWarning
@@ -4490,6 +4490,18 @@ PrefabInstance:
       propertyPath: planetWarning
       value: 
       objectReference: {fileID: 455317980}
+    - target: {fileID: 270369289285038385, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108341184672426219, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740637488430976033, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8616284537789148552, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
       propertyPath: m_RootOrder
       value: 5

@@ -87,7 +87,7 @@ public class PlanetDetection : MonoBehaviour
         RaycastHit[] hits = (Physics.RaycastAll(gameObject.transform.position, PlanetdirectionToBlackHole*distBlackHole,  distBlackHole));
         if(hits.Length > 0)
             hits = hits.Where(hit => hit.transform.name != "WarningBox").ToArray();
-            hits = hits.Where(hit => hit.transform.name == "DistortionHitbox").ToArray();
+            hits = hits.Where(hit => hit.transform.name == "SphereHitbox").ToArray();
             Debug.DrawRay(gameObject.transform.position, PlanetdirectionToBlackHole, Color.blue, 5f);
             Debug.Log(" Planet New Raycast: "+ hits[0].transform.name);
 
