@@ -10,7 +10,7 @@ public class BlackHoleGrowth : MonoBehaviour
         //Increases every frame if not paused
         if (Time.timeScale == 1)
         {
-            transform.localScale = new Vector3(transform.localScale.x * 1.0001f, transform.localScale.y * 1.0001f, transform.localScale.z * 1.0001f); 
+            transform.localScale = new Vector3(transform.localScale.x * 1.00005f, transform.localScale.y * 1.00005f, transform.localScale.z * 1.00005f); 
         }
     }
 }
