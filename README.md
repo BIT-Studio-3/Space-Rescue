@@ -53,11 +53,6 @@ The controls are shown in game when opening the menu. The current controls are a
 
 Info about continuous integration? Use a badge?
 -->
-<!-- 
-## Development Process
-
-Talk about methodologies and practices like Agile, Scrum, Kanban
--->
 
 ## Technologies used
 
@@ -90,18 +85,23 @@ If you have any questions or feedback, you can contact us at [team@example.com](
 Something with pretty pictures and gifs to show it off. Black hole for example
 Upload them to the repository and use ![Screenshot 1](path/to/screenshot1.png) to show them off.
 -->
-<!-- 
-## Acknowledgements
 
-Acknowledgements to the lecturers we've had and the product owner (Adon)
--->
-<!-- 
 ## Version history
 
-Talk about what features we've had in each version
-- v1.0.0 (Release Date): Initial release with basic gameplay mechanics.
-- v1.1.0 (Release Date): Whatever features we put in this
--->
+A full list of features can be seen on [this page.](https://github.com/BIT-Studio-3/Space-Rescue/releases)
+
+Some of the most important changes for each update are as follows:
+
+| Version   | Release Date | Features                                           |
+|-----------|--------------|----------------------------------------------------|
+| v1.0.0    | 17/03/2023   | Initial release with basic gameplay mechanics     |
+| v1.1.0    | 31/03/2023   | Black hole and main menu                           |
+| v1.2.0    | 28/04/2023   | Navigation system, pausing, and restarting        |
+| v1.3.0    | 12/05/2023   | Tutorial, new black hole visuals, new controls display  |
+| v1.4.0    | 28/05/2023   | Player ship model, new planet models, on planet gameplay added |
+| v1.5.0    | 12/06/2023   | Partial support for different aspect ratios, ship boosters, animal pathfinding, new tutorial UI |
+| v1.6.0    | 01/08/2023   | Gravity added, planet orbit, new HUD, new title screen  |
+
 ## Roadmap
 
 Upcoming features can be seen in the [issues page](https://github.com/BIT-Studio-3/Space-Rescue/issues).
@@ -117,9 +117,16 @@ Some of the features currently on the roadmap, in rough order of priority, are:
 - Quality settings
 - Music and Sound effects
 
+<!-- 
+## Acknowledgements
+
+Acknowledgements to the lecturers we've had and the product owner (Adon)
+-->
+
 ## Credits
 
 Black hole creation assisted by this tutorial:
 https://www.youtube.com/watch?v=FlE8e1JwVzs
 
 Ship model: https://assetstore.unity.com/packages/3d/vehicles/space/oxar-light-freighter-82240
+<!-- When music is added put the credit here as well as the licence for it -->
