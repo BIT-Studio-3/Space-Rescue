@@ -102,11 +102,21 @@ Talk about what features we've had in each version
 - v1.0.0 (Release Date): Initial release with basic gameplay mechanics.
 - v1.1.0 (Release Date): Whatever features we put in this
 -->
-<!-- 
 ## Roadmap
 
-Upcoming Features
--->
+Upcoming features can be seen in the [issues page](https://github.com/BIT-Studio-3/Space-Rescue/issues).
+
+Some of the features currently on the roadmap, in rough order of priority, are:
+- Major improvements to on planet gameplay
+- New pause menu
+- New end game screen
+- Improved new player experience
+- New models for on planet gameplay
+- New and expanded planets
+- Collections of different animal and planet info
+- Quality settings
+- Music and Sound effects
+
 ## Credits
 
 Black hole creation assisted by this tutorial:
