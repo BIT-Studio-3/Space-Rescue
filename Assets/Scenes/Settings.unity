@@ -718,8 +718,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 408757482}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+      - m_Target: {fileID: 408757484}
+        m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
         m_MethodName: ControlsButton
         m_Mode: 1
         m_Arguments:
@@ -777,26 +777,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 408757483}
-  - component: {fileID: 408757482}
+  - component: {fileID: 408757484}
   m_Layer: 0
-  m_Name: MenuManager
+  m_Name: SettingsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &408757482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408757481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11ba23ef4b777cc4ebf2ba338fe1a7e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &408757483
 Transform:
   m_ObjectHideFlags: 0
@@ -812,6 +800,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &408757484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408757481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40e1f6762994c144ad18d0e73b2bbec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &419664503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,7 +1339,6 @@ GameObject:
   m_Component:
   - component: {fileID: 577037743}
   - component: {fileID: 577037742}
-  - component: {fileID: 577037741}
   - component: {fileID: 577037744}
   m_Layer: 0
   m_Name: Main Camera
@@ -1348,14 +1347,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &577037741
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577037740}
-  m_Enabled: 1
 --- !u!20 &577037742
 Camera:
   m_ObjectHideFlags: 0
@@ -1531,8 +1522,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 408757482}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+      - m_Target: {fileID: 408757484}
+        m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1
         m_Arguments:
@@ -2770,8 +2761,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 408757482}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+      - m_Target: {fileID: 408757484}
+        m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
         m_MethodName: Credits
         m_Mode: 1
         m_Arguments:
