@@ -53,6 +53,9 @@ public class FindingPlanets : MonoBehaviour
                     minDist = dist;
 
                 }
+                else
+                {
+                }
 
                 if (planet == null || planet.GetComponent<PlanetDetection>().planetRescued == true)
                 {

@@ -17,16 +17,9 @@ public class PlanetDetection : MonoBehaviour
     public GameObject planet; //the planet prefab
 
 
-
-
-    void Start()
-    {
-
-    }
-
-
     void Update()
     {
+
         if (GameSettings.Tutorial && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips.Count != 0)
         {
 
