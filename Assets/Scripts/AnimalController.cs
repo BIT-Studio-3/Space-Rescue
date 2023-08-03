@@ -8,9 +8,9 @@ public class AnimalController : MonoBehaviour
 {
     private bool inRange = false;
     private float speed = 10;
-    private Vector3 velocity = Vector3.zero;
-    private Rigidbody rb;
-
+    private Vector3 velocity = Vector3.zero; 
+    private Rigidbody rb; 
+        
     private float RADIUS = 26;
     private const int MINWAIT = 4;
     private const int MAXWAIT = 11;
