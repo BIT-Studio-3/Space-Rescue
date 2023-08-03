@@ -8,9 +8,9 @@ public class AnimalController : MonoBehaviour
 {
     private bool inRange = false;
     private float speed = 10;
-    private Vector3 velocity = Vector3.zero; 
-    private Rigidbody rb; 
-        
+    private Vector3 velocity = Vector3.zero;
+    private Rigidbody rb;
+
     private float RADIUS = 26;
     private const int MINWAIT = 4;
     private const int MAXWAIT = 11;
@@ -63,7 +63,7 @@ public class AnimalController : MonoBehaviour
 
                 yield return 0; //used to let the engine wait for a frame which breaks an endless broken loop
             }
-        yield return new WaitForSeconds(Random.Range(MINWAIT, MAXWAIT)); //pause for a random time and then go again
+            yield return new WaitForSeconds(Random.Range(MINWAIT, MAXWAIT)); //pause for a random time and then go again
         }
     }
 }
