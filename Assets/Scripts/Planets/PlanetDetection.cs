@@ -13,7 +13,6 @@ public class PlanetDetection : MonoBehaviour
     public bool planetRescued;
     public bool inDanger;
 
-
     public GameObject planet; //the planet prefab
 
 
@@ -21,6 +20,8 @@ public class PlanetDetection : MonoBehaviour
 
     void Start()
     {
+        int notNeeded = 12;
+        string invalidString = "String"    
 
     }
 
