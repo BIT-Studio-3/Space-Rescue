@@ -75,22 +75,22 @@ public class FindingPlanets : MonoBehaviour
             LayerMask layerAsLayerMask = (1 << 0);
             RaycastHit[] hits;
             hits = (Physics.RaycastAll(cam.ScreenPointToRay(screenMiddle), Mathf.Infinity));
-            hits = hits.Where(hit => hit.transform.parent.transform.name !="Post Processing").ToArray();
-            foreach(RaycastHit hit in hits)
-                {
-                    print(hit.transform.parent.name);
-                }
+            hits = hits.Where(hit => hit.transform.parent.transform.name != "Post Processing").ToArray();
+            foreach (RaycastHit hit in hits)
+            {
+                print(hit.transform.parent.name);
+            }
             if (hits.Length > 0)
-            {            
+            {
                 hits = hits.OrderBy(hit => hit.distance).ToArray();
                 if (hits.Length > 0)
                 {
                     RaycastHit[] playerhits;
-                    playerhits = (Physics.RaycastAll(player.transform.position, (hits[0].transform.position - player.transform.position), hits[0].distance,layerAsLayerMask));
+                    playerhits = (Physics.RaycastAll(player.transform.position, (hits[0].transform.position - player.transform.position), hits[0].distance, layerAsLayerMask));
                     if (playerhits.Length > 0)
                     {
                         playerhits = playerhits.Where(hit => hit.transform.gameObject == hits[0].transform.gameObject).ToArray();
-                        playerhits = playerhits.Where(hit => hit.transform.parent.transform.name !="Post Processing").ToArray();
+                        playerhits = playerhits.Where(hit => hit.transform.parent.transform.name != "Post Processing").ToArray();
                         playerhits = playerhits.OrderBy(hit => hit.distance).ToArray();
 
                         if (playerhits.Length > 0)
