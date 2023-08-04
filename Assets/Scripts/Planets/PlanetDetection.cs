@@ -21,7 +21,7 @@ public class PlanetDetection : MonoBehaviour
     void Start()
     {
         int notNeeded = 12;
-        string invalidString = "String"    
+        string invalidString = "String";
 
     }
 
@@ -36,7 +36,7 @@ public class PlanetDetection : MonoBehaviour
                 GameObject.Find("Approaching").GetComponent<ToolTip>().completed = true;
             }
         }
-        if(Input.GetKeyDown(Keybinds.Interact))
+        if (Input.GetKeyDown(Keybinds.Interact))
         {
             if (playerInsideRadius && !planetRescued)
             {
@@ -85,12 +85,12 @@ public class PlanetDetection : MonoBehaviour
 
         //The ray is fired from the planet towards the blackhole the hit object is returned as hit, ignores the layermask value and returns true if the object is DistortionHitbox
 
-        RaycastHit[] hits = (Physics.RaycastAll(gameObject.transform.position, PlanetdirectionToBlackHole*distBlackHole,  distBlackHole));
-        if(hits.Length > 0)
+        RaycastHit[] hits = (Physics.RaycastAll(gameObject.transform.position, PlanetdirectionToBlackHole * distBlackHole, distBlackHole));
+        if (hits.Length > 0)
             hits = hits.Where(hit => hit.transform.name != "WarningBox").ToArray();
-            hits = hits.Where(hit => hit.transform.name == "SphereHitbox").ToArray();
-            Debug.DrawRay(gameObject.transform.position, PlanetdirectionToBlackHole, Color.blue, 5f);
-            Debug.Log(" Planet New Raycast: "+ hits[0].transform.name);
+        hits = hits.Where(hit => hit.transform.name == "SphereHitbox").ToArray();
+        Debug.DrawRay(gameObject.transform.position, PlanetdirectionToBlackHole, Color.blue, 5f);
+        Debug.Log(" Planet New Raycast: " + hits[0].transform.name);
 
         return Mathf.Round(hits[0].distance); //hit.distance is the length of the raycast the value is then rounded to a whole number
     }
