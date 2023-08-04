@@ -17,15 +17,6 @@ public class PlanetDetection : MonoBehaviour
 
 
 
-
-    void Start()
-    {
-        int notNeeded = 12;
-        string invalidString = "String";
-
-    }
-
-
     void Update()
     {
         if (GameSettings.Tutorial && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips.Count != 0)
@@ -76,8 +67,8 @@ public class PlanetDetection : MonoBehaviour
     public float PlanetDistanceToBlackHole() //The Planet fires a raycast to find it's approx distance from the black hole
     {
         Vector3 blackHoleLocation = GameObject.Find("Black Hole").gameObject.transform.position;
-        Vector3 PlanetdirectionToBlackHole = blackHoleLocation - gameObject.transform.position;
-        float distBlackHole = PlanetdirectionToBlackHole.sqrMagnitude; //This is not the correct value because the black hole remains at 0 0 0. this distance does not change which is why the raycast is needed
+        Vector3 planetdirectionToBlackHole = blackHoleLocation - gameObject.transform.position;
+        float distBlackHole = planetdirectionToBlackHole.sqrMagnitude; //This is not the correct value because the black hole remains at 0 0 0. this distance does not change which is why the raycast is needed
 
         int layerMask = 1 << 2; //the layer mask is set to layer 2
         layerMask = ~layerMask; // the ~ symbol inverts this so the ray will ignore layer 2 ("this layer is called ignore raycast") I set the warning sphere to this layer 
@@ -85,11 +76,11 @@ public class PlanetDetection : MonoBehaviour
 
         //The ray is fired from the planet towards the blackhole the hit object is returned as hit, ignores the layermask value and returns true if the object is DistortionHitbox
 
-        RaycastHit[] hits = (Physics.RaycastAll(gameObject.transform.position, PlanetdirectionToBlackHole * distBlackHole, distBlackHole));
+        RaycastHit[] hits = (Physics.RaycastAll(gameObject.transform.position, planetdirectionToBlackHole * distBlackHole, distBlackHole));
         if (hits.Length > 0)
             hits = hits.Where(hit => hit.transform.name != "WarningBox").ToArray();
         hits = hits.Where(hit => hit.transform.name == "SphereHitbox").ToArray();
-        Debug.DrawRay(gameObject.transform.position, PlanetdirectionToBlackHole, Color.blue, 5f);
+        Debug.DrawRay(gameObject.transform.position, planetdirectionToBlackHole, Color.blue, 5f);
         Debug.Log(" Planet New Raycast: " + hits[0].transform.name);
 
         return Mathf.Round(hits[0].distance); //hit.distance is the length of the raycast the value is then rounded to a whole number
