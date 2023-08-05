@@ -429,6 +429,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2146963836343637853, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4033948783163235572, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -558,6 +562,10 @@ PrefabInstance:
     - target: {fileID: 2146963836343637851, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_Camera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146963836343637853, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4033948783163235572, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_IsActive
@@ -728,6 +736,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2146963836343637853, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4033948783163235572, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -852,6 +864,10 @@ PrefabInstance:
     - target: {fileID: 2146963836343637851, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_Camera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146963836343637853, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4033948783163235572, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_IsActive
@@ -1665,6 +1681,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 673605164}
     - target: {fileID: 2977114449748218300, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977114449748218300, guid: fd43e492729b1c342a31347b6bb40c9a, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1834,7 +1854,7 @@ MonoBehaviour:
   planetPrefab: {fileID: 5748848403008948943, guid: cace40cffd7e57b41b1475d1de0338c5, type: 3}
   planets: []
   spawnRange: 2000
-  spawnCount: 10
+  spawnCount: 5
 --- !u!1 &1161758950
 GameObject:
   m_ObjectHideFlags: 0
@@ -2110,7 +2130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e17d99117b96b4a83c4de029a16f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 114082041123525444, guid: 09cefc679ac23c54aa919111d8f3fc40, type: 3}
+  pooledObject: {fileID: 114082041123525444, guid: 56bcdc1a610a3234b86408dd8a28c63a, type: 3}
   pooledAmount: 1
   willGrow: 1
 --- !u!114 &1288535608
@@ -2616,6 +2636,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2146963836343637853, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4033948783163235572, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3037,6 +3061,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2146963836343637853, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4033948783163235572, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3227,6 +3255,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2146963836343637853, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4033948783163235572, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3357,6 +3389,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2146963836343637853, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4033948783163235572, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3421,14 +3457,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1927107647}
     m_Modifications:
-    - target: {fileID: 461635334680381532, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2146963835525676933, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2146963836343637830, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_Name
       value: PlanetUI
@@ -3468,18 +3496,6 @@ PrefabInstance:
     - target: {fileID: 2146963836343637849, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2146963836343637849, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2146963836343637849, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2146963836343637849, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2146963836343637849, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3529,12 +3545,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2146963836343637851, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033948783163235572, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 2146963836343637853, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3742,6 +3754,10 @@ PrefabInstance:
     - target: {fileID: 2146963836343637851, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_Camera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146963836343637853, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4033948783163235572, guid: 8cca38702bb6c384e8f13c36abdfc552, type: 3}
       propertyPath: m_IsActive

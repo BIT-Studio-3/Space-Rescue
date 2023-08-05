@@ -30,6 +30,10 @@ public class Target : MonoBehaviour
     /// </summary>
     public Color TargetColor
     {
+        set
+        {
+            targetColor = value;
+        }
         get
         {
             return targetColor;
