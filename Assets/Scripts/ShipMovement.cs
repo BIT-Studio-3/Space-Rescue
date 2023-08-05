@@ -30,13 +30,13 @@ public class ShipMovement : MonoBehaviour
 
     //Constant with naming violation
     private const int this_field = 12;
+
     void Start()
     {
         Instance = this;
         Cursor.lockState = CursorLockMode.Locked; //keep mouse in the game
         spaceshipRB = GetComponent<Rigidbody>();
         ResetBoost(); //Sets boost to cap
-        Debug.Log(this_field);
     }
     // Update is called once per frame
     void Update()
