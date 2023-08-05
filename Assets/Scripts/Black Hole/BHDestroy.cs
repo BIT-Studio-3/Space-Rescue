@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,7 +12,7 @@ public class BHDestroy : MonoBehaviour
         //On collision with a planet it destroys it in a specified amount of seconds
         if (other.CompareTag("Planet"))
         {
-            Destroy(other.gameObject); 
+            Destroy(other.gameObject);
             //TODO: Add a destroy animation of it getting sucked in to the black hole
             GameSettings.PlanetDanger--;
             BHWarning.Instance.PlanetWarning();

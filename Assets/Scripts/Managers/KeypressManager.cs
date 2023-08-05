@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,15 +14,15 @@ public class KeypressManager : MonoBehaviour
         {
             Time.timeScale = 1;
             if (GameSettings.Tutorial)
-            {         
-                if (GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Escaping" || GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Complete" )
+            {
+                if (GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Escaping" || GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Complete")
                 {
                     escapeScene();
-                }           
+                }
             }
             else
             {
-                    escapeScene();
+                escapeScene();
             }
         }
         if (Input.GetKeyDown(Keybinds.Pause))

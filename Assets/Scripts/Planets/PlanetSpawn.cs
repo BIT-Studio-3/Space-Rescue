@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //using System.Math;
@@ -17,14 +17,14 @@ public class PlanetSpawn : MonoBehaviour
     private bool isNotCollision;
     private int loopCounter;
     [SerializeField] private int spawnRange = 3000;
-    [SerializeField]  private int spawnCount = 10;
+    [SerializeField] private int spawnCount = 10;
     private int YZone = 100;
 
     // Start is called before the first frame update
     void Awake()
     {
         GameSettings.planetPrefabs = Resources.LoadAll<GameObject>("Planets");
-        
+
         SpawningPlanet();
     }
 
@@ -42,7 +42,7 @@ public class PlanetSpawn : MonoBehaviour
                 spawnZ = Random.Range(-spawnRange, spawnRange);
                 randScale = Random.Range(100, 300);
                 loopCounter++;
-                
+
                 if (planets.Count == 0) //if the list is empty
 
                 {
@@ -74,7 +74,7 @@ public class PlanetSpawn : MonoBehaviour
                     break;
                 }
 
-            }while (!isNotCollision); //if its not true then it will try again
+            } while (!isNotCollision); //if its not true then it will try again
             //TODO add loop counter to while loop
             loopCounter = 0;
             planetTemp = Instantiate(planetPrefab, new Vector3(spawnX, spawnY, spawnZ), Quaternion.identity);
@@ -84,7 +84,7 @@ public class PlanetSpawn : MonoBehaviour
 
             isNotCollision = false;
         }
-        
+
     }
 
 

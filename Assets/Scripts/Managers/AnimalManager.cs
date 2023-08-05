@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,7 +24,7 @@ public class AnimalManager : MonoBehaviour
     //Spawns animals randomly on the surface of a sphere
     private void AnimalSpawn()
     {
-        for (int i = 0; i < Random.Range(MIN, MAX); i++) 
+        for (int i = 0; i < Random.Range(MIN, MAX); i++)
         {
             area = Random.onUnitSphere * 26; //onUnitSphere does the math of the surface of a spherical object multiplied by the radius
             animal = Instantiate(animalPrefab, area, Quaternion.identity);

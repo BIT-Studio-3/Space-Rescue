@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -41,7 +41,7 @@ public class ShipMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.timeScale == 0)return; //This instantly returns from update when the game is paused
+        if (Time.timeScale == 0) return; //This instantly returns from update when the game is paused
 
         verticalMove = Input.GetAxis("Vertical");
         horizontalMove = Input.GetAxis("Horizontal");
@@ -49,8 +49,8 @@ public class ShipMovement : MonoBehaviour
 
         mouseInputX = Input.GetAxis("Mouse X");
         mouseInputY = Input.GetAxis("Mouse Y");
-                
-        if(Input.GetKey(Keybinds.Boost)) //If boosting
+
+        if (Input.GetKey(Keybinds.Boost)) //If boosting
         {
             UseBoost();
         }
@@ -59,32 +59,32 @@ public class ShipMovement : MonoBehaviour
             RechargeBoost();
         }
 
-        EnergyBar(boostDuration/cap); //Gives a value of boost left between 0 and 1
+        EnergyBar(boostDuration / cap); //Gives a value of boost left between 0 and 1
     }
 
     private void UseBoost() //Boosting
     {
         if (boostDuration >= 1) //If boosting and having boost left
-            {
-                SpeedEffect.Instance.SpeedControl(true);
-                spaceshipRB.AddRelativeForce(Vector3.forward * thrust);
-                boostDuration -= 1;
-                //Visual boost bar reducing
-            }
-            else //If boosting but empty
-            {
-                SpeedEffect.Instance.SpeedControl(false);
-                //Effect for empty boost
-            }
+        {
+            SpeedEffect.Instance.SpeedControl(true);
+            spaceshipRB.AddRelativeForce(Vector3.forward * thrust);
+            boostDuration -= 1;
+            //Visual boost bar reducing
+        }
+        else //If boosting but empty
+        {
+            SpeedEffect.Instance.SpeedControl(false);
+            //Effect for empty boost
+        }
     }
 
     private void RechargeBoost() //Recharging boost
     {
         SpeedEffect.Instance.SpeedControl(false);
-            if (boostDuration < cap)
-            {
-                boostDuration += recharge; //Slowly refilling boost
-            }
+        if (boostDuration < cap)
+        {
+            boostDuration += recharge; //Slowly refilling boost
+        }
     }
 
     public void ResetBoost() //Sets the boost to max
@@ -99,7 +99,7 @@ public class ShipMovement : MonoBehaviour
             image.fillAmount = percentage;
         }
     }
-    
+
     void FixedUpdate()
     {
         spaceshipRB.AddForce(spaceshipRB.transform.TransformDirection(Vector3.forward) * verticalMove * speedMult, ForceMode.VelocityChange);

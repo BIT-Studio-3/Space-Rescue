@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour
     private Button controlsButton;
     private Button creditsButton;
     public static MenuManager Instance;
-    
+
     // Start is called before the first frame update
     void Start()
     {

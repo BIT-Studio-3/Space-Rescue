@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,15 +21,15 @@ public class ToolTip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!completed)
-            if(transform.localPosition.x < -400)
+        if (!completed)
+            if (transform.localPosition.x < -400)
             {
-                transform.localPosition += new Vector3(exitSpeed*Time.deltaTime,0,0);
+                transform.localPosition += new Vector3(exitSpeed * Time.deltaTime, 0, 0);
             }
             else
                 isActive = true;
         //Checks if the tooltip is active and completed
-        if(isActive && completed)
+        if (isActive && completed)
         {
             StartCoroutine(MoveOffScreen());
         }
@@ -40,15 +40,15 @@ public class ToolTip : MonoBehaviour
     {
         GetComponent<Text>().color = Color.green; //when the tooltip is marked as complete it will start sliding off screen removed from the list and then destoryed.
         yield return new WaitForSeconds(2.5f);
-        if(transform.localPosition.x > -1500)
+        if (transform.localPosition.x > -1500)
         {
-            transform.localPosition -= new Vector3(exitSpeed*Time.deltaTime,0,0);
+            transform.localPosition -= new Vector3(exitSpeed * Time.deltaTime, 0, 0);
         }
-        else 
+        else
         {
             GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips.Remove(gameObject);
             Destroy(gameObject);
-        }  
+        }
     }
 
 

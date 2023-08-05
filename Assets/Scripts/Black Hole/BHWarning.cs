@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -43,7 +43,7 @@ public class BHWarning : MonoBehaviour
         if (GameSettings.PlanetDanger > 0)
         {
             planetWarning.SetActive(true);
-        } 
+        }
         else
         {
             planetWarning.SetActive(false);

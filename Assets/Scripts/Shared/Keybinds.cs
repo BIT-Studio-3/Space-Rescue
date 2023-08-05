@@ -1,4 +1,4 @@
-//This keeps all of the keybindings in one, easily changable, script. All key controls should be added to here and used in reference.
+﻿//This keeps all of the keybindings in one, easily changable, script. All key controls should be added to here and used in reference.
 //To be done: Allowing all keybinds to be rebound
 using System.Collections;
 using System.Collections.Generic;

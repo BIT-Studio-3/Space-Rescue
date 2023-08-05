@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,9 +13,9 @@ public class GridManager : MonoBehaviour
     public int GridDimension = 8;
     public float Distance = 1.0f; // distance between each block
     private GameObject[,] Grid;
-    public static GridManager Instance { get; private set; } 
+    public static GridManager Instance { get; private set; }
 
-    void Awake(){ Instance = this; Score = 0; }
+    void Awake() { Instance = this; Score = 0; }
 
     float timeLeft = 30.0f; //Timer remaning time
 
@@ -57,7 +57,7 @@ public class GridManager : MonoBehaviour
             //Note from Palin. This will eventually need to have some sort of end screen. I just set it to kick you back to the planet
 
             //UnityEditor.EditorApplication.isPlaying = false; //only works in unity editor
-                                                             //to make it work in the actual game not in editor it needs to be changed 
+            //to make it work in the actual game not in editor it needs to be changed 
             //Application.Quit();  //for the main game  
         }
     }

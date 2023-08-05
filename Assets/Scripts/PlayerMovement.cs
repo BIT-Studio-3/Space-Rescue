@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
+
 
     }
 
@@ -44,6 +44,6 @@ public class PlayerMovement : MonoBehaviour
         //transform direction transforms direction from local to world
         Vector3 localMove = transform.TransformDirection(moveAmo) * Time.fixedDeltaTime;
         //changes the position (Vector3)
-		rb.MovePosition(rb.position + localMove);
+        rb.MovePosition(rb.position + localMove);
     }
 }

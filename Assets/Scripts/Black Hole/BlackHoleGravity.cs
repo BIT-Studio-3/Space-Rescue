@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +17,7 @@ public class BlackHoleGravity : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if(other.attachedRigidbody)
+        if (other.attachedRigidbody)
         {
             float gravityIntensity = Vector3.Distance(transform.position, other.transform.position) / radius;
             if (other.transform.CompareTag("Planet")) //Checks if it should use the player or planet gravity

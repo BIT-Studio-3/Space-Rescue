@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -123,17 +123,6 @@ public class FindingPlanets : MonoBehaviour
 
 
         }
-
-
-
-
-
-
-
-
-
-
-
 
         //The arrow still finds the closest planet and points to it as in previous iterations
 
