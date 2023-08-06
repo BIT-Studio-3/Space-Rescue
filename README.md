@@ -69,7 +69,7 @@ Need to confirm with lecturers about the licence this falls under. Can use https
 
 ## Contact Information
 
-Please post feedback to the [discussions board](https://github.com/BIT-Studio-3/Space-Rescue/discussions).
+Please post feedback and questions to the [discussions board](https://github.com/BIT-Studio-3/Space-Rescue/discussions).
 
 <!-- 
 ## Screenshots and gifs
