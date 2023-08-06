@@ -1,0 +1,119 @@
+name: Create Build and Release
+
+on:
+    pull_request:
+        types:
+            - closed
+        branches:
+            - main
+
+jobs:
+    build-project:
+        name: Build my Project
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check if the pull request was merged #This Step Is Checking whether the closed PR was merged into main and not just closed
+              id: check_merge
+              run: |
+                if [ "${{ github.event.pull_request.merged }}" == "true" ]; then
+                    echo "Pull request was merged!"
+                else
+                    echo "Error: Pull request to main branch was closed but not merged."
+                    exit 1
+                fi
+            # Checkout
+            - name: Checkout Repo #Checkouts to the Repository
+              uses: actions/checkout@v3
+              with:
+                lfs: true # Whether to download Git-LFS files 
+
+            # Cache 
+            - name: Cache Files #Cache un-needed files, significantly reduces build time
+              uses: actions/cache@v3
+              with:
+                path: Library
+                key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+                restore-keys: |
+                  Library-
+      
+            # Build
+            - name: Build Project #Builds the unity Project
+              uses: game-ci/unity-builder@v2
+              env:
+                UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }} #Explained in Wiki, required for validation and to build the project
+                UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+                UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+              with:
+                targetPlatform: StandaloneWindows
+                allowDirtyBuild: true #Allows the build to modify the repo, I had to enable this for the workflow to run
+                buildName: SpaceRescue
+
+            # Upload Artifact
+            - uses: actions/upload-artifact@v3 #Uploads files in specified path that can be used in later jobs
+              with:
+                name: build #the name of the artifact is build
+                path: build/StandaloneWindows
+
+        #Between the two jobs, the 'runner' clears the directory and is starting blank again
+    
+    release-project:
+        name: Release Project
+        runs-on: ubuntu-latest
+        needs: build-project #Ensures that the release job will only run when the build job is successful
+        steps:
+            - name: Download Artifact
+              uses: actions/download-artifact@v3
+              id: download
+              with:
+                name: build #the name is required to specify which artifact is needed
+
+            - name: ZIP Build
+              id: zip-release
+              uses: thedoctor0/zip-release@master
+              with: 
+                type: zip
+                filename: build.zip
+
+            - name: Check if file exists #Makes sure the build.zip was created successfully
+              id: check_file
+              run: |
+                if test -e /home/runner/work/Space-Rescue/Space-Rescue/build.zip; then
+                echo "File exists"
+                mkdir -p release
+                mv /home/runner/work/Space-Rescue/Space-Rescue/build.zip release/build.zip
+                cd release
+                echo pwd
+                ls .
+                else
+                echo "Non existent file requested"
+                fi
+
+            - name: Create Changelog.md
+              uses: fertrig/create-file-action@1.0.2
+              with:
+                path: /release
+                file: changelog.md
+                content: ${{ github.event.pull_request.body }} #Body of the merged PR
+            - name: Bump Version and Push Tag #Creates a new tag based on the existing tag, this can be accessed in the step outputs
+              id: tag_version
+              uses: mathieudutour/github-tag-action@v6.1
+              with:
+                github_token: ${{ secrets.REPO_TOKEN }}
+                default_bump: minor
+            - name: Create a GitHub Release
+              id: new_release
+              uses: ncipollo/release-action@v1
+              with:
+                token: ${{ secrets.REPO_TOKEN }} 
+                tag:  ${{ steps.tag_version.outputs.new_tag }} #the tag of the new release from the previous step
+                name: Release ${{ steps.tag_version.outputs.new_tag }}
+                bodyFile: /home/runner/work/Space-Rescue/Space-Rescue/release/changelog.md #the file with the markdown formattted body for the changelog
+            - name: Upload to GitHub Release
+              uses: fiddlermikey/upload-release-assets@main
+              env:
+                GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+              with: 
+                upload_url: ${{ steps.new_release.outputs.upload_url }} #using the output of the link to the created release from the create release step
+                asset_path: /home/runner/work/Space-Rescue/Space-Rescue/release/build.zip
+                asset_name: build-${{ steps.tag_version.outputs.new_tag}}.zip #Renames the build zip to an appropriate name
+                asset_content_type: application/zip

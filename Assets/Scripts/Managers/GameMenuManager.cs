@@ -17,7 +17,7 @@ public class GameMenuManager : MonoBehaviour
 
     public void MenuButton()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Title Screen");
         Time.timeScale = 1;
     }
 

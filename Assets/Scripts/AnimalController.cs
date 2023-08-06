@@ -19,13 +19,13 @@ public class AnimalController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        StartCoroutine(wait()); //NOTE: Disabled by Palin so as to not have the animal bouncing until fixed.
+        StartCoroutine(wait());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (inRange == true && Input.GetKeyDown(KeyCode.R))
+        if (inRange == true && Input.GetKeyDown(Keybinds.Interact))
         {
             Destroy(gameObject);
             PlanetManager.Instance.LoadMiniGame();
