@@ -10,17 +10,17 @@ public class PlanetSpawn : MonoBehaviour
     //variables
     [SerializeField]
     private GameObject planetPrefab; //the planet prefab
-    public List<GameObject> planets = new List<GameObject>();
+    public List<GameObject> planets = new List<GameObject>(); //Needs to be public for detection scripts
     private GameObject planetTemp;
     private GameObject planetParent;
-    private int spawnY;
-    private int spawnZ;
+    private int xDistance;
     private int scale;
     private const int SPAWNCOUNT = 10;
     private const int SCALEMIN = 100;
     private const int SCALEMAX = 300;
     private const int YZONE = 30; //Planets can spawn within x degrees from 0 up and down from the black hole
     private const int ORBITAREA = 300; //A planet will spawn every x amount of units away from the black hole
+    private const int BUFFER = 800; //Buffer away from the black hole so planets don't spawn too close
 
     void Awake()
     {
@@ -34,16 +34,18 @@ public class PlanetSpawn : MonoBehaviour
         //SpawnCount is the desired number of planets
         for (int i = 0; i < SPAWNCOUNT; i++)
         {
+            xDistance = i * ORBITAREA + BUFFER; //Set xDistance
             scale = Random.Range(SCALEMIN, SCALEMAX); //Random scale
             planetTemp = Instantiate(
                 planetPrefab,
-                new Vector3(i * ORBITAREA + 800, 0, 0),
+                new Vector3(xDistance, 0, 0),
                 Quaternion.identity
             ); //Spawn planet
             planetTemp.transform.localScale = new Vector3(scale, scale, scale); //Set scale
             GameObject rotator = new GameObject("Rotator"); //Create a new gameobject to rotate the planet around
             planetTemp.transform.parent = rotator.transform; //Set planet to have parent rotator
             rotator.transform.Rotate(0, Random.Range(0, 360), Random.Range(-YZONE, YZONE)); //Rotate the rotator a random amount of degrees
+            rotator.AddComponent<PlanetRotate>(); //Add the planet rotate script to the rotator
             rotator.transform.parent = planetParent.transform; //Set rotator to have overall parent
             planets.Add(planetTemp);
         }
