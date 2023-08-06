@@ -116,11 +116,10 @@ Some of the features currently on the roadmap, in rough order of priority, are:
 - Quality settings
 - Music and Sound effects
 
-<!-- 
 ## Acknowledgements
 
-Acknowledgements to the lecturers we've had and the product owner (Adon)
--->
+Thank you to our Studio teachers Elise Allen, Paul Admiraal, and Martin Junek for all the help, advice, and motivation provided during the making of this game
+Thank you to the product owner Adon Moskal for giving us the original concept and for his direction, ideas, and feedback throughout the project.
 
 ## Credits
 
