@@ -4,7 +4,7 @@
 ## Super Linter GitHub Actions ##
 #################################
 #################################
-name: Lint Code Base
+name: Validate Code Base
 
 #############################
 # Start the job on all push #
@@ -21,44 +21,13 @@ on:
 # Set the Job #
 ###############
 jobs:
-  build:
-    # Name the Job
-    name: Analyze Code Base
-    # Set the agent to run on
-    runs-on: windows-latest
-
-    ############################################
-    # Grant status permission for MULTI_STATUS #
-    ############################################
-    permissions:
-      contents: read
-      packages: read
-      statuses: write
-
-    ##################
-    # Load all steps #
-    ##################
+  resharper:
+    runs-on: ubuntu-latest
     steps:
-      ##########################
-      # Checkout the code base #
-      ##########################
-      - name: Checkout Code
-        uses: actions/checkout@v3
-        with:
-          # Full git history is needed to get a proper
-          # list of changed files within `super-linter`
-          fetch-depth: 0
-      - name: Setup the .NET framwork
-        uses: actions/setup-dotnet@v3.2.0
-        with:
-          dotnet-version: '7.0.x'
-      ################################
-      # Run Linter against code base #
-      ################################
-      - name: Run .NET Code Analysis
-        uses: dotnet/code-analysis@main
-        id: code-analysis
+      - name: checkout
+        uses: actions/checkout@v2
+      
+      - name: resharper
+        uses: glassechidna/resharper-action@master
         with:
           solution: Space-Rescue.sln
-          build-breaking: true
-          all-categories: all
