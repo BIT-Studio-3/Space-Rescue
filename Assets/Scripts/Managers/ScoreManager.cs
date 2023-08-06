@@ -32,16 +32,14 @@ public class ScoreManager : MonoBehaviour
                 {
                     planetUI[planets.IndexOf(p)].transform.Find("warning").gameObject.SetActive(true);
                 }
-                else if(p.GetComponent<PlanetDetection>().planetRescued == true)
+                else if(p.GetComponent<PlanetDetection>().planetRescued == true) //If The Planet has been rescued
                 {
-                    planetUI[planets.IndexOf(p)].transform.Find("tick").gameObject.SetActive(true);
-                    planetUI[planets.IndexOf(p)].transform.Find("warning").gameObject.SetActive(false);
+                    planetUI[planets.IndexOf(p)].gameObject.SetActive(false);
                 }
             }
             if(p == null && planetStatus[planets.IndexOf(p)] != true)
             {
-                planetUI[planets.IndexOf(p)].transform.Find("cross").gameObject.SetActive(true);
-                planetUI[planets.IndexOf(p)].transform.Find("warning").gameObject.SetActive(false);
+                planetUI[planets.IndexOf(p)].gameObject.SetActive(false);
             }
         } 
     }

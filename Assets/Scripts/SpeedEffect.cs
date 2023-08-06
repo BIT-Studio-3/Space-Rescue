@@ -6,7 +6,7 @@ public class SpeedEffect : MonoBehaviour
 {
     public float targetFOV = 90f; // The target FOV value when speeding up
     public float transitionDuration = 1f; // The duration of the FOV transition
-    private bool boosters = false; // Flag to track if the speed-up effect is active
+    public bool boosters = false; // Flag to track if the speed-up effect is active
     private float originalFOV; // The original FOV value of the camera
     private float startFOV; //The FOV at the start of the effect
     private float transitionTimer = 0f; // Timer for the FOV transition

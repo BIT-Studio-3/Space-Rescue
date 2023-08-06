@@ -20,9 +20,9 @@ public class ShipMovement : MonoBehaviour
     float speedtiltMultiAngle = 0.1f;
 
     //Thrusters - Set to private after testing is done and ideal speed is found
-    public float thrust = 2500f; //Amount of boost power
+    private float thrust = 2500f; //Amount of boost power
     private float boostDuration; //Frames the boost can be active for
-    public float Cap = 2500f; //Max amount of boost duration that can be held
+    private float Cap = 2500f; //Max amount of boost duration that can be held
     private float recharge = .25f; //Amount recharged. .25 means you recharge at a quarter of the speed you use it
 
     //Energy bars to edit
@@ -47,7 +47,7 @@ public class ShipMovement : MonoBehaviour
         mouseInputX = Input.GetAxis("Mouse X");
         mouseInputY = Input.GetAxis("Mouse Y");
                 
-        if(Input.GetKey(KeyCode.LeftShift)) //If boosting
+        if(Input.GetKey(Keybinds.Boost)) //If boosting
         {
             useBoost();
         }
@@ -66,13 +66,11 @@ public class ShipMovement : MonoBehaviour
                 SpeedEffect.Instance.SpeedControl(true);
                 spaceshipRB.AddRelativeForce(Vector3.forward * thrust);
                 boostDuration -= 1;
-                Debug.Log(boostDuration);
                 //Visual boost bar reducing
             }
             else //If boosting but empty
             {
                 SpeedEffect.Instance.SpeedControl(false);
-                Debug.Log("Empty");
                 //Effect for empty boost
             }
     }
@@ -83,7 +81,6 @@ public class ShipMovement : MonoBehaviour
             if (boostDuration < Cap)
             {
                 boostDuration += recharge; //Slowly refilling boost
-                Debug.Log(boostDuration);
             }
     }
 
