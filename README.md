@@ -67,12 +67,10 @@ Current bugs can be found on the [latest release](https://github.com/BIT-Studio-
 Need to confirm with lecturers about the licence this falls under. Can use https://choosealicense.com/
 -->
 
-<!-- 
 ## Contact Information
 
-Link to an email or something for feedback?
-If you have any questions or feedback, you can contact us at [team@example.com](mailto:team@example.com).
--->
+Please post feedback to the [discussions board](https://github.com/BIT-Studio-3/Space-Rescue/discussions).
+
 <!-- 
 ## Screenshots and gifs
 
