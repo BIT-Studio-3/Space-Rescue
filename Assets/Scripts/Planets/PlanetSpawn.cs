@@ -1,6 +1,8 @@
-//Planet spawning script.
-//Note from Palin: I am reworking this as the current version has several bugs. I am making it all spawn in the same Z axis and then each planet has a parent that is rotated a random amount of degrees around.
-// This way there can only be one planet in each "orbit"
+// Description: This script spawns the planets in the game. It spawns them in a random location and then rotates them around the black hole.
+// Author: Erika Stuart
+// Last Modified By: Palin Wiseman
+// Last Modified Date: 06/08/2023
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

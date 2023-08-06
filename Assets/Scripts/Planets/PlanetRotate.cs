@@ -1,3 +1,8 @@
+// Description: This script is used to rotate and orbit the planets
+// Author: Palin Wiseman
+// Last Modified By: Palin Wiseman
+// Last Modified Date: 06/08/2023
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +18,7 @@ public class PlanetRotate : MonoBehaviour
     private const int MINDISTANCE = 800; //The min distance the planet can be from the black hole
     private const int MINSPEED = 1; //The min speed the planet can orbit at
     private const int MAXSPEED = 4; //This + 1 is the max speed the planet can rotate at
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +40,6 @@ public class PlanetRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0,speed*Time.deltaTime,0);
+        transform.Rotate(0, speed * Time.deltaTime, 0);
     }
-
 }
