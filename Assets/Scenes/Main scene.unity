@@ -1303,7 +1303,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 774131079}
-  - component: {fileID: 774131080}
   m_Layer: 0
   m_Name: Planet Parent
   m_TagString: Untagged
@@ -1326,21 +1325,6 @@ Transform:
   m_Father: {fileID: 935375956}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &774131080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774131078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b93842c713b2771409e0178de3165700, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orbitSpeed: 3
-  minSpin: -4
-  maxSpin: -10
 --- !u!1 &787568501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,8 +1816,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetPrefab: {fileID: 5748848403008948943, guid: cace40cffd7e57b41b1475d1de0338c5, type: 3}
   planets: []
-  spawnRange: 2000
-  spawnCount: 10
 --- !u!1 &1161758950
 GameObject:
   m_ObjectHideFlags: 0

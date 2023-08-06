@@ -1,91 +1,51 @@
+//Planet spawning script.
+//Note from Palin: I am reworking this as the current version has several bugs. I am making it all spawn in the same Z axis and then each planet has a parent that is rotated a random amount of degrees around.
+// This way there can only be one planet in each "orbit"
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using System.Math;
 
 public class PlanetSpawn : MonoBehaviour
 {
     //variables
-    public GameObject planetPrefab; //the planet prefab - used for manager gameobject
+    [SerializeField]
+    private GameObject planetPrefab; //the planet prefab
+    public List<GameObject> planets = new List<GameObject>();
     private GameObject planetTemp;
     private GameObject planetParent;
-    private int spawnX;
     private int spawnY;
     private int spawnZ;
-    private int randScale;
-    public List<GameObject> planets = new List<GameObject>();
-    private bool isNotCollision;
-    private int loopCounter;
-    [SerializeField] private int spawnRange = 3000;
-    [SerializeField]  private int spawnCount = 10;
-    private int YZone = 100;
+    private int scale;
+    private const int SPAWNCOUNT = 10;
+    private const int SCALEMIN = 100;
+    private const int SCALEMAX = 300;
+    private const int YZONE = 30; //Planets can spawn within x degrees from 0 up and down from the black hole
+    private const int ORBITAREA = 300; //A planet will spawn every x amount of units away from the black hole
 
-    // Start is called before the first frame update
     void Awake()
     {
         GameSettings.planetPrefabs = Resources.LoadAll<GameObject>("Planets");
-        
+        planetParent = GameObject.Find("Planet Parent");
         SpawningPlanet();
     }
 
     private void SpawningPlanet()
     {
-        planetParent = GameObject.Find("Planet Parent");
-        //however many x number of planets
-        for (int i = 0; i < spawnCount; i++)
+        //SpawnCount is the desired number of planets
+        for (int i = 0; i < SPAWNCOUNT; i++)
         {
-            do //one iteration of a potential planet spawn
-            {
-                //does the random spawn stuff
-                spawnX = Random.Range(-spawnRange, spawnRange);
-                spawnY = Random.Range(-YZone, YZone);
-                spawnZ = Random.Range(-spawnRange, spawnRange);
-                randScale = Random.Range(100, 300);
-                loopCounter++;
-                
-                if (planets.Count == 0) //if the list is empty
-
-                {
-                    isNotCollision = true; //set isnotcollided to true
-                }
-                else //if the list is not empty
-                {
-                    for (int j = 0; j < planets.Count; j++)//checks through the list
-                    {
-                        // This will check through the entire list of currently spawned planets
-                        // If any of them are in range then the loop will continue without setting it to true
-                        if (Mathf.Abs(spawnX - planets[j].transform.position.x) > 100
-                        && Mathf.Abs(spawnY - planets[j].transform.position.y) > 100
-                        && Mathf.Abs(spawnZ - planets[j].transform.position.z) > 100) //and compares the distance
-                        {
-                            isNotCollision = true;
-                        }
-                        else
-                        {
-                            isNotCollision = false; //ensures that even if it's set to true, it gets reset back to false when the for loop breaks
-                            j = planets.Count; //forces it to end the loop
-                        }
-                    }
-                }
-
-                //prevents infinite loop
-                if (loopCounter >= 10)
-                {
-                    break;
-                }
-
-            }while (!isNotCollision); //if its not true then it will try again
-            //TODO add loop counter to while loop
-            loopCounter = 0;
-            planetTemp = Instantiate(planetPrefab, new Vector3(spawnX, spawnY, spawnZ), Quaternion.identity);
-            planetTemp.transform.localScale = new Vector3(randScale, randScale, randScale);
-            planetTemp.transform.parent = planetParent.transform;
+            scale = Random.Range(SCALEMIN, SCALEMAX); //Random scale
+            planetTemp = Instantiate(
+                planetPrefab,
+                new Vector3(i * ORBITAREA + 800, 0, 0),
+                Quaternion.identity
+            ); //Spawn planet
+            planetTemp.transform.localScale = new Vector3(scale, scale, scale); //Set scale
+            GameObject rotator = new GameObject("Rotator"); //Create a new gameobject to rotate the planet around
+            planetTemp.transform.parent = rotator.transform; //Set planet to have parent rotator
+            rotator.transform.Rotate(0, Random.Range(0, 360), Random.Range(-YZONE, YZONE)); //Rotate the rotator a random amount of degrees
+            rotator.transform.parent = planetParent.transform; //Set rotator to have overall parent
             planets.Add(planetTemp);
-
-            isNotCollision = false;
         }
-        
     }
-
-
 }
