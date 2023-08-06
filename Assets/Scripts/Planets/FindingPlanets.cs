@@ -61,7 +61,7 @@ public class FindingPlanets : MonoBehaviour
                 {
 
                     planetsNotRescued.Remove(planet); //Remove saved planets from the list
-                    planet.gameObject.GetComponent<Target>().enabled = false;
+                    planet.GetComponent<Target>().enabled = false;
                     break;
                 }
 
@@ -78,7 +78,7 @@ public class FindingPlanets : MonoBehaviour
 
             LayerMask layerAsLayerMask = (1 << 0);
             RaycastHit[] hits;
-            hits = (Physics.RaycastAll(cam.ScreenPointToRay(screenMiddle), Mathf.Infinity));
+            hits = Physics.RaycastAll(cam.ScreenPointToRay(screenMiddle), Mathf.Infinity);
             hits = hits.Where(hit => hit.transform.parent.transform.name != "Post Processing").ToArray();
             foreach (RaycastHit hit in hits)
             {
@@ -108,7 +108,7 @@ public class FindingPlanets : MonoBehaviour
                             else if (playerhits[0].transform.name == "Planet(Clone)")
                             {
                                 float distBlackHole = playerhits[0].transform.gameObject.GetComponent<PlanetDetection>().PlanetDistanceToBlackHole();
-                                string name = playerhits[0].transform.gameObject.transform.GetChild(1).name.Substring(0, playerhits[0].transform.gameObject.transform.GetChild(1).gameObject.name.Length - 7);
+                                string name = playerhits[0].transform.gameObject.transform.GetChild(1).name[..(playerhits[0].transform.gameObject.transform.GetChild(1).gameObject.name.Length - 7)];
                                 Debug.DrawRay(player.transform.position, (playerhits[0].transform.position - player.transform.position), Color.white, 0.5f);
                                 Debug.Log(playerhits[0].transform.name);
                                 HudBehaviour.instance.ShowPlanetInfo(playerhits[0].transform.GetComponent<PlanetDetection>(), Mathf.Round(playerhits[0].distance), distBlackHole, name);
@@ -142,26 +142,26 @@ public class FindingPlanets : MonoBehaviour
         //The arrow still finds the closest planet and points to it as in previous iterations
 
         GameObject target = closestPlanet;
-        closestPlanetName = closestPlanet.gameObject.transform.GetChild(1).transform.name;
+        closestPlanetName = closestPlanet.transform.GetChild(1).transform.name;
         foreach (GameObject planet in planetsNotRescued)
         {
-            if (planet.gameObject.transform.GetChild(1).transform.name != closestPlanetName)
+            if (planet.transform.GetChild(1).transform.name != closestPlanetName)
             {
-                if (planet.gameObject.GetComponent<PlanetDetection>().inDanger)
+                if (planet.GetComponent<PlanetDetection>().inDanger)
                 {
-                    planet.gameObject.GetComponent<Target>().enabled = true;
-                    planet.gameObject.GetComponent<Target>().TargetColor = Color.red;
+                    planet.GetComponent<Target>().enabled = true;
+                    planet.GetComponent<Target>().TargetColor = Color.red;
                     print(planet.transform.name + " ggfxy");
 
                 }
                 else
                 {
-                    planet.gameObject.GetComponent<Target>().enabled = false;
+                    planet.GetComponent<Target>().enabled = false;
                 }
             }
             else
             {
-                planet.gameObject.GetComponent<Target>().enabled = true;
+                planet.GetComponent<Target>().enabled = true;
             }
         }
         //Get the targets position on screen into a Vector3

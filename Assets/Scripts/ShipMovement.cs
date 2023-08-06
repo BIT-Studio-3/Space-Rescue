@@ -22,11 +22,14 @@ public class ShipMovement : MonoBehaviour
     //Thrusters - Set to private after testing is done and ideal speed is found
     private float thrust = 2500f; //Amount of boost power
     private float boostDuration; //Frames the boost can be active for
-    private float Cap = 2500f; //Max amount of boost duration that can be held
+    private float cap = 2500f; //Max amount of boost duration that can be held
     private float recharge = .25f; //Amount recharged. .25 means you recharge at a quarter of the speed you use it
 
+    private Vector3 initialVelocity;
+    public Text speedText;
+
     //Energy bars to edit
-    public Image[] Bars;
+    public Image[] bars;
 
     void Start()
     {
@@ -34,6 +37,7 @@ public class ShipMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked; //keep mouse in the game
         spaceshipRB = GetComponent<Rigidbody>();
         ResetBoost(); //Sets boost to Cap
+        initialVelocity = spaceshipRB.velocity;
     }
     // Update is called once per frame
     void Update()
@@ -49,17 +53,17 @@ public class ShipMovement : MonoBehaviour
                 
         if(Input.GetKey(Keybinds.Boost)) //If boosting
         {
-            useBoost();
+            UseBoost();
         }
         else //If not boosting
         {
-            rechargeBoost();
+            RechargeBoost();
         }
 
-        energyBar(boostDuration/Cap); //Gives a value of boost left between 0 and 1
+        EnergyBar(boostDuration/cap); //Gives a value of boost left between 0 and 1
     }
 
-    private void useBoost() //Boosting
+    private void UseBoost() //Boosting
     {
         if (boostDuration >= 1) //If boosting and having boost left
             {
@@ -75,10 +79,10 @@ public class ShipMovement : MonoBehaviour
             }
     }
 
-    private void rechargeBoost() //Recharging boost
+    private void RechargeBoost() //Recharging boost
     {
         SpeedEffect.Instance.SpeedControl(false);
-            if (boostDuration < Cap)
+            if (boostDuration < cap)
             {
                 boostDuration += recharge; //Slowly refilling boost
             }
@@ -86,12 +90,12 @@ public class ShipMovement : MonoBehaviour
 
     public void ResetBoost() //Sets the boost to max
     {
-        boostDuration = Cap;
+        boostDuration = cap;
     }
 
-    private void energyBar(float percentage) //Takes a value between 0 and 1 and fills the image appropriately
+    private void EnergyBar(float percentage) //Takes a value between 0 and 1 and fills the image appropriately
     {
-        foreach (var image in Bars)
+        foreach (var image in bars)
         {
             image.fillAmount = percentage;
         }
@@ -99,14 +103,16 @@ public class ShipMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-        spaceshipRB.AddForce(spaceshipRB.transform.TransformDirection(Vector3.forward) * verticalMove * speedMult, ForceMode.VelocityChange);
+        spaceshipRB.AddForce(speedMult * verticalMove * spaceshipRB.transform.TransformDirection(Vector3.forward), ForceMode.VelocityChange);
+        float currentVelocity = Mathf.Round((spaceshipRB.velocity - initialVelocity).magnitude);
+        print("SPEED: " + currentVelocity);
+        speedText.text = currentVelocity < 10 ? $"0{currentVelocity}" : $"{currentVelocity}";
+        spaceshipRB.AddForce(horizontalMove * speedMult * spaceshipRB.transform.TransformDirection(Vector3.right), ForceMode.VelocityChange);
 
-        spaceshipRB.AddForce(spaceshipRB.transform.TransformDirection(Vector3.right) * horizontalMove * speedMult, ForceMode.VelocityChange);
+        spaceshipRB.AddTorque(-1 * mouseInputY * speedMultAngle * spaceshipRB.transform.right, ForceMode.VelocityChange);
+        spaceshipRB.AddTorque(mouseInputX * speedMultAngle * spaceshipRB.transform.up, ForceMode.VelocityChange);
 
-        spaceshipRB.AddTorque(spaceshipRB.transform.right * speedMultAngle * mouseInputY * -1, ForceMode.VelocityChange);
-        spaceshipRB.AddTorque(spaceshipRB.transform.up * speedMultAngle * mouseInputX, ForceMode.VelocityChange);
-
-        spaceshipRB.AddTorque(spaceshipRB.transform.forward * speedtiltMultiAngle * tiltInput, ForceMode.VelocityChange);
+        spaceshipRB.AddTorque(speedtiltMultiAngle * tiltInput * spaceshipRB.transform.forward, ForceMode.VelocityChange);
 
     }
 }
