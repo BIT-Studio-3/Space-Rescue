@@ -48,11 +48,10 @@ The controls are shown in game when opening the menu. The current controls are a
 | Interacting               | Left Mouse Button      |
 | Pause                     | Enter                  |
 
-<!-- 
+
 ## Build status
 
-Info about continuous integration? Use a badge?
--->
+![Create Build and Release](https://github.com/BIT-Studio-3/Space-Rescue/actions/workflows/ci-build-and-release.yml/badge.svg)
 
 ## Technologies used
 
