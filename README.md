@@ -57,12 +57,6 @@ The controls are shown in game when opening the menu. The current controls are a
 
 We are using the Unity game engine on version 2021.3.19f1. It is being coded in C# and using the Universal Render Pipeline.
 
-<!-- 
-## Features
-
-List of current and future features
--->
-
 ## Known issues and limitations
 
 Current bugs can be found on the [latest release](https://github.com/BIT-Studio-3/Space-Rescue/releases/latest) patch notes and in the [issues list](https://github.com/BIT-Studio-3/Space-Rescue/issues?q=is%3Aopen+label%3Abug+is%3Aissue).
