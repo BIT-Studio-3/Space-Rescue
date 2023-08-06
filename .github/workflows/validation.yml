@@ -53,7 +53,7 @@ jobs:
       # Run Linter against code base #
       ################################
       - name: Run .NET Code Analysis
-        uses: dotnet/code-analysis@v1
+        uses: dotnet/code-analysis@main
         id: code-analysis
         with:
           solution: Space-Rescue.sln
