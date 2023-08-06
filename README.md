@@ -70,8 +70,9 @@ Current bugs can be found on the [latest release](https://github.com/BIT-Studio-
 <!-- 
 ## Licence
 
-What licence is this under? I have no idea what to do here. https://choosealicense.com/? Need to ask Adon or Martin I think
+Need to confirm with lecturers about the licence this falls under. Can use https://choosealicense.com/
 -->
+
 <!-- 
 ## Contact Information
 
