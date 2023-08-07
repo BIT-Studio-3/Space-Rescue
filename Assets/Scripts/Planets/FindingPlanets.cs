@@ -151,7 +151,6 @@ public class FindingPlanets : MonoBehaviour
                 {
                     planet.GetComponent<Target>().enabled = true;
                     planet.GetComponent<Target>().TargetColor = Color.red;
-                    print(planet.transform.name + " ggfxy");
 
                 }
                 else
@@ -162,6 +161,8 @@ public class FindingPlanets : MonoBehaviour
             else
             {
                 planet.GetComponent<Target>().enabled = true;
+                planet.GetComponent<Target>().TargetColor = new Color(0.5f,1,1);
+
             }
         }
         //Get the targets position on screen into a Vector3
