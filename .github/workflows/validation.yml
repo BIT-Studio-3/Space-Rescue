@@ -22,7 +22,7 @@ on:
 ###############
 jobs:
   Validate-Codebase:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -39,13 +39,16 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "6.0.x"
+      - name: Install dotnet-format
+        run: dotnet tool install -g dotnet-format
 
       - name: Analyze Changed Files
         run: |
           changed_files=${{ steps.changed-files.outputs.changed_files }}
           for file in $changed_files; do
-            echo "$file"
-            dotnet-format -f "$file" --check 
-          done
+              if [[ $file == *.cs ]]; then
+                dotnet format -f "$file" --check
+              fi
+]         done
 
         
