@@ -23,9 +23,10 @@ jobs:
         id: changed-files
         run: |
           CHANGED_FILES=$(git diff ${{ github.event.before }} HEAD --name-only)
+          echo "Changed Files: $CHANGED_FILES"
+
           echo "::set-output name=changed_files::$CHANGED_FILES"
-      - name: print files that were changed
-        run: echo ${{ steps.changed-files.outputs.changed_files }}
+
       - name: Set up .NET
         uses: actions/setup-dotnet@v1
         with:
