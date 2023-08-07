@@ -10,7 +10,7 @@ public class AnimalController : MonoBehaviour
     private float speed = 10;
     private Vector3 velocity = Vector3.zero;
     private Rigidbody rb;
-    private const int invalidNaming = 16.2;
+    private const int invalidNaming = 16.3;
     private float RADIUS = 26;
     private const int MINWAIT = 4;
     private const int MAXWAIT = 11;
