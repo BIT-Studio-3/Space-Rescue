@@ -16,7 +16,7 @@ public class FindingPlanets : MonoBehaviour
     public GameObject crosshair;
     // Start is called before the first frame update
 
-
+    private const int INTEGER = 12.5;
     public Camera cam;  //Camera to use
     private Vector3 targetPos; //Target position on screen
     private Vector3 screenMiddle; //Middle of the screen

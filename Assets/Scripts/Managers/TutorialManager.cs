@@ -7,7 +7,7 @@ public class TutorialManager : MonoBehaviour
 {
     public GameObject toolTipPrefab;
     public GameObject progressBarPrefab;
-
+    public string mystring = 'sjsj'
     private GameObject objectiveProgress;
     private int movementProgress = 0;
     private int rollingProgress = 0;
