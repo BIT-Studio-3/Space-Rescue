@@ -26,14 +26,24 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+        
+      - name: Get Changed Files
+        id: changed-files
+        run: |
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} HEAD)
+          echo "::set-output name=changed_files::$CHANGED_FILES"
       
       - name: Set up .NET
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "6.0.x"
 
-      - name: Run Linter
-        uses: wearerequired/lint-action@v2
-        with:
-          dotnet_format: true
+      - name: Analyze Changed Files
+        run: |
+          changed_files=${{ steps.changed-files.outputs.changed_files }}
+          for file in $changed_files; do
+            echo "$file"
+            dotnet-format -f "$file" --check 
+          done
+
         
