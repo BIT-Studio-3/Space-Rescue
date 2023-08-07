@@ -52,5 +52,6 @@
         "temp/":true,
         "Temp/":true
     },
-    "dotnet.defaultSolution": "Space-Rescue.sln"
+    "dotnet.defaultSolution": "Space-Rescue.sln",
+    "FSharp.suggestGitignore": false
 }
