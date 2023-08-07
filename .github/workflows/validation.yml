@@ -30,7 +30,7 @@ jobs:
       - name: Get Changed Files
         id: changed-files
         run: |
-          CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} HEAD)
+          CHANGED_FILES=$(git diff ${{ github.event.before }} HEAD --name-only)
           echo "::set-output name=changed_files::$CHANGED_FILES"
       
       - name: Set up .NET
