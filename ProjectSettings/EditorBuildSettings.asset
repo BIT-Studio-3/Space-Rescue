@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main scene.unity
     guid: 23d42cd4553f5b742b7810e89f06b771
   - enabled: 1
+    path: Assets/Scenes/Pause Overlay.unity
+    guid: 9fa3dfcc01c32784c9a76f896e71528f
+  - enabled: 1
     path: Assets/Scenes/Game End.unity
     guid: ac3bf1db81269e04fae298e8dd8c8904
   - enabled: 1

@@ -6,7 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class KeypressManager : MonoBehaviour
 {
-    public GameObject PauseMenu;
+    private GameObject pauseMenu;
+
+    void Start()
+    {
+        pauseMenu = GameObject.Find("Pause Menu");
+    }
     // Update is called once per frame
     void Update()
     {
@@ -51,15 +56,16 @@ public class KeypressManager : MonoBehaviour
         //Disable cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        PauseMenu.SetActive(false);
+        pauseMenu.SetActive(false);
     }
 
     private void pause()
     {
         Time.timeScale = 0;
-        //Enable cursor
-        Cursor.visible = true;
+
+        Cursor.visible = true;//Enable cursor
         Cursor.lockState = CursorLockMode.None;
-        PauseMenu.SetActive(true);
+        pauseMenu.SetActive(true);
+        //SceneManager.LoadScene("Pause Overlay", LoadSceneMode.Additive);
     }
 }
