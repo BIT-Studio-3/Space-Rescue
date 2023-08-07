@@ -2339,7 +2339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2613,6 +2613,22 @@ PrefabInstance:
     - target: {fileID: 4883970945553083160, guid: 6f3ca24229be9154187a2d38888f96d6, type: 3}
       propertyPath: m_Name
       value: PlanetInfoPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883970945553083162, guid: 6f3ca24229be9154187a2d38888f96d6, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883970945553083162, guid: 6f3ca24229be9154187a2d38888f96d6, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883970945553083162, guid: 6f3ca24229be9154187a2d38888f96d6, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883970945553083162, guid: 6f3ca24229be9154187a2d38888f96d6, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4883970945553083172, guid: 6f3ca24229be9154187a2d38888f96d6, type: 3}
       propertyPath: m_Pivot.x
