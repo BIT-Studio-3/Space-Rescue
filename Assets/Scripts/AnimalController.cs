@@ -28,7 +28,6 @@ public class AnimalController : MonoBehaviour
         if (inRange == true && Input.GetKeyDown(Keybinds.Interact))
         {
             Destroy(gameObject);
-            PlanetManager.Instance.LoadMiniGame();
         }
     }
 
