@@ -12,7 +12,7 @@ public class AnimalManager : MonoBehaviour
     private Vector3 area;
 
     private const int MIN = 2;
-    private const int MAX = 12;
+    private const int MAX = 11;
 
     // Start is called before the first frame update
     void Start()
