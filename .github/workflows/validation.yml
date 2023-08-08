@@ -40,7 +40,7 @@ jobs:
           changed_files=${{ steps.changed-files.outputs.changed_files }}
           for file in $changed_files; do
               if [[ $file == *.cs ]]; then
-                dotnet format -f "$file" --check
+                dotnet-format -f "$file" --check
               fi
           done
 
