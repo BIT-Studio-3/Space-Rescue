@@ -6,7 +6,7 @@ using UnityEngine;
 public class AnimalManager : MonoBehaviour
 {
     [SerializeField]
-    public GameObject animalPrefab; //needs to be public to be assigned
+    private GameObject animalPrefab;
     private GameObject animalParent;
     private GameObject animal;
     private Vector3 area;
