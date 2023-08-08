@@ -1506,6 +1506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e35e09c44ea5834887a1f0b61fe501b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  warning: {fileID: 7524945966772867431}
 --- !u!1 &9128085089361639701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,18 +1660,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8240519295143550290, guid: 4fc9ee23d04fc57438349234e3f1261c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8240519295143550290, guid: 4fc9ee23d04fc57438349234e3f1261c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8240519295143550290, guid: 4fc9ee23d04fc57438349234e3f1261c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8240519295143550290, guid: 4fc9ee23d04fc57438349234e3f1261c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1710,14 +1699,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8240519295143550290, guid: 4fc9ee23d04fc57438349234e3f1261c, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc9ee23d04fc57438349234e3f1261c, type: 3}
 --- !u!4 &1462882471475011975 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8240519295143550290, guid: 4fc9ee23d04fc57438349234e3f1261c, type: 3}
+  m_PrefabInstance: {fileID: 7354667882403429589}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7524945966772867431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1043987407468244402, guid: 4fc9ee23d04fc57438349234e3f1261c, type: 3}
   m_PrefabInstance: {fileID: 7354667882403429589}
   m_PrefabAsset: {fileID: 0}
