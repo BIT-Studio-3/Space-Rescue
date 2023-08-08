@@ -10,18 +10,24 @@ public class SpawningManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject prefab;
+
     [SerializeField]
     private GameObject parent;
-    private GameObject newSpawn;
-    private Vector3 area;
+
     [SerializeField]
     private int minSpawn;
+
     [SerializeField]
     private int maxSpawn;
+    
+    private float radius;
+    private GameObject newSpawn;
+    private Vector3 area;
     private Collider[] hitColliders;
 
     void Start()
     {
+        radius = GameObject.Find("Planet").transform.localScale.x / 2 + 1;
         Spawn();
     }
 
@@ -34,23 +40,21 @@ public class SpawningManager : MonoBehaviour
         {
             do
             {
-                reps++; //Protection against infinite loop
-                area = Random.onUnitSphere * 26; //onUnitSphere does the math of the surface of a spherical object multiplied by the radius
-                hitColliders = Physics.OverlapSphere(area, 1);
-                if (reps > 40) //If it can't find a spot after 50 tries, it will end the spawning
-                {
-                    Debug.Log(reps);
-                }
-                if (reps > 50) //If it can't find a spot after 50 tries, it will end the spawning
+                if (reps > 100) //If it can't find a spot after 100 tries, it will end the spawning
                 {
                     return;
                 }
+                reps++; //Protection against infinite loop
+                area = Random.onUnitSphere * radius; //onUnitSphere does the math of the surface of a spherical object multiplied by the radius
+                hitColliders = Physics.OverlapSphere(area, 1);
             } while (hitColliders.Length != 0); //If something is already there, it will keep trying to spawn until it finds an empty spot
             newSpawn = Instantiate(prefab, area, Quaternion.identity);
-            newSpawn.transform.rotation = Quaternion.FromToRotation(Vector3.up, newSpawn.transform.position);
-            //send a raycast towards the planet and move the object to the point where it hits the planet
-            RaycastHit hit;
-            if (Physics.Raycast(newSpawn.transform.position, -newSpawn.transform.up, out hit))
+            newSpawn.transform.rotation = Quaternion.FromToRotation(
+                Vector3.up,
+                newSpawn.transform.position
+            );
+            //Send a raycast towards the planet and move the object to the point where it hits the planet
+            if (Physics.Raycast(newSpawn.transform.position, -newSpawn.transform.up, out RaycastHit hit))
             {
                 newSpawn.transform.position = hit.point;
             }
