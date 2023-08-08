@@ -58,8 +58,12 @@ public class AnimalController : MonoBehaviour
             //BLESSED UNITY FORUMS
             while (transform.position != pos) //while the animal is not at their desired position
             {
+                if (Physics.Raycast(transform.position, pos, out RaycastHit hit, .1f))
+                    {
+                        //if there is a collider in front of the animal, end the movement
+                        break;
+                    }
                 transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime); //move them to it!
-
                 yield return 0; //used to let the engine wait for a frame which breaks an endless broken loop
             }
         yield return new WaitForSeconds(Random.Range(MINWAIT, MAXWAIT)); //pause for a random time and then go again
