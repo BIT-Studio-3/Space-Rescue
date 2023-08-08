@@ -252,7 +252,7 @@ MonoBehaviour:
   prefab: {fileID: 8768842384551100010, guid: 556efdf030cecbf40aa649b2aefaa99e, type: 3}
   parent: {fileID: 334610409}
   minSpawn: 1
-  maxSpawn: 3
+  maxSpawn: 1
 --- !u!1 &334610409
 GameObject:
   m_ObjectHideFlags: 0
