@@ -9,28 +9,25 @@ using UnityEngine;
 
 public class HostileDetection : MonoBehaviour
 {
-    private bool locked;
-    private GameObject target;
+    public GameObject target;
+    public bool locked;
+
     [SerializeField]
     private GameObject warning;
-    
+
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    void Start() { }
 
     // Update is called once per frame
     void Update()
     {
-
-        FindTarget();
         if (locked)
         {
-            warning.SetActive(true);
-        } else
+            LockedOn(target);
+        }
+        else
         {
-            warning.SetActive(false);
+            FindTarget();
         }
         //If the target is set turn on the warning
     }
@@ -38,25 +35,44 @@ public class HostileDetection : MonoBehaviour
     private void FindTarget() //Look for player object with a raycast directly in front and if it hits, set the player as the target
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 10))
+        if (
+            Physics.Raycast(
+                transform.position,
+                transform.TransformDirection(Vector3.forward),
+                out hit,
+                10
+            )
+        )
         {
             if (hit.collider.CompareTag("Player"))
             {
-                locked = true;
                 target = hit.collider.gameObject;
-                return;
+                locked = true;
+                warning.SetActive(true);
             }
-        }
-        else //This is just for testing. Remove when done
-        {
-            locked = false;
-            target = null;
         }
     }
 
-    private void LockedOn(GameObject target) //When locked on it is much harder to escape. Need to get behind something
+    private void LockedOn(GameObject target) //When locked on it is much harder to escape. Need to get behind scenery or very far out of range
     {
-        //Raycast in the direction of the target. If it doesnt hit it then set locked to false and clear target
+        RaycastHit hit;
+        //Raycast targeting the gameobject "target" and if it doesn't hit, set locked to false
+        if (
+            Physics.Raycast(
+                transform.position,
+                transform.position - target.transform.position,
+                out hit,
+                200
+            )
+        )
+        {
+            Debug.DrawRay(transform.position, transform.position - target.transform.position, Color.red);
+            if (hit.collider.CompareTag("Scenery"))
+            {
+                locked = false;
+                warning.SetActive(false);
+            }
+        }
     }
 
     private void MoveEnemy()

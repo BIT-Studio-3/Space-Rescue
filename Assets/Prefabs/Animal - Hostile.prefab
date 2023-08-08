@@ -1415,8 +1415,8 @@ GameObject:
   - component: {fileID: 3372032084740849271}
   - component: {fileID: 3421907299032348666}
   m_Layer: 0
-  m_Name: Animal 2
-  m_TagString: Untagged
+  m_Name: Animal - Hostile
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1506,6 +1506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e35e09c44ea5834887a1f0b61fe501b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  locked: 0
   warning: {fileID: 7524945966772867431}
 --- !u!1 &9128085089361639701
 GameObject:
@@ -1654,6 +1656,10 @@ PrefabInstance:
     - target: {fileID: 1043987407468244402, guid: 4fc9ee23d04fc57438349234e3f1261c, type: 3}
       propertyPath: m_Name
       value: Exclamation Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043987407468244402, guid: 4fc9ee23d04fc57438349234e3f1261c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8240519295143550290, guid: 4fc9ee23d04fc57438349234e3f1261c, type: 3}
       propertyPath: m_RootOrder
