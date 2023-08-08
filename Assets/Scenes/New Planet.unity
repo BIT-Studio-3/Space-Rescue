@@ -197,7 +197,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 310667744}
-  - component: {fileID: 310667743}
+  - component: {fileID: 310667745}
+  - component: {fileID: 310667746}
   m_Layer: 0
   m_Name: AnimalManager
   m_TagString: Untagged
@@ -205,19 +206,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &310667743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310667742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animalPrefab: {fileID: 8768842384551100010, guid: a856aef0cf1ee684fab26ff0de94a268, type: 3}
 --- !u!4 &310667744
 Transform:
   m_ObjectHideFlags: 0
@@ -233,6 +221,38 @@ Transform:
   m_Father: {fileID: 225632729}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &310667745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310667742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8768842384551100010, guid: a856aef0cf1ee684fab26ff0de94a268, type: 3}
+  parent: {fileID: 334610409}
+  minSpawn: 2
+  maxSpawn: 11
+--- !u!114 &310667746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310667742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8768842384551100010, guid: 556efdf030cecbf40aa649b2aefaa99e, type: 3}
+  parent: {fileID: 334610409}
+  minSpawn: 1
+  maxSpawn: 3
 --- !u!1 &334610409
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1511508502}
+  - component: {fileID: 1511508503}
   m_Layer: 0
   m_Name: TreeManager
   m_TagString: Untagged
@@ -627,6 +648,22 @@ Transform:
   m_Father: {fileID: 225632729}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1511508503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511508501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2584119853571017186, guid: 9f730c9a60d8ff447a4425ddab41dd93, type: 3}
+  parent: {fileID: 152430078}
+  minSpawn: 0
+  maxSpawn: 20
 --- !u!1 &1670289480
 GameObject:
   m_ObjectHideFlags: 0
