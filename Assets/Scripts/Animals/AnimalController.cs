@@ -67,7 +67,7 @@ public class AnimalController : MonoBehaviour
 
             while (Vector3.Distance(transform.position, pos) > 1) //while the animal is not at their desired position
             {
-                if (Physics.Raycast(transform.position, pos, out hit, .5f))
+                if (Physics.Raycast(transform.position, pos, out hit, .5f) && hit.collider.gameObject.tag != "AnimalFoV")
                 {
                     //if there is a collider in front of the animal, end the movement
                     break;

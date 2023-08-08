@@ -46,7 +46,8 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.GetChild(0).localRotation = Quaternion.LookRotation(direction);
         }
-        if (!Physics.Raycast(transform.GetChild(0).position, localMove, out RaycastHit hit, .5f))
+        if (!Physics.Raycast(transform.GetChild(0).position, localMove, out RaycastHit hit, .5f)
+            || hit.collider.gameObject.tag == "AnimalFoV")
         {
             //If there is a collider in the movement direction, don't let the player move
             rb.MovePosition(rb.position + localMove);
