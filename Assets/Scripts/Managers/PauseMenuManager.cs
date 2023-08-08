@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuManager : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class PauseMenuManager : MonoBehaviour
     void Start()
     {
         pauseMenu = GameObject.Find("Pause Menu");
-        pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,11 +27,11 @@ public class PauseMenuManager : MonoBehaviour
 
     public void Options()
     {
-
+        SceneManager.LoadScene("Settings", LoadSceneMode.Additive);
     }
 
     public void MainMenu()
     {
-
+        SceneManager.LoadScene("Title Screen");
     }
 }

@@ -11,6 +11,7 @@ public class KeypressManager : MonoBehaviour
     void Start()
     {
         pauseMenu = GameObject.Find("Pause Menu");
+        pauseMenu.SetActive(false);
     }
     // Update is called once per frame
     void Update()
@@ -35,10 +36,12 @@ public class KeypressManager : MonoBehaviour
             //Checks if it is currently paused or playing
             if (Time.timeScale == 0)
             {
+                pauseMenu.SetActive(false);
                 play();
             }
             else
             {
+                pauseMenu.SetActive(true);
                 pause();
             }
         }
@@ -65,7 +68,6 @@ public class KeypressManager : MonoBehaviour
 
         Cursor.visible = true;//Enable cursor
         Cursor.lockState = CursorLockMode.None;
-        pauseMenu.SetActive(true);
         //SceneManager.LoadScene("Pause Overlay", LoadSceneMode.Additive);
     }
 }
