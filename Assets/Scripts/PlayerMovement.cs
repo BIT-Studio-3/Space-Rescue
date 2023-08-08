@@ -42,10 +42,9 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.GetChild(0).localRotation = Quaternion.LookRotation(direction);
         }
-        //raycast if there is a collider in front of the child gameobject
         if (!Physics.Raycast(transform.GetChild(0).position, localMove, out RaycastHit hit, .5f))
         {
-            //if there is a collider, don't let the player move
+            //If there is a collider in the movement direction, don't let the player move
             rb.MovePosition(rb.position + localMove);
         }
     }
