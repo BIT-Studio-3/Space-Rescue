@@ -31,13 +31,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 targetMove = direction * speed;
         //current, target, velocity,  smooth time
         moveAmo = Vector3.SmoothDamp(moveAmo, targetMove, ref smoothMoveVel, .1f);
-
-        /*if (direction != Vector3.zero)
-        {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction, Vector3.up), Time.deltaTime * 50f);
-        }
-        rb.MovePosition(rb.position + transform.TransformDirection(direction) * speed * Time.deltaTime);
-        */
     }
 
     void FixedUpdate()
@@ -46,5 +39,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 localMove = transform.TransformDirection(moveAmo) * Time.fixedDeltaTime;
         //changes the position (Vector3)
         rb.MovePosition(rb.position + localMove);
+        //Turn child gameobject in the direction of movement
+        if (direction != Vector3.zero)
+        {
+            transform.GetChild(0).localRotation = Quaternion.LookRotation(direction);
+        }
     }
 }
