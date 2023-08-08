@@ -37,12 +37,16 @@ public class PlayerMovement : MonoBehaviour
     {
         //transform direction transforms direction from local to world
         Vector3 localMove = transform.TransformDirection(moveAmo) * Time.fixedDeltaTime;
-        //changes the position (Vector3)
-        rb.MovePosition(rb.position + localMove);
         //Turn child gameobject in the direction of movement
         if (direction != Vector3.zero)
         {
             transform.GetChild(0).localRotation = Quaternion.LookRotation(direction);
+        }
+        //raycast if there is a collider in front of the child gameobject
+        if (!Physics.Raycast(transform.GetChild(0).position, localMove, out RaycastHit hit, .2f))
+        {
+            //if there is a collider, don't let the player move
+            rb.MovePosition(rb.position + localMove);
         }
     }
 }
