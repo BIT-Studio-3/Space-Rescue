@@ -12,11 +12,9 @@ public class FindingPlanets : MonoBehaviour
     public GameObject tick;
     public GameObject blackHole;
     public Text distanceText;
-    public string closestPlanetName;
     public GameObject crosshair;
-    // Start is called before the first frame update
 
-
+    private string closestPlanetName; //Gets the name of the closest planet
     public Camera cam;  //Camera to use
     private Vector3 targetPos; //Target position on screen
     private Vector3 screenMiddle; //Middle of the screen

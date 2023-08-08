@@ -9,23 +9,34 @@ using UnityEngine.UI;
 
 public class WarningOverlay : MonoBehaviour
 {
-    private float overlayAlpha = 0.0f; //The alpha value of the overlay
     [SerializeField] 
     private bool isFlashing; //Whether the overlay is flashing or not
+    [SerializeField] private float colorDuration = 2.5f; //How long the overlay takes to change color
     void Start()
     {
         isFlashing = false;
-        gameObject.GetComponent<Image>().color = new Color(1.0f, 0.0f, 0.0f, overlayAlpha);
+        gameObject.GetComponent<Image>().color = new Color(1.0f, 0.0f, 0.0f, 0.0f);
     }
     public void SetOverlayVisible(bool visible) //Changes the overlay to a transparent red or clear
     {
         isFlashing = visible;
-        print("Go");
         if (visible)
-            StartCoroutine(WarningFlashing());            
+            StartCoroutine(RepeatFlash(colorDuration,new Color(1.0f,0.0f,0.0f,0.0f),new Color(1.0f,0.0f,0.0f,0.4f)));;            
     }
 
-    IEnumerator WarningBeginFlash(float colorDuration,Color start,Color end)
+    IEnumerator RepeatFlash(float colorDuration, Color start, Color end)
+    {
+        while(isFlashing)
+        {
+            yield return StartCoroutine(WarningChangeColor(2.25f, start, end));
+            yield return  StartCoroutine(WarningChangeColor(2.25f, end, start));
+        }
+        yield return null;
+
+    }
+
+    
+    IEnumerator WarningChangeColor(float colorDuration,Color start,Color end)
     {
         float t = 0;
         while (t < colorDuration)
@@ -36,24 +47,4 @@ public class WarningOverlay : MonoBehaviour
         }
     }
     
-    IEnumerator WarningFlashing()
-    {
-        while(isFlashing)
-        {
-            yield return StartCoroutine(WarningBeginFlash(2.25f, new Color(1.0f, 0.0f, 0.0f, 0.0f), new Color(1.0f, 0.0f, 0.0f, 0.4f)));
-            yield return  StartCoroutine(WarningEndFlash(2.25f, new Color(1.0f, 0.0f, 0.0f, 0.4f), new Color(1.0f, 0.0f, 0.0f, 0)));
-        }
-        yield return null;
-
-    }
-    IEnumerator WarningEndFlash(float colorDuration,Color start,Color end)
-    {
-        float t = 0;
-        while (t < colorDuration)
-        {
-            t += Time.deltaTime;
-            gameObject.GetComponent<Image>().color = Color.Lerp(start, end, t / colorDuration);
-            yield return null;
-        }
-    }
 }
