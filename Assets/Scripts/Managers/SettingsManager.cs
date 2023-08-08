@@ -46,6 +46,6 @@ public class SettingsManager : MonoBehaviour
     public void BackButton()
     {
         SceneManager.UnloadSceneAsync("Settings");
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
 }

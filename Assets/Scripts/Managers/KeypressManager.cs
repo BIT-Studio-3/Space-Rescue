@@ -7,7 +7,12 @@ using UnityEngine.SceneManagement;
 public class KeypressManager : MonoBehaviour
 {
     private GameObject pauseMenu;
+    public static KeypressManager Instance;
 
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         pauseMenu = GameObject.Find("Pause Menu");
@@ -23,12 +28,12 @@ public class KeypressManager : MonoBehaviour
             {         
                 if (GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Escaping" || GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Complete" )
                 {
-                    escapeScene();
+                    EscapeScene();
                 }           
             }
             else
             {
-                    escapeScene();
+                    EscapeScene();
             }
         }
         if (Input.GetKeyDown(Keybinds.Pause))
@@ -37,37 +42,36 @@ public class KeypressManager : MonoBehaviour
             if (Time.timeScale == 0)
             {
                 pauseMenu.SetActive(false);
-                play();
+                Play();
             }
             else
             {
                 pauseMenu.SetActive(true);
-                pause();
+                Pause();
             }
         }
     }
 
-    private void escapeScene()
+    private void EscapeScene()
     {
-        play();
+        Play();
         SceneManager.LoadScene("Game End");
     }
 
-    private void play()
+    public void Play()
     {
         Time.timeScale = 1;
-        //Disable cursor
-        Cursor.visible = false;
+        Cursor.visible = false;//Disable cursor
+
         Cursor.lockState = CursorLockMode.Locked;
         pauseMenu.SetActive(false);
     }
 
-    private void pause()
+    private void Pause()
     {
         Time.timeScale = 0;
 
         Cursor.visible = true;//Enable cursor
         Cursor.lockState = CursorLockMode.None;
-        //SceneManager.LoadScene("Pause Overlay", LoadSceneMode.Additive);
     }
 }

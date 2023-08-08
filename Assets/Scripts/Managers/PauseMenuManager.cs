@@ -13,16 +13,9 @@ public class PauseMenuManager : MonoBehaviour
         pauseMenu = GameObject.Find("Pause Menu");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void Continue()
     {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1;
+        KeypressManager.Instance.Play(); //Uses KeypressManager.Play() same as pressing esc
     }
 
     public void Options()
