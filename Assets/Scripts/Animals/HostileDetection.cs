@@ -9,18 +9,38 @@ using UnityEngine;
 
 public class HostileDetection : MonoBehaviour
 {
-    public GameObject target;
-    public bool locked;
 
     [SerializeField]
     private GameObject warning;
 
     // Start is called before the first frame update
-    void Start() { }
+    void Start() 
+    { 
+        warning.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
     {
+    }
+
+    private void OnTriggerStay(Collider other) //When the player is in the trigger, turn on the warning
+    {
+        
+    }
+    private void OnTriggerEnter(Collider other) //When the player enters the trigger turn on the warning
+    {
+        warning.SetActive(true);
+    }
+
+    private void OnTriggerExit(Collider other) //When the player exits the trigger turn off the warning
+    {
+        warning.SetActive(false);
+    }
+
+//Trying something new. Leaving just in case
+/*     public GameObject target;
+    public bool locked;
         if (locked)
         {
             LockedOn(target);
@@ -30,8 +50,6 @@ public class HostileDetection : MonoBehaviour
             FindTarget();
         }
         //If the target is set turn on the warning
-    }
-
     private void FindTarget() //Look for player object with a raycast directly in front and if it hits, set the player as the target
     {
         RaycastHit hit;
@@ -79,4 +97,4 @@ public class HostileDetection : MonoBehaviour
     {
         //Moves to the target
     }
-}
+ */}
