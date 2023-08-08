@@ -1,10 +1,14 @@
+// Description: This script is used to attract the player/animal to the planet's surface.
+// Author: Erika Stuart
+// Last Updated: 8/08/2023
+// Last Updated By: Palin Wiseman
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GravityAttractor : MonoBehaviour
 {
-    public float gravity = -10;
+    private float gravity = -12;
 
     public void Attract(Rigidbody body)
     {
@@ -16,5 +20,4 @@ public class GravityAttractor : MonoBehaviour
         body.rotation = Quaternion.FromToRotation(bodyUp, gravityUp) * body.rotation;
         //body.rotation = Quaternion.Slerp(body.rotation, targetRotation, 50f * Time.deltaTime);
     }
-
 }

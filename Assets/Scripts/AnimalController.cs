@@ -1,3 +1,7 @@
+// Description: Script controls each individual animal after spawn
+// Author: Erika Stuart
+// Last Updated: 8/08/2023
+// Last Updated By: Palin Wiseman
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
