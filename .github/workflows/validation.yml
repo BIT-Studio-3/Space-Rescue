@@ -18,10 +18,9 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 2
-      - name: List files/folders in cwd
-        run: cwd
+
       - name: list folders using ls
-        run: ls .
+        run: ls
       - name: Get Changed Files
         id: changed-files
         run: |
