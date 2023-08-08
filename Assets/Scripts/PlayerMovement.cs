@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float speed = 5f;
-    Rigidbody rb;
-    Vector3 moveAmo;
-    Vector3 smoothMoveVel = Vector3.zero;
-    public Vector3 direction;
+    private float speed = 20f;
+    private Rigidbody rb;
+    private Vector3 moveAmo;
+    private Vector3 smoothMoveVel = Vector3.zero;
+    private Vector3 direction;
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +19,15 @@ public class PlayerMovement : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
-
     }
 
     void Update()
     {
-        direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+        direction = new Vector3(
+            Input.GetAxisRaw("Horizontal"),
+            0,
+            Input.GetAxisRaw("Vertical")
+        ).normalized;
         Vector3 targetMove = direction * speed;
         //current, target, velocity,  smooth time
         moveAmo = Vector3.SmoothDamp(moveAmo, targetMove, ref smoothMoveVel, .1f);
@@ -40,10 +42,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-
         //transform direction transforms direction from local to world
         Vector3 localMove = transform.TransformDirection(moveAmo) * Time.fixedDeltaTime;
         //changes the position (Vector3)
-		rb.MovePosition(rb.position + localMove);
+        rb.MovePosition(rb.position + localMove);
     }
 }
