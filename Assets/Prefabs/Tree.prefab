@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8810335042247864185}
   m_Layer: 0
   m_Name: Tree
-  m_TagString: Scenery
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 2255651970917221733}
   m_Layer: 0
   m_Name: Trunk
-  m_TagString: Untagged
+  m_TagString: OnPlanetCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
