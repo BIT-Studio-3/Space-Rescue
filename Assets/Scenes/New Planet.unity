@@ -291,6 +291,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1058196546}
     m_Modifications:
+    - target: {fileID: 1255659100394292914, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255659100394292914, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513986998577531070, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
+      propertyPath: m_Name
+      value: AnimalDisplay
+      objectReference: {fileID: 0}
     - target: {fileID: 8074805878199049736, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
       propertyPath: m_Name
       value: PlayerPlanet
@@ -384,6 +396,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1223313013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513986998577531070, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
+  m_PrefabInstance: {fileID: 680957244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1257789086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4196102712989238, guid: d8a0dcc8abe0f9a43a9962953bc57645, type: 3}
@@ -466,6 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d212120e1b35e54284be5c7e4aef869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animalDisplay: {fileID: 1223313013}
 --- !u!4 &1670289482
 Transform:
   m_ObjectHideFlags: 0

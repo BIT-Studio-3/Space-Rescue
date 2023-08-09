@@ -15,6 +15,7 @@ public class AnimalController : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private Rigidbody rb;
     private float radius;
+    private bool inRange = false;
 
     private const int MINWAIT = 4;
     private const int MAXWAIT = 11;
@@ -28,20 +29,35 @@ public class AnimalController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() { }
-
-    private void OnTriggerStay(Collider other)
+    void Update()
     {
-        if (other.CompareTag("Player") && Input.GetKeyDown(Keybinds.Interact))
+        if (inRange && Input.GetKeyDown(Keybinds.Interact)) //TODO: Add a max held? Also have a better visual way of seeing when you have held animals. And what ones
+            {
+                PlanetManager.Instance.UpdateHeldAnimals(gameObject.name); //Updating the UI to show the amount of animals held
+                Destroy(gameObject);
+            }
+    }
+
+    //on trigger enter and on trigger exit toggling in range on and off
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
-            GameSettings.Score++;
-            Destroy(gameObject);
+            inRange = true;
+        }
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            inRange = false;
         }
     }
 
     IEnumerator wait()
     {
-        while (true) //while its running (forever)
+        while (true)
         {
             Vector3 pos = Random.onUnitSphere * radius; //picks a random point on the surface of a sphere with the radius
             transform.LookAt(pos, transform.position * Time.deltaTime); //makes them face the direction they will move to

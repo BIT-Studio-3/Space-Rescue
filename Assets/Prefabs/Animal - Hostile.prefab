@@ -128,7 +128,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8768842384551100011}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &512966015940561815
 CapsuleCollider:
@@ -273,7 +273,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8768842384551100011}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &2253546469213318453
 MeshFilter:
@@ -439,7 +439,7 @@ Transform:
   - {fileID: 6071339941307628623}
   - {fileID: 1064286002714578711}
   m_Father: {fileID: 8768842384551100011}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5619125364322072291
 GameObject:
@@ -1581,10 +1581,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5989160268877782178}
   - {fileID: 1462882471475011975}
   - {fileID: 1881003228688455891}
   - {fileID: 8467311313805835600}
-  - {fileID: 5989160268877782178}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1599,7 +1599,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 4
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &8768842384551100009
 MonoBehaviour:
@@ -1792,7 +1792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8240519295143550290, guid: 4fc9ee23d04fc57438349234e3f1261c, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8240519295143550290, guid: 4fc9ee23d04fc57438349234e3f1261c, type: 3}
       propertyPath: m_LocalPosition.x

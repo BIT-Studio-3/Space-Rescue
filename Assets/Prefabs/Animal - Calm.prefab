@@ -34,7 +34,7 @@ Transform:
   - {fileID: 8768842383238832100}
   - {fileID: 8768842383966158096}
   m_Father: {fileID: 8768842384551100011}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8664911398156900320
 GameObject:
@@ -66,7 +66,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8768842384551100011}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &7278451676987487586
 CapsuleCollider:
@@ -604,8 +604,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8699145030860641315}
   - {fileID: 4931081504205064058}
+  - {fileID: 8699145030860641315}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -620,7 +620,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 4
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &8768842384551100009
 MonoBehaviour:
