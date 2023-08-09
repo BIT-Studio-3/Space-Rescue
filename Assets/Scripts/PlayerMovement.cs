@@ -48,11 +48,12 @@ public class PlayerMovement : MonoBehaviour
             transform.GetChild(0).localRotation = Quaternion.LookRotation(direction);
         }
         //The reason I am using raycasts here and not just non trigger colliders is because the player can use the animals as a ramp with proper colliders
-        if (!Physics.Raycast(transform.GetChild(0).position, localMove, out hit, .5f)
-            || hit.collider.gameObject.tag == "AnimalFoV")
+        if (Physics.Raycast(transform.GetChild(0).position, localMove, out hit, .5f)
+            && hit.collider.gameObject.tag == "OnPlanetCollision")
         {
-            //If there is no trigger collider in the movement direction (or it is the collider for the animal FOV) the player moves
-            rb.MovePosition(rb.position + localMove);
+            return;
         }
+        //If there is no trigger collider in the movement direction (or it is the collider for the animal FOV) the player moves
+        rb.MovePosition(rb.position + localMove);
     }
 }

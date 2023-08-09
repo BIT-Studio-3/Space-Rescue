@@ -1,6 +1,6 @@
 // Description: Script controls each individual animal after spawn
 // Author: Erika Stuart
-// Last Updated: 8/08/2023
+// Last Updated: 9/08/2023
 // Last Updated By: Palin Wiseman
 using System.Collections;
 using System.Collections.Generic;
@@ -11,8 +11,7 @@ using UnityEngine;
 //Script controls each individual animal after spawn
 public class AnimalController : MonoBehaviour
 {
-    private bool inRange = false;
-    private float speed = 10;
+    private const float SPEED = 10;
     private Vector3 velocity = Vector3.zero;
     private Rigidbody rb;
     private float radius;
@@ -29,28 +28,14 @@ public class AnimalController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() { }
+
+    private void OnTriggerStay(Collider other)
     {
-        if (inRange == true && Input.GetKeyDown(Keybinds.Interact))
+        if (other.CompareTag("Player") && Input.GetKeyDown(Keybinds.Interact))
         {
             GameSettings.Score++;
             Destroy(gameObject);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            inRange = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            inRange = false;
         }
     }
 
@@ -66,16 +51,20 @@ public class AnimalController : MonoBehaviour
             RaycastHit hit;
 
             while (Vector3.Distance(transform.position, pos) > 1) //while the animal is not at their desired position
-            {
-                if (Physics.Raycast(transform.position, pos, out hit, .5f) && hit.collider.gameObject.tag != "AnimalFoV")
+            { //This code is a mess but it works and every time I try to make it better it stops working.
+                if (
+                    Physics.Raycast(transform.position, pos, out hit, .5f) //if there is a collider in front of the animal
+                    && hit.collider.gameObject.tag == "OnPlanetCollision" //if the collider is for collision
+                    && hit.collider.gameObject.transform.parent.gameObject != gameObject //if the collider is not the animal's own collider
+                )
                 {
-                    //if there is a collider in front of the animal, end the movement
+                    //end the movement
                     break;
                 }
                 transform.position = Vector3.MoveTowards(
                     transform.position,
                     pos,
-                    speed * Time.deltaTime
+                    SPEED * Time.deltaTime
                 ); //move them to it!
                 yield return 0; //used to let the engine wait for a frame which breaks an endless broken loop
             }
