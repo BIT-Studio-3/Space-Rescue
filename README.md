@@ -120,4 +120,5 @@ Black hole creation assisted by this tutorial:
 https://www.youtube.com/watch?v=FlE8e1JwVzs
 
 Ship model: https://assetstore.unity.com/packages/3d/vehicles/space/oxar-light-freighter-82240
+Planet lander model: https://assetstore.unity.com/packages/3d/vehicles/space/mars-pod-121710
 <!-- When music is added put the credit here as well as the licence for it -->
