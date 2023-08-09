@@ -1,6 +1,6 @@
 // Description: Handles player movement
 // Author: Erika Stuart
-// Last Updated: 8/08/2023
+// Last Updated: 9/08/2023
 // Last Updated By: Palin Wiseman
 using System.Collections;
 using System.Collections.Generic;
@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        RaycastHit hit;
         //transform direction transforms direction from local to world
         Vector3 localMove = transform.TransformDirection(moveAmo) * Time.fixedDeltaTime;
         //Turn child gameobject in the direction of movement
@@ -46,10 +47,11 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.GetChild(0).localRotation = Quaternion.LookRotation(direction);
         }
-        if (!Physics.Raycast(transform.GetChild(0).position, localMove, out RaycastHit hit, .5f)
+        //The reason I am using raycasts here and not just non trigger colliders is because the player can use the animals as a ramp with proper colliders
+        if (!Physics.Raycast(transform.GetChild(0).position, localMove, out hit, .5f)
             || hit.collider.gameObject.tag == "AnimalFoV")
         {
-            //If there is a collider in the movement direction, don't let the player move
+            //If there is no trigger collider in the movement direction (or it is the collider for the animal FOV) the player moves
             rb.MovePosition(rb.position + localMove);
         }
     }
