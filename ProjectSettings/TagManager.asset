@@ -10,8 +10,9 @@ TagManager:
   - Tooltip
   - PlanetUI
   - EnergyBarFull
-  - Scenery
   - Animal
+  - AnimalFoV
+  - OnPlanetCollision
   layers:
   - Default
   - TransparentFX

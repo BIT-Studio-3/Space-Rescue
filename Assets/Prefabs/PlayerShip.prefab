@@ -5007,7 +5007,7 @@ GameObject:
   - component: {fileID: 2333569641422922412}
   - component: {fileID: 8476803455249810064}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerShip
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
