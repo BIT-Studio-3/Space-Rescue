@@ -55,7 +55,7 @@ public class HudBehaviour : MonoBehaviour
     public void ShowBlackholeInfo(float dist) //Shows the Panel with the distance from the blackhole
     {
         HideInfoPanel();
-        gameObject.GetComponent<SpriteRenderer>().enabled = true; //show or hide the panel sprite
+        gameObject.GetComponent<Image>().enabled = true; //show or hide the panel sprite
         objectName.GetComponent<Text>().enabled = true;
         distFromPlayer.GetComponent<Text>().enabled = true;
         objectName.GetComponent<Text>().text = "Black Hole";
@@ -69,7 +69,7 @@ public class HudBehaviour : MonoBehaviour
 
     public void ShowHudItems(bool visible) //Shows or hides all the hudItems
     {
-        gameObject.GetComponent<SpriteRenderer>().enabled = visible; //show or hide the panel sprite
+        gameObject.GetComponent<Image>().enabled = visible; //show or hide the panel sprite
         planetStatus.GetComponent<Text>().enabled = visible;
         objectName.GetComponent<Text>().enabled = visible;
         distFromPlayer.GetComponent<Text>().enabled = visible;
