@@ -11,6 +11,10 @@ public class PlanetManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject animalDisplay;
+
+    [SerializeField]
+    private GameObject scoreDisplay;
+
     private GameObject planetParent;
     private GameObject dropShip;
     public static PlanetManager Instance;
@@ -23,11 +27,13 @@ public class PlanetManager : MonoBehaviour
         Instance = this;
         planetParent = GameObject.Find("PlanetParent");
         held = 0;
+        scoreDisplay.GetComponent<TMPro.TextMeshPro>().text = "Temp Score Display: " + GameSettings.Score.ToString();
+        //This is very temporary. Will have a better system in the next increment.
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(Keybinds.Leave)&& dropShipRange)
+        if (Input.GetKeyDown(Keybinds.Leave) && dropShipRange)
         {
             ShipMovement.Instance.ResetBoost(); //This resets the ships boost before it goes back to the main scene
             GameMenuManager.Instance.ReturntoScene("Planet");
@@ -48,8 +54,11 @@ public class PlanetManager : MonoBehaviour
 
     private void DepositHeldAnimals()
     {
+        GameSettings.Score += held;
         held = 0;
         animalDisplay.GetComponent<TMPro.TextMeshPro>().text = held.ToString();
-        GameSettings.Score += held;
+        scoreDisplay.GetComponent<TMPro.TextMeshPro>().text = "Temp Score Display: " + GameSettings.Score.ToString();
+        //This is very temporary. Will have a better system in the next increment.
+
     }
 }
