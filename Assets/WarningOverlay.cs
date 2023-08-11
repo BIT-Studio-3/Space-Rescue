@@ -21,7 +21,7 @@ public class WarningOverlay : MonoBehaviour
     {
         isFlashing = visible;
         if (visible)
-            StartCoroutine(RepeatFlash(colorDuration,new Color(1.0f,0.0f,0.0f,0.0f),new Color(1.0f,0.0f,0.0f,0.4f)));;            
+            StartCoroutine(RepeatFlash(colorDuration,new Color(1.0f,0.0f,0.0f,0.0f),new Color(1.0f,0.0f,0.0f,0.075f)));;            
     }
 
     IEnumerator RepeatFlash(float colorDuration, Color start, Color end)
