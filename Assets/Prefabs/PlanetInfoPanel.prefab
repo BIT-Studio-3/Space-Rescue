@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4883970944370294302}
   - component: {fileID: 4883970944370294296}
   - component: {fileID: 4883970944370294297}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: DistanceBlackHole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4883970944940989349}
   - component: {fileID: 4883970944940989351}
   - component: {fileID: 4883970944940989348}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: PlayerCanLand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 4883970945242250834}
   - component: {fileID: 4883970945242250844}
   - component: {fileID: 4883970945242250845}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Status
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 4883970945537102610}
   - component: {fileID: 4883970945537102620}
   - component: {fileID: 4883970945537102621}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 4883970945553083173}
   - component: {fileID: 8206237141538893381}
   - component: {fileID: 1891070311983743164}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: PlanetInfoPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 4883970946185786569}
   - component: {fileID: 4883970946185786571}
   - component: {fileID: 4883970946185786568}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: DistancePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
