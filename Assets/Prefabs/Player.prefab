@@ -5122,7 +5122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d97bdf99ab1c747bad582571d803b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 1000
+  thrust: 2500
   Cap: 2500
   Bars:
   - {fileID: 3461958630786886031}

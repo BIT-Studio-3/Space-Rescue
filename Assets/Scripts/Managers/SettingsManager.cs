@@ -8,7 +8,7 @@ public class SettingsManager : MonoBehaviour
     public void BackButton()
     {
         Scene main = SceneManager.GetSceneByName("Main Scene");
-        Scene menu = SceneManager.GetSceneByName("Menu");
+        Scene menu = SceneManager.GetSceneByName("Title Screen");
         Scene tutorial = SceneManager.GetSceneByName("Game Tutorial");
         if (menu.IsValid())
         {
