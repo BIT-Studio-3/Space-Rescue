@@ -17,7 +17,7 @@ public class PlanetSpawn : MonoBehaviour
     private GameObject planetParent;
     private int xDistance;
     private int scale;
-    private const int SPAWNCOUNT = 10;
+    private const int SPAWNCOUNT = 8;
     private const int SCALEMIN = 100;
     private const int SCALEMAX = 300;
     private const int YZONE = 30; //Planets can spawn within x degrees from 0 up and down from the black hole
