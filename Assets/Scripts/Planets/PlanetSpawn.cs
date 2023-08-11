@@ -18,8 +18,8 @@ public class PlanetSpawn : MonoBehaviour
     private int xDistance;
     private int scale;
     private const int SPAWNCOUNT = 8;
-    private const int SCALEMIN = 100;
-    private const int SCALEMAX = 300;
+    private const int SCALEMIN = 50;
+    private const int SCALEMAX = 250;
     private const int YZONE = 30; //Planets can spawn within x degrees from 0 up and down from the black hole
     private const int ORBITAREA = 350; //A planet will spawn every x amount of units away from the black hole
     private const int BUFFER = 800; //Buffer away from the black hole so planets don't spawn too close
