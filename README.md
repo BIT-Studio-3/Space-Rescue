@@ -119,7 +119,7 @@ Thank you to the product owner Adon Moskal for giving us the original concept an
 Black hole creation assisted by this tutorial:
 https://www.youtube.com/watch?v=FlE8e1JwVzs
 
-Ship model: https://assetstore.unity.com/packages/3d/vehicles/space/oxar-light-freighter-82240
-Planet lander model: https://assetstore.unity.com/packages/3d/vehicles/space/mars-pod-121710
-HUD Elements: https://assetstore.unity.com/packages/tools/gui/off-screen-target-indicator-71799
+Ship model: [Oxar Light Freighter](https://assetstore.unity.com/packages/3d/vehicles/space/oxar-light-freighter-82240)
+Planet lander model: [Mars Pod](https://assetstore.unity.com/packages/3d/vehicles/space/mars-pod-121710)
+HUD Elements: [Off Screen Target Indicator](https://assetstore.unity.com/packages/tools/gui/off-screen-target-indicator-71799)https://assetstore.unity.com/packages/tools/gui/off-screen-target-indicator-71799
 <!-- When music is added put the credit here as well as the licence for it -->
