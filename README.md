@@ -56,7 +56,7 @@ The controls are shown in game when opening the menu. The current controls are a
 | Rolling Right             | E                      |
 | Looking Around            | Mouse movement         |
 | Speed Boost               | Left Shift             |
-| Escaping system / Plane   | Enter                  |
+| Escaping system / Planet  | Enter                  |
 | Interacting               | Left Mouse Button      |
 | Pause                     | Enter                  |
 
