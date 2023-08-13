@@ -1,10 +1,23 @@
-# Space Rescue
+# Space Rescue - A Thrilling Space Adventure Game
 
-<!-- ... 
-## Project Overview
 
-To be done. "Concise and compelling description of the game's concept, objectives, and unique selling points"
--->
+![Clean screenshot](https://github.com/BIT-Studio-3/Space-Rescue/assets/104882337/bf3c350a-64be-41ba-9067-b7cd31710454)
+
+
+Welcome to **Space Rescue**, an exciting space adventure game where you embark on a daring mission to save stranded animals from distant planets while racing against time and a looming black hole.
+
+## Features
+
+- **Engaging Gameplay:** Take on the role of a heroic space rescuer, navigating treacherous environments to rescue adorable animals and ensure their safe return to the lander.
+
+- **Dynamic Challenges:** Confront the relentless threat of a black hole as you race against time to complete your rescue missions and escape the planetary system
+
+- **Intuitive Controls:** Master your spacecraft's controls with ease, utilizing precise maneuvers, speed boosts, and interactive elements to navigate the diverse landscapes and challenges.
+
+- **Evolving Experience:** With each update, Space Rescue introduces new features and improvements, ensuring an ever-evolving and captivating gameplay experience.
+
+- **Stunning Visuals:** Immerse yourself in visually striking planets, each with its own unique characteristics, hazards, and environments, brought to life with the Unity game engine and the Universal Render Pipeline.
+
 
 ## Team Info
 
@@ -22,15 +35,14 @@ We are The Games Team! We are a team in the Bachelor of Information Technology i
   - Continuous Integration Engineer
   - Developer
 
-## Installation Instructions
-
-To install and play the game go to [this page](https://github.com/BIT-Studio-3/Space-Rescue/releases/latest) and download the Build.v1.X.ZIP file.
-When it is downloaded unzip the folder and run the SpaceRescue.exe file.
-
 ## How to play
 
-The goal of this game is to rescue animals off each planet and escape the area before the black hole swallows everyone. As the game is very early in development the gameplay loop is still being iterated on.
-<!-- More detailed explanation of the gameplay loop when it is finshed -->
+In Space Rescue, your mission is to save animals stranded on various planets before a black hole consumes everything. To play:
+
+1. Download the latest version of the game from the [release page](https://github.com/BIT-Studio-3/Space-Rescue/releases/latest).
+2. Unzip the downloaded folder and run `SpaceRescue.exe`.
+3. Use the controls to navigate your spacecraft, land on planets, rescue animals, and return them to the lander.
+4. Escape before the black hole's gravitational force becomes overwhelming.
 
 The controls are shown in game when opening the menu. The current controls are as follows:
 
@@ -44,18 +56,21 @@ The controls are shown in game when opening the menu. The current controls are a
 | Rolling Right             | E                      |
 | Looking Around            | Mouse movement         |
 | Speed Boost               | Left Shift             |
-| Escaping Area / Planet    | Enter                  |
+| Escaping system / Plane   | Enter                  |
 | Interacting               | Left Mouse Button      |
 | Pause                     | Enter                  |
 
+## Get Involved
+
+Join the Space Rescue community and stay up to date with the latest developments, bug fixes, and upcoming features:
+
+- **Discussions:** Share your feedback, questions, and ideas on the [discussions board](https://github.com/BIT-Studio-3/Space-Rescue/discussions).
+- **Issue Tracker:** Report bugs on the [issues page](https://github.com/BIT-Studio-3/Space-Rescue/issues).
 
 ## Build status
 
 ![Create Build and Release](https://github.com/BIT-Studio-3/Space-Rescue/actions/workflows/ci-build-and-release.yml/badge.svg)
 
-## Technologies used
-
-We are using the Unity game engine on version 2021.3.19f1. It is being coded in C# and using the Universal Render Pipeline.
 
 ## Known issues and limitations
 
@@ -67,20 +82,11 @@ Current bugs can be found on the [latest release](https://github.com/BIT-Studio-
 Need to confirm with lecturers about the licence this falls under. Can use https://choosealicense.com/
 -->
 
-## Contact Information
 
-Please post feedback and questions to the [discussions board](https://github.com/BIT-Studio-3/Space-Rescue/discussions).
-
-<!-- 
-## Screenshots and gifs
-
-Something with pretty pictures and gifs to show it off. Black hole for example
-Upload them to the repository and use ![Screenshot 1](path/to/screenshot1.png) to show them off.
--->
 
 ## Version history
 
-A full list of features can be seen on [this page.](https://github.com/BIT-Studio-3/Space-Rescue/releases)
+A full list of features added in each version can be seen on [this page.](https://github.com/BIT-Studio-3/Space-Rescue/releases)
 
 Some of the most important changes for each update are as follows:
 
@@ -98,31 +104,23 @@ Some of the most important changes for each update are as follows:
 
 Upcoming features can be seen in the [issues page](https://github.com/BIT-Studio-3/Space-Rescue/issues).
 
-Some of the features currently on the roadmap, in rough order of priority, are:
-- Major improvements to on planet gameplay
-- New pause menu
-- New end game screen
+Some of the features currently on the roadmap are:
+- Major improvements to on-planet gameplay
+- Enhanced pause menu and end game screen
 - Improved new player experience
-- New models for on planet gameplay
-- New and expanded planets
-- Collections of different animal and planet info
-- Quality settings
-- Music and Sound effects
+- Diverse models for on-planet gameplay
+- Expansive range of planets and animals
+- Quality settings, music, and sound effects
 
 ## Acknowledgements
 
-Thank you to our Studio teachers Elise Allen, Paul Admiraal, and Martin Junek for all the help, advice, and motivation provided during the making of this game
-Thank you to the product owner Adon Moskal for giving us the original concept and for his direction, ideas, and feedback throughout the project.
+We extend our heartfelt gratitude to our dedicated team members and mentors who have contributed to Space Rescue's development. Special thanks to Elise Allen, Paul Admiraal, Martin Junek, and Adon Moskal for their guidance, support, and creative input.
 
 ## Credits
 
-Black hole creation assisted by this tutorial:
-https://www.youtube.com/watch?v=FlE8e1JwVzs
+- Black hole creation: [Tutorial Link](https://www.youtube.com/watch?v=FlE8e1JwVzs)
+- Ship model: [Oxar Light Freighter](https://assetstore.unity.com/packages/3d/vehicles/space/oxar-light-freighter-82240)
+- Planet lander model: [Mars Pod](https://assetstore.unity.com/packages/3d/vehicles/space/mars-pod-121710)
+- HUD Elements: [Off Screen Target Indicator](https://assetstore.unity.com/packages/tools/gui/off-screen-target-indicator-71799)
 
-Ship model: [Oxar Light Freighter](https://assetstore.unity.com/packages/3d/vehicles/space/oxar-light-freighter-82240)
-
-Planet lander model: [Mars Pod](https://assetstore.unity.com/packages/3d/vehicles/space/mars-pod-121710)
-
-HUD Elements: [Off Screen Target Indicator](https://assetstore.unity.com/packages/tools/gui/off-screen-target-indicator-71799)
-
-<!-- When music is added put the credit here as well as the licence for it -->
+<!-- Add music credits and license information when available -->
