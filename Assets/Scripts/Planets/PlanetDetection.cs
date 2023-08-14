@@ -37,7 +37,7 @@ public class PlanetDetection : MonoBehaviour
         }
         if(Input.GetKeyDown(Keybinds.Interact))
         {
-            if (playerInsideRadius && !planetRescued)
+            if (playerInsideRadius && !planetRescued && Time.timeScale != 0)
             {
                 if (GameSettings.Tutorial)
                 {
