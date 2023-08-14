@@ -30,7 +30,6 @@ public class BlackHoleGravity : MonoBehaviour
             {
                 other.attachedRigidbody.AddForce((transform.position - other.transform.position) * gravityIntensity * other.attachedRigidbody.mass * playerGravity * Time.smoothDeltaTime);
             }
-            Debug.DrawRay(other.transform.position, transform.position - other.transform.position); //To show what it's targetting
         }
     }
 }
