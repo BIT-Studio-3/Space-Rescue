@@ -1,0 +1,23 @@
+{
+  "prompt_text": "Realistic  red clay soil surface, irregular surface, muddy and flaky , clay lumps  , grainy , particles , brown and red shade  porous",
+  "patch": {
+    "ext": "png",
+    "dtype": "uint8",
+    "width": 512,
+    "height": 512,
+    "url": "https://static-dev.withpoly.com/v3/textures/patches/2dfcf9b9-621b-4211-ad15-7c6b84a7b598.png",
+    "patch_id": "hbWoWXjbxn"
+  },
+  "seamless_prompt_text": "Realistic  red clay soil surface, irregular surface, muddy and flaky , clay lumps  , grainy , particles , brown and red shade  porous",
+  "seamless_patch_scale": 1.1,
+  "upscale_prompt_text": "Realistic  red clay soil surface, irregular surface, muddy and flaky , clay lumps  , grainy , particles , brown and red shade  porous",
+  "upscale_resolution": 2048,
+  "is_seamless": true,
+  "pbr_mode": "diverse",
+  "pbr_generate_color": true,
+  "pbr_generate_normal": true,
+  "pbr_generate_height": true,
+  "pbr_generate_ao": true,
+  "pbr_generate_roughness": true,
+  "pbr_generate_metallic": false
+}
