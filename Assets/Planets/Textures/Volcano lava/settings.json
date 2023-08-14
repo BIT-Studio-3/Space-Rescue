@@ -1,0 +1,23 @@
+{
+  "prompt_text": "Volcano rocks with lots of lava",
+  "patch": {
+    "ext": "png",
+    "dtype": "uint8",
+    "width": 512,
+    "height": 512,
+    "url": "https://static-dev.withpoly.com/v3-voronoi/textures/patches/f5a3e0f6-2e7a-405e-84f6-fdaf22f8b784.png",
+    "patch_id": "RTNo9wgKcn"
+  },
+  "seamless_prompt_text": "Volcano rocks with lots of lava",
+  "seamless_patch_scale": 0.8,
+  "upscale_prompt_text": "Volcano rocks with lots of lava",
+  "upscale_resolution": 4096,
+  "is_seamless": true,
+  "pbr_mode": "matte",
+  "pbr_use_render_as_color": true,
+  "pbr_generate_normal": true,
+  "pbr_generate_height": true,
+  "pbr_generate_ao": true,
+  "pbr_generate_roughness": true,
+  "pbr_generate_metallic": false
+}
