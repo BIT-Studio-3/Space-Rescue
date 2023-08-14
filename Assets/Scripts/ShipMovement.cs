@@ -105,7 +105,7 @@ public class ShipMovement : MonoBehaviour
     {
         spaceshipRB.AddForce(speedMult * verticalMove * spaceshipRB.transform.TransformDirection(Vector3.forward), ForceMode.VelocityChange);
         float currentVelocity = Mathf.Round((spaceshipRB.velocity - initialVelocity).magnitude);
-        currentVelocity = currentVelocity * 10;
+        currentVelocity = currentVelocity * 10; 
         speedText.text = currentVelocity < 10 ? $"0{currentVelocity}" : $"{currentVelocity}";
         spaceshipRB.AddForce(horizontalMove * speedMult * spaceshipRB.transform.TransformDirection(Vector3.right), ForceMode.VelocityChange);
 
