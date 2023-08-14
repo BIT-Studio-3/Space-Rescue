@@ -1,0 +1,23 @@
+{
+  "prompt_text": "Frozen lake with small snowflakes all over the frozen surface in high resolution",
+  "patch": {
+    "ext": "png",
+    "dtype": "uint8",
+    "width": 512,
+    "height": 512,
+    "url": "https://static-dev.withpoly.com/v3-voronoi/textures/patches/0386cab3-7f7f-4e7f-9898-6263a677572f.png",
+    "patch_id": "HyoCZLbZjs"
+  },
+  "seamless_prompt_text": "Frozen lake with small snowflakes all over the frozen surface in high resolution",
+  "seamless_patch_scale": 0.96,
+  "upscale_prompt_text": "Frozen lake with small snowflakes all over the frozen surface in high resolution",
+  "upscale_resolution": 4096,
+  "is_seamless": true,
+  "pbr_mode": "polished",
+  "pbr_generate_color": true,
+  "pbr_generate_normal": true,
+  "pbr_generate_height": true,
+  "pbr_generate_ao": true,
+  "pbr_generate_roughness": true,
+  "pbr_generate_metallic": false
+}
