@@ -15,7 +15,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public void Continue()
     {
-        KeypressManager.Instance.Play(); //Uses KeypressManager.Play() same as pressing esc
+        PlanetManager.Instance.Play(); //Uses KeypressManager.Play() same as pressing esc
     }
 
     public void Options()
