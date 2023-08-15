@@ -20,14 +20,18 @@ public class PlanetManager : MonoBehaviour
     public static PlanetManager Instance;
     private int held;
     public bool dropShipRange;
+    private GameObject pauseMenu;
 
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
+        pauseMenu = GameObject.Find("Pause Menu");
+        pauseMenu.SetActive(false);
         planetParent = GameObject.Find("PlanetParent");
         held = 0;
-        scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "Temp Score Display: " + GameSettings.Score.ToString();
+        scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text =
+            "Temp Score Display: " + GameSettings.Score.ToString();
         //This is very temporary. Will have a better system in the next increment.
     }
 
@@ -42,6 +46,44 @@ public class PlanetManager : MonoBehaviour
         {
             DepositHeldAnimals();
         }
+
+        if (Input.GetKeyDown(Keybinds.Pause))
+        {
+            //Checks if it is currently paused or playing
+            if (Time.timeScale == 0)
+            {
+                pauseMenu.SetActive(false);
+
+                if (SceneManager.GetSceneByName("Settings").isLoaded)
+                { //gets the settings scene and checks if its loaded
+                    SceneManager.UnloadSceneAsync("Settings"); //then unloads it if the player presses escape in the settings menu
+                }
+
+                Play();
+            }
+            else
+            {
+                pauseMenu.SetActive(true);
+                Pause();
+            }
+        }
+    }
+
+    public void Play()
+    {
+        Time.timeScale = 1;
+        Cursor.visible = false; //Disable cursor
+
+        Cursor.lockState = CursorLockMode.Locked;
+        pauseMenu.SetActive(false);
+    }
+
+    private void Pause()
+    {
+        Time.timeScale = 0;
+
+        Cursor.visible = true; //Enable cursor
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void UpdateHeldAnimals(string animalName)
@@ -57,8 +99,8 @@ public class PlanetManager : MonoBehaviour
         GameSettings.Score += held;
         held = 0;
         animalDisplay.GetComponent<TMPro.TextMeshPro>().text = held.ToString();
-        scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "Temp Score Display: " + GameSettings.Score.ToString();
+        scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text =
+            "Temp Score Display: " + GameSettings.Score.ToString();
         //This is very temporary. Will have a better system in the next increment.
-
     }
 }
