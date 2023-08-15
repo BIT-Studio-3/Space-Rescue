@@ -5122,13 +5122,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d97bdf99ab1c747bad582571d803b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2500
-  Cap: 2500
-  Bars:
+  speedText: {fileID: 0}
+  bars:
   - {fileID: 3461958630786886031}
   - {fileID: 8654786635985543905}
   - {fileID: 8023915526307364310}
   - {fileID: 6116732038883403111}
+  - {fileID: 0}
 --- !u!1 &2333569642393514052
 GameObject:
   m_ObjectHideFlags: 0
@@ -5263,6 +5263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetFOV: 90
   transitionDuration: 1
+  boosters: 0
   BoosterTop: {fileID: 7238423926071346298}
   BoosterBot: {fileID: 8835682765455784378}
 --- !u!1 &3413041998363350406

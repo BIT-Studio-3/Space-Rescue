@@ -6,7 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class KeypressManager : MonoBehaviour
 {
-    public GameObject PauseMenu;
+    private GameObject pauseMenu;
+    public static KeypressManager Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+    void Start()
+    {
+        pauseMenu = GameObject.Find("Pause Menu");
+        pauseMenu.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -17,12 +28,12 @@ public class KeypressManager : MonoBehaviour
             {         
                 if (GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Escaping" || GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Complete" )
                 {
-                    escapeScene();
+                    EscapeScene();
                 }           
             }
             else
             {
-                    escapeScene();
+                EscapeScene();
             }
         }
         if (Input.GetKeyDown(Keybinds.Pause))
@@ -30,36 +41,42 @@ public class KeypressManager : MonoBehaviour
             //Checks if it is currently paused or playing
             if (Time.timeScale == 0)
             {
-                play();
+                pauseMenu.SetActive(false);
+
+                if(SceneManager.GetSceneByName("Settings").isLoaded){ //gets the settings scene and checks if its loaded
+                    SceneManager.UnloadSceneAsync("Settings"); //then unloads it if the player presses escape in the settings menu
+                }
+
+                Play();
             }
             else
             {
-                pause();
+                pauseMenu.SetActive(true);
+                Pause();
             }
         }
     }
 
-    private void escapeScene()
+    private void EscapeScene()
     {
-        play();
+        Play();
         SceneManager.LoadScene("Game End");
     }
 
-    private void play()
+    public void Play()
     {
         Time.timeScale = 1;
-        //Disable cursor
-        Cursor.visible = false;
+        Cursor.visible = false;//Disable cursor
+
         Cursor.lockState = CursorLockMode.Locked;
-        PauseMenu.SetActive(false);
+        pauseMenu.SetActive(false);
     }
 
-    private void pause()
+    private void Pause()
     {
         Time.timeScale = 0;
-        //Enable cursor
-        Cursor.visible = true;
+
+        Cursor.visible = true;//Enable cursor
         Cursor.lockState = CursorLockMode.None;
-        PauseMenu.SetActive(true);
     }
 }

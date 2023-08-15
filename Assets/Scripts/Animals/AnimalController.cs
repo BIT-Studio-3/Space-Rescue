@@ -31,7 +31,7 @@ public class AnimalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inRange && Input.GetKeyDown(Keybinds.Interact)) //TODO: Add a max held? Also have a better visual way of seeing when you have held animals. And what ones
+        if (inRange && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0) //TODO: Add a max held? Also have a better visual way of seeing when you have held animals. And what ones
             {
                 PlanetManager.Instance.UpdateHeldAnimals(gameObject.name); //Updating the UI to show the amount of animals held
                 Destroy(gameObject);
