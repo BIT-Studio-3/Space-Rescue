@@ -25,7 +25,7 @@ public class AnimalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inRange == true && Input.GetKeyDown(Keybinds.Interact))
+        if (inRange == true && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0)
         {
             Destroy(gameObject);
             PlanetManager.Instance.LoadMiniGame();
