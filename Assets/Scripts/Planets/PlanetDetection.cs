@@ -13,15 +13,11 @@ public class PlanetDetection : MonoBehaviour
 
     public GameObject planet; //the planet prefab
 
-    void Start() { }
 
     void Update()
     {
-        if (
-            GameSettings.Tutorial
-            && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips.Count
-                != 0
-        )
+
+        if (GameSettings.Tutorial && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips.Count != 0)
         {
             if (
                 playerInsideRadius
@@ -112,9 +108,7 @@ public class PlanetDetection : MonoBehaviour
         );
         if (hits.Length > 0)
             hits = hits.Where(hit => hit.transform.name != "WarningBox").ToArray();
-        hits = hits.Where(hit => hit.transform.name == "SphereHitbox").ToArray();
-        Debug.DrawRay(gameObject.transform.position, PlanetdirectionToBlackHole, Color.blue, 5f);
-        Debug.Log(" Planet New Raycast: " + hits[0].transform.name);
+            hits = hits.Where(hit => hit.transform.name == "SphereHitbox").ToArray();
 
         return Mathf.Round(hits[0].distance); //hit.distance is the length of the raycast the value is then rounded to a whole number
     }

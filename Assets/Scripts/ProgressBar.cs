@@ -8,8 +8,6 @@ public class ProgressBar : MonoBehaviour
     private RectTransform progressBar;
     public float targetScale; 
     public float barSpeed = 5 ; 
-    private float startScale;  
-    private float percentScaled;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +17,6 @@ public class ProgressBar : MonoBehaviour
         b.anchorMax = new Vector2(0,0);
         b.pivot = new Vector2(0,0);
         b.anchoredPosition = new Vector3(0,0,0);
-        startScale = progressBar.sizeDelta.x;
     }
     // Update is called once per frame
     void Update()
