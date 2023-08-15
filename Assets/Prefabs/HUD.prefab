@@ -86,11 +86,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 933962706170195661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a1b015da339f14a896e1745df08341, type: 3}
+  m_Script: {fileID: 11500000, guid: 556b42c84423ce244a2607f7eab8bd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isFlashing: 0
-  colorDuration: 0
+  colorDuration: 2.5
 --- !u!1 &933962706211514307
 GameObject:
   m_ObjectHideFlags: 0
