@@ -33,7 +33,7 @@ public class KeypressManager : MonoBehaviour
             }
             else
             {
-                    EscapeScene();
+                EscapeScene();
             }
         }
         if (Input.GetKeyDown(Keybinds.Pause))
@@ -42,6 +42,11 @@ public class KeypressManager : MonoBehaviour
             if (Time.timeScale == 0)
             {
                 pauseMenu.SetActive(false);
+
+                if(SceneManager.GetSceneByName("Settings").isLoaded){ //gets the settings scene and checks if its loaded
+                    SceneManager.UnloadSceneAsync("Settings"); //then unloads it if the player presses escape in the settings menu
+                }
+
                 Play();
             }
             else
