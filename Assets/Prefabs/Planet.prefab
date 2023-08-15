@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 9173007900431462682}
   - component: {fileID: 3791640524103179786}
   - component: {fileID: 2169499603414191347}
+  - component: {fileID: -2013812364552127450}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -177,4 +178,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93842c713b2771409e0178de3165700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: -10
+  orbitSpeed: 3
+  minSpin: -4
+  maxSpin: -10
+--- !u!114 &-2013812364552127450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5748848403008948943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411060de4483b5e4c9847cd3cbc18554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetColor: {r: 0.9283019, g: 0.9694229, b: 1, a: 1}
+  needBoxIndicator: 1
+  needArrowIndicator: 1
+  needDistanceText: 0
+  indicator: {fileID: 0}

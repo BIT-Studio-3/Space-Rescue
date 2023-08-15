@@ -12,11 +12,9 @@ public class FindingPlanets : MonoBehaviour
     public GameObject tick;
     public GameObject blackHole;
     public Text distanceText;
-
     public GameObject crosshair;
-    // Start is called before the first frame update
 
-
+    private string closestPlanetName; //Gets the name of the closest planet
     public Camera cam;  //Camera to use
     private Vector3 targetPos; //Target position on screen
     private Vector3 screenMiddle; //Middle of the screen
@@ -53,11 +51,15 @@ public class FindingPlanets : MonoBehaviour
                     minDist = dist;
 
                 }
+                else
+                {
+                }
 
                 if (planet == null || planet.GetComponent<PlanetDetection>().planetRescued == true)
                 {
 
                     planetsNotRescued.Remove(planet); //Remove saved planets from the list
+                    planet.GetComponent<Target>().enabled = false;
                     break;
                 }
 
@@ -74,39 +76,34 @@ public class FindingPlanets : MonoBehaviour
 
             LayerMask layerAsLayerMask = (1 << 0);
             RaycastHit[] hits;
-            hits = (Physics.RaycastAll(cam.ScreenPointToRay(screenMiddle), Mathf.Infinity));
-            hits = hits.Where(hit => hit.transform.parent.transform.name !="Post Processing").ToArray();
-            foreach(RaycastHit hit in hits)
-                {
-                    print(hit.transform.parent.name);
-                }
+            hits = Physics.RaycastAll(cam.ScreenPointToRay(screenMiddle), Mathf.Infinity);
+            hits = hits.Where(hit => hit.transform.parent.transform.name != "Post Processing").ToArray();
+            foreach (RaycastHit hit in hits)
+            {
+            }
             if (hits.Length > 0)
-            {            
+            {
                 hits = hits.OrderBy(hit => hit.distance).ToArray();
                 if (hits.Length > 0)
                 {
                     RaycastHit[] playerhits;
-                    playerhits = (Physics.RaycastAll(player.transform.position, (hits[0].transform.position - player.transform.position), hits[0].distance,layerAsLayerMask));
+                    playerhits = (Physics.RaycastAll(player.transform.position, (hits[0].transform.position - player.transform.position), hits[0].distance, layerAsLayerMask));
                     if (playerhits.Length > 0)
                     {
                         playerhits = playerhits.Where(hit => hit.transform.gameObject == hits[0].transform.gameObject).ToArray();
-                        playerhits = playerhits.Where(hit => hit.transform.parent.transform.name !="Post Processing").ToArray();
+                        playerhits = playerhits.Where(hit => hit.transform.parent.transform.name != "Post Processing").ToArray();
                         playerhits = playerhits.OrderBy(hit => hit.distance).ToArray();
 
                         if (playerhits.Length > 0)
                         {
-                            print(hits[0].transform.name);
                             if (playerhits[0].transform.name == "SphereHitbox") //Because of the gravity feature changing some aspects of the black hole this will be later changed to the physcial game object of the black hole hit box
                             {
-                                Debug.DrawRay(player.transform.position, (playerhits[0].transform.position - player.transform.position), Color.green, 0.5f);
                                 HudBehaviour.instance.ShowBlackholeInfo(Mathf.Round(playerhits[0].distance));
                             }
                             else if (playerhits[0].transform.name == "Planet(Clone)")
                             {
                                 float distBlackHole = playerhits[0].transform.gameObject.GetComponent<PlanetDetection>().PlanetDistanceToBlackHole();
-                                string name = playerhits[0].transform.gameObject.transform.GetChild(1).name.Substring(0, playerhits[0].transform.gameObject.transform.GetChild(1).gameObject.name.Length - 7);
-                                Debug.DrawRay(player.transform.position, (playerhits[0].transform.position - player.transform.position), Color.white, 0.5f);
-                                Debug.Log(playerhits[0].transform.name);
+                                string name = playerhits[0].transform.gameObject.transform.GetChild(1).name[..(playerhits[0].transform.gameObject.transform.GetChild(1).gameObject.name.Length - 7)];
                                 HudBehaviour.instance.ShowPlanetInfo(playerhits[0].transform.GetComponent<PlanetDetection>(), Mathf.Round(playerhits[0].distance), distBlackHole, name);
                             }
                         }
@@ -138,6 +135,29 @@ public class FindingPlanets : MonoBehaviour
         //The arrow still finds the closest planet and points to it as in previous iterations
 
         GameObject target = closestPlanet;
+        closestPlanetName = closestPlanet.transform.GetChild(1).transform.name;
+        foreach (GameObject planet in planetsNotRescued)
+        {
+            if (planet.transform.GetChild(1).transform.name != closestPlanetName)
+            {
+                if (planet.GetComponent<PlanetDetection>().inDanger)
+                {
+                    planet.GetComponent<Target>().enabled = true;
+                    planet.GetComponent<Target>().TargetColor = Color.red;
+
+                }
+                else
+                {
+                    planet.GetComponent<Target>().enabled = false;
+                }
+            }
+            else
+            {
+                planet.GetComponent<Target>().enabled = true;
+                planet.GetComponent<Target>().TargetColor = new Color(0.5f,1,1);
+
+            }
+        }
         //Get the targets position on screen into a Vector3
         targetPos = cam.WorldToScreenPoint(target.transform.position);
         //Get the middle of the screen into a Vector3
@@ -157,8 +177,8 @@ public class FindingPlanets : MonoBehaviour
         //  distanceText.text = angle.ToString();
         if (angle < 10 && angle > 0) //Range for the crosshair to the planet. 
         {
-            GetComponent<Renderer>().enabled = false;
-            tick.SetActive(true);
+            //GetComponent<Renderer>().enabled = false;
+            //tick.SetActive(true);
 
 
             if (GameSettings.Tutorial) //Only checks if the tutorial is set to true.
@@ -171,8 +191,8 @@ public class FindingPlanets : MonoBehaviour
         }
         else
         {
-            GetComponent<Renderer>().enabled = true;
-            tick.SetActive(false);
+            //GetComponent<Renderer>().enabled = true;
+            //tick.SetActive(false);
             //HudBehaviour.instance.HidePlanetInfo(target.GetComponent<PlanetDetection>());
 
 
