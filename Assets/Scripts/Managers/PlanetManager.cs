@@ -39,6 +39,7 @@ public class PlanetManager : MonoBehaviour
     {
         if (Input.GetKeyDown(Keybinds.Leave) && dropShipRange)
         {
+            DepositHeldAnimals();
             ShipMovement.Instance.ResetBoost(); //This resets the ships boost before it goes back to the main scene
             GameMenuManager.Instance.ReturntoScene("Planet");
         }
