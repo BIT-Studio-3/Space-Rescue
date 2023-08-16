@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BHWarning : MonoBehaviour
 {
     public static BHWarning Instance;
     public GameObject planetWarning;
     public GameObject shipWarning;
+    public GameObject warningOverlay;
 
     void Awake()
     {
@@ -26,6 +28,7 @@ public class BHWarning : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             shipWarning.SetActive(true);
+            warningOverlay.GetComponent<WarningOverlay>().SetOverlayVisible(true);
         }
     }
 
@@ -35,6 +38,9 @@ public class BHWarning : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             shipWarning.SetActive(false);
+            warningOverlay.GetComponent<WarningOverlay>().SetOverlayVisible(false);
+
+
         }
     }
 

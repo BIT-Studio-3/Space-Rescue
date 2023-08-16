@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Managers/PauseMenuManager.cs.meta
+guid: 7aede3aada710984899618ec4a7995c1
+========
+guid: f9689fb239e119246b229cc37053cc00
+>>>>>>>> staging:Assets/Scripts/Managers/DropShipManager.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

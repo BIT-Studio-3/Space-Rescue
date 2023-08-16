@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Feature Requests
+    url: https://github.com/BIT-Studio-3/Space-Rescue/discussions/new?category=ideas
+    about: Idea for a new feature? Let us know!
+  - name: Questions
+    url: https://github.com/BIT-Studio-3/Space-Rescue/discussions/new?category=q-a
+    about: Ask us anything!
+  - name: General Feedback
+    url: https://github.com/BIT-Studio-3/Space-Rescue/discussions/new?category=general
+    about: Any feedback you might have
