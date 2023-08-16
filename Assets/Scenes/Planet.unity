@@ -864,6 +864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPlanet
       objectReference: {fileID: 0}
+    - target: {fileID: 8074805878199049737, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
+      propertyPath: attractor
+      value: 
+      objectReference: {fileID: 1736528026}
     - target: {fileID: 8074805878199049973, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
       propertyPath: m_RootOrder
       value: 1
