@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/PlanetKeypressManager.cs.meta
+guid: 556b42c84423ce244a2607f7eab8bd87
+========
+guid: 70a1b015da339f14a896e1745df08341
+>>>>>>>> staging:Assets/WarningOverlay.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

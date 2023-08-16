@@ -1,3 +1,7 @@
+// Description: Handles player movement
+// Author: Erika Stuart
+// Last Updated: 9/08/2023
+// Last Updated By: Palin Wiseman
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +9,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float speed = 5f;
-    Rigidbody rb;
-    Vector3 moveAmo;
-    Vector3 smoothMoveVel = Vector3.zero;
-    public Vector3 direction;
+    private float speed = 20f;
+    private Rigidbody rb;
+    private Vector3 moveAmo;
+    private Vector3 smoothMoveVel = Vector3.zero;
+    private Vector3 direction;
 
     // Start is called before the first frame update
     void Start()
@@ -19,31 +23,37 @@ public class PlayerMovement : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
-
     }
 
     void Update()
     {
-        direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+        direction = new Vector3(
+            Input.GetAxisRaw("Horizontal"),
+            0,
+            Input.GetAxisRaw("Vertical")
+        ).normalized;
         Vector3 targetMove = direction * speed;
         //current, target, velocity,  smooth time
         moveAmo = Vector3.SmoothDamp(moveAmo, targetMove, ref smoothMoveVel, .1f);
-
-        /*if (direction != Vector3.zero)
-        {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction, Vector3.up), Time.deltaTime * 50f);
-        }
-        rb.MovePosition(rb.position + transform.TransformDirection(direction) * speed * Time.deltaTime);
-        */
     }
 
     void FixedUpdate()
     {
-
+        RaycastHit hit;
         //transform direction transforms direction from local to world
         Vector3 localMove = transform.TransformDirection(moveAmo) * Time.fixedDeltaTime;
-        //changes the position (Vector3)
-		rb.MovePosition(rb.position + localMove);
+        //Turn child gameobject in the direction of movement
+        if (direction != Vector3.zero)
+        {
+            transform.GetChild(0).localRotation = Quaternion.LookRotation(direction);
+        }
+        //The reason I am using raycasts here and not just non trigger colliders is because the player can use the animals as a ramp with proper colliders
+        if (Physics.Raycast(transform.GetChild(0).position, localMove, out hit, .5f)
+            && hit.collider.gameObject.tag == "OnPlanetCollision")
+        {
+            return;
+        }
+        //If there is no trigger collider in the movement direction (or it is the collider for the animal FOV) the player moves
+        rb.MovePosition(rb.position + localMove);
     }
 }
