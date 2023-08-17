@@ -99,14 +99,15 @@ jobs:
               uses: mathieudutour/github-tag-action@v6.1
               with:
                 github_token: ${{ secrets.REPO_TOKEN }}
-                default_bump: minor
+                custom_tag: ${{github.event.pull_request.title}}
+        
             - name: Create a GitHub Release
               id: new_release
               uses: ncipollo/release-action@v1
               with:
                 token: ${{ secrets.REPO_TOKEN }} 
-                tag:  ${{ steps.tag_version.outputs.new_tag }} #the tag of the new release from the previous step
-                name: Release ${{ steps.tag_version.outputs.new_tag }}
+                tag:  ${{ steps.tag_version.outputs.new_version }} #the tag of the new release from the previous step
+                name: ${{ steps.tag_version.outputs.new_version }}
                 bodyFile: /home/runner/work/Space-Rescue/Space-Rescue/release/changelog.md #the file with the markdown formattted body for the changelog
             - name: Upload to GitHub Release
               uses: fiddlermikey/upload-release-assets@main
