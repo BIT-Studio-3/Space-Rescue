@@ -10,7 +10,7 @@ public class PauseMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pauseMenu = GameObject.Find("Pause Menu");
+        pauseMenu = GameObject.Find("Pause Menu"); 
     }
 
     public void Continue()
