@@ -1,4 +1,7 @@
-//Updates UI as needed
+// Description: Handles the End Screen
+// Author: 
+// Last Updated: 18/8/23
+// Last Updated By: Chase Bennett-Hill
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,14 +11,13 @@ using UnityEngine.UI;
 
 public class GameEndManager : MonoBehaviour
 {
-    //The text of the number of planets saved
-    public Text savedNumber;
+
     //Game objects for saved numbers and the text above it
-    public GameObject savedNumGO;
     public GameObject savedTextGO;
-    public GameObject menuButton;
+    public GameObject statusTextGO;
     //Text announcing the result
     public Text winningText;
+    //The text of the number of planets saved
     void Start()
     {
         //Updates score and winning state when end game state is entered
@@ -26,14 +28,13 @@ public class GameEndManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         if(GameSettings.Tutorial)
             GameObject.Find("Restart").GetComponent<Text>().text = "Continue";
-            menuButton.SetActive(true);
  
     }
 
     //Sets the score display to the current game score
     public void UpdateScore()
     {
-        savedNumber.text = GameSettings.Score.ToString();
+        savedTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = GameSettings.Score == 1 ? $"You rescued {GameSettings.Score} animal" : $"You rescued {GameSettings.Score} animals";
     }
 
     //Updates the text depending on if you escaped or died
@@ -45,13 +46,11 @@ public class GameEndManager : MonoBehaviour
         } 
         else if (GameSettings.Winning)
         {
-            winningText.text = "Escaped!";
+            savedTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Successful!";
         }
         else
         {
-            savedNumGO.SetActive(false);
-            savedTextGO.SetActive(false);
-            winningText.text = "You got caught by the black hole\nBetter luck next time!";
+            savedTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Failed!";
         }
     }
 
