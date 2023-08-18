@@ -46,11 +46,11 @@ public class GameEndManager : MonoBehaviour
         } 
         else if (GameSettings.Winning)
         {
-            savedTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Successful!";
+            statusTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Successful!";
         }
         else
         {
-            savedTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Failed!";
+            statusTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Failed!";
         }
     }
 
