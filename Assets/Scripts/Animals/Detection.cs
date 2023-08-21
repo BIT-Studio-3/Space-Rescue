@@ -2,7 +2,6 @@
 // Author: Palin Wiseman
 // Last Updated: 21/08/2023
 // Last Updated By: Palin Wiseman
-// Note: THIS SCRIPT IS WIP
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
