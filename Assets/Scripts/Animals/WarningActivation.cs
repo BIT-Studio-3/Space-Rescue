@@ -1,8 +1,13 @@
+// This script is responsible for activating the warning sign when the player is detected by the animal
+// Created by: Palin Wiseman
+// Created on: 22/08/2023
+// Last modified by: Palin Wiseman
+// Last modified on: 22/08/2023
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hostile : MonoBehaviour
+public class WarningActivation : MonoBehaviour
 {
 
     [SerializeField]
