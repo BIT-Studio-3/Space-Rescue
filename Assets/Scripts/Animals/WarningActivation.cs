@@ -19,14 +19,17 @@ public class WarningActivation : MonoBehaviour
         warning.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+        private void OnTriggerStay(Collider other) //When the player enters the trigger turn on the warning
     {
-        if (Detection.Instance.detected == true)
+        if (other.gameObject.tag == "Player")
         {
             warning.SetActive(true);
         }
-        else
+    }
+
+    private void OnTriggerExit(Collider other) //When the player exits the trigger turn off the warning
+    {
+        if (other.gameObject.tag == "Player")
         {
             warning.SetActive(false);
         }

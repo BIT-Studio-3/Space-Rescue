@@ -1769,7 +1769,8 @@ PrefabInstance:
       propertyPath: warning
       value: 
       objectReference: {fileID: 7524945966772867431}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2482303378346223627, guid: 727c1629d8ba48549bfba72236be1c82, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 727c1629d8ba48549bfba72236be1c82, type: 3}
 --- !u!4 &1613023847123730433 stripped
 Transform:
