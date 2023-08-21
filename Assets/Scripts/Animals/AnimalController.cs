@@ -16,6 +16,7 @@ public class AnimalController : MonoBehaviour
     private Rigidbody rb;
     private float radius;
     private bool inRange = false;
+    private bool locked = false;
 
     private const int MINWAIT = 4;
     private const int MAXWAIT = 11;
