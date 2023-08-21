@@ -94,7 +94,7 @@ Transform:
   m_GameObject: {fileID: 5748848403008948943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7820922927772108298}
@@ -166,6 +166,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235e4a35adbb4d848b2942cd9dcc62ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetTextures:
+  - {fileID: 2800000, guid: 408fc9193edcda94d85c39924646af94, type: 3}
+  - {fileID: 2800000, guid: 5b19b2764dc58764b88c0e7e61991e0a, type: 3}
+  - {fileID: 2800000, guid: a542119a3918fd043bf972e4f80b079a, type: 3}
+  - {fileID: 2800000, guid: d7dbab47c6efa0a44b085406dbb47b22, type: 3}
+  - {fileID: 2800000, guid: 0dd80c70825e2b84c83ac57ba9547b33, type: 3}
+  - {fileID: 2800000, guid: 19d99ba378d08a541a75d7a8828e113d, type: 3}
+  - {fileID: 2800000, guid: 6afe9af1595ec3c42a21500dc88a7fc6, type: 3}
+  - {fileID: 2800000, guid: 2cbdbb9c2c79f124ca8b714a87ed483d, type: 3}
+  - {fileID: 2800000, guid: d933048f88983994b979347123999f65, type: 3}
+  - {fileID: 2800000, guid: 5c2d1c6984b71b84ea968486c6978251, type: 3}
 --- !u!114 &2169499603414191347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,9 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93842c713b2771409e0178de3165700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbitSpeed: 3
-  minSpin: -4
-  maxSpin: -10
 --- !u!114 &-2013812364552127450
 MonoBehaviour:
   m_ObjectHideFlags: 0

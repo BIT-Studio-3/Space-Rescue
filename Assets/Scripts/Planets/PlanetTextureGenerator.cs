@@ -5,31 +5,35 @@ using UnityEngine.UI;
 
 public class PlanetTextureGenerator : MonoBehaviour
 {
-  
+
+    public List<Texture2D> planetTextures; // List of texture assets to use for planets
+
     // Start is called before the first frame update
     void Start()
     {
-     GenerateTexture();
+        GenerateTexture();
     }
 
-    public void GenerateTexture() //Reads in the global array in planetsettings and picks a random prefab, 
-                                  //instantiates the chosen prefab in game and on the UI
+    public void GenerateTexture()
     {
-        int r;
-        do
+        if (planetTextures.Count == 0)
         {
-            r = Random.Range(0,GameSettings.planetPrefabs.Length);
-        }   while(GameSettings.planetPrefabs[r] == null);
+            Debug.LogWarning("No planet textures available.");
+            return;
+        }
 
-        int index = GameObject.Find("PlanetManager").GetComponent<PlanetSpawn>().planets.IndexOf(gameObject);
-        GameObject[] planetUIobjects = GameObject.FindGameObjectsWithTag("PlanetUI");
-        GameObject p = Instantiate(GameSettings.planetPrefabs[r],new Vector3(0,0,0),Quaternion.identity);
-        p.transform.SetParent(gameObject.transform);
-        p.transform.localPosition = new Vector3(0,0,0);
-        p.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
+        int randomIndex = Random.Range(0, planetTextures.Count);
+        Texture2D selectedTexture = planetTextures[randomIndex];
 
+        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere); // Create a basic sphere
+        sphere.transform.SetParent(gameObject.transform);
+        sphere.transform.localPosition = Vector3.zero;
+        sphere.transform.localScale = new Vector3(1f, 1f, 1f); // Maintain the original sphere size
 
-        GameSettings.planetPrefabs[r] = null; //setting the chosen index in the array to null so it cant be chosen again
+        Renderer sphereRenderer = sphere.GetComponent<Renderer>();
+        sphereRenderer.material.mainTexture = selectedTexture;
+
+        planetTextures.RemoveAt(randomIndex); // Remove the used texture from the list
     }
 
 }
