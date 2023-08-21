@@ -122,6 +122,5 @@ We extend our heartfelt gratitude to our dedicated team members and mentors who 
 - Ship model: [Oxar Light Freighter](https://assetstore.unity.com/packages/3d/vehicles/space/oxar-light-freighter-82240)
 - Planet lander model: [Mars Pod](https://assetstore.unity.com/packages/3d/vehicles/space/mars-pod-121710)
 - HUD Elements: [Off Screen Target Indicator](https://assetstore.unity.com/packages/tools/gui/off-screen-target-indicator-71799)
-- Scared animal ghost icon : [Game Games Ghost Run Scary SVG](https://www.svgrepo.com/svg/404397/game-games-ghost-run-scary)
 
 <!-- Add music credits and license information when available -->
