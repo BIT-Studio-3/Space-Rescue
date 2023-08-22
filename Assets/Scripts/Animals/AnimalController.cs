@@ -12,11 +12,10 @@ using UnityEngine;
 public class AnimalController : MonoBehaviour
 {
     private const float SPEED = 10;
-    private Vector3 velocity = Vector3.zero;
-    private Rigidbody rb;
     private float radius;
     private bool inRange = false;
     private bool alerted = false;
+    private Vector3 pos;
 
     private const int MINWAIT = 4;
     private const int MAXWAIT = 11;
@@ -25,7 +24,7 @@ public class AnimalController : MonoBehaviour
     void Start()
     {
         radius = GameObject.Find("Planet").transform.localScale.x / 2;
-        rb = GetComponent<Rigidbody>();
+        pos = transform.position; //Sets initial movement to the animals spawn point
         StartCoroutine(wait());
     }
 
@@ -37,9 +36,10 @@ public class AnimalController : MonoBehaviour
             PlanetManager.Instance.UpdateHeldAnimals(gameObject.name); //Updating the UI to show the amount of animals held
             Destroy(gameObject);
         }
+        Movement();
     }
 
-    //on trigger enter and on trigger exit toggling in range on and off
+    //On trigger enter and on trigger exit toggling in range on and off
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -61,37 +61,34 @@ public class AnimalController : MonoBehaviour
         while (true)
         {
             Vector3 pos = Random.onUnitSphere * radius; //picks a random point on the surface of a sphere with the radius
-            movement(pos); //moves them to the point
             yield return new WaitForSeconds(Random.Range(MINWAIT, MAXWAIT)); //pause for a random time and then go again
         }
     }
 
-    private void Movement(Vector3 pos)
+    //Moving towards the current position
+    private void Movement()
     {
-        transform.LookAt(pos, transform.position * Time.deltaTime); //makes them face the direction they will move to
-        RaycastHit hit;
-        //https://forum.unity.com/threads/help-using-coroutine-to-move-game-object-to-position-wait-then-return-to-original-position.1122784/
-        while (Vector3.Distance(transform.position, pos) > 1) //while the animal is not at their desired position
-        { //This code is a mess but it works and every time I try to make it better it stops working.
-            if (
-                (alerted)
-                || //If the animal has seen an enemy OR
-                (
-                    Physics.Raycast(transform.position, pos, out hit, .5f)
-                    && hit.collider.gameObject.tag == "OnPlanetCollision"
-                    && hit.collider.gameObject.transform.parent.gameObject != gameObject
-                ) //If the animal sees a collider that is for collision and not itself
-            )
-            {
-                //end the movement
-                break;
-            }
+        if (
+            Vector3.Distance(transform.position, pos) > 1 //if the animal is not at the desired position
+            && //If any of the following three statements are false it returns true. If all are true it returns false. This is a manual way of making a NAND gate
+            (
+                !Physics.Raycast(transform.position, pos, out RaycastHit hit, .5f)
+                || !hit.collider.gameObject.tag == "OnPlanetCollision"
+                || !hit.collider.gameObject.transform.parent.gameObject != gameObject
+            ) //If the animal sees a collider that is for collision and not itself
+        )
+        {
             transform.position = Vector3.MoveTowards(
                 transform.position,
                 pos,
                 SPEED * Time.deltaTime
             ); //move them to it
-            yield return 0; //used to let the engine wait for a frame which breaks an endless broken loop
         }
+    }
+
+    //Animals look at the direction they are moving
+    private void LookAtMovement(Vector3 pos)
+    {
+        transform.LookAt(pos, transform.position * Time.deltaTime); //makes them face the direction they are moving to
     }
 }
