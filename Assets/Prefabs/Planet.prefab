@@ -169,11 +169,11 @@ MonoBehaviour:
   planetTextures:
   - {fileID: 2800000, guid: 408fc9193edcda94d85c39924646af94, type: 3}
   - {fileID: 2800000, guid: 5b19b2764dc58764b88c0e7e61991e0a, type: 3}
-  - {fileID: 2800000, guid: a542119a3918fd043bf972e4f80b079a, type: 3}
   - {fileID: 2800000, guid: d7dbab47c6efa0a44b085406dbb47b22, type: 3}
   - {fileID: 2800000, guid: 0dd80c70825e2b84c83ac57ba9547b33, type: 3}
-  - {fileID: 2800000, guid: 19d99ba378d08a541a75d7a8828e113d, type: 3}
+  - {fileID: 2800000, guid: d8eec727960f2404fa3181cf238cc17f, type: 3}
   - {fileID: 2800000, guid: 6afe9af1595ec3c42a21500dc88a7fc6, type: 3}
+  - {fileID: 2800000, guid: 253124de3936a8e4f8fdeb2ac6999ed3, type: 3}
   - {fileID: 2800000, guid: 2cbdbb9c2c79f124ca8b714a87ed483d, type: 3}
   - {fileID: 2800000, guid: d933048f88983994b979347123999f65, type: 3}
   - {fileID: 2800000, guid: 5c2d1c6984b71b84ea968486c6978251, type: 3}
