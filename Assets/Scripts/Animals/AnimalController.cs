@@ -15,8 +15,9 @@ public class AnimalController : MonoBehaviour
     private bool inRange;
     private bool moving;
     private Vector3 pos;
+    private bool attacking;
 
-    private const float SPEED = 10;
+    private float speed = 10;
     private const int MINWAIT = 10;
     private const int MAXWAIT = 30;
 
@@ -26,18 +27,24 @@ public class AnimalController : MonoBehaviour
         radius = GameObject.Find("Planet").transform.localScale.x / 2 + 1;
         pos = transform.position; //Sets initial movement to the animals spawn point
         inRange = false;
+        attacking = false;
         StartCoroutine(wait());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (inRange && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0) //TODO: Add a max held? Also have a better visual way of seeing when you have held animals. And what ones
+        if (inRange && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0)
         {
             PlanetManager.Instance.UpdateHeldAnimals(gameObject.name); //Updating the UI to show the amount of animals held
             Destroy(gameObject);
         }
+        if (attacking && Vector3.Distance(transform.position, pos) < 2) //This will now kick you out of the planet if you get caught. I want to make this more interesting in the future but it works for the moment
+        {
+            PlanetManager.Instance.LeavePlanet();
+        }
         Movement();
+        attacking = false; //This will stop the attacking until it gets another command from the hostile animal script. If the attack is still going on then that will be right away
     }
 
     //On trigger enter and on trigger exit toggling in range on and off
@@ -59,15 +66,16 @@ public class AnimalController : MonoBehaviour
 
     public void Scared(Vector3 playerPos)
     {
-        //set pos to the other side of the planet from the player
+        //set pos to the other side of the planet from the player. This doesn't work particularly well but it works for now
         pos = playerPos * -1;
         LookAtMovement();
     }
 
-    public void Hostile(Vector3 playerPos) //TODO: Make it so that the animals can attack the player
+    public void Hostile(Vector3 playerPos)
     {
         pos = playerPos;
         LookAtMovement();
+        attacking = true;
     }
 
     IEnumerator wait()
@@ -101,7 +109,7 @@ public class AnimalController : MonoBehaviour
             transform.position = Vector3.MoveTowards(
                 transform.position,
                 pos,
-                SPEED * Time.deltaTime
+                speed * Time.deltaTime
             ); //move them to it
         }
     }
