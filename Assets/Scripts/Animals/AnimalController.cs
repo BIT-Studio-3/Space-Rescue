@@ -93,12 +93,12 @@ public class AnimalController : MonoBehaviour
         moving = false;
         if (
             Vector3.Distance(transform.position, pos) > 2 //if the animal is not at the desired position
-            // && //If any of the following three statements are false it returns true. If all are true it returns false. This is a manual way of making a NAND gate
-            // (
-            //     !Physics.Raycast(transform.position, pos, out RaycastHit hit, .5f)
-            //     || hit.collider.gameObject.tag != "OnPlanetCollision"
-            //     || hit.collider.gameObject.transform.parent.gameObject == gameObject
-            // ) //If the animal sees a collider that is for collision and not itself
+            && //If any of the following three statements are false it returns true. If all are true it returns false. This is a manual way of making a NAND gate
+            (
+                !Physics.Raycast(transform.position, pos, out RaycastHit hit, .5f)
+                || hit.collider.gameObject.tag != "OnPlanetCollision"
+                || hit.collider.gameObject.transform.parent.gameObject == gameObject
+            ) //If the animal sees a collider that is for collision and not itself
         )
         {
             moving = true;
