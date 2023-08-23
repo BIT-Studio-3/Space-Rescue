@@ -11,21 +11,21 @@ using UnityEngine;
 //Script controls each individual animal after spawn
 public class AnimalController : MonoBehaviour
 {
-    private const float SPEED = 10;
     private float radius;
-    private bool inRange = false;
-    private bool alerted = false;
+    private bool inRange;
     private bool moving;
     private Vector3 pos;
 
-    private const int MINWAIT = 4;
-    private const int MAXWAIT = 11;
+    private const float SPEED = 10;
+    private const int MINWAIT = 10;
+    private const int MAXWAIT = 30;
 
     // Start is called before the first frame update
     void Start()
     {
         radius = GameObject.Find("Planet").transform.localScale.x / 2 + 1;
         pos = transform.position; //Sets initial movement to the animals spawn point
+        inRange = false;
         StartCoroutine(wait());
     }
 
@@ -59,29 +59,25 @@ public class AnimalController : MonoBehaviour
 
     public void Scared(Vector3 playerPos)
     {
-        //set pos to 100 units in the opposite direction on the sphere from the player
+        //set pos to the other side of the planet from the player
         pos = playerPos * -1;
-        LookAtMovement(pos);
-        //Set the pos to a certain distance in the opposite direction from the player and set alerted to make sure a new pos is not set
+        LookAtMovement();
     }
 
-    public void Hostile(Vector3 playerPos)
+    public void Hostile(Vector3 playerPos) //TODO: Make it so that the animals can attack the player
     {
         pos = playerPos;
-        alerted = true;
-        LookAtMovement(pos);
-        //Set the pos to the player and set alerted to make sure a new pos is not set
-        //Will also need to check if the player has escaped?
+        LookAtMovement();
     }
 
     IEnumerator wait()
     {
         while (true)
         {
-            if (!alerted && !moving)
+            if (!moving)
             {
                 pos = Random.onUnitSphere * radius; //picks a random point on the surface of a sphere with the radius
-                transform.LookAt(pos, transform.position * Time.deltaTime); //makes them face the direction they are moving to
+                LookAtMovement();
             }
             yield return new WaitForSeconds(Random.Range(MINWAIT, MAXWAIT)); //pause for a random time and then go again
         }
@@ -111,8 +107,8 @@ public class AnimalController : MonoBehaviour
     }
 
     //Animals look at the direction they are moving
-    private void LookAtMovement(Vector3 pos)
+    private void LookAtMovement()
     {
-        transform.LookAt(pos, transform.position * Time.deltaTime); //makes them face the direction they are moving to
+        transform.LookAt(pos, transform.position); //makes them face the direction they are moving to
     }
 }
