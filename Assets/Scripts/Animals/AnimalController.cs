@@ -16,8 +16,10 @@ public class AnimalController : MonoBehaviour
     private bool moving;
     private Vector3 pos;
     private bool attacking;
+    private Vector3 normalizedDirection;
+    private Vector3 quarterRadiusOffset;
 
-    private float speed = 10;
+    private float speed = 15;
     private const int MINWAIT = 10;
     private const int MAXWAIT = 30;
 
@@ -66,8 +68,18 @@ public class AnimalController : MonoBehaviour
 
     public void Scared(Vector3 playerPos)
     {
-        //set pos to the other side of the planet from the player. This doesn't work particularly well but it works for now
-        pos = playerPos * -1;
+        //set pos to 1/4 of the planet away from the player
+        Vector3 pointA = playerPos;
+        Vector3 pointB = transform.position;
+        Vector3 sphereCenter = new Vector3(0, 0, 0);
+        Vector3 AB = pointB - pointA;
+        Vector3 AC = pointA - sphereCenter;
+
+        Vector3 BC = Vector3.Cross(AB, AC);
+        BC.Normalize();
+
+        Vector3 pointC = sphereCenter + BC * radius;
+        pos = pointC;
         LookAtMovement();
     }
 
