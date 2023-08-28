@@ -68,18 +68,12 @@ public class AnimalController : MonoBehaviour
 
     public void Scared(Vector3 playerPos)
     {
-        //set pos to 1/4 of the planet away from the player
-        Vector3 pointA = playerPos;
-        Vector3 pointB = transform.position;
-        Vector3 sphereCenter = new Vector3(0, 0, 0);
-        Vector3 AB = pointB - pointA;
-        Vector3 AC = pointA - sphereCenter;
-
-        Vector3 BC = Vector3.Cross(AB, AC);
-        BC.Normalize();
-
-        Vector3 pointC = sphereCenter + BC * radius;
-        pos = pointC;
+        //set pos to 1/4 of the planet away from the player. This is a lot of algebra I don't fully understand and got to through trial and error. However it works
+        Vector3 AB = transform.position - playerPos;
+        Vector3 AC = playerPos - new Vector3(0, 0, 0);
+        Vector3 BC = Vector3.Cross(AB, AC); //This is getting the three points of the triangle and then getting the cross product of two of the sides
+        BC.Normalize(); //Normalizing the vector so it is a unit vector
+        pos = new Vector3(0, 0, 0) + BC * radius; //Setting the position to new point on the surface of the planet
         LookAtMovement();
     }
 
