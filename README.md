@@ -100,7 +100,7 @@ Some of the most important changes for each update are as follows:
 | v1.5.0    | 12/06/2023   | Partial support for different aspect ratios, ship boosters, animal pathfinding, new tutorial UI |
 | v1.6.0    | 01/08/2023   | Gravity added, planet orbit, new HUD, new title screen  |
 | v1.7.0    | 15/08/2023   | Planet orbit improved, more HUD improvements, new pause screen, planet gameplay rework  |
-| v1.8.0    | 29/08/2023   | TBD |
+| v1.8.0    | 29/08/2023   | New End Screen Menu |
 
 ## Roadmap
 
