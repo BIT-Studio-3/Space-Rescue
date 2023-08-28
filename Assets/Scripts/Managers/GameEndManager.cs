@@ -1,4 +1,7 @@
-//Updates UI as needed
+// Description: Handles the End Screen
+// Author:
+// Last Updated: 18/8/23
+// Last Updated By: Chase Bennett-Hill
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,14 +11,10 @@ using UnityEngine.UI;
 
 public class GameEndManager : MonoBehaviour
 {
-    //The text of the number of planets saved
-    public Text savedNumber;
     //Game objects for saved numbers and the text above it
-    public GameObject savedNumGO;
-    public GameObject savedTextGO;
-    public GameObject menuButton;
-    //Text announcing the result
-    public Text winningText;
+    public GameObject savedTextGO; //Animals saved
+    public GameObject statusTextGO; //Win or lose status
+
     void Start()
     {
         //Updates score and winning state when end game state is entered
@@ -24,34 +23,33 @@ public class GameEndManager : MonoBehaviour
         //Enable cursor
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        if(GameSettings.Tutorial)
-            GameObject.Find("Restart").GetComponent<Text>().text = "Continue";
-            menuButton.SetActive(true);
- 
+        // if (GameSettings.Tutorial)
+        //     GameObject.Find("Restart").GetComponent<Text>().text = "Continue";
     }
 
     //Sets the score display to the current game score
     public void UpdateScore()
     {
-        savedNumber.text = GameSettings.Score.ToString();
+        savedTextGO.GetComponent<TMPro.TextMeshProUGUI>().text =
+            GameSettings.Score == 1
+                ? $"You rescued {GameSettings.Score} animal"
+                : $"You rescued {GameSettings.Score} animals";
     }
 
     //Updates the text depending on if you escaped or died
     public void UpdateWinning()
     {
-        if(GameSettings.Tutorial)
+        // if(GameSettings.Tutorial)
+        // {
+        //     winningText.text = "You Completed the Tutorial! \n Press the button below \nto play the game!";
+        // }
+        if (GameSettings.Winning)
         {
-            winningText.text = "You Completed the Tutorial! \n Press the button below \nto play the game!";
-        } 
-        else if (GameSettings.Winning)
-        {
-            winningText.text = "Escaped!";
+            statusTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Successful!";
         }
         else
         {
-            savedNumGO.SetActive(false);
-            savedTextGO.SetActive(false);
-            winningText.text = "You got caught by the black hole\nBetter luck next time!";
+            statusTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Failed!";
         }
     }
 
@@ -63,14 +61,15 @@ public class GameEndManager : MonoBehaviour
         GameSettings.Tutorial = false;
         SceneManager.LoadScene("Main scene");
     }
+
     public void QuitButton()
     {
         Application.Quit();
     }
+
     public void MenuButton()
     {
         GameSettings.Tutorial = false;
         SceneManager.LoadScene("Title Screen");
     }
-
 }
