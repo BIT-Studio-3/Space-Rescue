@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 310667744}
   - component: {fileID: 310667745}
   - component: {fileID: 310667746}
+  - component: {fileID: 310667747}
   m_Layer: 0
   m_Name: AnimalManager
   m_TagString: Untagged
@@ -541,6 +542,22 @@ MonoBehaviour:
   parent: {fileID: 334610409}
   minSpawn: 1
   maxSpawn: 1
+--- !u!114 &310667747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310667742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8768842384551100010, guid: 6eb1eb2d7fa47494bace62e2f3c5abe5, type: 3}
+  parent: {fileID: 334610409}
+  minSpawn: 1
+  maxSpawn: 4
 --- !u!1 &322023209
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,7 +2256,7 @@ GameObject:
   - component: {fileID: 3520301665912250976}
   m_Layer: 0
   m_Name: Ship
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -40,8 +40,7 @@ public class PlanetManager : MonoBehaviour
         if (Input.GetKeyDown(Keybinds.Leave) && dropShipRange)
         {
             DepositHeldAnimals();
-            ShipMovement.Instance.ResetBoost(); //This resets the ships boost before it goes back to the main scene
-            GameMenuManager.Instance.ReturntoScene("Planet");
+            LeavePlanet();
         }
         if (Input.GetKeyDown(Keybinds.Interact) && held > 0 && dropShipRange)
         {
@@ -103,5 +102,11 @@ public class PlanetManager : MonoBehaviour
         scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text =
             "Temp Score Display: " + GameSettings.Score.ToString();
         //This is very temporary. Will have a better system in the next increment.
+    }
+
+    public void LeavePlanet()
+    {
+        ShipMovement.Instance.ResetBoost(); //This resets the ships boost before it goes back to the main scene
+        GameMenuManager.Instance.ReturntoScene("Planet");
     }
 }

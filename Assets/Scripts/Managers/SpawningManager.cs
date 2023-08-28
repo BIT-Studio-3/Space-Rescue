@@ -27,7 +27,7 @@ public class SpawningManager : MonoBehaviour
 
     void Start()
     {
-        radius = GameObject.Find("Planet").transform.localScale.x / 2 + 1;
+        radius = GameObject.Find("Planet").transform.localScale.x / 2 + 5; //This is giving a buffer so that the object wont spawn inside the planet
         Spawn();
     }
 
