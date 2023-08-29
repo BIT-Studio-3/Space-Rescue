@@ -1,0 +1,47 @@
+---
+name: Validate and Format Whitespace
+
+on:
+  push:
+    branches-ignore: [master, main] #Formatting will not be checked on main because It should already be formatted and I dont want a commit to trigger the release workflow
+
+jobs:
+  check-and-format-whitespace:
+    name: Check and Format Whitespace
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+          
+      - name: Set up .NET #set up the .NET installation for the workflow
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "6.0.x"
+          
+      - name: check the whitespace of git diff #Only Checks the Whitespace using the option --verify-no-changes and will determine whether theres files to format
+        id: verify_whitespace
+        run: |
+          echo "VERIFY_WHITESPACE=1" >> $GITHUB_OUTPUT #Initially the VERIFY_WHITESPACE variable is set to 1 which in this case would mean there was an error and files need fixing
+          dotnet format whitespace Space-Rescue.sln --include $( git diff ${{github.event.before}} --name-only) --verify-no-changes  
+          if [[ $? == 0 ]] ; then #If the above command returns 0 there were no files that needed changing and the variable will be updated to 0   
+              echo "VERIFY_WHITESPACE=0" >> $GITHUB_OUTPUT
+          fi
+          echo $? 
+
+        continue-on-error: true #This will allow the workflow to continue despite errors
+      - name: print whitespace output #Prints the error code simply for verification
+        run: echo ${{ steps.verify_whitespace.outputs.VERIFY_WHITESPACE }}
+          
+      - name: format and commit the files
+        if: ${{steps.verify_whitespace.outputs.VERIFY_WHITESPACE != 0}} #If the variable from the above step is not 0 then there are files that need to be formatted otherwise it will skip this step
+        run: |
+          dotnet format whitespace Space-Rescue.sln --include $( git diff ${{github.event.before}} --name-only) #this is the command that actually formats the files 
+          #git diff --name-only returns any changed files in comparison to another commit github.event.before is the commit hash of the previous commit (the one that activated this workflow)
+          git add .
+          git config user.email "actions@github.com" #Commit will be added by the github bot
+          git config user.name "Github Actions"
+          git commit -m "CI: Automatically formatted the Whitespace"
+          git push
