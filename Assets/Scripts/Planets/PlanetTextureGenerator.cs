@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlanetTextureGenerator : MonoBehaviour
 {
-  
-    // Start is called before the first frame update
+
+   // Start is called before the first frame update
     void Start()
     {
      GenerateTexture();
@@ -21,7 +21,7 @@ public class PlanetTextureGenerator : MonoBehaviour
             r = Random.Range(0,GameSettings.planetPrefabs.Length);
         }   while(GameSettings.planetPrefabs[r] == null);
 
-        int index = GameObject.Find("PlanetManager").GetComponent<PlanetSpawn>().planets.IndexOf(gameObject);
+        int index = GameObject.Find("SpacePlanetManager").GetComponent<PlanetSpawn>().planets.IndexOf(gameObject);
         GameObject[] planetUIobjects = GameObject.FindGameObjectsWithTag("PlanetUI");
         GameObject p = Instantiate(GameSettings.planetPrefabs[r],new Vector3(0,0,0),Quaternion.identity);
         p.transform.SetParent(gameObject.transform);
