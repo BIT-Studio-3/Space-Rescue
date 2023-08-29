@@ -120,7 +120,7 @@ public class PlanetDetection : MonoBehaviour
         {
             o.GetComponent<FindingPlanets>().planetsNotRescued.Remove(gameObject);
         }
-        GameObject a = GameObject.Find("PlanetManager");
+        GameObject a = GameObject.Find("SpacePlanetManager");
         if (a != null)
         {
             int i = a.GetComponent<PlanetSpawn>().planets.IndexOf(gameObject);
