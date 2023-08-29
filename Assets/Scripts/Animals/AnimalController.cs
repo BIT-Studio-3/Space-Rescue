@@ -1,4 +1,4 @@
-// Description: Script controls each individual animal after spawn
+﻿// Description: Script controls each individual animal after spawn
 // Author: Erika Stuart
 // Last Updated: 9/08/2023
 // Last Updated By: Palin Wiseman
