@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlanetTextureGenerator : MonoBehaviour
 {
-  
-    // Start is called before the first frame update
+
+   // Start is called before the first frame update
     void Start()
     {
      GenerateTexture();
