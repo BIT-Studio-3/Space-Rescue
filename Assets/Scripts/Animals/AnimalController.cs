@@ -19,7 +19,7 @@ public class AnimalController : MonoBehaviour
     private Vector3 normalizedDirection;
     private Vector3 quarterRadiusOffset;
 
-    private float speed = 15;
+    private float speed = 10;
     private const int MINWAIT = 10;
     private const int MAXWAIT = 30;
 
@@ -74,6 +74,7 @@ public class AnimalController : MonoBehaviour
         Vector3 BC = Vector3.Cross(AB, AC); //This is getting the three points of the triangle and then getting the cross product of two of the sides
         BC.Normalize(); //Normalizing the vector so it is a unit vector
         pos = new Vector3(0, 0, 0) + BC * radius; //Setting the position to new point on the surface of the planet
+        speed = 15; //Animal gets scared and runs away faster
         LookAtMovement();
     }
 
