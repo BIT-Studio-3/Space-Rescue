@@ -1,4 +1,4 @@
-// Description: Handles the End Screen
+﻿// Description: Handles the End Screen
 // Author:
 // Last Updated: 18/8/23
 // Last Updated By: Chase Bennett-Hill
