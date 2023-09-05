@@ -1,6 +1,6 @@
 ﻿// Description: Script controls each individual animal after spawn
 // Author: Erika Stuart
-// Last Updated: 9/08/2023
+// Last Updated: 5/09/2023
 // Last Updated By: Palin Wiseman
 using System.Collections;
 using System.Collections.Generic;
@@ -38,7 +38,8 @@ public class AnimalController : MonoBehaviour
     {
         if (inRange && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0)
         {
-            if (gameObject.name.Contains("Hostile"))
+            //This checks if the name of the gameobject contains a keyword of it's type and then updates the count of that animal and passes a string to the planet manager to update the UI
+            if (gameObject.name.Contains("Hostile")) 
             {
                 PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].hostileCount--;
                 PlanetManager.Instance.UpdateHeldAnimals("Hostile");

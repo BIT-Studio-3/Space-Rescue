@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿// Description: This script is attached to the planet prefab. It is used to detect when the player is inside the radius of the planet and when the player is inside the radius of the black hole.
+//              It also contains a function to calculate the distance between the planet and the black hole.
+//              This script is also used to load the planet scene when the player is inside the radius of the planet and presses the interact key.
+// Author: Palin Wiseman
+// Last Updated: 5/09/2023
+// Last Updated By: Palin Wiseman
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

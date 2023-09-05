@@ -1,7 +1,7 @@
 // Description: Handles the End Screen
-// Author:
-// Last Updated: 18/8/23
-// Last Updated By: Chase Bennett-Hill
+// Author: Palin Wiseman
+// Last Updated: 5/09/2023
+// Last Updated By: Palin Wiseman
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,6 +53,7 @@ public class GameEndManager : MonoBehaviour
         }
     }
 
+    //Restarts the game and resets all variables
     public void Restart()
     {
         GameSettings.Score = 0;

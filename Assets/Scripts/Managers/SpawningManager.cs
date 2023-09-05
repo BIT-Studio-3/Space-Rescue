@@ -1,6 +1,6 @@
-﻿// Script is used for planet object spawning
+﻿// Description: Script is used for planet object spawning
 // Created by: Erika Stuart
-// Last Updated: 8/08/2023
+// Last Updated: 5/09/2023
 // Last Updated By: Palin Wiseman
 using System.Collections;
 using System.Collections.Generic;
@@ -8,9 +8,11 @@ using UnityEngine;
 
 public class SpawningManager : MonoBehaviour
 {
+    //The current object being spawned and the parent it is being moved to
     private GameObject currentPrefab;
     private GameObject currentParent;
 
+    //The parents the objects are being moved to. This is assigned in the editor
     [Header("Parents")]
     [SerializeField]
     private GameObject AnimalParent;
@@ -18,6 +20,7 @@ public class SpawningManager : MonoBehaviour
     [SerializeField]
     private GameObject TreeParent;
 
+    //The prefabs that are being spawned. This is assigned in the editor
     [Header("Prefabs")]
     [SerializeField]
     private GameObject hostilePrefab;
@@ -31,6 +34,7 @@ public class SpawningManager : MonoBehaviour
     [SerializeField]
     private GameObject treePrefab;
 
+    //The amount of objects that are being spawned. This is gotten from the planet info script for the planet entered
     private int hostileCount;
     private int scaredCount;
     private int neutralCount;
@@ -45,11 +49,13 @@ public class SpawningManager : MonoBehaviour
     {
         radius = GameObject.Find("Planet").transform.localScale.x / 2 + 5; //This is giving a buffer so that the object wont spawn inside the planet
 
+        //Setting the amount of objects to be spawned
         hostileCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].hostileCount;
         scaredCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].scaredCount;
         neutralCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].neutralCount;
         treeCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].treeCount;
 
+        //Spawning the objects
         Spawn(hostileCount, hostilePrefab, AnimalParent);
         Spawn(scaredCount, scaredPrefab, AnimalParent);
         Spawn(neutralCount, neutralPrefab, AnimalParent);

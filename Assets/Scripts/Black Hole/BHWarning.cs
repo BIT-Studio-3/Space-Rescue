@@ -1,3 +1,7 @@
+// Description: This script is used to activate the warning when the player or planet is near a black hole.
+// Author: Palin Wiseman
+// Last Updated: 5/09/2023
+// Last Updated By: Palin Wiseman
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
