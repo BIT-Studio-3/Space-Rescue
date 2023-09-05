@@ -7,8 +7,9 @@ public class PlanetStates : MonoBehaviour
 
     public static PlanetStates Instance;
     // Start is called before the first frame update
-
+    [HideInInspector]
     public PlanetInfo[] planetInfo = new PlanetInfo[8];
+    [HideInInspector]
     public int activePlanet;
 
     private void Awake()
@@ -26,4 +27,5 @@ public class PlanetStates : MonoBehaviour
     {
         
     }
+
 }
