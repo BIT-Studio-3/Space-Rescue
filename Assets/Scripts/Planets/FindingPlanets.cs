@@ -1,4 +1,4 @@
-// Description: This script is used to find the closest planet to the player and point an arrow towards it.
+﻿// Description: This script is used to find the closest planet to the player and point an arrow towards it.
 // Author: Chase Bennett
 // Last Updated: 5/09/2023
 // Last Updated By: Chase Bennett

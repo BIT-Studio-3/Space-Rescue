@@ -30,63 +30,63 @@ public class PlanetDetection : MonoBehaviour
     void Update()
     {
 
-/*         if (GameSettings.Tutorial && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips.Count != 0)
-        {
-            if (
-                playerInsideRadius
-                && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[
-                    0
-                ].name == "Approaching"
-                && GameObject.Find("Approaching") != null
-                && GameObject.Find("Approaching").GetComponent<ToolTip>().isActive
-            )
-            {
-                GameObject.Find("Approaching").GetComponent<ToolTip>().completed = true;
-            }
-        }
- */        
+        /*         if (GameSettings.Tutorial && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips.Count != 0)
+                {
+                    if (
+                        playerInsideRadius
+                        && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[
+                            0
+                        ].name == "Approaching"
+                        && GameObject.Find("Approaching") != null
+                        && GameObject.Find("Approaching").GetComponent<ToolTip>().isActive
+                    )
+                    {
+                        GameObject.Find("Approaching").GetComponent<ToolTip>().completed = true;
+                    }
+                }
+         */
         if (Input.GetKeyDown(Keybinds.Interact))
         {
             if (playerInsideRadius && Time.timeScale != 0)
             {
-/*                 if (GameSettings.Tutorial)
-                {
-                    if (
-                        playerInsideRadius
-                        && GameObject
-                            .Find("TutorialManager")
-                            .GetComponent<TutorialManager>()
-                            .toolTips[0].name == "Rescue"
-                        && GameObject.Find("Rescue") != null
-                        && GameObject.Find("Rescue").GetComponent<ToolTip>().isActive
-                    )
-                    {
-                        GameObject.Find("Rescue").GetComponent<ToolTip>().completed = true;
-                        planetRescued = true; //Note from Chase - Temp fix for tutorial until updated with planet and minigame scenes
-                        GameObject
-                            .Find("TutorialManager")
-                            .GetComponent<TutorialManager>()
-                            .planetRescued++;
-                    }
-                    else if (
-                        playerInsideRadius
-                        && !planetRescued
-                        && GameObject
-                            .Find("TutorialManager")
-                            .GetComponent<TutorialManager>()
-                            .toolTips[0].name == "Escaping"
-                        && GameObject.Find("Escaping") != null
-                        && GameObject.Find("Escaping").GetComponent<ToolTip>().isActive
-                    )
-                    {
-                        planetRescued = true; //Note from Chase - Temp fix for tutorial until updated with planet and minigame scenes
-                        GameObject
-                            .Find("TutorialManager")
-                            .GetComponent<TutorialManager>()
-                            .planetRescued++; //Counts ammount of rescued planets, so the tutorial can count the rescued planets properly
-                    }
-                }
- */             
+                /*                 if (GameSettings.Tutorial)
+                                {
+                                    if (
+                                        playerInsideRadius
+                                        && GameObject
+                                            .Find("TutorialManager")
+                                            .GetComponent<TutorialManager>()
+                                            .toolTips[0].name == "Rescue"
+                                        && GameObject.Find("Rescue") != null
+                                        && GameObject.Find("Rescue").GetComponent<ToolTip>().isActive
+                                    )
+                                    {
+                                        GameObject.Find("Rescue").GetComponent<ToolTip>().completed = true;
+                                        planetRescued = true; //Note from Chase - Temp fix for tutorial until updated with planet and minigame scenes
+                                        GameObject
+                                            .Find("TutorialManager")
+                                            .GetComponent<TutorialManager>()
+                                            .planetRescued++;
+                                    }
+                                    else if (
+                                        playerInsideRadius
+                                        && !planetRescued
+                                        && GameObject
+                                            .Find("TutorialManager")
+                                            .GetComponent<TutorialManager>()
+                                            .toolTips[0].name == "Escaping"
+                                        && GameObject.Find("Escaping") != null
+                                        && GameObject.Find("Escaping").GetComponent<ToolTip>().isActive
+                                    )
+                                    {
+                                        planetRescued = true; //Note from Chase - Temp fix for tutorial until updated with planet and minigame scenes
+                                        GameObject
+                                            .Find("TutorialManager")
+                                            .GetComponent<TutorialManager>()
+                                            .planetRescued++; //Counts ammount of rescued planets, so the tutorial can count the rescued planets properly
+                                    }
+                                }
+                 */
                 PlanetStates.Instance.activePlanet = planetID;
                 GameMenuManager.Instance.LoadNewScene("Planet");
             }

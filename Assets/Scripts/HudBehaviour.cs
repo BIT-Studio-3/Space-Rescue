@@ -1,4 +1,4 @@
-//Description: This script is responsible for displaying the information about the planets and the black hole on the HUD
+﻿//Description: This script is responsible for displaying the information about the planets and the black hole on the HUD
 //Author: Chase Bennett
 //Last Updated: 5/09/2023
 //Last Updated By: Palin Wiseman

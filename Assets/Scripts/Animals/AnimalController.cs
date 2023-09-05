@@ -39,7 +39,7 @@ public class AnimalController : MonoBehaviour
         if (inRange && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0)
         {
             //This checks if the name of the gameobject contains a keyword of it's type and then updates the count of that animal and passes a string to the planet manager to update the UI
-            if (gameObject.name.Contains("Hostile")) 
+            if (gameObject.name.Contains("Hostile"))
             {
                 PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].hostileCount--;
                 PlanetManager.Instance.UpdateHeldAnimals("Hostile");

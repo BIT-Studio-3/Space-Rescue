@@ -1,4 +1,4 @@
-// Description: Handles the End Screen
+﻿// Description: Handles the End Screen
 // Author: Palin Wiseman
 // Last Updated: 5/09/2023
 // Last Updated By: Palin Wiseman
