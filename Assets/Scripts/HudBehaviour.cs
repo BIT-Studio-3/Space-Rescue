@@ -24,7 +24,7 @@ public class HudBehaviour : MonoBehaviour
 
         ShowHudItems(true);
         planetStatus.GetComponent<Text>().color = (PlanetStates.Instance.planetInfo[status.planetID].totalAnimals == 0 ? Color.green : Color.red);
-        planetStatus.GetComponent<Text>().text = "Animals Remaining: " + PlanetStates.Instance.planetInfo[status.planetID].totalAnimals.ToString();
+        planetStatus.GetComponent<Text>().text = "Animals: " + PlanetStates.Instance.planetInfo[status.planetID].totalAnimals.ToString();
         distFromPlayer.GetComponent<Text>().text = "Distance: " + dist.ToString();
         blackHolePlanetDist.GetComponent<Text>().text = "Black Hole: " + distBlackHole.ToString();
         if (status.inDanger) //If the planet is inside the warning area of the black hole
