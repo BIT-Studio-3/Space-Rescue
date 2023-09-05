@@ -1,4 +1,4 @@
-// Script is used for planet object spawning
+﻿// Script is used for planet object spawning
 // Created by: Erika Stuart
 // Last Updated: 8/08/2023
 // Last Updated By: Palin Wiseman

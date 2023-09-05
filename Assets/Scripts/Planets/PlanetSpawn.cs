@@ -1,4 +1,4 @@
-// Description: This script spawns the planets in the game. It spawns them in a random location and then rotates them around the black hole.
+﻿// Description: This script spawns the planets in the game. It spawns them in a random location and then rotates them around the black hole.
 // Author: Erika Stuart
 // Last Modified By: Palin Wiseman
 // Last Modified Date: 06/08/2023
