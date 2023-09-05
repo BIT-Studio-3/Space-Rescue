@@ -8,7 +8,6 @@ using System.Linq;
 public class PlanetDetection : MonoBehaviour
 {
     public bool playerInsideRadius;
-    public bool planetRescued;
     public bool inDanger;
     public int planetID; //The ID number to identify the planet
 
@@ -41,7 +40,7 @@ public class PlanetDetection : MonoBehaviour
         }
         if (Input.GetKeyDown(Keybinds.Interact))
         {
-            if (playerInsideRadius && !planetRescued && Time.timeScale != 0)
+            if (playerInsideRadius && Time.timeScale != 0)
             {
                 if (GameSettings.Tutorial)
                 {
@@ -83,14 +82,7 @@ public class PlanetDetection : MonoBehaviour
                 else
                 {
                     PlanetStates.Instance.activePlanet = planetID;
-                    planetRescued = true;
                     GameMenuManager.Instance.LoadNewScene("Planet");
-                }
-
-                if (inDanger)
-                {
-                    GameSettings.PlanetDanger--;
-                    BHWarning.Instance.PlanetWarning();
                 }
             }
         }
