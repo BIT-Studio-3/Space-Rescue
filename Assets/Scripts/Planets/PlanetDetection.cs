@@ -12,7 +12,15 @@ public class PlanetDetection : MonoBehaviour
     public bool inDanger;
 
     public GameObject planet; //the planet prefab
+    public PlanetInfo planetInfo; //the planet info script
 
+    void Start()
+    {
+        planet = gameObject;
+        planetInfo = planet.GetComponent<PlanetInfo>();
+        Debug.Log(planet.name);
+        Debug.Log(planetInfo.totalAnimals);
+    }
 
     void Update()
     {
@@ -71,8 +79,8 @@ public class PlanetDetection : MonoBehaviour
                             .GetComponent<TutorialManager>()
                             .planetRescued++; //Counts ammount of rescued planets, so the tutorial can count the rescued planets properly
                     }
-                }
-                if (!GameSettings.Tutorial)
+                } 
+                else
                 {
                     planetRescued = true;
                     GameMenuManager.Instance.LoadNewScene("Planet");
