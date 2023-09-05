@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -79,7 +79,7 @@ public class PlanetDetection : MonoBehaviour
                             .GetComponent<TutorialManager>()
                             .planetRescued++; //Counts ammount of rescued planets, so the tutorial can count the rescued planets properly
                     }
-                } 
+                }
                 else
                 {
                     PlanetStates.Instance.activePlanet = planetID;
@@ -117,7 +117,7 @@ public class PlanetDetection : MonoBehaviour
         );
         if (hits.Length > 0)
             hits = hits.Where(hit => hit.transform.name != "WarningBox").ToArray();
-            hits = hits.Where(hit => hit.transform.name == "SphereHitbox").ToArray();
+        hits = hits.Where(hit => hit.transform.name == "SphereHitbox").ToArray();
 
         return Mathf.Round(hits[0].distance); //hit.distance is the length of the raycast the value is then rounded to a whole number
     }
