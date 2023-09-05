@@ -49,6 +49,7 @@ public class PlanetSpawn : MonoBehaviour
             rotator.transform.Rotate(0, Random.Range(0, 360), Random.Range(-YZONE, YZONE)); //Rotate the rotator a random amount of degrees
             rotator.AddComponent<PlanetRotate>(); //Add the planet rotate script to the rotator
             rotator.transform.parent = planetParent.transform; //Set rotator to have overall parent
+            planet.PlanetDetection.planetID = i; //Set planet ID
             planets.Add(planetTemp);
         }
     }

@@ -10,16 +10,16 @@ public class PlanetDetection : MonoBehaviour
     public bool playerInsideRadius;
     public bool planetRescued;
     public bool inDanger;
+    public int planetID; //The ID number to identify the planet
 
     public GameObject planet; //the planet prefab
-    public PlanetInfo planetInfo; //the planet info script
+    private PlanetInfo planetInfo; //the planet info script
 
     void Start()
     {
         planet = gameObject;
         planetInfo = planet.GetComponent<PlanetInfo>();
-        Debug.Log(planet.name);
-        Debug.Log(planetInfo.totalAnimals);
+        PlanetStates.Instance.planetInfo[planetID] = planetInfo;
     }
 
     void Update()
@@ -82,6 +82,7 @@ public class PlanetDetection : MonoBehaviour
                 } 
                 else
                 {
+                    PlanetStates.Instance.activePlanet = planetID;
                     planetRescued = true;
                     GameMenuManager.Instance.LoadNewScene("Planet");
                 }

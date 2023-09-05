@@ -8,18 +8,34 @@ using UnityEngine;
 
 public class SpawningManager : MonoBehaviour
 {
+    private GameObject currentPrefab;
+    private GameObject currentParent;
+
+    [Header("Parents")]
     [SerializeField]
-    private GameObject prefab;
+    private GameObject AnimalParent;
 
     [SerializeField]
-    private GameObject parent;
+    private GameObject TreeParent;
+
+    [Header("Prefabs")]
+    [SerializeField]
+    private GameObject hostilePrefab;
 
     [SerializeField]
-    private int minSpawn;
+    private GameObject neutralPrefab;
 
     [SerializeField]
-    private int maxSpawn;
-    
+    private GameObject scaredPrefab;
+
+    [SerializeField]
+    private GameObject treePrefab;
+
+    private int hostileCount;
+    private int scaredCount;
+    private int neutralCount;
+    private int treeCount;
+
     private float radius;
     private GameObject newSpawn;
     private Vector3 area;
@@ -28,16 +44,24 @@ public class SpawningManager : MonoBehaviour
     void Start()
     {
         radius = GameObject.Find("Planet").transform.localScale.x / 2 + 5; //This is giving a buffer so that the object wont spawn inside the planet
-        Spawn();
+
+        hostileCount = PlanetStates.planetInfo[activePlanet].hostileCount;
+        scaredCount = PlanetStates.planetInfo[activePlanet].scaredCount;
+        neutralCount = PlanetStates.planetInfo[activePlanet].neutralCount;
+        treeCount = PlanetStates.planetInfo[activePlanet].treeCount;
+
+        Spawn(hostileCount, hostilePrefab, AnimalParent);
+        Spawn(scaredCount, scaredPrefab, AnimalParent);
+        Spawn(neutralCount, neutralPrefab, AnimalParent);
+        Spawn(treeCount, treePrefab, TreeParent);
     }
 
     //Spawns objects randomly on the surface of a sphere
-    private void Spawn()
+    private void Spawn(int amount, GameObject prefab, GameObject parent)
     {
-        int amount = Random.Range(minSpawn, maxSpawn);
-        int reps = 0;
         for (int i = 0; i < amount; i++)
         {
+            int reps = 0;
             do
             {
                 if (reps > 100) //If it can't find a spot after 100 tries, it will end the spawning
@@ -54,7 +78,13 @@ public class SpawningManager : MonoBehaviour
                 newSpawn.transform.position
             );
             //Send a raycast towards the planet and move the object to the point where it hits the planet
-            if (Physics.Raycast(newSpawn.transform.position, -newSpawn.transform.up, out RaycastHit hit))
+            if (
+                Physics.Raycast(
+                    newSpawn.transform.position,
+                    -newSpawn.transform.up,
+                    out RaycastHit hit
+                )
+            )
             {
                 newSpawn.transform.position = hit.point;
             }
