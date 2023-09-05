@@ -24,7 +24,7 @@ public class PlanetDetection : MonoBehaviour
     void Update()
     {
 
-        if (GameSettings.Tutorial && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips.Count != 0)
+/*         if (GameSettings.Tutorial && GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips.Count != 0)
         {
             if (
                 playerInsideRadius
@@ -38,11 +38,12 @@ public class PlanetDetection : MonoBehaviour
                 GameObject.Find("Approaching").GetComponent<ToolTip>().completed = true;
             }
         }
+ */        
         if (Input.GetKeyDown(Keybinds.Interact))
         {
             if (playerInsideRadius && Time.timeScale != 0)
             {
-                if (GameSettings.Tutorial)
+/*                 if (GameSettings.Tutorial)
                 {
                     if (
                         playerInsideRadius
@@ -79,11 +80,9 @@ public class PlanetDetection : MonoBehaviour
                             .planetRescued++; //Counts ammount of rescued planets, so the tutorial can count the rescued planets properly
                     }
                 }
-                else
-                {
-                    PlanetStates.Instance.activePlanet = planetID;
-                    GameMenuManager.Instance.LoadNewScene("Planet");
-                }
+ */             
+                PlanetStates.Instance.activePlanet = planetID;
+                GameMenuManager.Instance.LoadNewScene("Planet");
             }
         }
     }
