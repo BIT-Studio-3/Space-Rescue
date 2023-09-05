@@ -45,10 +45,10 @@ public class SpawningManager : MonoBehaviour
     {
         radius = GameObject.Find("Planet").transform.localScale.x / 2 + 5; //This is giving a buffer so that the object wont spawn inside the planet
 
-        hostileCount = PlanetStates.planetInfo[activePlanet].hostileCount;
-        scaredCount = PlanetStates.planetInfo[activePlanet].scaredCount;
-        neutralCount = PlanetStates.planetInfo[activePlanet].neutralCount;
-        treeCount = PlanetStates.planetInfo[activePlanet].treeCount;
+        hostileCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].hostileCount;
+        scaredCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].scaredCount;
+        neutralCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].neutralCount;
+        treeCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].treeCount;
 
         Spawn(hostileCount, hostilePrefab, AnimalParent);
         Spawn(scaredCount, scaredPrefab, AnimalParent);
