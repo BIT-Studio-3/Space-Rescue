@@ -59,6 +59,7 @@ public class GameEndManager : MonoBehaviour
         GameSettings.PlanetDanger = 0;
         GameSettings.Winning = true;
         GameSettings.Tutorial = false;
+        PlanetStates.Instance.ResetPlanets();
         SceneManager.LoadScene("Main scene");
     }
 
@@ -70,6 +71,7 @@ public class GameEndManager : MonoBehaviour
     public void MenuButton()
     {
         GameSettings.Tutorial = false;
+        PlanetStates.Instance.ResetPlanets();
         SceneManager.LoadScene("Title Screen");
     }
 }

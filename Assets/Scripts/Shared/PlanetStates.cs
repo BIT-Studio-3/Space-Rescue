@@ -23,11 +23,6 @@ public class PlanetStates : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
-    {
-        
-    }
-
     public void ResetPlanets()
     {
         Destroy(gameObject);
