@@ -28,4 +28,8 @@ public class PlanetStates : MonoBehaviour
         
     }
 
+    public void ResetPlanets()
+    {
+        Destroy(gameObject);
+    }
 }
