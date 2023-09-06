@@ -23,9 +23,12 @@ public class AnimalController : MonoBehaviour
     private const int MINWAIT = 10;
     private const int MAXWAIT = 30;
 
+    public static AnimalController Instance;
+
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         radius = GameObject.Find("Planet").transform.localScale.x / 2 + 1;
         pos = transform.position; //Sets initial movement to the animals spawn point
         inRange = false;
@@ -38,6 +41,7 @@ public class AnimalController : MonoBehaviour
     {
         if (inRange && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0)
         {
+            PlanetAnimalCountTEMP.Instance.AnimalCount(gameObject.name);
             PlanetManager.Instance.UpdateHeldAnimals(gameObject.name); //Updating the UI to show the amount of animals held
             Destroy(gameObject);
         }
