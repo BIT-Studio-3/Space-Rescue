@@ -1,4 +1,4 @@
-// Description: This script is used to rotate and orbit the planets
+﻿// Description: This script is used to rotate and orbit the planets
 // Author: Palin Wiseman
 // Last Modified By: Palin Wiseman
 // Last Modified Date: 06/08/2023
