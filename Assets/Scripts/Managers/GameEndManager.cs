@@ -1,4 +1,4 @@
-// Description: Handles the End Screen
+﻿// Description: Handles the End Screen
 // Author:
 // Last Updated: 18/8/23
 // Last Updated By: Chase Bennett-Hill
@@ -45,11 +45,11 @@ public class GameEndManager : MonoBehaviour
         // }
         if (GameSettings.Winning)
         {
-            statusTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Successful!";
+            statusTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Successful";
         }
         else
         {
-            statusTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Failed!";
+            statusTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Failed";
         }
     }
 
