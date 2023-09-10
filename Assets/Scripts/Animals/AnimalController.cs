@@ -41,7 +41,7 @@ public class AnimalController : MonoBehaviour
     {
         if (inRange && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0)
         {
-            PlanetAnimalCountTEMP.Instance.AnimalCount(gameObject.name);
+            PlanetAnimalCountTEMP.Instance.AnimalCount(gameObject.name); //sends the name of the game object to planetanimalcountTemp
             PlanetManager.Instance.UpdateHeldAnimals(gameObject.name); //Updating the UI to show the amount of animals held
             Destroy(gameObject);
         }

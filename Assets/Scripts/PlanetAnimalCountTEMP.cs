@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class PlanetAnimalCountTEMP : MonoBehaviour
 {
-    public int calmCaught = 0;
-    public int calmSpawned;
-    public Text calmUI;
+    private int calmCaught = 0;
+    private int calmSpawned;
+    private Text calmUI;
 
-    public int hostileCaught = 0;
-    public int hostileSpawned;
-    public Text hostileUI;
+    private int hostileCaught = 0;
+    private int hostileSpawned;
+    private Text hostileUI;
 
-    public int scaredCaught = 0;
-    public int scaredSpawned;
-    public Text scaredUI;
+    private int scaredCaught = 0;
+    private int scaredSpawned;
+    private Text scaredUI;
 
     //public SpawningManager spawningManager;
     public static PlanetAnimalCountTEMP	Instance;
@@ -29,13 +29,7 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         scaredUI = GameObject.Find("Scared Caught").GetComponent<Text>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void AnimalCount(string name)
+    public void AnimalCount(string name) //Sent from AnimalController.cs
     {
         if (name.Contains("Calm"))
         {
@@ -45,10 +39,12 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         else if (name.Contains("Hostile"))
         {
             hostileCaught += 1;
+            hostileUI.text = "Hostile Caught: " + hostileCaught;
         }
         else if (name.Contains("Scared"))
         {
             scaredCaught += 1;
+            scaredUI.text = "Scared Caught: " + scaredCaught;
         }
     }
 }
