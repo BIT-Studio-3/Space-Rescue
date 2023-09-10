@@ -7,15 +7,15 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
 {
     private int calmCaught = 0;
     private int calmSpawned;
-    private Text calmUI;
+    private TMPro.TextMeshProUGUI calmUI;
 
     private int hostileCaught = 0;
     private int hostileSpawned;
-    private Text hostileUI;
+    private TMPro.TextMeshProUGUI hostileUI;
 
     private int scaredCaught = 0;
     private int scaredSpawned;
-    private Text scaredUI;
+    private TMPro.TextMeshProUGUI scaredUI;
 
     //public SpawningManager spawningManager;
     public static PlanetAnimalCountTEMP	Instance;
@@ -24,9 +24,9 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
     void Start()
     {
         Instance = this;
-        calmUI = GameObject.Find("Calm Caught").GetComponent<Text>();
-        hostileUI = GameObject.Find("Hostile Caught").GetComponent<Text>();
-        scaredUI = GameObject.Find("Scared Caught").GetComponent<Text>();
+        calmUI = GameObject.Find("Calm Caught").GetComponent<TMPro.TextMeshProUGUI>();
+        hostileUI = GameObject.Find("Hostile Caught").GetComponent<TMPro.TextMeshProUGUI>();
+        scaredUI = GameObject.Find("Scared Caught").GetComponent<TMPro.TextMeshProUGUI>();
     }
 
     public void AnimalCount(string name) //Sent from AnimalController.cs
