@@ -1812,6 +1812,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1161758951}
     - target: {fileID: 8476803455249810064, guid: 0ec627f363295e644872f77860511ab8, type: 3}
+      propertyPath: thrust
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8476803455249810064, guid: 0ec627f363295e644872f77860511ab8, type: 3}
+      propertyPath: recharge
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8476803455249810064, guid: 0ec627f363295e644872f77860511ab8, type: 3}
       propertyPath: speedText
       value: 
       objectReference: {fileID: 560965042}

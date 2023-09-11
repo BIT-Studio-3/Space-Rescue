@@ -20,10 +20,10 @@ public class ShipMovement : MonoBehaviour
     float speedtiltMultiAngle = 0.1f;
 
     //Thrusters - Set to private after testing is done and ideal speed is found
-    private float thrust = 2500f; //Amount of boost power
+    [SerializeField] private float thrust = 2500f; //Amount of boost power
     private float boostDuration; //Frames the boost can be active for
-    private float cap = 2500f; //Max amount of boost duration that can be held
-    private float recharge = .25f; //Amount recharged. .25 means you recharge at a quarter of the speed you use it
+    [SerializeField] private float cap = 2500f; //Max amount of boost duration that can be held
+    [SerializeField] private float recharge = .25f; //Amount recharged. .25 means you recharge at a quarter of the speed you use it
 
     private Vector3 initialVelocity;
     public Text speedText;
