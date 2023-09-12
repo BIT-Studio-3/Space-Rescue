@@ -1,3 +1,7 @@
+// Description: This script is used to activate the warning when the player or planet is near a black hole.
+// Author: Palin Wiseman
+// Last Updated: 5/09/2023
+// Last Updated By: Palin Wiseman
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +23,7 @@ public class BHWarning : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //This checks if the planet has been rescued when it enters the zone
-        if (other.CompareTag("Planet") && other.gameObject.GetComponent<PlanetDetection>().planetRescued == false)
+        if (other.CompareTag("Planet") && PlanetStates.Instance.planetInfo[other.gameObject.GetComponent<PlanetDetection>().planetID].totalAnimals > 0)
         {
             GameSettings.PlanetDanger++;
             other.gameObject.GetComponent<PlanetDetection>().inDanger = true;

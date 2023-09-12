@@ -76,13 +76,13 @@ Join the Space Rescue community and stay up to date with the latest developments
 
 Current bugs can be found on the [latest release](https://github.com/BIT-Studio-3/Space-Rescue/releases/latest) patch notes and in the [issues list](https://github.com/BIT-Studio-3/Space-Rescue/issues?q=is%3Aopen+label%3Abug+is%3Aissue).
 
-<!-- 
 ## Licence
 
-Need to confirm with lecturers about the licence this falls under. Can use https://choosealicense.com/
--->
+MIT License
 
+Copyright (c) 2023 Palin Wiseman, Erika Stuart, Chase Bennett-Hill, Yousef Altay
 
+See license file for full license text
 
 ## Version history
 
