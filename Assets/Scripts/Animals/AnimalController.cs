@@ -23,9 +23,12 @@ public class AnimalController : MonoBehaviour
     private const int MINWAIT = 10;
     private const int MAXWAIT = 30;
 
+    public static AnimalController Instance;
+
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         radius = GameObject.Find("Planet").transform.localScale.x / 2 + 1;
         pos = transform.position; //Sets initial movement to the animals spawn point
         inRange = false;
@@ -38,6 +41,7 @@ public class AnimalController : MonoBehaviour
     {
         if (inRange && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0)
         {
+            PlanetAnimalCountTEMP.Instance.AnimalCount(gameObject.name); //sends the name of the game object to planetanimalcountTemp
             //This checks if the name of the gameobject contains a keyword of it's type and then updates the count of that animal and passes a string to the planet manager to update the UI
             if (gameObject.name.Contains("Hostile"))
             {
@@ -55,6 +59,7 @@ public class AnimalController : MonoBehaviour
                 PlanetManager.Instance.UpdateHeldAnimals("Neutral");
             }
             PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].totalAnimals--;
+
             Destroy(gameObject);
         }
         if (attacking && Vector3.Distance(transform.position, pos) < 2) //This will now kick you out of the planet if you get caught. I want to make this more interesting in the future but it works for the moment
