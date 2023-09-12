@@ -1,3 +1,7 @@
+﻿//Description: This script is responsible for displaying the information about the planets and the black hole on the HUD
+//Author: Chase Bennett
+//Last Updated: 5/09/2023
+//Last Updated By: Palin Wiseman
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +11,17 @@ public class HudBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     public static HudBehaviour instance;
-    public GameObject planetStatus, objectName, distFromPlayer, blackHolePlanetDist, planetLand; //The HUD Text Objects
+    public GameObject planetStatus,
+        objectName,
+        distFromPlayer,
+        blackHolePlanetDist,
+        planetLand; //The HUD Text Objects
+
     void Awake()
     {
         instance = this;
         HideInfoPanel();
     }
-
 
     //Displays the Planet Info Panel with information about the planet
     //PlanetDetection status: the Planet Detection script attached to the planet has info about whether the planet has been rescued and if the player is close enough to land
@@ -21,10 +29,22 @@ public class HudBehaviour : MonoBehaviour
 
     public void ShowPlanetInfo(PlanetDetection status, float dist, float distBlackHole, string name)
     {
-
         ShowHudItems(true);
-        planetStatus.GetComponent<Text>().color = (status.planetRescued ? Color.green : Color.red);
-        planetStatus.GetComponent<Text>().text = "Status: " + (status.planetRescued ? "Rescued" : "Not Rescued");
+        planetStatus.GetComponent<Text>().color = (
+            PlanetStates.Instance.planetInfo[status.planetID].totalAnimals == 0
+                ? Color.green
+                : Color.red
+        );
+        if (PlanetStates.Instance.planetInfo[status.planetID].totalAnimals > 0)
+        {
+            planetStatus.GetComponent<Text>().text =
+                "Animals: "
+                + PlanetStates.Instance.planetInfo[status.planetID].totalAnimals.ToString();
+        }
+        else
+        {
+            planetStatus.GetComponent<Text>().text = "All animals rescued!";
+        }
         distFromPlayer.GetComponent<Text>().text = "Distance: " + dist.ToString();
         blackHolePlanetDist.GetComponent<Text>().text = "Black Hole: " + distBlackHole.ToString();
         if (status.inDanger) //If the planet is inside the warning area of the black hole
@@ -37,20 +57,19 @@ public class HudBehaviour : MonoBehaviour
             {
                 blackHolePlanetDist.GetComponent<Text>().color = new Color(1.0f, 0.64f, 0.0f); //otherwise it is orange
             }
-
         }
         else
         {
             blackHolePlanetDist.GetComponent<Text>().color = objectName.GetComponent<Text>().color; //If the planet is out of danger the distance returns to the standard color
         }
-
         objectName.GetComponent<Text>().text = name;
-        planetLand.GetComponent<Text>().text = (status.playerInsideRadius ? "Ready to Land" : "Fly Closer to Land"); //Tooltip about when the player can land 
-        planetLand.GetComponent<Text>().color = (status.playerInsideRadius ? Color.green : objectName.GetComponent<Text>().color); //sets color to green or standard blue
-        planetLand.GetComponent<Text>().enabled = !status.planetRescued; //hides the landing prompt if the planet is rescued
-
+        planetLand.GetComponent<Text>().text = (
+            status.playerInsideRadius ? "Ready to Land" : "Fly Closer to Land"
+        ); //Tooltip about when the player can land
+        planetLand.GetComponent<Text>().color = (
+            status.playerInsideRadius ? Color.green : objectName.GetComponent<Text>().color
+        ); //sets color to green or standard blue
     }
-
 
     public void ShowBlackholeInfo(float dist) //Shows the Panel with the distance from the blackhole
     {

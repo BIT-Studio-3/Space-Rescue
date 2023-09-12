@@ -1,4 +1,8 @@
-using System.Collections;
+// Description: This script controls the speed-up effect of the player. It changes the field of view of the camera to give the illusion of speed.
+// Author: Palin Wiseman
+// Last Updated: 5/09/2023
+// Last Updated By: Palin Wiseman
+using System.Collections; 
 using System.Collections.Generic;
 using UnityEngine;
 

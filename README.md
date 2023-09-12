@@ -76,13 +76,13 @@ Join the Space Rescue community and stay up to date with the latest developments
 
 Current bugs can be found on the [latest release](https://github.com/BIT-Studio-3/Space-Rescue/releases/latest) patch notes and in the [issues list](https://github.com/BIT-Studio-3/Space-Rescue/issues?q=is%3Aopen+label%3Abug+is%3Aissue).
 
-<!-- 
 ## Licence
 
-Need to confirm with lecturers about the licence this falls under. Can use https://choosealicense.com/
--->
+MIT License
 
+Copyright (c) 2023 Palin Wiseman, Erika Stuart, Chase Bennett-Hill, Yousef Altay
 
+See license file for full license text
 
 ## Version history
 
@@ -101,6 +101,7 @@ Some of the most important changes for each update are as follows:
 | v1.6.0    | 01/08/2023   | Gravity added, planet orbit, new HUD, new title screen  |
 | v1.7.0    | 15/08/2023   | Planet orbit improved, more HUD improvements, new pause screen, planet gameplay rework  |
 | v1.8.0    | 29/08/2023   | New End Screen Menu, animal behaviour improvements, wider variety of planet textures |
+| v1.9.0    | 12/09/2023   | Boost speed increased, on planet UI, new planet scanning info |
 
 ## Roadmap
 

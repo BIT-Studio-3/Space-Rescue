@@ -1,0 +1,38 @@
+name: Cache the Library Files
+on:
+  schedule:
+    - cron: "0 18 * * 3"
+  workflow_dispatch:
+
+jobs:
+  cache-and-build:
+    runs-on: ubuntu-latest
+    name: Cache Library Files
+    steps:
+      # Checkout
+      - name: Checkout Repo #Checkouts to the Repository
+        uses: actions/checkout@v3
+        with:
+          lfs: true # Whether to download Git-LFS files 
+
+      # Cache 
+      - name: Cache Files #Cache un-needed files, significantly reduces build time
+        uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-Space-Rescue-StandaloneWindows
+          restore-keys: |
+              Library-Space-Rescue-
+              Library-
+        # Build
+      - name: Build Project #Builds the unity Project
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }} #Explained in Wiki, required for validation and to build the project
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: StandaloneWindows
+          allowDirtyBuild: true #Allows the build to modify the repo, I had to enable this for the workflow to run
+          buildName: SpaceRescue
+        
