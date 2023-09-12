@@ -31,7 +31,7 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
 
     public void AnimalCount(string name) //Sent from AnimalController.cs
     {
-        if (name.Contains("Calm"))
+        if (name.Contains("Neutral"))
         {
             calmCaught += 1;
             calmUI.text = "Calm Caught: " + calmCaught;
