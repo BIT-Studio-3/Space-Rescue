@@ -1,6 +1,6 @@
 ﻿// Description: Script controls each individual animal after spawn
 // Author: Erika Stuart
-// Last Updated: 9/08/2023
+// Last Updated: 5/09/2023
 // Last Updated By: Palin Wiseman
 using System.Collections;
 using System.Collections.Generic;
@@ -42,7 +42,24 @@ public class AnimalController : MonoBehaviour
         if (inRange && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0)
         {
             PlanetAnimalCountTEMP.Instance.AnimalCount(gameObject.name); //sends the name of the game object to planetanimalcountTemp
-            PlanetManager.Instance.UpdateHeldAnimals(gameObject.name); //Updating the UI to show the amount of animals held
+            //This checks if the name of the gameobject contains a keyword of it's type and then updates the count of that animal and passes a string to the planet manager to update the UI
+            if (gameObject.name.Contains("Hostile"))
+            {
+                PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].hostileCount--;
+                PlanetManager.Instance.UpdateHeldAnimals("Hostile");
+            }
+            else if (gameObject.name.Contains("Scared"))
+            {
+                PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].scaredCount--;
+                PlanetManager.Instance.UpdateHeldAnimals("Scared");
+            }
+            else if (gameObject.name.Contains("Neutral"))
+            {
+                PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].neutralCount--;
+                PlanetManager.Instance.UpdateHeldAnimals("Neutral");
+            }
+            PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].totalAnimals--;
+
             Destroy(gameObject);
         }
         if (attacking && Vector3.Distance(transform.position, pos) < 2) //This will now kick you out of the planet if you get caught. I want to make this more interesting in the future but it works for the moment

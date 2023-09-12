@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03257911, g: 0.004022466, b: 0.04088818, a: 1}
+  m_IndirectSpecularColor: {r: 0.032488257, g: 0.004014846, b: 0.040772725, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -470,7 +470,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 310667744}
-  - {fileID: 1511508502}
   - {fileID: 1670289482}
   - {fileID: 897433051}
   m_Father: {fileID: 1058196546}
@@ -486,10 +485,8 @@ GameObject:
   m_Component:
   - component: {fileID: 310667744}
   - component: {fileID: 310667745}
-  - component: {fileID: 310667746}
-  - component: {fileID: 310667747}
   m_Layer: 0
-  m_Name: AnimalManager
+  m_Name: SpawningManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -522,42 +519,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8768842384551100010, guid: a856aef0cf1ee684fab26ff0de94a268, type: 3}
-  parent: {fileID: 334610409}
-  minSpawn: 2
-  maxSpawn: 11
---- !u!114 &310667746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310667742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 8768842384551100010, guid: 556efdf030cecbf40aa649b2aefaa99e, type: 3}
-  parent: {fileID: 334610409}
-  minSpawn: 1
-  maxSpawn: 1
---- !u!114 &310667747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310667742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 8768842384551100010, guid: 6eb1eb2d7fa47494bace62e2f3c5abe5, type: 3}
-  parent: {fileID: 334610409}
-  minSpawn: 1
-  maxSpawn: 4
+  AnimalParent: {fileID: 334610409}
+  TreeParent: {fileID: 152430078}
+  hostilePrefab: {fileID: 8768842384551100010, guid: 556efdf030cecbf40aa649b2aefaa99e, type: 3}
+  neutralPrefab: {fileID: 8768842384551100010, guid: a856aef0cf1ee684fab26ff0de94a268, type: 3}
+  scaredPrefab: {fileID: 8768842384551100010, guid: 6eb1eb2d7fa47494bace62e2f3c5abe5, type: 3}
+  treePrefab: {fileID: 2584119853571017186, guid: 9f730c9a60d8ff447a4425ddab41dd93, type: 3}
 --- !u!1 &322023209
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,7 +618,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1112,7 +1079,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 225632729}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1023257828
 GameObject:
@@ -1386,7 +1353,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1521,7 +1488,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1737,54 +1704,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1511508501
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1511508502}
-  - component: {fileID: 1511508503}
-  m_Layer: 0
-  m_Name: TreeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1511508502
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511508501}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 225632729}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1511508503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511508501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 2584119853571017186, guid: 9f730c9a60d8ff447a4425ddab41dd93, type: 3}
-  parent: {fileID: 152430078}
-  minSpawn: 0
-  maxSpawn: 20
 --- !u!1 &1670289480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,7 +1749,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 225632729}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1736528025
 GameObject:

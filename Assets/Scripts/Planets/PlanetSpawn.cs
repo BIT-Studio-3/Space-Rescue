@@ -1,7 +1,7 @@
-// Description: This script spawns the planets in the game. It spawns them in a random location and then rotates them around the black hole.
+﻿// Description: This script spawns the planets in the game. It spawns them in a random location and then rotates them around the black hole.
 // Author: Erika Stuart
 // Last Modified By: Palin Wiseman
-// Last Modified Date: 06/08/2023
+// Last Modified Date: 5/09/2023
 
 using System.Collections;
 using System.Collections.Generic;
@@ -49,6 +49,7 @@ public class PlanetSpawn : MonoBehaviour
             rotator.transform.Rotate(0, Random.Range(0, 360), Random.Range(-YZONE, YZONE)); //Rotate the rotator a random amount of degrees
             rotator.AddComponent<PlanetRotate>(); //Add the planet rotate script to the rotator
             rotator.transform.parent = planetParent.transform; //Set rotator to have overall parent
+            planetTemp.GetComponent<PlanetDetection>().planetID = i; //Set planet ID
             planets.Add(planetTemp);
         }
     }

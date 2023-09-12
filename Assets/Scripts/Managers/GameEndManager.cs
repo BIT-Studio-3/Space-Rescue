@@ -1,7 +1,7 @@
-// Description: Handles the End Screen
-// Author:
-// Last Updated: 18/8/23
-// Last Updated By: Chase Bennett-Hill
+﻿// Description: Handles the End Screen
+// Author: Palin Wiseman
+// Last Updated: 5/09/2023
+// Last Updated By: Palin Wiseman
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,20 +45,22 @@ public class GameEndManager : MonoBehaviour
         // }
         if (GameSettings.Winning)
         {
-            statusTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Successful!";
+            statusTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Successful";
         }
         else
         {
-            statusTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Failed!";
+            statusTextGO.GetComponent<TMPro.TextMeshProUGUI>().text = "Mission Failed";
         }
     }
 
+    //Restarts the game and resets all variables
     public void Restart()
     {
         GameSettings.Score = 0;
         GameSettings.PlanetDanger = 0;
         GameSettings.Winning = true;
         GameSettings.Tutorial = false;
+        PlanetStates.Instance.ResetPlanets();
         SceneManager.LoadScene("Main scene");
     }
 
@@ -70,6 +72,7 @@ public class GameEndManager : MonoBehaviour
     public void MenuButton()
     {
         GameSettings.Tutorial = false;
+        PlanetStates.Instance.ResetPlanets();
         SceneManager.LoadScene("Title Screen");
     }
 }
