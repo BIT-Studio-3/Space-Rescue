@@ -4,6 +4,7 @@
 // Last Updated By: Palin Wiseman
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 //using System;
@@ -13,9 +14,9 @@ public class AnimalController : MonoBehaviour
 {
     private float radius;
     private bool inRange;
-    private bool moving;
+    [SerializeField] private bool moving;
     private Vector3 pos;
-    private bool attacking;
+    [SerializeField] private bool attacking;
     private Vector3 normalizedDirection;
     private Vector3 quarterRadiusOffset;
 
@@ -67,6 +68,9 @@ public class AnimalController : MonoBehaviour
             PlanetManager.Instance.LeavePlanet();
         }
         Movement();
+        if ( gameObject.transform.Find("Model"))
+             gameObject.transform.Find("Model").GetComponent<Animator>().Play("Walk"); //This is playing the walk animation on the model
+
         attacking = false; //This will stop the attacking until it gets another command from the hostile animal script. If the attack is still going on then that will be right away
     }
 
@@ -112,6 +116,8 @@ public class AnimalController : MonoBehaviour
         {
             if (!moving)
             {
+            if ( gameObject.transform.Find("Model"))
+                gameObject.transform.Find("Model").GetComponent<Animator>().Play("Idle_A"); //This is playing the walk animation on the model
                 pos = Random.onUnitSphere * radius; //picks a random point on the surface of a sphere with the radius
                 LookAtMovement();
             }
