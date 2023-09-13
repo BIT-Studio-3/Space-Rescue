@@ -17,6 +17,17 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
     private int scaredSpawned;
     private TMPro.TextMeshProUGUI scaredUI;
 
+    private GameObject[,] collectedAnimals; //= new GameObject[2,5]; //[row, col]
+    /*
+    The animals and their spaces visual guide
+    collected animals =
+    {  (col)
+  (row) {1, 2, 3, 4, 5},
+        {1, 2, 3, 4, 5},
+    }
+    */
+
+
     //public SpawningManager spawningManager;
     public static PlanetAnimalCountTEMP	Instance;
 
@@ -27,6 +38,17 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         calmUI = GameObject.Find("Calm Caught").GetComponent<TMPro.TextMeshProUGUI>();
         hostileUI = GameObject.Find("Hostile Caught").GetComponent<TMPro.TextMeshProUGUI>();
         scaredUI = GameObject.Find("Scared Caught").GetComponent<TMPro.TextMeshProUGUI>();
+
+        collectedAnimals = new GameObject[2,5];
+        for (int row = 0; row < collectedAnimals.GetLength(0); row++) //GetLength(0) is the 2
+        {
+            for (int col = 0; col < collectedAnimals.GetLength(1); col++)//GetLength(1) is the 5
+            {
+                //collectedAnimals[GameObject.Find("Row "), GameObject.Find("{col}")];
+                
+            }
+        }
+
     }
 
     public void AnimalCount(string name) //Sent from AnimalController.cs
