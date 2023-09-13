@@ -7,6 +7,7 @@ public class PlanetRotation : MonoBehaviour
     public Transform player;          // Reference to the player's Transform component.
     public float sensitivityX = 2.0f; // Mouse sensitivity for horizontal
     public float sensitivityY = 2.0f; // Mouse sensitivity for vertical
+    public float movementSpeed = 5.0f; // Horizontal movement speed
     private float rotationX = 0.0f;  // Current X rotation of the camera.
 
     void Start()
@@ -18,16 +19,19 @@ public class PlanetRotation : MonoBehaviour
     }
     void Update()
     {
-        // mouse input.
+       // Mouse input.
         float mouseX = Input.GetAxis("Mouse X") * sensitivityX;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivityY;
 
-        // player's rotation around the Y-axis
+        // Player's rotation around the Y-axis
         player.Rotate(Vector3.up * mouseX);
 
-        // camera's rotation around the X-axis
+        // Camera's rotation around the X-axis
         rotationX -= mouseY;
-        rotationX = Mathf.Clamp(rotationX, -90f, 90f);
+
+        // Limit the camera's up and down rotation
+        rotationX = Mathf.Clamp(rotationX, 60f, 90f);
+
         Camera.main.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
     }
 }
