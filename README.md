@@ -124,5 +124,6 @@ We extend our heartfelt gratitude to our dedicated team members and mentors who 
 - Ship model: [Oxar Light Freighter](https://assetstore.unity.com/packages/3d/vehicles/space/oxar-light-freighter-82240)
 - Planet lander model: [Mars Pod](https://assetstore.unity.com/packages/3d/vehicles/space/mars-pod-121710)
 - HUD Elements: [Off Screen Target Indicator](https://assetstore.unity.com/packages/tools/gui/off-screen-target-indicator-71799)
+- Black hole icon: [Black hole icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/black-hole)
 
-<!-- Add music credits and license information when available -->
+<!-- Add music credits when available -->
