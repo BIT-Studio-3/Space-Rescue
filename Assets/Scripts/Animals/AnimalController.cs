@@ -74,18 +74,21 @@ public class AnimalController : MonoBehaviour
         attacking = false; //This will stop the attacking until it gets another command from the hostile animal script. If the attack is still going on then that will be right away
     }
 
-    private void  PlayAnimation()
-    {   
-        if(moving){
+    private void PlayAnimation()
+    {
+        if (moving)
+        {
             if (gameObject.transform.Find("Model"))
                 gameObject.transform.Find("Model").GetComponent<Animator>().Play("Walk"); //This is playing the walk animation on the model
         }
-        else if (attacking){
-            if(gameObject.transform.Find("Model"))
+        else if (attacking)
+        {
+            if (gameObject.transform.Find("Model"))
                 gameObject.transform.Find("Model").GetComponent<Animator>().Play("Attack"); //This is playing the walk animation on the model
         }
-        else{
-            if(gameObject.transform.Find("Model"))
+        else
+        {
+            if (gameObject.transform.Find("Model"))
                 gameObject.transform.Find("Model").GetComponent<Animator>().Play("Idle_A"); //This is playing the walk animation on the model
         }
     }
@@ -132,8 +135,8 @@ public class AnimalController : MonoBehaviour
         {
             if (!moving)
             {
-            if ( gameObject.transform.Find("Model"))
-                gameObject.transform.Find("Model").GetComponent<Animator>().Play("Idle_A"); //This is playing the walk animation on the model
+                if (gameObject.transform.Find("Model"))
+                    gameObject.transform.Find("Model").GetComponent<Animator>().Play("Idle_A"); //This is playing the walk animation on the model
                 pos = Random.onUnitSphere * radius; //picks a random point on the surface of a sphere with the radius
                 LookAtMovement();
             }
