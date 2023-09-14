@@ -40,6 +40,7 @@ public class AnimalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayAnimation();
         if (inRange && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0)
         {
             PlanetAnimalCountTEMP.Instance.AnimalCount(gameObject.name); //sends the name of the game object to planetanimalcountTemp
@@ -68,10 +69,25 @@ public class AnimalController : MonoBehaviour
             PlanetManager.Instance.LeavePlanet();
         }
         Movement();
-        if ( gameObject.transform.Find("Model"))
-             gameObject.transform.Find("Model").GetComponent<Animator>().Play("Walk"); //This is playing the walk animation on the model
+
 
         attacking = false; //This will stop the attacking until it gets another command from the hostile animal script. If the attack is still going on then that will be right away
+    }
+
+    private void  PlayAnimation()
+    {   
+        if(moving){
+            if (gameObject.transform.Find("Model"))
+                gameObject.transform.Find("Model").GetComponent<Animator>().Play("Walk"); //This is playing the walk animation on the model
+        }
+        else if (attacking){
+            if(gameObject.transform.Find("Model"))
+                gameObject.transform.Find("Model").GetComponent<Animator>().Play("Attack"); //This is playing the walk animation on the model
+        }
+        else{
+            if(gameObject.transform.Find("Model"))
+                gameObject.transform.Find("Model").GetComponent<Animator>().Play("Idle_A"); //This is playing the walk animation on the model
+        }
     }
 
     //On trigger enter and on trigger exit toggling in range on and off
