@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03257911, g: 0.004022466, b: 0.04088818, a: 1}
+  m_IndirectSpecularColor: {r: 0.032488257, g: 0.004014846, b: 0.040772725, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimalParent: {fileID: 334610409}
   TreeParent: {fileID: 152430078}
-  hostilePrefab: {fileID: 8768842384551100010, guid: ea24b3510356c8b46aa52c8db5c79b4e, type: 3}
+  hostilePrefab: {fileID: 8768842384551100010, guid: 1a908727f2cd86c4587bfe8740190068, type: 3}
   neutralPrefab: {fileID: 8768842384551100010, guid: a856aef0cf1ee684fab26ff0de94a268, type: 3}
   scaredPrefab: {fileID: 8768842384551100010, guid: 6eb1eb2d7fa47494bace62e2f3c5abe5, type: 3}
   treePrefab: {fileID: 2584119853571017186, guid: 9f730c9a60d8ff447a4425ddab41dd93, type: 3}
