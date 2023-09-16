@@ -1,7 +1,7 @@
 ﻿// Description: Script controls each individual animal after spawn
 // Author: Erika Stuart
-// Last Updated: 5/09/2023
-// Last Updated By: Palin Wiseman
+// Last Updated: 16/09/2023
+// Last Updated By: Chase Bennett-Hill
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -17,6 +17,7 @@ public class AnimalController : MonoBehaviour
     [SerializeField] private bool moving;
     private Vector3 pos;
     [SerializeField] private bool attacking;
+    [SerializeField] private bool running;
     private Vector3 normalizedDirection;
     private Vector3 quarterRadiusOffset;
 
@@ -40,7 +41,8 @@ public class AnimalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayAnimation();
+        if (gameObject.transform.Find("Model"))
+            PlayAnimation();
         if (inRange && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0)
         {
             PlanetAnimalCountTEMP.Instance.AnimalCount(gameObject.name); //sends the name of the game object to planetanimalcountTemp
@@ -72,24 +74,32 @@ public class AnimalController : MonoBehaviour
 
 
         attacking = false; //This will stop the attacking until it gets another command from the hostile animal script. If the attack is still going on then that will be right away
+        running = false; //This will stop the running until it gets another command from the scared animal script. If the animal is still scared then that will be right away
     }
 
-    private void PlayAnimation()
+    public void PlayAnimation()
     {
-        if (moving)
+
+        Animator animator = gameObject.transform.Find("Model").GetComponent<Animator>();
+        if (attacking)
         {
-            if (gameObject.transform.Find("Model"))
-                gameObject.transform.Find("Model").GetComponent<Animator>().Play("Walk"); //This is playing the walk animation on the model
+            animator.Play("Attack"); //This is playing the Attacking animation on the model
+            Debug.Log(gameObject.name + " is attacking");
         }
-        else if (attacking)
+        else if (running)
         {
-            if (gameObject.transform.Find("Model"))
-                gameObject.transform.Find("Model").GetComponent<Animator>().Play("Attack"); //This is playing the walk animation on the model
+            animator.Play("Run"); //This is playing the run animation on the model
+            Debug.Log(gameObject.name + " is running");
+        }
+        else if (moving)
+        {
+            animator.Play("Walk"); //This is playing the walk animation on the model
+            Debug.Log(gameObject.name + " is walking");
         }
         else
         {
-            if (gameObject.transform.Find("Model"))
-                gameObject.transform.Find("Model").GetComponent<Animator>().Play("Idle_A"); //This is playing the walk animation on the model
+            animator.Play("Idle_A"); //This is playing the Idle animation on the model
+            Debug.Log(gameObject.name + " is idle");
         }
     }
 
@@ -135,8 +145,6 @@ public class AnimalController : MonoBehaviour
         {
             if (!moving)
             {
-                if (gameObject.transform.Find("Model"))
-                    gameObject.transform.Find("Model").GetComponent<Animator>().Play("Idle_A"); //This is playing the walk animation on the model
                 pos = Random.onUnitSphere * radius; //picks a random point on the surface of a sphere with the radius
                 LookAtMovement();
             }
