@@ -122,6 +122,7 @@ public class AnimalController : MonoBehaviour
 
     public void Scared(Vector3 playerPos)
     {
+        running = true;
         //set pos to 1/4 of the planet away from the player. This is a lot of algebra I don't fully understand and got to through trial and error. However it works
         Vector3 AB = transform.position - playerPos;
         Vector3 AC = playerPos - new Vector3(0, 0, 0);
