@@ -108,6 +108,6 @@ public class PlanetManager : MonoBehaviour
     public void LeavePlanet()
     {
         ShipMovement.Instance.ResetBoost(); //This resets the ships boost before it goes back to the main scene
-        GameMenuManager.Instance.ReturntoScene("Planet");
+        GameMenuManager.Instance.ReturntoScene("Planet 1");
     }
 }
