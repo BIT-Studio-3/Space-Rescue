@@ -659,10 +659,14 @@ MonoBehaviour:
   TreeParent: {fileID: 152430078}
   hostilePrefabs:
   - {fileID: 8768842384551100010, guid: ea24b3510356c8b46aa52c8db5c79b4e, type: 3}
-  - {fileID: 8768842384551100010, guid: 1a908727f2cd86c4587bfe8740190068, type: 3}
-  neutralPrefabs: []
-  scaredPrefabs: []
-  foliagePrefabs: []
+  neutralPrefabs:
+  - {fileID: 8768842384551100010, guid: cb3f11b2fb0c77241b77804979386d9e, type: 3}
+  scaredPrefabs:
+  - {fileID: 8768842384551100010, guid: c5cc6c2635b24cb4f89cd5cd1f9ce644, type: 3}
+  - {fileID: 8768842384551100010, guid: 1f21562f6386a484182873f6f45120fa, type: 3}
+  - {fileID: 8768842384551100010, guid: b034bd83f153fc448b14be82816ce634, type: 3}
+  foliagePrefabs:
+  - {fileID: 2584119853571017186, guid: 9f730c9a60d8ff447a4425ddab41dd93, type: 3}
 --- !u!1 &322023209
 GameObject:
   m_ObjectHideFlags: 0

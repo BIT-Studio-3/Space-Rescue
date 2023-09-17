@@ -79,27 +79,22 @@ public class AnimalController : MonoBehaviour
 
     public void PlayAnimation()
     {
-
         Animator animator = gameObject.transform.Find("Model").GetComponent<Animator>();
         if (attacking)
         {
             animator.Play("Attack"); //This is playing the Attacking animation on the model
-            Debug.Log(gameObject.name + " is attacking");
         }
         else if (running)
         {
             animator.Play("Run"); //This is playing the run animation on the model
-            Debug.Log(gameObject.name + " is running");
         }
         else if (moving)
         {
             animator.Play("Walk"); //This is playing the walk animation on the model
-            Debug.Log(gameObject.name + " is walking");
         }
         else
         {
             animator.Play("Idle_A"); //This is playing the Idle animation on the model
-            Debug.Log(gameObject.name + " is idle");
         }
     }
 
