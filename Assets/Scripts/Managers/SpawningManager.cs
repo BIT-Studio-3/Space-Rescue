@@ -1,7 +1,7 @@
 ﻿// Description: Script is used for planet object spawning
 // Created by: Erika Stuart
-// Last Updated: 5/09/2023
-// Last Updated By: Palin Wiseman
+// Last Updated: 17/09/2023
+// Last Updated By: Chase Bennett-Hill
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,20 +22,13 @@ public class SpawningManager : MonoBehaviour
 
     //The prefabs that are being spawned. This is assigned in the editor
     [Header("Prefabs")]
-
     [SerializeField]
-    private List<GameObject> hostilePrefabs;
-
+    private List<GameObject> hostilePrefabs; //List of prefabs that can be used for the hostile animal
     [SerializeField]
-    private List<GameObject> neutralPrefabs;
+    private List<GameObject> neutralPrefabs; //List of prefabs that can be used for the neutral animal
+    private List<GameObject> scaredPrefabs; //List of prefabs that can be used for the Scared animal
     [SerializeField]
-
-
-    private List<GameObject> scaredPrefabs;
-    [SerializeField]
-
- 
-    private List<GameObject> foliagePrefabs;
+    private List<GameObject> foliagePrefabs; //List of prefabs that can be used for the foliage
     //The amount of objects that are being spawned. This is gotten from the planet info script for the planet entered
     private int hostileCount;
     private int scaredCount;
