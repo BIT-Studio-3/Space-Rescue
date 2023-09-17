@@ -22,18 +22,19 @@ public class SpawningManager : MonoBehaviour
 
     //The prefabs that are being spawned. This is assigned in the editor
     [Header("Prefabs")]
+    private GameObject hostilePrefab; 
     [SerializeField]
-    private GameObject hostilePrefab;
+    private List<GameObject> hostilePrefabs;
 
-    [SerializeField]
     private GameObject neutralPrefab;
-
     [SerializeField]
+    private List<GameObject> neutralPrefabs;
     private GameObject scaredPrefab;
-
     [SerializeField]
+    private List<GameObject> scaredPrefabs;
     private GameObject treePrefab;
-
+    [SerializeField]
+    private List<GameObject> foliagePrefabs;
     //The amount of objects that are being spawned. This is gotten from the planet info script for the planet entered
     private int hostileCount;
     private int scaredCount;
@@ -47,6 +48,10 @@ public class SpawningManager : MonoBehaviour
 
     void Start()
     {
+        hostilePrefabs = new List<GameObject>();
+        neutralPrefabs = new List<GameObject>();
+        scaredPrefabs = new List<GameObject>();
+        foliagePrefabs = new List<GameObject>();
         radius = GameObject.Find("Planet").transform.localScale.x / 2 + 5; //This is giving a buffer so that the object wont spawn inside the planet
 
         //Setting the amount of objects to be spawned
@@ -54,9 +59,8 @@ public class SpawningManager : MonoBehaviour
         scaredCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].scaredCount;
         neutralCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].neutralCount;
         treeCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].treeCount;
-
         //Spawning the objects
-        Spawn(hostileCount, hostilePrefab, AnimalParent);
+        Spawn(hostileCount, hostilePrefabs[Random.Range(0,hostilePrefabs.Count)], AnimalParent);
         Spawn(scaredCount, scaredPrefab, AnimalParent);
         Spawn(neutralCount, neutralPrefab, AnimalParent);
         Spawn(treeCount, treePrefab, TreeParent);
