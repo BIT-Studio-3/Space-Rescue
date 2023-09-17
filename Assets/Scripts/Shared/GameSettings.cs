@@ -1,3 +1,4 @@
+// Description: This file contains the global variables that will be used throughout the game.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
