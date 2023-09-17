@@ -27,7 +27,6 @@ public class SettingsManager : MonoBehaviour
         credits.SetActive(false);
         settings.SetActive(false);
         controlsButton.interactable = false;
-
     }
 
     //Switches to the controls/keybinds menu
