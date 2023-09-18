@@ -70,7 +70,7 @@ public class MusicManager : MonoBehaviour
         else
         {
             //Muting the audioSource
-            audioSource.mute = true;
+            audioSource.mute = false;
             audioSource.volume = GameSettings.MusicVolume;
         }
     }

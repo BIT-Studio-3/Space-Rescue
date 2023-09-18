@@ -8,11 +8,12 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
+        MusicManager.Instance.stopMusic();
     }
 
     public void PlayButton()
@@ -39,5 +40,4 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Game Tutorial");
     }
-
 }

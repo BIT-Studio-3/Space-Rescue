@@ -34,11 +34,13 @@ public class SettingsManager : MonoBehaviour
         soundEffectsNumber = GameObject.Find("Sound Effects Number");
         muteToggle = GameObject.Find("Mute Toggle").GetComponent<Toggle>();
         
+        //Setting everything to the current volume whenever settings is opened
         musicSlider.value = GameSettings.MusicVolume;
         soundEffectsSlider.value = GameSettings.SoundEffectsVolume;
         musicNumber.GetComponent<TMPro.TextMeshProUGUI>().text = (musicSlider.value * 100).ToString("0");
         soundEffectsNumber.GetComponent<TMPro.TextMeshProUGUI>().text = (soundEffectsSlider.value * 100).ToString("0");
-        muteToggle.isOn = GameSettings.Mute;
+        //This needs to be done as set without notify otherwise it triggers itself
+        muteToggle.SetIsOnWithoutNotify(GameSettings.Mute);
 
         credits.SetActive(false);
         settings.SetActive(false);
@@ -98,6 +100,7 @@ public class SettingsManager : MonoBehaviour
 
     public void MuteToggle()
     {
+        Debug.Log("Mute Toggle");
         GameSettings.Mute = !GameSettings.Mute;
         MusicManager.Instance.ToggleMute();
     }
