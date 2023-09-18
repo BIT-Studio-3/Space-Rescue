@@ -2,12 +2,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance;
     private AudioSource audioSource;
     private float volume = .5f;
+    public AudioClip[] menuClips;
+    public AudioClip[] gameClips;
+
+    void Update()
+    {
+        //Checking if the audio source is not playing
+        if (!audioSource.isPlaying)
+        {
+            string currentScene = SceneManager.GetActiveScene().name;
+            switch (currentScene)
+            {
+                case "Main scene":
+                case "Planet":
+                case "Game Tutorial":
+                    audioSource.clip = gameClips[Random.Range(0, gameClips.Length)];
+                    break;
+                case "Title Screen":
+                case "Settings":
+                case "Game End":
+                    audioSource.clip = menuClips[Random.Range(0, menuClips.Length)];
+                    break;
+                default:
+                    break;
+            }
+            audioSource.Play();
+        }
+    }
 
     private void Awake()
     {
@@ -32,6 +60,7 @@ public class MusicManager : MonoBehaviour
             audioSource.volume = volume;
         }
     }
+
     public void ToggleMute()
     {
         if (GameSettings.Mute)
@@ -45,5 +74,10 @@ public class MusicManager : MonoBehaviour
             //Muting the audioSource
             audioSource.mute = true;
         }
+    }
+
+    public void stopMusic()
+    {
+        audioSource.Pause();
     }
 }

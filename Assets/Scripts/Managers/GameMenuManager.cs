@@ -13,6 +13,7 @@ public class GameMenuManager : MonoBehaviour
         Instance = this;
         GameSettings.Score = 0;
         MainScene = GameObject.Find("MainParent");
+        MusicManager.Instance.stopMusic();
     }
 
     public void MenuButton()

@@ -1160,6 +1160,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97e28066857d7f428c96dff8c32d8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuClips:
+  - {fileID: 8300000, guid: fce8ec7ef884c244bb1779b3a2c19c00, type: 3}
+  gameClips:
+  - {fileID: 8300000, guid: 2751f06f3d9d7a743bbcabed7afd0ffd, type: 3}
+  - {fileID: 8300000, guid: 8bed0e87708145b4a9799c99ae399936, type: 3}
+  - {fileID: 8300000, guid: 33af93f5339f7e848af4a1a1d680e648, type: 3}
 --- !u!1 &1321929731
 GameObject:
   m_ObjectHideFlags: 0
