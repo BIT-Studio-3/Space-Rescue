@@ -7,7 +7,7 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance;
     private AudioSource audioSource;
-    private float volume;
+    private float volume = .5f;
 
     private void Awake()
     {
@@ -37,12 +37,13 @@ public class MusicManager : MonoBehaviour
         if (GameSettings.Mute)
         {
             //Setting the volume of the audio source to the current stored volume
+            audioSource.mute = false;
             audioSource.volume = volume;
         }
         else
         {
-            //Setting the volume of the audio source to 0
-            audioSource.volume = 0;
+            //Muting the audioSource
+            audioSource.mute = true;
         }
     }
 }
