@@ -5,19 +5,44 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    AudioSource audioSource;
-    void Awake()
+    public static MusicManager Instance;
+    private AudioSource audioSource;
+    private float volume;
+
+    private void Awake()
     {
+        //Singleton pattern
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
         audioSource = GetComponent<AudioSource>();
-        //Setting the volume of the audio source to current music volume
-        audioSource.volume = GameSettings.MusicVolume;
     }
 
-    public void SetVolume(float volume)
+    public void SetVolume(float input)
     {
-        //Setting global volume to the volume passed in
-        GameSettings.MusicVolume = volume;
-        //Setting the volume of the audio source to the volume passed in
-        audioSource.volume = volume;
+        //Storing the volume passed in
+        volume = input;
+        //Setting the volume of the audio source to the volume passed in if not muted
+        if (!GameSettings.Mute)
+        {
+            audioSource.volume = volume;
+        }
+    }
+    public void ToggleMute()
+    {
+        if (GameSettings.Mute)
+        {
+            //Setting the volume of the audio source to the current stored volume
+            audioSource.volume = volume;
+        }
+        else
+        {
+            //Setting the volume of the audio source to 0
+            audioSource.volume = 0;
+        }
     }
 }

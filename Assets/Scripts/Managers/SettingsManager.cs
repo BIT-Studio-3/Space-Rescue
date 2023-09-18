@@ -14,6 +14,10 @@ public class SettingsManager : MonoBehaviour
     private Button controlsButton;
     private Button creditsButton;
     private Button settingsButton;
+    private Slider musicSlider;
+    private Slider soundEffectsSlider;
+    private GameObject musicNumber;
+    private GameObject soundEffectsNumber;
 
     void Start()
     {
@@ -23,6 +27,10 @@ public class SettingsManager : MonoBehaviour
         controlsButton = GameObject.Find("Controls Button").GetComponent<Button>();
         creditsButton = GameObject.Find("Credits Button").GetComponent<Button>();
         settingsButton = GameObject.Find("Settings Button").GetComponent<Button>();
+        musicSlider = GameObject.Find("Music Slider").GetComponent<Slider>();
+        soundEffectsSlider = GameObject.Find("Sound Effects Slider").GetComponent<Slider>();
+        musicNumber = GameObject.Find("Music Number");
+        soundEffectsNumber = GameObject.Find("Sound Effects Number");
 
         credits.SetActive(false);
         settings.SetActive(false);
@@ -66,5 +74,23 @@ public class SettingsManager : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync("Settings");
         //Time.timeScale = 1;
+    }
+
+    public void MusicSlider()
+    {
+        MusicManager.Instance.SetVolume(musicSlider.value);
+        musicNumber.GetComponent<TMPro.TextMeshProUGUI>().text = (musicSlider.value * 100).ToString("0");
+    }
+
+    public void SoundEffectsSlider()
+    {
+        GameSettings.SoundEffectsVolume = soundEffectsSlider.value;
+        soundEffectsNumber.GetComponent<TMPro.TextMeshProUGUI>().text = (soundEffectsSlider.value * 100).ToString("0");
+    }
+
+    public void MuteToggle()
+    {
+        MusicManager.Instance.ToggleMute();
+        GameSettings.Mute = !GameSettings.Mute;
     }
 }

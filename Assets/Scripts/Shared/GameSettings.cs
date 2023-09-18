@@ -21,9 +21,9 @@ public static class GameSettings
     //Global Array that will be populated with the variety of planet prefabs in the resources folder
     public static GameObject[] planetPrefabs;
 
-    //Volume from 0 to 1 for the music
-    public static float MusicVolume = .5f;
-
     //Volume from 0 to 1 for the sound effects
     public static float SoundEffectsVolume = .5f;
+
+    //Mute variable for sound effects
+    public static bool Mute = false;
 }
