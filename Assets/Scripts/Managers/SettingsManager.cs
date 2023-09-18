@@ -33,7 +33,7 @@ public class SettingsManager : MonoBehaviour
         musicNumber = GameObject.Find("Music Number");
         soundEffectsNumber = GameObject.Find("Sound Effects Number");
         muteToggle = GameObject.Find("Mute Toggle").GetComponent<Toggle>();
-        
+
         musicSlider.value = GameSettings.MusicVolume;
         soundEffectsSlider.value = GameSettings.SoundEffectsVolume;
         musicNumber.GetComponent<TMPro.TextMeshProUGUI>().text = (musicSlider.value * 100).ToString("0");
