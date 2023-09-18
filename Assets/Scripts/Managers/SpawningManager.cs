@@ -57,9 +57,9 @@ public class SpawningManager : MonoBehaviour
         treeCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].treeCount;
         //Spawning the objects
         Spawn(hostileCount, hostilePrefabs[Random.Range(0, hostilePrefabs.Count)], animalParent);
-        Spawn(scaredCount, scaredPrefabs[Random.Range(0,scaredPrefabs.Count)], animalParent);
-        Spawn(neutralCount, neutralPrefabs[Random.Range(0,neutralPrefabs.Count)], animalParent);
-        Spawn(treeCount, foliagePrefabs[Random.Range(0,foliagePrefabs.Count)], treeParent);
+        Spawn(scaredCount, scaredPrefabs[Random.Range(0, scaredPrefabs.Count)], animalParent);
+        Spawn(neutralCount, neutralPrefabs[Random.Range(0, neutralPrefabs.Count)], animalParent);
+        Spawn(treeCount, foliagePrefabs[Random.Range(0, foliagePrefabs.Count)], treeParent);
     }
 
     //Spawns objects randomly on the surface of a sphere
