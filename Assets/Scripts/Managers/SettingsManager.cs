@@ -18,6 +18,7 @@ public class SettingsManager : MonoBehaviour
     private Slider soundEffectsSlider;
     private GameObject musicNumber;
     private GameObject soundEffectsNumber;
+    private Toggle muteToggle;
 
     void Start()
     {
@@ -31,10 +32,13 @@ public class SettingsManager : MonoBehaviour
         soundEffectsSlider = GameObject.Find("Sound Effects Slider").GetComponent<Slider>();
         musicNumber = GameObject.Find("Music Number");
         soundEffectsNumber = GameObject.Find("Sound Effects Number");
+        muteToggle = GameObject.Find("Mute Toggle").GetComponent<Toggle>();
+        
         musicSlider.value = GameSettings.MusicVolume;
         soundEffectsSlider.value = GameSettings.SoundEffectsVolume;
         musicNumber.GetComponent<TMPro.TextMeshProUGUI>().text = (musicSlider.value * 100).ToString("0");
         soundEffectsNumber.GetComponent<TMPro.TextMeshProUGUI>().text = (soundEffectsSlider.value * 100).ToString("0");
+        muteToggle.isOn = GameSettings.Mute;
 
         credits.SetActive(false);
         settings.SetActive(false);
@@ -94,7 +98,7 @@ public class SettingsManager : MonoBehaviour
 
     public void MuteToggle()
     {
-        MusicManager.Instance.ToggleMute();
         GameSettings.Mute = !GameSettings.Mute;
+        MusicManager.Instance.ToggleMute();
     }
 }

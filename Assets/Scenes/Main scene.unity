@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03260267, g: 0.0040255236, b: 0.04088335, a: 1}
+  m_IndirectSpecularColor: {r: 0.03257911, g: 0.004022466, b: 0.04088818, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1307,6 +1307,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123d65b55cb561a4c89a4ea812261ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &976181461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 976181463}
+  - component: {fileID: 976181462}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &976181462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976181461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97e28066857d7f428c96dff8c32d8ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuClips:
+  - {fileID: 8300000, guid: fce8ec7ef884c244bb1779b3a2c19c00, type: 3}
+  gameClips:
+  - {fileID: 8300000, guid: 2751f06f3d9d7a743bbcabed7afd0ffd, type: 3}
+  - {fileID: 8300000, guid: 8bed0e87708145b4a9799c99ae399936, type: 3}
+  - {fileID: 8300000, guid: 33af93f5339f7e848af4a1a1d680e648, type: 3}
+--- !u!4 &976181463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976181461}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1280.8, y: 430, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1017789551
 PrefabInstance:
   m_ObjectHideFlags: 0

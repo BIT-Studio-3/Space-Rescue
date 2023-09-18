@@ -65,13 +65,13 @@ public class MusicManager : MonoBehaviour
         if (GameSettings.Mute)
         {
             //Setting the volume of the audio source to the current stored volume
-            audioSource.mute = false;
-            audioSource.volume = GameSettings.MusicVolume;
+            audioSource.mute = true;
         }
         else
         {
             //Muting the audioSource
             audioSource.mute = true;
+            audioSource.volume = GameSettings.MusicVolume;
         }
     }
 
