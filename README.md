@@ -124,7 +124,13 @@ We extend our heartfelt gratitude to our dedicated team members and mentors who 
 - Ship model: [Oxar Light Freighter](https://assetstore.unity.com/packages/3d/vehicles/space/oxar-light-freighter-82240)
 - Planet lander model: [Mars Pod](https://assetstore.unity.com/packages/3d/vehicles/space/mars-pod-121710)
 - HUD Elements: [Off Screen Target Indicator](https://assetstore.unity.com/packages/tools/gui/off-screen-target-indicator-71799)
-- Music:  
+
+### Music
+
 "New Direction" Kevin MacLeod (incompetech.com)  
+Licensed under Creative Commons: By Attribution 4.0 License  
+http://creativecommons.org/licenses/by/4.0/
+
+"Phantom from Space" Kevin MacLeod (incompetech.com)  
 Licensed under Creative Commons: By Attribution 4.0 License  
 http://creativecommons.org/licenses/by/4.0/
