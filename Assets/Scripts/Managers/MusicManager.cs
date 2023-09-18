@@ -8,7 +8,6 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance;
     private AudioSource audioSource;
-    private float volume = .5f;
     public AudioClip[] menuClips;
     public AudioClip[] gameClips;
 
@@ -53,11 +52,11 @@ public class MusicManager : MonoBehaviour
     public void SetVolume(float input)
     {
         //Storing the volume passed in
-        volume = input;
+        GameSettings.MusicVolume = input;
         //Setting the volume of the audio source to the volume passed in if not muted
         if (!GameSettings.Mute)
         {
-            audioSource.volume = volume;
+            audioSource.volume = GameSettings.MusicVolume;
         }
     }
 
@@ -67,7 +66,7 @@ public class MusicManager : MonoBehaviour
         {
             //Setting the volume of the audio source to the current stored volume
             audioSource.mute = false;
-            audioSource.volume = volume;
+            audioSource.volume = GameSettings.MusicVolume;
         }
         else
         {

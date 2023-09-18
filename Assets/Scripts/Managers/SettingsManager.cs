@@ -31,6 +31,10 @@ public class SettingsManager : MonoBehaviour
         soundEffectsSlider = GameObject.Find("Sound Effects Slider").GetComponent<Slider>();
         musicNumber = GameObject.Find("Music Number");
         soundEffectsNumber = GameObject.Find("Sound Effects Number");
+        musicSlider.value = GameSettings.MusicVolume;
+        soundEffectsSlider.value = GameSettings.SoundEffectsVolume;
+        musicNumber.GetComponent<TMPro.TextMeshProUGUI>().text = (musicSlider.value * 100).ToString("0");
+        soundEffectsNumber.GetComponent<TMPro.TextMeshProUGUI>().text = (soundEffectsSlider.value * 100).ToString("0");
 
         credits.SetActive(false);
         settings.SetActive(false);
