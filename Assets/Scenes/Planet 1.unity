@@ -667,6 +667,10 @@ MonoBehaviour:
   - {fileID: 8768842384551100010, guid: b034bd83f153fc448b14be82816ce634, type: 3}
   foliagePrefabs:
   - {fileID: 2584119853571017186, guid: 9f730c9a60d8ff447a4425ddab41dd93, type: 3}
+  - {fileID: 137650, guid: 826b6a0b570e8460990010fa615b5a2a, type: 3}
+  - {fileID: 188006, guid: c6b7fb383a3534b039692b5485b6e739, type: 3}
+  - {fileID: 191266, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
+  - {fileID: 192044, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
 --- !u!1 &322023209
 GameObject:
   m_ObjectHideFlags: 0
