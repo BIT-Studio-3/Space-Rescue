@@ -15,10 +15,10 @@ public class SpawningManager : MonoBehaviour
     //The parents the objects are being moved to. This is assigned in the editor
     [Header("Parents")]
     [SerializeField]
-    private GameObject AnimalParent;
+    private GameObject animalParent;
 
     [SerializeField]
-    private GameObject TreeParent;
+    private GameObject treeParent;
 
     //The prefabs that are being spawned. This is assigned in the editor
     [Header("Prefabs")]
@@ -56,10 +56,10 @@ public class SpawningManager : MonoBehaviour
         neutralCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].neutralCount;
         treeCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].treeCount;
         //Spawning the objects
-        Spawn(hostileCount, hostilePrefabs[Random.Range(0, hostilePrefabs.Count)], AnimalParent);
-        Spawn(scaredCount, scaredPrefabs[Random.Range(0, scaredPrefabs.Count)], AnimalParent);
-        Spawn(neutralCount, neutralPrefabs[Random.Range(0, neutralPrefabs.Count)], AnimalParent);
-        Spawn(treeCount, foliagePrefabs[Random.Range(0, foliagePrefabs.Count)], TreeParent);
+        Spawn(hostileCount, hostilePrefabs[Random.Range(0, hostilePrefabs.Count)], animalParent);
+        Spawn(scaredCount, scaredPrefabs[Random.Range(0,scaredPrefabs.Count)], animalParent);
+        Spawn(neutralCount, neutralPrefabs[Random.Range(0,neutralPrefabs.Count)], animalParent);
+        Spawn(treeCount, foliagePrefabs[Random.Range(0,foliagePrefabs.Count)], treeParent);
     }
 
     //Spawns objects randomly on the surface of a sphere
