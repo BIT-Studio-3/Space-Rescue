@@ -33,7 +33,7 @@ public class SettingsManager : MonoBehaviour
         musicNumber = GameObject.Find("Music Number");
         soundEffectsNumber = GameObject.Find("Sound Effects Number");
         muteToggle = GameObject.Find("Mute Toggle").GetComponent<Toggle>();
-        
+
         //Setting everything to the current volume whenever settings is opened
         musicSlider.value = GameSettings.MusicVolume;
         soundEffectsSlider.value = GameSettings.SoundEffectsVolume;
