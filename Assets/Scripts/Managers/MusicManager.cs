@@ -10,6 +10,19 @@ public class MusicManager : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip[] menuClips;
     public AudioClip[] gameClips;
+    private void Awake()
+    {
+        //Singleton pattern
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+        audioSource = GetComponent<AudioSource>();
+        SetVolume();
+    }
 
     void Update()
     {
@@ -36,23 +49,21 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        //Singleton pattern
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-        audioSource = GetComponent<AudioSource>();
-    }
-
+    //Sets the volume of the music with an input
     public void SetVolume(float input)
     {
         //Storing the volume passed in
         GameSettings.MusicVolume = input;
+        //Setting the volume of the audio source to the volume passed in if not muted
+        if (!GameSettings.Mute)
+        {
+            audioSource.volume = GameSettings.MusicVolume;
+        }
+    }
+
+    //Sets the volume of the music without an input
+    public void SetVolume()
+    {
         //Setting the volume of the audio source to the volume passed in if not muted
         if (!GameSettings.Mute)
         {
