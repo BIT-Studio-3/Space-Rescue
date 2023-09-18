@@ -26,6 +26,8 @@ public class SpawningManager : MonoBehaviour
     private List<GameObject> hostilePrefabs; //List of prefabs that can be used for the hostile animal
     [SerializeField]
     private List<GameObject> neutralPrefabs; //List of prefabs that can be used for the neutral animal
+    [SerializeField]
+
     private List<GameObject> scaredPrefabs; //List of prefabs that can be used for the Scared animal
     [SerializeField]
     private List<GameObject> foliagePrefabs; //List of prefabs that can be used for the foliage
@@ -55,9 +57,9 @@ public class SpawningManager : MonoBehaviour
         treeCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].treeCount;
         //Spawning the objects
         Spawn(hostileCount, hostilePrefabs[Random.Range(0, hostilePrefabs.Count)], AnimalParent);
-        Spawn(scaredCount, scaredPrefabs[Random.Range(0,scaredPrefabs.Count)], AnimalParent);
-        Spawn(neutralCount, neutralPrefabs[Random.Range(0,neutralPrefabs.Count)], AnimalParent);
-        Spawn(treeCount, foliagePrefabs[Random.Range(0,foliagePrefabs.Count)], TreeParent);
+        Spawn(scaredCount, scaredPrefabs[Random.Range(0, scaredPrefabs.Count)], AnimalParent);
+        Spawn(neutralCount, neutralPrefabs[Random.Range(0, neutralPrefabs.Count)], AnimalParent);
+        Spawn(treeCount, foliagePrefabs[Random.Range(0, foliagePrefabs.Count)], TreeParent);
     }
 
     //Spawns objects randomly on the surface of a sphere
