@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3302873817524194281}
   m_Layer: 0
   m_Name: Poplar_Tree
-  m_TagString: Untagged
+  m_TagString: OnPlanetCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -92,7 +92,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137650}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.4
   m_Height: 2
