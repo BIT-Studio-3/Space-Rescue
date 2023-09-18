@@ -134,3 +134,11 @@ http://creativecommons.org/licenses/by/4.0/
 "Phantom from Space" Kevin MacLeod (incompetech.com)  
 Licensed under Creative Commons: By Attribution 4.0 License  
 http://creativecommons.org/licenses/by/4.0/
+
+"Jellyfish in Space" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+"Space 1990" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
