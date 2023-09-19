@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 8920185696325813445}
   - component: {fileID: 3372032084740849271}
   m_Layer: 0
-  m_Name: Animal - Hostile Snake 1
+  m_Name: Animal - Hostile Snake Base
   m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
