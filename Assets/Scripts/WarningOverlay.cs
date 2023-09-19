@@ -1,4 +1,4 @@
-//Description: This script is used to control the warning overlay that appears when the player is in range of the black-hole
+﻿//Description: This script is used to control the warning overlay that appears when the player is in range of the black-hole
 //Programmer: Chase Bennett-Hill
 //Last Modified By: Chase Bennett-Hill
 //Last Modified Date: 08/08/2023
@@ -12,7 +12,7 @@ public class WarningOverlay : MonoBehaviour
     private bool isFlashing; //Whether the overlay is flashing or not
     private float colorDuration = 2.5f; //How long the overlay takes to change color
     private AudioSource audioSource;
-    
+
 
     void Start()
     {
