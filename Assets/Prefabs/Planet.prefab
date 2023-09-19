@@ -216,11 +216,13 @@ MonoBehaviour:
   totalAnimals: 0
   hostilePrefabs:
   - {fileID: 8768842384551100010, guid: ea24b3510356c8b46aa52c8db5c79b4e, type: 3}
+  - {fileID: 8768842384551100010, guid: c56980ab9b9137141b3c5d915c345d5d, type: 3}
   selectedHostile: 0
   neutralPrefabs:
   - {fileID: 8768842384551100010, guid: 405f544d244948f48adf4d3ce9a68661, type: 3}
   - {fileID: 8768842384551100010, guid: cb3f11b2fb0c77241b77804979386d9e, type: 3}
   - {fileID: 8768842384551100010, guid: a15bf149cb108c144ae416e5ec711cf2, type: 3}
+  - {fileID: 8768842384551100010, guid: feb3bc46b4ca8f640b9cd90e96b9981b, type: 3}
   selectedNeutral: 0
   scaredPrefabs:
   - {fileID: 8768842384551100010, guid: c5cc6c2635b24cb4f89cd5cd1f9ce644, type: 3}
