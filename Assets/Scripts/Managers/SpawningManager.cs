@@ -26,7 +26,7 @@ public class SpawningManager : MonoBehaviour
     private GameObject neutralPrefab; //The prefab that will be used for the neutral animal
     private GameObject scaredPrefab; //The prefab that will be used for the Scared animal
     private GameObject foliagePrefab; //The prefab that will be used for the foliage
-    
+
     //The amount of objects that are being spawned. This is gotten from the planet info script for the planet entered
     private int hostileCount;
     private int scaredCount;

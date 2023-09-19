@@ -1,4 +1,4 @@
-// Description: This script is used to store the information of the planet.
+﻿// Description: This script is used to store the information of the planet.
 // Author: Palin Wiseman
 // Last Updated: 19/09/2023
 // Last Updated By: Chase Bennett-Hill
