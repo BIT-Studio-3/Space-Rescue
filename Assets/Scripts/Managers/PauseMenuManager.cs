@@ -1,16 +1,21 @@
+// Description: This script is used to manage the pause menu. It is used to control the pause menu buttons and their functionality.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenuManager : MonoBehaviour
 {
     private GameObject pauseMenu;
+    private AudioSource audioSource;
+    public AudioClip menuHover;
 
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu = GameObject.Find("Pause Menu"); 
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Continue()
@@ -35,5 +40,14 @@ public class PauseMenuManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Title Screen");
+    }
+
+    public void PlayHoverSound(Button button)
+    {
+        if (button.interactable) //This makes sure the button isn't already selected
+        {
+            audioSource.Stop();
+            SoundEffectsSetting.SoundMenuSetting(audioSource, menuHover);
+        }
     }
 }
