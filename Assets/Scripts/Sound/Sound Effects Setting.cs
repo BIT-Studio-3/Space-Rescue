@@ -8,7 +8,7 @@ public static class SoundEffectsSetting
     //Set sound for gameplay
     public static void SoundSetting(AudioSource audioSource)
     {
-        SetAudio(audioSource)
+        SetAudio(audioSource);
         if (Time.timeScale != 0 && !audioSource.isPlaying) //If not paused and not playing, play
         {
             audioSource.Play();
@@ -22,7 +22,7 @@ public static class SoundEffectsSetting
     //Set the sound when you are in the menu and want it to play while game is paused
     public static void SoundMenuSetting(AudioSource audioSource)
     {
-        SetAudio(audioSource)
+        SetAudio(audioSource);
         if (!audioSource.isPlaying) //If not paused and not playing, play
         {
             audioSource.Play();
@@ -36,12 +36,12 @@ public static class SoundEffectsSetting
     //Overload so you can specify the clip
     public static void SoundMenuSetting(AudioSource audioSource, AudioClip audioClip)
     {
-        audioSource.AudioClip = audioClip;
-        SoundMenuSetting(audioSource)
+        audioSource.clip = audioClip;
+        SoundMenuSetting(audioSource);
     }
 
     //Sets volume and mute
-    private static SetAudio(AudioSource audioSource)
+    private static void SetAudio(AudioSource audioSource)
     {
         if (audioSource.volume != GameSettings.SoundEffectsVolume) //Sets the volume to the sound effect volume setting
         {
@@ -51,6 +51,5 @@ public static class SoundEffectsSetting
         {
             audioSource.mute = GameSettings.Mute;
         }
-
     }
 }

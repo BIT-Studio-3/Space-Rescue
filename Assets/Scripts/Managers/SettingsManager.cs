@@ -19,6 +19,9 @@ public class SettingsManager : MonoBehaviour
     private GameObject musicNumber;
     private GameObject soundEffectsNumber;
     private Toggle muteToggle;
+    [SerializeField]
+    private AudioClip menuHover;
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -41,6 +44,7 @@ public class SettingsManager : MonoBehaviour
         soundEffectsNumber.GetComponent<TMPro.TextMeshProUGUI>().text = (soundEffectsSlider.value * 100).ToString("0");
         //This needs to be done as set without notify otherwise it triggers itself
         muteToggle.SetIsOnWithoutNotify(GameSettings.Mute);
+        audioSource = GetComponent<AudioSource>();
 
         credits.SetActive(false);
         settings.SetActive(false);
@@ -104,5 +108,12 @@ public class SettingsManager : MonoBehaviour
         MusicManager.Instance.ToggleMute();
     }
 
-    
+    public void PlayHoverSound(Button button)
+    {
+        if (button.interactable) //This makes sure the button isn't already selected
+        {
+            audioSource.Stop();
+            SoundEffectsSetting.SoundMenuSetting(audioSource, menuHover);
+        }
+    }
 }
