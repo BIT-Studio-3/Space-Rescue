@@ -5122,6 +5122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d97bdf99ab1c747bad582571d803b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrust: 2500
+  cap: 2500
+  recharge: 0.25
   speedText: {fileID: 0}
   bars:
   - {fileID: 3461958630786886031}
@@ -5464,7 +5467,7 @@ GameObject:
   - component: {fileID: 3623593493645963694}
   m_Layer: 5
   m_Name: Empty
-  m_TagString: Untagged
+  m_TagString: EnergyBarFull
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5578,7 +5581,7 @@ GameObject:
   - component: {fileID: 8464973906614761856}
   m_Layer: 5
   m_Name: Empty
-  m_TagString: Untagged
+  m_TagString: EnergyBarFull
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10618,7 +10621,7 @@ GameObject:
   - component: {fileID: 8909809407034885050}
   m_Layer: 5
   m_Name: Empty
-  m_TagString: Untagged
+  m_TagString: EnergyBarFull
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10694,7 +10697,7 @@ GameObject:
   - component: {fileID: 5330698158334937559}
   m_Layer: 5
   m_Name: Empty
-  m_TagString: Untagged
+  m_TagString: EnergyBarFull
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
