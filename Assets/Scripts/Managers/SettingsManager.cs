@@ -103,4 +103,6 @@ public class SettingsManager : MonoBehaviour
         GameSettings.Mute = !GameSettings.Mute;
         MusicManager.Instance.ToggleMute();
     }
+
+    
 }
