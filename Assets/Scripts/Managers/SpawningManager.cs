@@ -1,6 +1,6 @@
 ﻿// Description: Script is used for planet object spawning
 // Created by: Erika Stuart
-// Last Updated: 17/09/2023
+// Last Updated: 19/09/2023
 // Last Updated By: Chase Bennett-Hill
 using System.Collections;
 using System.Collections.Generic;
@@ -22,15 +22,11 @@ public class SpawningManager : MonoBehaviour
 
     //The prefabs that are being spawned. This is assigned in the editor
     [Header("Prefabs")]
-    [SerializeField]
-    private List<GameObject> hostilePrefabs; //List of prefabs that can be used for the hostile animal
-    [SerializeField]
-    private List<GameObject> neutralPrefabs; //List of prefabs that can be used for the neutral animal
-    [SerializeField]
-
-    private List<GameObject> scaredPrefabs; //List of prefabs that can be used for the Scared animal
-    [SerializeField]
-    private List<GameObject> foliagePrefabs; //List of prefabs that can be used for the foliage
+    private GameObject hostilePrefab; //The prefab that will be used for the hostile animal
+    private GameObject neutralPrefab; //The prefab that will be used for the neutral animal
+    private GameObject scaredPrefab; //The prefab that will be used for the Scared animal
+    private GameObject foliagePrefab; //The prefab that will be used for the foliage
+    
     //The amount of objects that are being spawned. This is gotten from the planet info script for the planet entered
     private int hostileCount;
     private int scaredCount;
@@ -44,22 +40,26 @@ public class SpawningManager : MonoBehaviour
 
     void Start()
     {
-        // hostilePrefabs = new List<GameObject>();
-        // neutralPrefabs = new List<GameObject>();
-        // scaredPrefabs = new List<GameObject>();
-        // foliagePrefabs = new List<GameObject>();
-        radius = GameObject.Find("Planet").transform.localScale.x / 2 + 5; //This is giving a buffer so that the object wont spawn inside the planet
 
+        radius = GameObject.Find("Planet").transform.localScale.x / 2 + 5; //This is giving a buffer so that the object wont spawn inside the planet
+        //Setting the prefabs to spawn
+        //For each prefab it finds the active planet, and sets it to the selected one in the list from PlanetInfo.
+        hostilePrefab = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].hostilePrefabs[PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].selectedHostile];
+        scaredPrefab = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].scaredPrefabs[PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].selectedScared];
+        neutralPrefab = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].neutralPrefabs[PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].selectedNeutral];
+        foliagePrefab = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].foliagePrefabs[PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].selectedFoliage];
         //Setting the amount of objects to be spawned
         hostileCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].hostileCount;
         scaredCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].scaredCount;
         neutralCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].neutralCount;
         treeCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].treeCount;
+
+
         //Spawning the objects
-        Spawn(hostileCount, hostilePrefabs[Random.Range(0, hostilePrefabs.Count)], animalParent);
-        Spawn(scaredCount, scaredPrefabs[Random.Range(0, scaredPrefabs.Count)], animalParent);
-        Spawn(neutralCount, neutralPrefabs[Random.Range(0, neutralPrefabs.Count)], animalParent);
-        Spawn(treeCount, foliagePrefabs[Random.Range(0, foliagePrefabs.Count)], treeParent);
+        Spawn(hostileCount, hostilePrefab, animalParent);
+        Spawn(scaredCount, scaredPrefab, animalParent);
+        Spawn(neutralCount, neutralPrefab, animalParent);
+        Spawn(treeCount, foliagePrefab, treeParent);
     }
 
     //Spawns objects randomly on the surface of a sphere
