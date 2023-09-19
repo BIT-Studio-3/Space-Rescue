@@ -16,7 +16,7 @@ public class PlanetRotation : MonoBehaviour
         Vector3 lookAtPlayerDirection = player.position - transform.position;
         Quaternion initialRotation = Quaternion.LookRotation(lookAtPlayerDirection);
         transform.rotation = initialRotation;
-    }
+    };
     void Update()
     {
        // Mouse input.
@@ -33,5 +33,5 @@ public class PlanetRotation : MonoBehaviour
         rotationX = Mathf.Clamp(rotationX, 60f, 90f);
 
         Camera.main.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-    }
-}
+    };
+};
