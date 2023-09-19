@@ -1,4 +1,4 @@
-// Description: This script is used to manage the pause menu. It is used to control the pause menu buttons and their functionality.
+﻿// Description: This script is used to manage the pause menu. It is used to control the pause menu buttons and their functionality.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,21 +14,21 @@ public class PauseMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pauseMenu = GameObject.Find("Pause Menu"); 
+        pauseMenu = GameObject.Find("Pause Menu");
         audioSource = GetComponent<AudioSource>();
     }
 
     public void Continue()
     {
-        if(PlanetManager.Instance != null )
+        if (PlanetManager.Instance != null)
         {
-             PlanetManager.Instance.Play(); //Uses KeypressManager.Play() same as pressing esc
+            PlanetManager.Instance.Play(); //Uses KeypressManager.Play() same as pressing esc
         }
         else if (KeypressManager.Instance != null)
         {
             KeypressManager.Instance.Play(); //Uses KeyPressManager.Play() same as pressing
         }
-       
+
     }
 
     public void Options()
