@@ -655,16 +655,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimalParent: {fileID: 334610409}
-  TreeParent: {fileID: 152430078}
+  animalParent: {fileID: 334610409}
+  treeParent: {fileID: 152430078}
   hostilePrefabs:
   - {fileID: 8768842384551100010, guid: ea24b3510356c8b46aa52c8db5c79b4e, type: 3}
   neutralPrefabs:
   - {fileID: 8768842384551100010, guid: cb3f11b2fb0c77241b77804979386d9e, type: 3}
+  - {fileID: 8768842384551100010, guid: a15bf149cb108c144ae416e5ec711cf2, type: 3}
+  - {fileID: 8768842384551100010, guid: 405f544d244948f48adf4d3ce9a68661, type: 3}
   scaredPrefabs:
   - {fileID: 8768842384551100010, guid: 1f21562f6386a484182873f6f45120fa, type: 3}
   - {fileID: 8768842384551100010, guid: c5cc6c2635b24cb4f89cd5cd1f9ce644, type: 3}
   - {fileID: 8768842384551100010, guid: b034bd83f153fc448b14be82816ce634, type: 3}
+  - {fileID: 8768842384551100010, guid: a8233eb7301859c4d8cba388ff7a748f, type: 3}
+  - {fileID: 8768842384551100010, guid: de8316e001cbd5244ad6e213c7ef9d53, type: 3}
   foliagePrefabs:
   - {fileID: 2584119853571017186, guid: 9f730c9a60d8ff447a4425ddab41dd93, type: 3}
   - {fileID: 137650, guid: 826b6a0b570e8460990010fa615b5a2a, type: 3}
