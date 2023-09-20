@@ -142,3 +142,8 @@ http://creativecommons.org/licenses/by/4.0/
 "Space 1990" Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 4.0 License
 http://creativecommons.org/licenses/by/4.0/
+
+### Sound Effects
+
+- https://assetstore.unity.com/packages/audio/sound-fx/sci-fi-small-sound-pack-262068
+- https://assetstore.unity.com/packages/audio/sound-fx/free-casual-soundfx-pack-164843
