@@ -1629,7 +1629,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1858615698}
         m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
-        m_MethodName: PlaySoundDestroy
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1919,6 +1919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSettings: 0
+  isPlanet: 0
 --- !u!82 &1858615699
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1929,7 +1930,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 255893bf6390c4f4fb39a79bd1f71429, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 36be362505f82f94da85c7a211aaf4d4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
