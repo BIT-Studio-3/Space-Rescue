@@ -14,10 +14,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveAmo;
     private Vector3 smoothMoveVel = Vector3.zero;
     private Vector3 direction;
+    private bool isMoving;
 
     // Start is called before the first frame update
     void Start()
     {
+        isMoving = false;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
@@ -27,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        isMoving = (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0);
+        PlayAnimation();
         direction = new Vector3(
             Input.GetAxisRaw("Horizontal"),
             0,
@@ -55,5 +59,20 @@ public class PlayerMovement : MonoBehaviour
         }
         //If there is no trigger collider in the movement direction (or it is the collider for the animal FOV) the player moves
         rb.MovePosition(rb.position + localMove);
+    }
+    private void PlayAnimation()
+    {
+        Animator animator = GameObject.Find("Model").GetComponent<Animator>();
+        if(animator != null)
+        {
+            if(isMoving)
+            {
+                animator.Play("Run");
+            }
+            else
+            {
+                animator.Play("Idle");
+            }
+        }
     }
 }
