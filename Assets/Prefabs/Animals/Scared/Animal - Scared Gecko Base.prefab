@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9eb7c0eb497dd840b5b0958bd467559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  probability: 0
-  species: 
+  probability: 75
+  species: Normal Gecko
 --- !u!1001 &2176362264717397662
 PrefabInstance:
   m_ObjectHideFlags: 0

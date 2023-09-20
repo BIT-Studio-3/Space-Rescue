@@ -54,9 +54,9 @@ public class PlanetInfo : MonoBehaviour
 
     [HideInInspector]
     public int selectedFoliage;
-    [SerializeField] private readonly string hostileName;
-    [SerializeField] private readonly string scaredName;
-    [Unity.Collections.ReadOnly] public string neutralName;
+    public string hostileName;
+    public  string scaredName;
+    public string neutralName;
 
     void Awake()
     {
@@ -69,17 +69,20 @@ public class PlanetInfo : MonoBehaviour
 
         //Selects an index from each list of prefabs
         selectedFoliage = Random.Range(0, foliagePrefabs.Count);
-        selectedHostile = Random.Range(0, hostilePrefabs.Count);
-        // selectedNeutral = Random.Range(0, neutralPrefabs.Count);
-        selectedScared = Random.Range(0, scaredPrefabs.Count);
-        selectedNeutral = neutralPrefabs.IndexOf(SelectAnimal(neutralPrefabs));
+
+        selectedHostile = hostilePrefabs.IndexOf(SelectAnimal(hostilePrefabs,"Hostile"));
+        hostileName = hostilePrefabs[selectedHostile].GetComponent<Animal>().Species;
+        selectedScared = scaredPrefabs.IndexOf(SelectAnimal(scaredPrefabs,"Scared"));
+        scaredName = scaredPrefabs[selectedScared].GetComponent<Animal>().Species;
+        selectedNeutral = neutralPrefabs.IndexOf(SelectAnimal(neutralPrefabs,"Neutral"));
         neutralName = neutralPrefabs[selectedNeutral].GetComponent<Animal>().Species;
     }
 
-    private GameObject SelectAnimal(List<GameObject> animals) //Selects an animal from the list of prefabs based on their probability
+    private GameObject SelectAnimal(List<GameObject> animals,string species) //Selects an animal from the list of prefabs based on their probability
     {
         int p = animals.Sum(x => x.GetComponent<Animal>().Probability); //Gets the sum of all the probabilities of the animals
         int random = Random.Range(0, p); //Gets a random number between 0 and the sum of the probabilities
+        Debug.Log(gameObject.name + ":" + species + ">>" + random); //Debugging (can be removed
         int cumulative = 0;
         foreach (GameObject animal in animals)
         {
