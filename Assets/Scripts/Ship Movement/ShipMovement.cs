@@ -29,6 +29,13 @@ public class ShipMovement : MonoBehaviour
     public Text speedText;
 
     private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip boostSound;
+    [SerializeField]
+    private AudioClip rechargeSound;
+
+    private float rechargeClipLength;
+    private float boostPercent;
 
     //Energy bars to edit
     public Image[] bars;
@@ -41,6 +48,7 @@ public class ShipMovement : MonoBehaviour
         ResetBoost(); //Sets boost to Cap
         initialVelocity = spaceshipRB.velocity;
         audioSource = GetComponent<AudioSource>();
+        rechargeClipLength = rechargeSound.length;
     }
     // Update is called once per frame
     void Update()
@@ -87,11 +95,18 @@ public class ShipMovement : MonoBehaviour
 
     private void RechargeBoost() //Recharging boost
     {
+        Debug.Log(boostPercent);
         SpeedEffect.Instance.SpeedControl(false);
-            if (boostDuration < cap)
+        if (boostDuration < cap)
+        {
+            boostPercent = boostDuration / cap * 100;
+            //play recharge clip at that percent
+            boostDuration += recharge; //Slowly refilling boost
+            if (boostDuration > cap) //If boost is over cap, set to cap
             {
-                boostDuration += recharge; //Slowly refilling boost
+                boostDuration = cap;
             }
+        }
     }
 
     public void ResetBoost() //Sets the boost to max
