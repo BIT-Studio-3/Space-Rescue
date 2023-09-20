@@ -18,7 +18,12 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
     private TMPro.TextMeshProUGUI scaredUI;
 
     //private GameObject[,] collectedAnimals; //= new GameObject[2,5]; //[row, col]
+    public List<GameObject> panels = new List<GameObject>(); //the grid of panels that the animals will spawn as a child on
     public List<GameObject> collectedAnimals = new List<GameObject>();
+
+    public GameObject neutral;
+    public GameObject hostile;
+    public GameObject scared;
     /*
     The animals and their spaces visual guide
     collected animals =
@@ -58,16 +63,23 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         {
             calmCaught += 1;
             calmUI.text = "Calm Caught: " + calmCaught;
+            //add to list
+            collectedAnimals.Add(Instantiate(neutral, panels[collectedAnimals.Count+1].transform)); //adds it to the latest empty spot
         }
         else if (name.Contains("Hostile"))
         {
             hostileCaught += 1;
             hostileUI.text = "Hostile Caught: " + hostileCaught;
+            collectedAnimals.Add(Instantiate(hostile));
+
         }
         else if (name.Contains("Scared"))
         {
             scaredCaught += 1;
             scaredUI.text = "Scared Caught: " + scaredCaught;
+            collectedAnimals.Add(Instantiate(scared));
+
         }
     }
+
 }
