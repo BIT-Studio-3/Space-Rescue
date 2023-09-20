@@ -54,7 +54,10 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
                 
             }
         }*/
-
+        /*for (int i = 0; i < 10; i++)
+        {
+            panels.Add(GameObject.Find("Panel" + i));
+        }*/
     }
 
     public void AnimalCount(string name) //Sent from AnimalController.cs
@@ -64,7 +67,10 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
             calmCaught += 1;
             calmUI.text = "Calm Caught: " + calmCaught;
             //add to list
-            collectedAnimals.Add(Instantiate(neutral, panels[collectedAnimals.Count+1].transform)); //adds it to the latest empty spot
+
+            collectedAnimals.Add(Instantiate(neutral, new Vector3(panels[0].transform.position.x, panels[0].transform.position.y, 24), Quaternion.identity)); //adds it to the latest empty spot
+            neutral.transform.localScale = new Vector3(40, 40, 40);
+            Debug.Log("Spawned");
         }
         else if (name.Contains("Hostile"))
         {
