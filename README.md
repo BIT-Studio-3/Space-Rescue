@@ -125,5 +125,7 @@ We extend our heartfelt gratitude to our dedicated team members and mentors who 
 - Ship model: [Oxar Light Freighter](https://assetstore.unity.com/packages/3d/vehicles/space/oxar-light-freighter-82240)
 - Planet lander model: [Mars Pod](https://assetstore.unity.com/packages/3d/vehicles/space/mars-pod-121710)
 - HUD Elements: [Off Screen Target Indicator](https://assetstore.unity.com/packages/tools/gui/off-screen-target-indicator-71799)
+- Player Model: [3D Model Astronaut](https://www.turbosquid.com/3d-models/3d-model-astronaut-1813269)
+- Animals: [Quirky Series](https://assetstore.unity.com/packages/3d/characters/animals/quirky-series-free-animals-pack-178235)
 
 <!-- Add music credits and license information when available -->
