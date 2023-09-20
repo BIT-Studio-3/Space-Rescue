@@ -22,7 +22,7 @@ public class SFXManager : MonoBehaviour
             isSettings = true;
         }
         else if(SceneManager.GetSceneByName("Planet").isLoaded)
-        { //gets the settings scene and checks if its loaded
+        { //gets the planet scene and checks if its loaded
             isPlanet = true;
         }
     }
