@@ -1,15 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SFXManager : MonoBehaviour
 {
     private AudioSource audioSource;
+    public static SFXManager instance;
+    [HideInInspector]
+    public bool isSettings = false;
 
-    private void Awake()
+    private void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         audioSource = GetComponent<AudioSource>();
         SetVolume();
+        if(SceneManager.GetSceneByName("Settings").isLoaded)
+        { //gets the settings scene and checks if its loaded
+            isSettings = true;
+        }
     }
 
     
@@ -35,5 +44,11 @@ public class SFXManager : MonoBehaviour
     public void PlaySound()
     {
         audioSource.Play();
+    }
+
+    public void PlaySoundDestroy()
+    {
+        audioSource.Play();
+        Destroy(this.gameObject, audioSource.clip.length);
     }
 }

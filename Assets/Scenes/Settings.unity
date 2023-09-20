@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 19647486}
   m_Layer: 0
   m_Name: MenuClickSound
-  m_TagString: Untagged
+  m_TagString: MenuClickSound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,12 +182,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19647484}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.302979, y: 101.2251, z: -266.9996}
+  m_LocalPosition: {x: 977.303, y: 641.2251, z: -266.9996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 755136712}
-  m_RootOrder: 6
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &19647486
 MonoBehaviour:
@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de221277d38a8ea4496c93226362858e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSettings: 0
 --- !u!82 &19647487
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2460,7 +2461,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 19647486}
         m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
-        m_MethodName: PlaySound
+        m_MethodName: PlaySoundDestroy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2997,7 +2998,6 @@ RectTransform:
   - {fileID: 1047794905}
   - {fileID: 772361514}
   - {fileID: 2080909480}
-  - {fileID: 19647485}
   m_Father: {fileID: 1423433523}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4731,7 +4731,7 @@ Transform:
   m_Children:
   - {fileID: 755136712}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1425149882
 GameObject:

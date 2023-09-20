@@ -220,6 +220,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1858615698}
+        m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
+        m_MethodName: PlaySoundDestroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &56610829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1617,7 +1629,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1858615698}
         m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
-        m_MethodName: PlaySound
+        m_MethodName: PlaySoundDestroy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1874,7 +1886,7 @@ GameObject:
   - component: {fileID: 1858615698}
   m_Layer: 0
   m_Name: MenuClickSound
-  m_TagString: Untagged
+  m_TagString: MenuClickSound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1887,12 +1899,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858615696}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10225.744, y: 4940.5283, z: 2188.623}
-  m_LocalScale: {x: 9.353074, y: 9.353074, z: 9.353074}
+  m_LocalPosition: {x: 977.303, y: 641.2251, z: -266.9996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2076945823}
-  m_RootOrder: 5
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1858615698
 MonoBehaviour:
@@ -1906,6 +1918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de221277d38a8ea4496c93226362858e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSettings: 0
 --- !u!82 &1858615699
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2214,7 +2227,6 @@ RectTransform:
   - {fileID: 934081825}
   - {fileID: 1786006809}
   - {fileID: 1797516134}
-  - {fileID: 1858615697}
   m_Father: {fileID: 1823034893}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
