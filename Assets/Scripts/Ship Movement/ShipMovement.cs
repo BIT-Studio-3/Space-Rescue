@@ -28,6 +28,8 @@ public class ShipMovement : MonoBehaviour
     private Vector3 initialVelocity;
     public Text speedText;
 
+    private AudioSource audioSource;
+
     //Energy bars to edit
     public Image[] bars;
 
@@ -38,6 +40,7 @@ public class ShipMovement : MonoBehaviour
         spaceshipRB = GetComponent<Rigidbody>();
         ResetBoost(); //Sets boost to Cap
         initialVelocity = spaceshipRB.velocity;
+        audioSource = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -58,6 +61,7 @@ public class ShipMovement : MonoBehaviour
         else //If not boosting
         {
             RechargeBoost();
+            audioSource.Stop();
         }
 
         EnergyBar(boostDuration/cap); //Gives a value of boost left between 0 and 1
@@ -70,11 +74,13 @@ public class ShipMovement : MonoBehaviour
                 SpeedEffect.Instance.SpeedControl(true);
                 spaceshipRB.AddRelativeForce(Vector3.forward * thrust);
                 boostDuration -= 1;
+                SoundEffectsSetting.SoundSetting(audioSource);
                 //Visual boost bar reducing
             }
             else //If boosting but empty
             {
                 SpeedEffect.Instance.SpeedControl(false);
+                audioSource.Stop();
                 //Effect for empty boost
             }
     }

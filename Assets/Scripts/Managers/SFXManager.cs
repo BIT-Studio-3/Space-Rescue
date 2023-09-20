@@ -9,6 +9,8 @@ public class SFXManager : MonoBehaviour
     public static SFXManager instance;
     [HideInInspector]
     public bool isSettings = false;
+    [HideInInspector]
+    public bool isPlanet = false;
 
     private void Start()
     {
@@ -18,6 +20,10 @@ public class SFXManager : MonoBehaviour
         if(SceneManager.GetSceneByName("Settings").isLoaded)
         { //gets the settings scene and checks if its loaded
             isSettings = true;
+        }
+        else if(SceneManager.GetSceneByName("Planet").isLoaded)
+        { //gets the settings scene and checks if its loaded
+            isPlanet = true;
         }
     }
 
@@ -43,12 +49,12 @@ public class SFXManager : MonoBehaviour
 
     public void PlaySound()
     {
-        audioSource.Play();
+        SoundEffectsSetting.SoundMenuSetting(audioSource);
     }
 
     public void PlaySoundDestroy()
     {
-        audioSource.Play();
+        PlaySound();
         Destroy(this.gameObject, audioSource.clip.length);
     }
 }
