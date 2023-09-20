@@ -522,10 +522,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8768842384551100010, guid: a856aef0cf1ee684fab26ff0de94a268, type: 3}
-  parent: {fileID: 334610409}
-  minSpawn: 2
-  maxSpawn: 11
+  AnimalParent: {fileID: 0}
+  TreeParent: {fileID: 0}
+  hostilePrefab: {fileID: 0}
+  neutralPrefab: {fileID: 0}
+  scaredPrefab: {fileID: 0}
+  treePrefab: {fileID: 0}
 --- !u!114 &310667746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,10 +540,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8768842384551100010, guid: 556efdf030cecbf40aa649b2aefaa99e, type: 3}
-  parent: {fileID: 334610409}
-  minSpawn: 1
-  maxSpawn: 1
+  AnimalParent: {fileID: 0}
+  TreeParent: {fileID: 0}
+  hostilePrefab: {fileID: 0}
+  neutralPrefab: {fileID: 0}
+  scaredPrefab: {fileID: 0}
+  treePrefab: {fileID: 0}
 --- !u!114 &310667747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,10 +558,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8768842384551100010, guid: 6eb1eb2d7fa47494bace62e2f3c5abe5, type: 3}
-  parent: {fileID: 334610409}
-  minSpawn: 1
-  maxSpawn: 4
+  AnimalParent: {fileID: 0}
+  TreeParent: {fileID: 0}
+  hostilePrefab: {fileID: 0}
+  neutralPrefab: {fileID: 0}
+  scaredPrefab: {fileID: 0}
+  treePrefab: {fileID: 0}
 --- !u!1 &322023209
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,7 +941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8074805879352939206, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8074805879352939206, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1147,6 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2086083f736131c40ad19faccf164c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuHover: {fileID: 0}
 --- !u!4 &897433051
 Transform:
   m_ObjectHideFlags: 0
@@ -1834,10 +1841,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2584119853571017186, guid: 9f730c9a60d8ff447a4425ddab41dd93, type: 3}
-  parent: {fileID: 152430078}
-  minSpawn: 0
-  maxSpawn: 20
+  AnimalParent: {fileID: 0}
+  TreeParent: {fileID: 0}
+  hostilePrefab: {fileID: 0}
+  neutralPrefab: {fileID: 0}
+  scaredPrefab: {fileID: 0}
+  treePrefab: {fileID: 0}
 --- !u!1 &1670289480
 GameObject:
   m_ObjectHideFlags: 0
