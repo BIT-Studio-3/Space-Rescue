@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlanetRotation : MonoBehaviour
 {
     public Transform player;          // Reference to the player's Transform component.
+    [HideInInspector]
     public float sensitivityX = 2.0f; // Mouse sensitivity for horizontal
+    [HideInInspector]
     public float sensitivityY = 2.0f; // Mouse sensitivity for vertical
+    [HideInInspector]
     public float movementSpeed = 5.0f; // Horizontal movement speed
     private float rotationX = 0.0f;  // Current X rotation of the camera.
     private float rotationY = 0.0f;
