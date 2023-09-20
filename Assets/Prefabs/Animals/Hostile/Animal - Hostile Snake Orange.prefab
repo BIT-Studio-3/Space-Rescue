@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 8920185696325813445}
   - component: {fileID: 3372032084740849271}
   m_Layer: 0
-  m_Name: Animal - Hostile Snake Base 1
+  m_Name: Animal - Hostile Snake Orange
   m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moving: 0
   attacking: 0
+  running: 0
 --- !u!114 &8920185696325813445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +240,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 8768842384551100011}
     m_Modifications:
     - target: {fileID: 2311683543228773735, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5538e217422584447bc8ba5d01f1649f, type: 2}
+    - target: {fileID: 2311683543228773735, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 29
       objectReference: {fileID: 0}
@@ -246,6 +251,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4526051182192201800, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5538e217422584447bc8ba5d01f1649f, type: 2}
     - target: {fileID: 4526051182192201800, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 29
@@ -255,9 +264,17 @@ PrefabInstance:
       value: Model
       objectReference: {fileID: 0}
     - target: {fileID: 5442504493887559991, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5538e217422584447bc8ba5d01f1649f, type: 2}
+    - target: {fileID: 5442504493887559991, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 29
       objectReference: {fileID: 0}
+    - target: {fileID: 8319246735976726104, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5538e217422584447bc8ba5d01f1649f, type: 2}
     - target: {fileID: 8319246735976726104, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 29

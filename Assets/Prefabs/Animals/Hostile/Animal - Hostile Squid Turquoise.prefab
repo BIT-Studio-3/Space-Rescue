@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 8920185696325813445}
   - component: {fileID: 3372032084740849271}
   m_Layer: 0
-  m_Name: Animal - Hostile Squid Base 1
+  m_Name: Animal - Hostile Squid Turquoise
   m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,9 +239,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8768842384551100011}
     m_Modifications:
+    - target: {fileID: 1450177669000054212, guid: 818c5a1ba0d9810439f11299463f2294, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8040a8539b5978e49a96f14fd3fd45bb, type: 2}
+    - target: {fileID: 2716154403044705339, guid: 818c5a1ba0d9810439f11299463f2294, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8040a8539b5978e49a96f14fd3fd45bb, type: 2}
+    - target: {fileID: 3230127564229832065, guid: 818c5a1ba0d9810439f11299463f2294, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8040a8539b5978e49a96f14fd3fd45bb, type: 2}
+    - target: {fileID: 5425916760323031536, guid: 818c5a1ba0d9810439f11299463f2294, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8040a8539b5978e49a96f14fd3fd45bb, type: 2}
     - target: {fileID: 7511180232019162148, guid: 818c5a1ba0d9810439f11299463f2294, type: 3}
       propertyPath: m_Name
-      value: Squid
+      value: Model
       objectReference: {fileID: 0}
     - target: {fileID: 8648425310868573238, guid: 818c5a1ba0d9810439f11299463f2294, type: 3}
       propertyPath: m_RootOrder
