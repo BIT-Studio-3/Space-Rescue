@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability: 25
+  species: Pink Deer
 --- !u!1001 &2385126478613368181
 PrefabInstance:
   m_ObjectHideFlags: 0

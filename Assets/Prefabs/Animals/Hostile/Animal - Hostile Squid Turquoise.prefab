@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 8768842384551100009}
   - component: {fileID: 8920185696325813445}
   - component: {fileID: 3372032084740849271}
+  - component: {fileID: -5991786386078550168}
   m_Layer: 0
   m_Name: Animal - Hostile Squid Turquoise
   m_TagString: Animal
@@ -142,6 +143,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-5991786386078550168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8768842384551100010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9eb7c0eb497dd840b5b0958bd467559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probability: 40
+  species: Green Squid
 --- !u!1001 &288684013666084054
 PrefabInstance:
   m_ObjectHideFlags: 0

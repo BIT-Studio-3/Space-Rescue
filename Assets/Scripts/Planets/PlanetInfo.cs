@@ -4,7 +4,9 @@
 // Last Updated By: Chase Bennett-Hill
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using Unity.Collections;
 using UnityEngine;
 
 public class PlanetInfo : MonoBehaviour
@@ -52,6 +54,9 @@ public class PlanetInfo : MonoBehaviour
 
     [HideInInspector]
     public int selectedFoliage;
+    [SerializeField] private readonly string hostileName;
+    [SerializeField] private readonly string scaredName;
+    [Unity.Collections.ReadOnly] public string neutralName;
 
     void Awake()
     {
@@ -68,16 +73,17 @@ public class PlanetInfo : MonoBehaviour
         // selectedNeutral = Random.Range(0, neutralPrefabs.Count);
         selectedScared = Random.Range(0, scaredPrefabs.Count);
         selectedNeutral = neutralPrefabs.IndexOf(SelectAnimal(neutralPrefabs));
+        neutralName = neutralPrefabs[selectedNeutral].GetComponent<Animal>().Species;
     }
 
-    private GameObject SelectAnimal(List<GameObject> animals)
+    private GameObject SelectAnimal(List<GameObject> animals) //Selects an animal from the list of prefabs based on their probability
     {
-        int p = animals.Sum(x => x.GetComponent<Animal>().Probability);
-        int random = Random.Range(0, p);
+        int p = animals.Sum(x => x.GetComponent<Animal>().Probability); //Gets the sum of all the probabilities of the animals
+        int random = Random.Range(0, p); //Gets a random number between 0 and the sum of the probabilities
         int cumulative = 0;
         foreach (GameObject animal in animals)
         {
-            cumulative += animal.GetComponent<Animal>().Probability;
+            cumulative += animal.GetComponent<Animal>().Probability; //Adds all the probabilities together, so that when the random number is less than the cumulative, it will return that animal
             if (random < cumulative)
             {
                 return animal;
