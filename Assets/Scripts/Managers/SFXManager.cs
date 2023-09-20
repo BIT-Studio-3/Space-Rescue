@@ -49,6 +49,7 @@ public class SFXManager : MonoBehaviour
 
     public void PlaySound()
     {
+        audioSource.Stop();
         SoundEffectsSetting.SoundMenuSetting(audioSource);
     }
 
