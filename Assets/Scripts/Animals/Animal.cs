@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    [Range(0, 100)]
+    [Tooltip("The Probability of the animal being selected for a planet (1 - 100)")]
+    [Range(1, 100)]
     [SerializeField] private int probability;
     public int Probability { get => probability; set => probability = value; }
     [SerializeField] private string species;
