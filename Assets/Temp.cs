@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ public class Temp : MonoBehaviour
     void Start()
     {
         print("hello world");
-                        gameObject.GetComponent<Animator>().Play("Run");
+        gameObject.GetComponent<Animator>().Play("Run");
 
     }
 

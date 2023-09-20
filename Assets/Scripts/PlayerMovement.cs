@@ -1,4 +1,4 @@
-// Description: Handles player movement
+﻿// Description: Handles player movement
 // Author: Erika Stuart
 // Last Updated: 9/08/2023
 // Last Updated By: Palin Wiseman
@@ -63,9 +63,9 @@ public class PlayerMovement : MonoBehaviour
     private void PlayAnimation()
     {
         Animator animator = GameObject.Find("Model").GetComponent<Animator>();
-        if(animator != null)
+        if (animator != null)
         {
-            if(isMoving)
+            if (isMoving)
             {
                 animator.Play("Run");
             }
