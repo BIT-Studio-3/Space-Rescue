@@ -522,12 +522,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimalParent: {fileID: 0}
-  TreeParent: {fileID: 0}
-  hostilePrefab: {fileID: 0}
-  neutralPrefab: {fileID: 0}
-  scaredPrefab: {fileID: 0}
-  treePrefab: {fileID: 0}
+  prefab: {fileID: 0}
+  parent: {fileID: 0}
+  minSpawn: 0
+  maxSpawn: 0
 --- !u!114 &310667746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,12 +538,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimalParent: {fileID: 0}
-  TreeParent: {fileID: 0}
-  hostilePrefab: {fileID: 0}
-  neutralPrefab: {fileID: 0}
-  scaredPrefab: {fileID: 0}
-  treePrefab: {fileID: 0}
+  prefab: {fileID: 0}
+  parent: {fileID: 0}
+  minSpawn: 0
+  maxSpawn: 0
 --- !u!114 &310667747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,12 +554,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimalParent: {fileID: 0}
-  TreeParent: {fileID: 0}
-  hostilePrefab: {fileID: 0}
-  neutralPrefab: {fileID: 0}
-  scaredPrefab: {fileID: 0}
-  treePrefab: {fileID: 0}
+  prefab: {fileID: 0}
+  parent: {fileID: 0}
+  minSpawn: 0
+  maxSpawn: 0
 --- !u!1 &322023209
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,15 +939,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8074805879352939206, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8074805879352939206, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7660445
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8074805879352939206, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.6427876
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8074805879352939206, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
       propertyPath: m_LocalRotation.y
@@ -965,7 +959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8074805879352939206, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 80
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8074805879352939206, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1153,7 +1147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2086083f736131c40ad19faccf164c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuHover: {fileID: 0}
 --- !u!4 &897433051
 Transform:
   m_ObjectHideFlags: 0
@@ -1841,12 +1834,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503228e73f23b5746a6ee7175784a9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimalParent: {fileID: 0}
-  TreeParent: {fileID: 0}
-  hostilePrefab: {fileID: 0}
-  neutralPrefab: {fileID: 0}
-  scaredPrefab: {fileID: 0}
-  treePrefab: {fileID: 0}
+  prefab: {fileID: 0}
+  parent: {fileID: 0}
+  minSpawn: 0
+  maxSpawn: 0
 --- !u!1 &1670289480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,7 +2057,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8074805879352939227, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
   m_PrefabInstance: {fileID: 680957244}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1797501203
+--- !u!114 &1797501198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2079,8 +2070,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1075176581}
-  sensitivityX: 1
-  sensitivityY: 1
+  sensitivityX: 2
+  sensitivityY: 2
   movementSpeed: 5
 --- !u!1 &1950031763
 GameObject:
