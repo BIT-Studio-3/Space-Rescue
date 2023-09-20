@@ -4,6 +4,7 @@
 // Last Updated By: Chase Bennett-Hill
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlanetInfo : MonoBehaviour
@@ -64,7 +65,24 @@ public class PlanetInfo : MonoBehaviour
         //Selects an index from each list of prefabs
         selectedFoliage = Random.Range(0, foliagePrefabs.Count);
         selectedHostile = Random.Range(0, hostilePrefabs.Count);
-        selectedNeutral = Random.Range(0, neutralPrefabs.Count);
+        // selectedNeutral = Random.Range(0, neutralPrefabs.Count);
         selectedScared = Random.Range(0, scaredPrefabs.Count);
+        selectedNeutral = neutralPrefabs.IndexOf(SelectAnimal(neutralPrefabs));
+    }
+
+    private GameObject SelectAnimal(List<GameObject> animals)
+    {
+        int p = animals.Sum(x => x.GetComponent<Animal>().Probability);
+        int random = Random.Range(0, p);
+        int cumulative = 0;
+        foreach (GameObject animal in animals)
+        {
+            cumulative += animal.GetComponent<Animal>().Probability;
+            if (random < cumulative)
+            {
+                return animal;
+            }
+        }
+        return null;
     }
 }
