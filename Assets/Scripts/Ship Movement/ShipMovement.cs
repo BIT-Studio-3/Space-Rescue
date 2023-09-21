@@ -53,8 +53,11 @@ public class ShipMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.timeScale == 0)return; //This instantly returns from update when the game is paused
-
+        if(Time.timeScale == 0)
+        {
+            audioSource.Stop();
+            return; //This instantly returns from update when the game is paused
+        }
         verticalMove = Input.GetAxis("Vertical");
         horizontalMove = Input.GetAxis("Horizontal");
         tiltInput = Input.GetAxis("Roll");
