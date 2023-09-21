@@ -127,5 +127,7 @@ We extend our heartfelt gratitude to our dedicated team members and mentors who 
 - HUD Elements: [Off Screen Target Indicator](https://assetstore.unity.com/packages/tools/gui/off-screen-target-indicator-71799)
 - Player Model: [3D Model Astronaut](https://www.turbosquid.com/3d-models/3d-model-astronaut-1813269)
 - Animals: [Quirky Series](https://assetstore.unity.com/packages/3d/characters/animals/quirky-series-free-animals-pack-178235)
+- Black hole icon: [Black hole icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/black-hole)
 
-<!-- Add music credits and license information when available -->
+
+<!-- Add music credits when available -->
