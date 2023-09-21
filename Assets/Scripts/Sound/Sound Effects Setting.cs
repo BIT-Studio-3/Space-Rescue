@@ -33,12 +33,20 @@ public static class SoundEffectsSetting
         }
     }
 
-    //Overload so you can specify the clip
+    //Overload so you can specify the clip. for playing while paused
     public static void SoundMenuSetting(AudioSource audioSource, AudioClip audioClip)
     {
         audioSource.clip = audioClip;
         SoundMenuSetting(audioSource);
     }
+
+    //Overload so you can specify the clip
+    public static void SoundSetting(AudioSource audioSource, AudioClip audioClip)
+    {
+        audioSource.clip = audioClip;
+        SoundSetting(audioSource);
+    }
+
 
     //Sets volume and mute
     private static void SetAudio(AudioSource audioSource)

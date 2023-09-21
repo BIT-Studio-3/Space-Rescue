@@ -68,8 +68,11 @@ public class ShipMovement : MonoBehaviour
         }
         else //If not boosting
         {
+            if (audioSource.clip == boostSound)
+            {
+                audioSource.Stop();
+            }
             RechargeBoost();
-            audioSource.Stop();
         }
 
         EnergyBar(boostDuration/cap); //Gives a value of boost left between 0 and 1
@@ -82,7 +85,8 @@ public class ShipMovement : MonoBehaviour
                 SpeedEffect.Instance.SpeedControl(true);
                 spaceshipRB.AddRelativeForce(Vector3.forward * thrust);
                 boostDuration -= 1;
-                SoundEffectsSetting.SoundSetting(audioSource);
+                audioSource.loop = true;
+                SoundEffectsSetting.SoundSetting(audioSource, boostSound);
                 //Visual boost bar reducing
             }
             else //If boosting but empty
@@ -95,15 +99,15 @@ public class ShipMovement : MonoBehaviour
 
     private void RechargeBoost() //Recharging boost
     {
-        Debug.Log(boostPercent);
         SpeedEffect.Instance.SpeedControl(false);
         if (boostDuration < cap)
         {
-            boostPercent = boostDuration / cap * 100;
+            SoundEffectsSetting.SoundSetting(audioSource, rechargeSound);
             //play recharge clip at that percent
             boostDuration += recharge; //Slowly refilling boost
-            if (boostDuration > cap) //If boost is over cap, set to cap
+            if (boostDuration >= cap) //If boost is over cap, set to cap
             {
+                audioSource.Stop();
                 boostDuration = cap;
             }
         }
