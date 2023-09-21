@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03257911, g: 0.004022466, b: 0.04088818, a: 1}
+  m_IndirectSpecularColor: {r: 0.032488257, g: 0.004014846, b: 0.040772725, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1260,6 +1260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPlanet
       objectReference: {fileID: 0}
+    - target: {fileID: 8074805878199049736, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8074805878199049737, guid: 8d98b8eb0b074734dbbff244fbe80c86, type: 3}
       propertyPath: attractor
       value: 
@@ -1935,7 +1939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3247349489904952341, guid: f662ff3b072ce5d4f915c0407999f4c5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3247349489904952347, guid: f662ff3b072ce5d4f915c0407999f4c5, type: 3}
       propertyPath: m_RootOrder
