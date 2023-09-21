@@ -2242,6 +2242,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1087343399971769176, guid: 0ec627f363295e644872f77860511ab8, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2333569641422922413, guid: 0ec627f363295e644872f77860511ab8, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2305,7 +2309,7 @@ PrefabInstance:
     - target: {fileID: 8476803455249810064, guid: 0ec627f363295e644872f77860511ab8, type: 3}
       propertyPath: rechargeSound
       value: 
-      objectReference: {fileID: 8300000, guid: 29ce6edf830ac0b4a9860ec0a5f6d82f, type: 3}
+      objectReference: {fileID: 8300000, guid: efbbdb00181cad94c866d68285175635, type: 3}
     - target: {fileID: 8476803455249810064, guid: 0ec627f363295e644872f77860511ab8, type: 3}
       propertyPath: bars.Array.data[4]
       value: 
