@@ -47,8 +47,14 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
             calmUI.text = "Calm Caught: " + calmCaught;
             //add to list
 
-            GameObject uiAnimal = Instantiate(neutral, new Vector3(panels[0].transform.position.x + 10, panels[0].transform.position.y - 30, 24), Quaternion.identity, panels[0].transform);
+            GameObject uiAnimal = Instantiate(neutral, new Vector3(panels[0].transform.position.x + 10, panels[0].transform.position.y - 30, panels[0].transform.position.z + 6), Quaternion.identity, panels[0].transform);
             collectedAnimals.Add(uiAnimal);
+            uiAnimal.layer = 5;
+            //uiAnimal.transform.GetChild(1).gameObject.layer = 5;
+            foreach(Transform child in uiAnimal.transform.GetChild(1))
+            {
+                child.gameObject.layer = 5;
+            }
 
             //collectedAnimals.Add(Instantiate(neutral, new Vector3(panels[0].transform.position.x, panels[0].transform.position.y, 24), Quaternion.identity)); //adds it to the latest empty spot
             uiAnimal.transform.localScale = new Vector3(40, 40, 40);
