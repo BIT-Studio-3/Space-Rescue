@@ -24,14 +24,6 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
     public GameObject neutral;
     public GameObject hostile;
     public GameObject scared;
-    /*
-    The animals and their spaces visual guide
-    collected animals =
-    {  (col)
-  (row) {1, 2, 3, 4, 5},
-        {1, 2, 3, 4, 5},
-    }
-    */
 
 
     //public SpawningManager spawningManager;
@@ -45,19 +37,6 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         hostileUI = GameObject.Find("Hostile Caught").GetComponent<TMPro.TextMeshProUGUI>();
         scaredUI = GameObject.Find("Scared Caught").GetComponent<TMPro.TextMeshProUGUI>();
 
-        /*collectedAnimals = new GameObject[2,5];
-        for (int row = 0; row < collectedAnimals.GetLength(0); row++) //GetLength(0) is the 2
-        {
-            for (int col = 0; col < collectedAnimals.GetLength(1); col++)//GetLength(1) is the 5
-            {
-                //collectedAnimals[GameObject.Find("Row "), GameObject.Find("{col}")];
-                
-            }
-        }*/
-        /*for (int i = 0; i < 10; i++)
-        {
-            panels.Add(GameObject.Find("Panel" + i));
-        }*/
     }
 
     public void AnimalCount(string name) //Sent from AnimalController.cs
@@ -68,8 +47,15 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
             calmUI.text = "Calm Caught: " + calmCaught;
             //add to list
 
-            collectedAnimals.Add(Instantiate(neutral, new Vector3(panels[0].transform.position.x, panels[0].transform.position.y, 24), Quaternion.identity)); //adds it to the latest empty spot
-            neutral.transform.localScale = new Vector3(40, 40, 40);
+            GameObject uiAnimal = Instantiate(neutral, new Vector3(panels[0].transform.position.x + 10, panels[0].transform.position.y - 30, 24), Quaternion.identity, panels[0].transform);
+            collectedAnimals.Add(uiAnimal);
+
+            //collectedAnimals.Add(Instantiate(neutral, new Vector3(panels[0].transform.position.x, panels[0].transform.position.y, 24), Quaternion.identity)); //adds it to the latest empty spot
+            uiAnimal.transform.localScale = new Vector3(40, 40, 40);
+    	    Destroy(uiAnimal.GetComponent<Rigidbody>()); //gets rid of the rigidbody
+            Destroy(uiAnimal.GetComponent<AnimalController>());
+            Destroy(uiAnimal.GetComponent<GravityBody>());
+
             Debug.Log("Spawned");
         }
         else if (name.Contains("Hostile"))
