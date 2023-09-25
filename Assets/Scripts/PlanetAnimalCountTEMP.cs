@@ -20,6 +20,7 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
     //private GameObject[,] collectedAnimals; //= new GameObject[2,5]; //[row, col]
     public List<GameObject> panels = new List<GameObject>(); //the grid of panels that the animals will spawn as a child on
     public List<GameObject> collectedAnimals = new List<GameObject>();
+    private int lastSpace;
 
     public GameObject neutral;
     public GameObject hostile;
@@ -41,26 +42,13 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
 
     public void AnimalCount(string name) //Sent from AnimalController.cs
     {
+        lastSpace = panels.Count - collectedAnimals.Count;
         if (name.Contains("Neutral"))
         {
             calmCaught += 1;
             calmUI.text = "Calm Caught: " + calmCaught;
-            //add to list
-
-            GameObject uiAnimal = Instantiate(neutral, new Vector3(panels[0].transform.position.x + 10, panels[0].transform.position.y - 30, panels[0].transform.position.z + 6), Quaternion.identity, panels[0].transform);
-            collectedAnimals.Add(uiAnimal);
-            uiAnimal.layer = 5;
-            //uiAnimal.transform.GetChild(1).gameObject.layer = 5;
-            foreach(Transform child in uiAnimal.transform.GetChild(1))
-            {
-                child.gameObject.layer = 5;
-            }
-
-            //collectedAnimals.Add(Instantiate(neutral, new Vector3(panels[0].transform.position.x, panels[0].transform.position.y, 24), Quaternion.identity)); //adds it to the latest empty spot
-            uiAnimal.transform.localScale = new Vector3(40, 40, 40);
-    	    Destroy(uiAnimal.GetComponent<Rigidbody>()); //gets rid of the rigidbody
-            Destroy(uiAnimal.GetComponent<AnimalController>());
-            Destroy(uiAnimal.GetComponent<GravityBody>());
+            SpawnUIAnimal(neutral, lastSpace);
+        
 
             Debug.Log("Spawned");
         }
@@ -68,16 +56,34 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         {
             hostileCaught += 1;
             hostileUI.text = "Hostile Caught: " + hostileCaught;
-            collectedAnimals.Add(Instantiate(hostile));
+            SpawnUIAnimal(hostile, lastSpace);
 
         }
         else if (name.Contains("Scared"))
         {
             scaredCaught += 1;
             scaredUI.text = "Scared Caught: " + scaredCaught;
-            collectedAnimals.Add(Instantiate(scared));
-
+            SpawnUIAnimal(scared, lastSpace);
         }
+    }
+
+    public void SpawnUIAnimal(GameObject type, int lastSpace)
+    {
+        GameObject uiAnimal = Instantiate(type, new Vector3(panels[lastSpace].transform.position.x + 10, panels[lastSpace].transform.position.y - 30, panels[lastSpace].transform.position.z + 6), Quaternion.identity, panels[0].transform);
+        collectedAnimals.Add(uiAnimal);
+        uiAnimal.layer = 5;
+
+        //every child object of the animal needs to have the layer set, as they don't inherit layers from parent
+        foreach(Transform child in uiAnimal.transform.GetChild(1)) //0 is collider, 1 is the animal body
+        {
+            child.gameObject.layer = 5; //UI layer
+        }
+
+        //collectedAnimals.Add(Instantiate(neutral, new Vector3(panels[0].transform.position.x, panels[0].transform.position.y, 24), Quaternion.identity)); //adds it to the latest empty spot
+        uiAnimal.transform.localScale = new Vector3(40, 40, 40);
+        Destroy(uiAnimal.GetComponent<Rigidbody>()); //gets rid of the rigidbody
+        Destroy(uiAnimal.GetComponent<AnimalController>());
+        Destroy(uiAnimal.GetComponent<GravityBody>());
     }
 
 }
