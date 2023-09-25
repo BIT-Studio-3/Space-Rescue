@@ -42,12 +42,11 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
 
     public void AnimalCount(string name) //Sent from AnimalController.cs
     {
-        lastSpace = panels.Count - collectedAnimals.Count;
         if (name.Contains("Neutral"))
         {
             calmCaught += 1;
             calmUI.text = "Calm Caught: " + calmCaught;
-            SpawnUIAnimal(neutral, lastSpace);
+            SpawnUIAnimal(neutral);
         
 
             Debug.Log("Spawned");
@@ -56,20 +55,20 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         {
             hostileCaught += 1;
             hostileUI.text = "Hostile Caught: " + hostileCaught;
-            SpawnUIAnimal(hostile, lastSpace);
+            SpawnUIAnimal(hostile);
 
         }
         else if (name.Contains("Scared"))
         {
             scaredCaught += 1;
             scaredUI.text = "Scared Caught: " + scaredCaught;
-            SpawnUIAnimal(scared, lastSpace);
+            SpawnUIAnimal(scared);
         }
     }
 
-    public void SpawnUIAnimal(GameObject type, int lastSpace)
+    public void SpawnUIAnimal(GameObject type)
     {
-        GameObject uiAnimal = Instantiate(type, new Vector3(panels[lastSpace].transform.position.x + 10, panels[lastSpace].transform.position.y - 30, panels[lastSpace].transform.position.z + 6), Quaternion.identity, panels[0].transform);
+        GameObject uiAnimal = Instantiate(type, new Vector3(panels[collectedAnimals.Count].transform.position.x + 10, panels[collectedAnimals.Count].transform.position.y - 30, panels[collectedAnimals.Count].transform.position.z + 6), Quaternion.identity, panels[0].transform);
         collectedAnimals.Add(uiAnimal);
         uiAnimal.layer = 5;
 
@@ -79,7 +78,6 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
             child.gameObject.layer = 5; //UI layer
         }
 
-        //collectedAnimals.Add(Instantiate(neutral, new Vector3(panels[0].transform.position.x, panels[0].transform.position.y, 24), Quaternion.identity)); //adds it to the latest empty spot
         uiAnimal.transform.localScale = new Vector3(40, 40, 40);
         Destroy(uiAnimal.GetComponent<Rigidbody>()); //gets rid of the rigidbody
         Destroy(uiAnimal.GetComponent<AnimalController>());

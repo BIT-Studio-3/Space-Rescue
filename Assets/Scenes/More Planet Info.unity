@@ -1614,17 +1614,7 @@ MonoBehaviour:
   - {fileID: 159960768}
   - {fileID: 21495993}
   - {fileID: 381149959}
-  collectedAnimals:
-  - {fileID: 499662572}
-  - {fileID: 805578897}
-  - {fileID: 1529972166}
-  - {fileID: 365497745}
-  - {fileID: 1097699724}
-  - {fileID: 1330658498}
-  - {fileID: 1716929748}
-  - {fileID: 159960768}
-  - {fileID: 21495993}
-  - {fileID: 381149959}
+  collectedAnimals: []
   neutral: {fileID: 1203130130}
   hostile: {fileID: 8768842384551100010, guid: 556efdf030cecbf40aa649b2aefaa99e, type: 3}
   scared: {fileID: 8768842384551100010, guid: 6eb1eb2d7fa47494bace62e2f3c5abe5, type: 3}
@@ -2098,7 +2088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -49.99994}
+  m_AnchoredPosition: {x: -50, y: -49.999878}
   m_SizeDelta: {x: 400, y: 500}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &827230696
