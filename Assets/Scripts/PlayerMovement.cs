@@ -5,7 +5,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+public enum PlayerState
+{
+    IDLE,
+    RUN,
+    PICKUP,
+    DEATH
+}
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
@@ -15,22 +21,29 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 smoothMoveVel = Vector3.zero;
     private Vector3 direction;
     private bool isMoving;
+    private Animator animator;
+    private PlayerState animationState;
+
+    public PlayerState AnimationState { get => animationState; set => animationState = value; }
+
 
     // Start is called before the first frame update
     void Start()
     {
         isMoving = false;
+        animationState = PlayerState.IDLE;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+         animator = GameObject.Find("Model").GetComponent<Animator>();
+
     }
 
     void Update()
     {
         isMoving = (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0);
-        PlayAnimation();
         direction = new Vector3(
             Input.GetAxisRaw("Horizontal"),
             0,
@@ -39,6 +52,21 @@ public class PlayerMovement : MonoBehaviour
         Vector3 targetMove = direction * speed;
         //current, target, velocity,  smooth time
         moveAmo = Vector3.SmoothDamp(moveAmo, targetMove, ref smoothMoveVel, .1f);
+        if(isMoving)
+        {
+            AnimationState = PlayerState.RUN;
+        }
+        else
+        {
+            AnimationState = PlayerState.IDLE;
+        }
+    
+        if(Input.GetKeyDown(Keybinds.Interact))
+        {
+            AnimationState = PlayerState.PICKUP;
+        }
+        PlayAnimation();
+
     }
 
     void FixedUpdate()
@@ -62,16 +90,25 @@ public class PlayerMovement : MonoBehaviour
     }
     private void PlayAnimation()
     {
-        Animator animator = GameObject.Find("Model").GetComponent<Animator>();
         if (animator != null)
         {
-            if (isMoving)
+
+            switch(animationState)
             {
-                animator.Play("Run");
-            }
-            else
-            {
-                animator.Play("Idle");
+                case PlayerState.RUN:
+                    animator.Play("Run");
+                    break;
+  
+                case PlayerState.PICKUP:
+                    animator.Play("Pickup");
+                    break;
+                // case PlayerState.DEATH:
+                //     animator.Play("Death");
+                //     break;
+     
+                default:
+                    animator.Play("PlayIdle");
+                    break;
             }
         }
     }
