@@ -102,13 +102,7 @@ public class PlayerMovement : MonoBehaviour
                 case PlayerState.PICKUP:
                     animator.Play("Pickup");
                     break;
-                // case PlayerState.DEATH:
-                //     animator.Play("Death");
-                //     break;
-     
-                default:
-                    animator.Play("PlayIdle");
-                    break;
+
             }
         }
     }
