@@ -51,6 +51,7 @@ public class SpawningManager : MonoBehaviour
 
         //Setting the amount of objects to be spawned
         hostileCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].hostileCount;
+        hostileCount = 20;
         scaredCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].scaredCount;
         neutralCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].neutralCount;
         treeCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].treeCount;
@@ -76,7 +77,13 @@ public class SpawningManager : MonoBehaviour
                 }
                 reps++; //Protection against infinite loop
                 area = Random.onUnitSphere * radius; //onUnitSphere does the math of the surface of a spherical object multiplied by the radius
-                hitColliders = Physics.OverlapSphere(area, 1);
+                if (prefab.name.Contains("Hostile")) //There will be a bigger gap for the hostile animal so it doesn't spawn too close to the player
+                {
+                    hitColliders = Physics.OverlapSphere(area, 5);
+                } else
+                {
+                    hitColliders = Physics.OverlapSphere(area, 1);                
+                }
             } while (hitColliders.Length != 0); //If something is already there, it will keep trying to spawn until it finds an empty spot
             newSpawn = Instantiate(prefab, area, Quaternion.identity);
             newSpawn.transform.rotation = Quaternion.FromToRotation(
