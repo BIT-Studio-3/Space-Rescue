@@ -27,25 +27,34 @@ public class MusicManager : MonoBehaviour
     void Update()
     {
         //Checking if the audio source is not playing
+        string currentScene = SceneManager.GetActiveScene().name;
         if (!audioSource.isPlaying)
         {
-            string currentScene = SceneManager.GetActiveScene().name;
             switch (currentScene)
             {
                 case "Main scene":
                 case "Planet":
                 case "Game Tutorial":
-                    audioSource.clip = gameClips[Random.Range(0, gameClips.Length)];
+                    audioSource.clip = gameClips[Random.Range(0, gameClips.Length)]; //Randomly selects a clip from the game clips array
                     break;
                 case "Title Screen":
                 case "Settings":
                 case "Game End":
-                    audioSource.clip = menuClips[Random.Range(0, menuClips.Length)];
+                    audioSource.clip = menuClips[Random.Range(0, menuClips.Length)]; //Randomly selects a clip from the menu clips array
                     break;
                 default:
                     break;
             }
             audioSource.Play();
+        }
+        if (GameObject.Find("Pause Menu") != null && GameObject.Find("Pause Menu").activeSelf)
+        //If it is currently in pause screen
+        {
+            audioSource.volume = GameSettings.MusicVolume / 2;
+        }
+        else
+        {
+            SetVolume();
         }
     }
 
