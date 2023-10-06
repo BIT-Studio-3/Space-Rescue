@@ -80,9 +80,10 @@ public class SpawningManager : MonoBehaviour
                 if (prefab.name.Contains("Hostile")) //There will be a bigger gap for the hostile animal so it doesn't spawn too close to the player
                 {
                     hitColliders = Physics.OverlapSphere(area, 5);
-                } else
+                }
+                else
                 {
-                    hitColliders = Physics.OverlapSphere(area, 1);                
+                    hitColliders = Physics.OverlapSphere(area, 1);
                 }
             } while (hitColliders.Length != 0); //If something is already there, it will keep trying to spawn until it finds an empty spot
             newSpawn = Instantiate(prefab, area, Quaternion.identity);
