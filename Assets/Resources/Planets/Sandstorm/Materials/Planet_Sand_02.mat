@@ -1,0 +1,210 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Planet_Sand_02
+  m_Shader: {fileID: 4800000, guid: 60ce16781708cb442ba3b6dbfacf9785, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudsMiddle:
+        m_Texture: {fileID: 2800000, guid: 0769a4ef5be32554583cdf3aa7e27ffe, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - _CloudsTop:
+        m_Texture: {fileID: 2800000, guid: 1905a0f1a3a2a094096c851d3dbfd1a4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMap:
+        m_Texture: {fileID: 2800000, guid: 586b69062d25b464d9b336e0959de779, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Gradient:
+        m_Texture: {fileID: 2800000, guid: 20fb3fab602c05c44a31867aee0cfe1d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: bad2d56f095bff043a356b38e8688a20, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Scatter:
+        m_Texture: {fileID: 2800000, guid: f71a975b2533af7438e1615313fbcb4e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ScatterMap:
+        m_Texture: {fileID: 2800000, guid: 60a52cb5d6d63394c80627589e692c6a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: f71a975b2533af7438e1615313fbcb4e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlbedoBoost: 20.1
+    - _AlphaCutoff: 0.5
+    - _Bias: 0.12
+    - _BumpScale: 1
+    - _CloudBoost: 25.2
+    - _CloudShadows: 1
+    - _Clouds: 1
+    - _CloudsAnimation: 0.0022
+    - _CloudsBlendWeight: 1
+    - _CloudsBoost: 1
+    - _CloudsHeight: 0.02
+    - _CloudsMiddleSpeed: 0.0043
+    - _CloudsOutput: 1
+    - _CloudsSmoothness: 1
+    - _CloudsSpecular: 1
+    - _CloudsTiling: 1.72
+    - _CloudsTopSpeed: -0.0151
+    - _ColorTiling: 2
+    - _Cutoff: 0.5
+    - _DesertCoverage: 0.082
+    - _DesertFactors: 14.5
+    - _DetailNormalMapScale: 1
+    - _DetailTiling: 3
+    - _DstBlend: 0
+    - _Float0: 0.005
+    - _Float1: 23
+    - _FrenselLandMult: 0.4
+    - _FrenselMult: 0.31
+    - _FresnelLandPower: 3.2
+    - _FresnelPower: 1.12
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HeightTiling: 2
+    - _IceDetail: -0.02
+    - _IceFactorA: 0.17
+    - _IceFactorB: 0.44
+    - _IceFactorC: 0.73
+    - _Metallic: 0
+    - _Mode: 0
+    - _MountainCoverage: 0.162
+    - _MountainFactors: 49.4
+    - _Mult: 0.955
+    - _NormalScale: 1
+    - _NormalTiling: 3
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _Power: 3.05
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Scale: -0.24
+    - _ScatterBoost: 0.92
+    - _ScatterCenterShift: -0.1
+    - _ScatterInderect: 0.25
+    - _ScatterIndirect: 1
+    - _ScatterShift: -0.453
+    - _ScatterShiftCenter: 1.47
+    - _ScatterStretch: 1
+    - _ScatterTile: 0.61
+    - _Shininess: 0.1
+    - _Smoothness: 0.301
+    - _SmoothnessTextureChannel: 0
+    - _Specular: 0.766
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _TriplanarFalloff: 5
+    - _UVSec: 0
+    - _ZWrite: 1
+    - __dirty: 0
+    m_Colors:
+    - _BaseColor: {r: 1, g: 0.8742392, b: 0.5441177, a: 1}
+    - _CloudsTint: {r: 1, g: 0.8849518, b: 0.75735295, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DesertColor: {r: 0.99264705, g: 0.8671064, b: 0.6787954, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FresnelColor: {r: 0.75735295, g: 0.41408616, b: 0.15035684, a: 1}
+    - _FresnelLandColor: {r: 1, g: 0.92611563, b: 0.77205884, a: 1}
+    - _MainColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+    - _MountainColor: {r: 1, g: 0.8669371, b: 0.7647059, a: 1}
+    - _RampHigh: {r: 0.71323526, g: 0.47184917, b: 0.34088448, a: 0}
+    - _RampLow: {r: 0.29098186, g: 0.8602941, b: 0.7896209, a: 0}
+    - _RampMid: {r: 0.30882353, g: 0.29566878, b: 0.2815744, a: 0}
+    - _ScatterColor: {r: 1, g: 1, b: 1, a: 0}
+    - _ScatterTint: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 0}
+    - _Tint: {r: 1, g: 0.79574037, b: 0.6102941, a: 0}
+  m_BuildTextureStacks: []

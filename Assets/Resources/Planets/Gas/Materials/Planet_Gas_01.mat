@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Planet_Gas_01
+  m_Shader: {fileID: 4800000, guid: 01f9b012bee164843a7b8c020c2b31ec, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMap:
+        m_Texture: {fileID: 2800000, guid: aca7ed0456526f144895da1d00aa1ad1, type: 3}
+        m_Scale: {x: 1, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ScatterMap:
+        m_Texture: {fileID: 2800000, guid: 20516425c5227f44ba5b125adbf08419, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _UVDistortionMap:
+        m_Texture: {fileID: 2800000, guid: 0f41ab862aef93e4a9a0eda78449ce34, type: 3}
+        m_Scale: {x: 2, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaCutoff: 0.5
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _Float2: -3.06
+    - _Float23: 1
+    - _FrenselMult: 2.63
+    - _FresnelPower: 6.58
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _MetallicBoost: 0.29
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _PoleBoost: 1.8
+    - _PoleMaskShift: -0.02
+    - _PoleMaskShift1: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _ScatterBoost: 1.9
+    - _ScatterCenterShift: 0
+    - _ScatterIndirect: 0.897
+    - _ScatterStretch: 1
+    - _Smoothness: 0.442
+    - _SmoothnessBoost: 0.85
+    - _SmoothnessTextureChannel: 0
+    - _Smoothness_: 0
+    - _Specular: 0.003
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVDistortion: 0.076
+    - _UVSec: 0
+    - _ZWrite: 1
+    - __dirty: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 0.18039216, g: 0.18431373, b: 0.18431373, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FresnelColor: {r: 0.0031594948, g: 0.24128349, b: 0.6698113, a: 1}
+    - _MetallicLoHi: {r: 0, g: 0.35, b: 0, a: 0}
+    - _PoleColor: {r: 0.5211819, g: 0.45910463, b: 0.5377358, a: 1}
+    - _PoleMaskLoHi: {r: 0.01, g: 0.1, b: 0, a: 0}
+    - _PoleMaskLoHi1: {r: 0, g: 1, b: 0, a: 0}
+    - _ScatterColor: {r: 1, g: 1, b: 1, a: 0}
+    - _SmoothnessLoHi: {r: -0.3, g: 0.78, b: 0, a: 0}
+    - _SpecularLoHi: {r: 0.95, g: 0.09, b: 0, a: 0}
+    - _SpecularTint: {r: 0.989858, g: 0.97058815, b: 1, a: 0}
+    - _Tint: {r: 1, g: 1, b: 1, a: 0}
+    - _UVDistortionSpeed: {r: 0.002, g: 0, b: 0, a: 0}
+    - _UVSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _Vector1: {r: 0.56, g: 5, b: 0, a: 0}
+    - _Vector2: {r: 0.04, g: 0.11, b: 0, a: 0}
+  m_BuildTextureStacks: []
