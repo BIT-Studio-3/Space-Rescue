@@ -26,8 +26,7 @@ public class PlanetTextureGenerator : MonoBehaviour
         GameObject p = Instantiate(GameSettings.planetPrefabs[r],new Vector3(0,0,0),Quaternion.identity);
         p.transform.SetParent(gameObject.transform);
         p.transform.localPosition = new Vector3(0,0,0);
-        p.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
-
+        p.transform.localScale = new Vector3(1.3f,1.3f,1.3f);
 
         GameSettings.planetPrefabs[r] = null; //setting the chosen index in the array to null so it cant be chosen again
     }
