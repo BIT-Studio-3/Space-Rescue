@@ -102,7 +102,7 @@ Some of the most important changes for each update are as follows:
 | v1.7.0    | 15/08/2023   | Planet orbit improved, more HUD improvements, new pause screen, planet gameplay rework  |
 | v1.8.0    | 29/08/2023   | New End Screen Menu, animal behaviour improvements, wider variety of planet textures |
 | v1.9.0    | 12/09/2023   | Boost speed increased, on planet UI, new planet scanning info |
-| v1.10.0   | 10/10/2023   | TBD |
+| v1.10.0   | 10/10/2023   | Expanded planet visuals, correct visuals in planet exploration, music and sound effects, new in planet models, improved planet info panel |
 
 ## Roadmap
 
