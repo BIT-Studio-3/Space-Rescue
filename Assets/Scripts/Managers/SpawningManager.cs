@@ -67,7 +67,7 @@ public class SpawningManager : MonoBehaviour
 
         //The radius of the planet
         radius = planet.transform.localScale.x / 2 + 5; //This is giving a buffer so that the object wont spawn inside the planet
-        
+
         //Setting the amount of objects to be spawned
         hostileCount = planetInfo.hostileCount;
         scaredCount = planetInfo.scaredCount;

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +16,7 @@ public static class GameSettings
 
     //Global Array that will be populated with the variety of planet prefabs in the resources folder. This is loaded in PlanetTextureGenerator.cs
     public static GameObject[] planetPrefabs;
-    
+
 
 }
 
