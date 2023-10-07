@@ -75,10 +75,10 @@ GameObject:
   - component: {fileID: 3933345139217522775}
   - component: {fileID: 1465809472240493112}
   - component: {fileID: 9173007900431462682}
+  - component: {fileID: 3142477286732722296}
   - component: {fileID: 3791640524103179786}
   - component: {fileID: 2169499603414191347}
   - component: {fileID: -2013812364552127450}
-  - component: {fileID: 3142477286732722296}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -136,8 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInsideRadius: 0
-  planetRescued: 0
   inDanger: 0
+  planetID: 0
   planet: {fileID: 5748848403008948943}
 --- !u!54 &9173007900431462682
 Rigidbody:
@@ -155,6 +155,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3142477286732722296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5748848403008948943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e33fcae1b24ed343bf8679b954bc487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hostileCount: 0
+  scaredCount: 0
+  neutralCount: 0
+  treeCount: 0
+  totalAnimals: 0
 --- !u!114 &3791640524103179786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93842c713b2771409e0178de3165700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
 --- !u!114 &-2013812364552127450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,15 +214,3 @@ MonoBehaviour:
   needArrowIndicator: 1
   needDistanceText: 0
   indicator: {fileID: 0}
---- !u!114 &3142477286732722296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5748848403008948943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e33fcae1b24ed343bf8679b954bc487, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -32,6 +32,12 @@ public class PlanetInfo : MonoBehaviour
     [HideInInspector]
     public int totalAnimals;
 
+    [HideInInspector]
+    public Material planetMaterial; //The material of the texture of the planet
+
+    [HideInInspector]
+    public bool rings; //As there is only one ring this simply is true if they exist
+
     void Awake()
     {
         hostileCount = Random.Range(HOSTILEMIN, HOSTILEMAX);

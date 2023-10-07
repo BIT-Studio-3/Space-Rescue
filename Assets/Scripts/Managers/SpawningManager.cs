@@ -8,6 +8,11 @@ using UnityEngine;
 
 public class SpawningManager : MonoBehaviour
 {
+
+    //The current planet and planet info
+    private GameObject planet;
+    private PlanetInfo planetInfo;
+
     //The current object being spawned and the parent it is being moved to
     private GameObject currentPrefab;
     private GameObject currentParent;
@@ -47,13 +52,27 @@ public class SpawningManager : MonoBehaviour
 
     void Start()
     {
-        radius = GameObject.Find("Planet").transform.localScale.x / 2 + 5; //This is giving a buffer so that the object wont spawn inside the planet
+        //The current planet and planetinfo
+        planet = GameObject.Find("Planet");
+        planetInfo = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet];
 
+        //Setting the material of the planet
+        planet.GetComponent<Renderer>().material = planetInfo.planetMaterial;
+
+        //Disabling rings if they don't exist
+        if (!planetInfo.rings)
+        {
+            planet.transform.GetChild(0).gameObject.SetActive(false);
+        }
+
+        //The radius of the planet
+        radius = planet.transform.localScale.x / 2 + 5; //This is giving a buffer so that the object wont spawn inside the planet
+        
         //Setting the amount of objects to be spawned
-        hostileCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].hostileCount;
-        scaredCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].scaredCount;
-        neutralCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].neutralCount;
-        treeCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].treeCount;
+        hostileCount = planetInfo.hostileCount;
+        scaredCount = planetInfo.scaredCount;
+        neutralCount = planetInfo.neutralCount;
+        treeCount = planetInfo.treeCount;
 
         //Spawning the objects
         Spawn(hostileCount, hostilePrefab, AnimalParent);
