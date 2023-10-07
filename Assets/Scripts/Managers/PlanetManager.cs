@@ -107,6 +107,14 @@ public class PlanetManager : MonoBehaviour
 
     public void LeavePlanet()
     {
+        StartCoroutine(PlayerDeath());
+
+    }
+
+    private IEnumerator PlayerDeath()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Death();
+        yield return new WaitForSeconds(3);
         ShipMovement.Instance.ResetBoost(); //This resets the ships boost before it goes back to the main scene
         GameMenuManager.Instance.ReturntoScene("Planet 1");
     }

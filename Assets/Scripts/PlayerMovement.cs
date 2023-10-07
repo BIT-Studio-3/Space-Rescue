@@ -65,6 +65,10 @@ public class PlayerMovement : MonoBehaviour
         {
             AnimationState = PlayerState.PICKUP;
         }
+        if(Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Death();
+        }
         PlayAnimation();
 
     }
@@ -92,7 +96,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (animator != null)
         {
-
             switch(animationState)
             {
                 case PlayerState.RUN:
@@ -102,9 +105,18 @@ public class PlayerMovement : MonoBehaviour
                 case PlayerState.PICKUP:
                     animator.Play("Pickup");
                     break;
-                    //I dont include because the other animations are directed to play idle immediately after they are done
+                case PlayerState.DEATH:
+                    animator.Play("Death");
+                    break;
+                    //I dont include Idle because the other animations are directed to play idle immediately after they are done
 
             }
         }
+    }
+
+    public void Death()
+    {
+        AnimationState = PlayerState.DEATH;
+        PlayAnimation();
     }
 }
