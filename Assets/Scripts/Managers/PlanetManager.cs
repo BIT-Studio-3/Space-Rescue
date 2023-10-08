@@ -116,7 +116,7 @@ public class PlanetManager : MonoBehaviour
     private IEnumerator PlayerDeath()
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Death();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         LeavePlanet();
     }
     public void Death()
