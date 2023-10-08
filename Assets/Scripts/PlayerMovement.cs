@@ -65,10 +65,7 @@ public class PlayerMovement : MonoBehaviour
         {
             AnimationState = PlayerState.PICKUP;
         }
-        if(Input.GetKeyDown(KeyCode.Backspace))
-        {
-            Death();
-        }
+ 
         PlayAnimation();
 
     }
