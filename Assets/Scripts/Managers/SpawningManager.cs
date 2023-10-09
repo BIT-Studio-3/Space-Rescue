@@ -79,7 +79,7 @@ public class SpawningManager : MonoBehaviour
                 hitColliders = Physics.OverlapSphere(area, 1);
             } while (hitColliders.Length != 0); //If something is already there, it will keep trying to spawn until it finds an empty spot
             newSpawn = Instantiate(prefab, area, Quaternion.identity);
-            if(prefab.GetComponent<Animal>() != null)
+            if (prefab.GetComponent<Animal>() != null)
                 newSpawn.name = prefab.GetComponent<Animal>().Species; //Sets the name of the object to the species of the animal
             newSpawn.transform.rotation = Quaternion.FromToRotation(
                 Vector3.up,

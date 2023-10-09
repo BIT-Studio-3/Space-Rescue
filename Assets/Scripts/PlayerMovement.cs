@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-         animator = GameObject.Find("Model").GetComponent<Animator>();
+        animator = GameObject.Find("Model").GetComponent<Animator>();
 
     }
 
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 targetMove = direction * speed;
         //current, target, velocity,  smooth time
         moveAmo = Vector3.SmoothDamp(moveAmo, targetMove, ref smoothMoveVel, .1f);
-        if(isMoving)
+        if (isMoving)
         {
             AnimationState = PlayerState.RUN;
         }
@@ -60,12 +60,12 @@ public class PlayerMovement : MonoBehaviour
         {
             AnimationState = PlayerState.IDLE;
         }
-    
-        if(Input.GetKeyDown(Keybinds.Interact))
+
+        if (Input.GetKeyDown(Keybinds.Interact))
         {
             AnimationState = PlayerState.PICKUP;
         }
- 
+
         PlayAnimation();
 
     }
@@ -93,12 +93,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (animator != null)
         {
-            switch(animationState)
+            switch (animationState)
             {
                 case PlayerState.RUN:
                     animator.Play("Run");
                     break;
-  
+
                 case PlayerState.PICKUP:
                     animator.Play("Pickup");
                     break;

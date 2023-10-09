@@ -61,7 +61,7 @@ public class PlanetInfo : MonoBehaviour
     [Tooltip("The name of the hostile animal that was selected")]
     public string hostileName;
     [Tooltip("The name of the scared animal that was selected")]
-    public  string scaredName;
+    public string scaredName;
     [Tooltip("The name of the neutral animal that was selected")]
     public string neutralName;
 
