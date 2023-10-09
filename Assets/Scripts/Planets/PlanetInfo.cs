@@ -70,7 +70,7 @@ public class PlanetInfo : MonoBehaviour
     public string scaredName;
     [Tooltip("The name of the neutral animal that was selected")]
     public string neutralName;
-    
+
     void Awake()
     {
         hostileCount = Random.Range(HOSTILEMIN, HOSTILEMAX);

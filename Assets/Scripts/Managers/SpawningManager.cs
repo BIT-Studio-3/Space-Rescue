@@ -1,4 +1,4 @@
-// Description: Script is used for planet object spawning
+﻿// Description: Script is used for planet object spawning
 // Created by: Erika Stuart
 // Last Updated: 19/09/2023
 // Last Updated By: Chase Bennett-Hill
@@ -60,7 +60,7 @@ public class SpawningManager : MonoBehaviour
 
         //The radius of the planet
         radius = planet.transform.localScale.x / 2 + 5; //This is giving a buffer so that the object wont spawn inside the planet
-        
+
         //Setting the prefabs to spawn
         //For each prefab it finds the active planet, and sets it to the selected one in the list from PlanetInfo.
         hostilePrefab = planetInfo.hostilePrefabs[planetInfo.selectedHostile];
