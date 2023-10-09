@@ -23,12 +23,14 @@ public class PlanetManager : MonoBehaviour
     public bool dropShipRange;
     private GameObject pauseMenu;
 
+    public static PlanetAnimalCountTEMP AnimalCountTEMP;
+
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
-        pauseMenu = GameObject.Find("Pause Menu");
-        pauseMenu.SetActive(false);
+        //pauseMenu = GameObject.Find("Pause Menu");
+        //pauseMenu.SetActive(false);
         planetParent = GameObject.Find("PlanetParent");
         held = 0;
         scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text =
@@ -103,6 +105,13 @@ public class PlanetManager : MonoBehaviour
         scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text =
             "Temp Score Display: " + GameSettings.Score.ToString();
         //This is very temporary. Will have a better system in the next increment.
+
+        //delete from list in planetanimalcount
+        foreach (GameObject animal in AnimalCountTEMP.collectedAnimals)
+        {
+            Destroy(animal);
+        }
+        AnimalCountTEMP.collectedAnimals.Clear();
     }
 
     public void LeavePlanet()

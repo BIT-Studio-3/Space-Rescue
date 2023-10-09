@@ -74,7 +74,7 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
 
     public void SpawnUIAnimal(GameObject type)
     {
-        GameObject uiAnimal = Instantiate(type, new Vector3(panels[collectedAnimals.Count].transform.position.x + 10, panels[collectedAnimals.Count].transform.position.y - 30, panels[collectedAnimals.Count].transform.position.z + 6), Quaternion.identity, panels[0].transform);
+        GameObject uiAnimal = Instantiate(type, new Vector3(panels[collectedAnimals.Count].transform.position.x + 10, panels[collectedAnimals.Count].transform.position.y - 30, panels[collectedAnimals.Count].transform.position.z + 6), Quaternion.Euler(0,180,0), panels[0].transform);
         collectedAnimals.Add(uiAnimal);
         uiAnimal.layer = 5;
 
