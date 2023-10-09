@@ -1,4 +1,4 @@
-// Description: This script is used to manage the planet scene. It is also used to reset the ships boost when the player leaves the planet scene and deposit the animals into the score.
+﻿// Description: This script is used to manage the planet scene. It is also used to reset the ships boost when the player leaves the planet scene and deposit the animals into the score.
 // Author: Palin Wiseman
 // Last Updated: 10/08/2023
 // Last Updated By: Palin Wiseman
