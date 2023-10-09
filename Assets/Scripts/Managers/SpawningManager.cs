@@ -1,7 +1,7 @@
 ﻿// Description: Script is used for planet object spawning
 // Created by: Erika Stuart
-// Last Updated: 5/09/2023
-// Last Updated By: Palin Wiseman
+// Last Updated: 19/09/2023
+// Last Updated By: Chase Bennett-Hill
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,24 +15,17 @@ public class SpawningManager : MonoBehaviour
     //The parents the objects are being moved to. This is assigned in the editor
     [Header("Parents")]
     [SerializeField]
-    private GameObject AnimalParent;
+    private GameObject animalParent;
 
     [SerializeField]
-    private GameObject TreeParent;
+    private GameObject treeParent;
 
     //The prefabs that are being spawned. This is assigned in the editor
     [Header("Prefabs")]
-    [SerializeField]
-    private GameObject hostilePrefab;
-
-    [SerializeField]
-    private GameObject neutralPrefab;
-
-    [SerializeField]
-    private GameObject scaredPrefab;
-
-    [SerializeField]
-    private GameObject treePrefab;
+    private GameObject hostilePrefab; //The prefab that will be used for the hostile animal
+    private GameObject neutralPrefab; //The prefab that will be used for the neutral animal
+    private GameObject scaredPrefab; //The prefab that will be used for the Scared animal
+    private GameObject foliagePrefab; //The prefab that will be used for the foliage
 
     //The amount of objects that are being spawned. This is gotten from the planet info script for the planet entered
     private int hostileCount;
@@ -47,19 +40,26 @@ public class SpawningManager : MonoBehaviour
 
     void Start()
     {
-        radius = GameObject.Find("Planet").transform.localScale.x / 2 + 5; //This is giving a buffer so that the object wont spawn inside the planet
 
+        radius = GameObject.Find("Planet").transform.localScale.x / 2 + 5; //This is giving a buffer so that the object wont spawn inside the planet
+        //Setting the prefabs to spawn
+        //For each prefab it finds the active planet, and sets it to the selected one in the list from PlanetInfo.
+        hostilePrefab = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].hostilePrefabs[PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].selectedHostile];
+        scaredPrefab = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].scaredPrefabs[PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].selectedScared];
+        neutralPrefab = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].neutralPrefabs[PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].selectedNeutral];
+        foliagePrefab = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].foliagePrefabs[PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].selectedFoliage];
         //Setting the amount of objects to be spawned
         hostileCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].hostileCount;
         scaredCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].scaredCount;
         neutralCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].neutralCount;
         treeCount = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].treeCount;
 
+
         //Spawning the objects
-        Spawn(hostileCount, hostilePrefab, AnimalParent);
-        Spawn(scaredCount, scaredPrefab, AnimalParent);
-        Spawn(neutralCount, neutralPrefab, AnimalParent);
-        Spawn(treeCount, treePrefab, TreeParent);
+        Spawn(hostileCount, hostilePrefab, animalParent);
+        Spawn(scaredCount, scaredPrefab, animalParent);
+        Spawn(neutralCount, neutralPrefab, animalParent);
+        Spawn(treeCount, foliagePrefab, treeParent);
     }
 
     //Spawns objects randomly on the surface of a sphere
@@ -76,9 +76,18 @@ public class SpawningManager : MonoBehaviour
                 }
                 reps++; //Protection against infinite loop
                 area = Random.onUnitSphere * radius; //onUnitSphere does the math of the surface of a spherical object multiplied by the radius
-                hitColliders = Physics.OverlapSphere(area, 1);
+                if (prefab.name.Contains("Hostile")) //There will be a bigger gap for the hostile animal so it doesn't spawn too close to the player
+                {
+                    hitColliders = Physics.OverlapSphere(area, 5);
+                }
+                else
+                {
+                    hitColliders = Physics.OverlapSphere(area, 1);
+                }
             } while (hitColliders.Length != 0); //If something is already there, it will keep trying to spawn until it finds an empty spot
             newSpawn = Instantiate(prefab, area, Quaternion.identity);
+            if (prefab.GetComponent<Animal>() != null)
+                newSpawn.name = prefab.GetComponent<Animal>().Species; //Sets the name of the object to the species of the animal
             newSpawn.transform.rotation = Quaternion.FromToRotation(
                 Vector3.up,
                 newSpawn.transform.position
