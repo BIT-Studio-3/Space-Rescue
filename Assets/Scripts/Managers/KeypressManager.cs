@@ -46,7 +46,15 @@ public class KeypressManager : MonoBehaviour
                 if(SceneManager.GetSceneByName("Settings").isLoaded){ //gets the settings scene and checks if its loaded
                     SceneManager.UnloadSceneAsync("Settings"); //then unloads it if the player presses escape in the settings menu
                 }
-
+                //Gets all game objects with the name MenuClickSound, iterates through them, and deletes any ones with sfx manager script isSettings = true.
+                GameObject[] menuClickSounds = GameObject.FindGameObjectsWithTag("MenuClickSound");
+                foreach (GameObject menuClickSound in menuClickSounds)
+                {
+                    if (menuClickSound.GetComponent<SFXManager>().isSettings)
+                    {
+                        Destroy(menuClickSound);
+                    }
+                }
                 Play();
             }
             else

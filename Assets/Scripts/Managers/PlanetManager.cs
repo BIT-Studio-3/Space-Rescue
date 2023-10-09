@@ -107,7 +107,15 @@ public class PlanetManager : MonoBehaviour
 
     public void LeavePlanet()
     {
-
+        //Gets all game objects with the name MenuClickSound, iterates through them, and deletes any ones with sfx manager script isSettings = true.
+        GameObject[] menuClickSounds = GameObject.FindGameObjectsWithTag("MenuClickSound");
+        foreach (GameObject menuClickSound in menuClickSounds)
+        {
+            if (menuClickSound.GetComponent<SFXManager>().isPlanet)
+            {
+                Destroy(menuClickSound);
+            }
+        }
         ShipMovement.Instance.ResetBoost(); //This resets the ships boost before it goes back to the main scene
         GameMenuManager.Instance.ReturntoScene("Planet");
 
