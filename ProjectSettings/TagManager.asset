@@ -13,6 +13,7 @@ TagManager:
   - Animal
   - AnimalFoV
   - OnPlanetCollision
+  - MenuClickSound
   layers:
   - Default
   - TransparentFX

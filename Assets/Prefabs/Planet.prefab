@@ -214,3 +214,48 @@ MonoBehaviour:
   needArrowIndicator: 1
   needDistanceText: 0
   indicator: {fileID: 0}
+--- !u!114 &3142477286732722296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5748848403008948943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e33fcae1b24ed343bf8679b954bc487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hostileCount: 0
+  scaredCount: 0
+  neutralCount: 0
+  treeCount: 0
+  totalAnimals: 0
+  hostilePrefabs:
+  - {fileID: 8768842384551100010, guid: ea24b3510356c8b46aa52c8db5c79b4e, type: 3}
+  - {fileID: 8768842384551100010, guid: c56980ab9b9137141b3c5d915c345d5d, type: 3}
+  - {fileID: 8768842384551100010, guid: 6541bba2f10067b45b8aa9929be49845, type: 3}
+  - {fileID: 8768842384551100010, guid: 8e569c51084b4b44e9b02c2a2d4f39c3, type: 3}
+  - {fileID: 8768842384551100010, guid: 8be6d68c23d895844a1a9053cc8e08cf, type: 3}
+  selectedHostile: 0
+  neutralPrefabs:
+  - {fileID: 8768842384551100010, guid: 405f544d244948f48adf4d3ce9a68661, type: 3}
+  - {fileID: 8768842384551100010, guid: cb3f11b2fb0c77241b77804979386d9e, type: 3}
+  - {fileID: 8768842384551100010, guid: a15bf149cb108c144ae416e5ec711cf2, type: 3}
+  - {fileID: 8768842384551100010, guid: feb3bc46b4ca8f640b9cd90e96b9981b, type: 3}
+  selectedNeutral: 0
+  scaredPrefabs:
+  - {fileID: 8768842384551100010, guid: c5cc6c2635b24cb4f89cd5cd1f9ce644, type: 3}
+  - {fileID: 8768842384551100010, guid: a8233eb7301859c4d8cba388ff7a748f, type: 3}
+  - {fileID: 8768842384551100010, guid: de8316e001cbd5244ad6e213c7ef9d53, type: 3}
+  - {fileID: 8768842384551100010, guid: 1f21562f6386a484182873f6f45120fa, type: 3}
+  - {fileID: 8768842384551100010, guid: b034bd83f153fc448b14be82816ce634, type: 3}
+  selectedScared: 0
+  foliagePrefabs:
+  - {fileID: 192044, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
+  - {fileID: 191266, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
+  - {fileID: 188006, guid: c6b7fb383a3534b039692b5485b6e739, type: 3}
+  - {fileID: 137650, guid: 826b6a0b570e8460990010fa615b5a2a, type: 3}
+  - {fileID: 2584119853571017186, guid: 9f730c9a60d8ff447a4425ddab41dd93, type: 3}
+  selectedFoliage: 0
+  neutralName: 
