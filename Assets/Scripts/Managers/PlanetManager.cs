@@ -128,7 +128,7 @@ public class PlanetManager : MonoBehaviour
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject obj in objs)
         {
-            if(obj.GetComponent<PlayerMovement>() != null)
+            if (obj.GetComponent<PlayerMovement>() != null)
             {
                 player = obj;
             }
