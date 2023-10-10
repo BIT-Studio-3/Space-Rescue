@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//bugs:
+// . neutral not showing on ui
+// . temp drop ship counter goes down but cs110pm obj not set to instance
+
 public class PlanetAnimalCountTEMP : MonoBehaviour
 {
     private int calmCaught = 0;
@@ -53,9 +57,6 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
             calmCaught += 1;
             calmUI.text = "Calm Caught: " + calmCaught;
             SpawnUIAnimal(neutral);
-        
-
-            Debug.Log("Spawned");
         }
         else if (name.Contains("Hostile"))
         {
@@ -88,6 +89,7 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         Destroy(uiAnimal.GetComponent<Rigidbody>()); //gets rid of the rigidbody
         Destroy(uiAnimal.GetComponent<AnimalController>());
         Destroy(uiAnimal.GetComponent<GravityBody>());
+        //Destroy(uiAnimal.GetComponent<SphereCollider>());
     }
 
 }

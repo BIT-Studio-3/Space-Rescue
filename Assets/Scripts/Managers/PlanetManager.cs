@@ -100,7 +100,7 @@ public class PlanetManager : MonoBehaviour
     private void DepositHeldAnimals()
     {
         GameSettings.Score += held;
-        held = 0;
+        held = 0;//was 0
         animalDisplay.GetComponent<TMPro.TextMeshPro>().text = held.ToString();
         scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text =
             "Temp Score Display: " + GameSettings.Score.ToString();
@@ -117,6 +117,6 @@ public class PlanetManager : MonoBehaviour
     public void LeavePlanet()
     {
         ShipMovement.Instance.ResetBoost(); //This resets the ships boost before it goes back to the main scene
-        GameMenuManager.Instance.ReturntoScene("Planet");
+        GameMenuManager.Instance.ReturntoScene("More Planet Info");
     }
 }
