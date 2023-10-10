@@ -108,13 +108,6 @@ Some of the most important changes for each update are as follows:
 
 Upcoming features can be seen in the [issues page](https://github.com/BIT-Studio-3/Space-Rescue/issues).
 
-Some of the features currently on the roadmap are:
-- Further improvements to on planet gameplay
-- Improved new player experience
-- Diverse models for on-planet gameplay
-- Expansive range of planets and animals
-- Quality settings, music, and sound effects
-
 ## Acknowledgements
 
 We extend our heartfelt gratitude to our dedicated team members and mentors who have contributed to Space Rescue's development. Special thanks to Elise Allen, Paul Admiraal, Martin Junek, and Adon Moskal for their guidance, support, and creative input.
