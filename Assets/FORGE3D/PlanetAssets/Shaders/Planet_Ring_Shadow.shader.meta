@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: eebb0314253a6e04a816fd49b6e77dac
+labels:
+- Shader
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _DetailMap: {instanceID: 0}
+  - unity_Lightmaps: {instanceID: 0}
+  - unity_LightmapsInd: {instanceID: 0}
+  - unity_ShadowMasks: {instanceID: 0}
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

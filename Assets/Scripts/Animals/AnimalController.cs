@@ -1,9 +1,10 @@
 ﻿// Description: Script controls each individual animal after spawn
 // Author: Erika Stuart
-// Last Updated: 5/09/2023
-// Last Updated By: Palin Wiseman
+// Last Updated: 16/09/2023
+// Last Updated By: Chase Bennett-Hill
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 //using System;
@@ -13,9 +14,10 @@ public class AnimalController : MonoBehaviour
 {
     private float radius;
     private bool inRange;
-    private bool moving;
+    [SerializeField] private bool moving;
     private Vector3 pos;
-    private bool attacking;
+    [SerializeField] private bool attacking;
+    [SerializeField] private bool running;
     private Vector3 normalizedDirection;
     private Vector3 quarterRadiusOffset;
 
@@ -39,6 +41,8 @@ public class AnimalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameObject.transform.Find("Model"))
+            PlayAnimation();
         if (inRange && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0)
         {
             PlanetAnimalCountTEMP.Instance.AnimalCount(gameObject.name); //sends the name of the game object to planetanimalcountTemp
@@ -62,12 +66,38 @@ public class AnimalController : MonoBehaviour
 
             Destroy(gameObject);
         }
+
         if (attacking && Vector3.Distance(transform.position, pos) < 2) //This will now kick you out of the planet if you get caught. I want to make this more interesting in the future but it works for the moment
         {
-            PlanetManager.Instance.LeavePlanet();
+
+            PlanetManager.Instance.Death();
         }
         Movement();
+
+
         attacking = false; //This will stop the attacking until it gets another command from the hostile animal script. If the attack is still going on then that will be right away
+        running = false; //This will stop the running until it gets another command from the scared animal script. If the animal is still scared then that will be right away
+    }
+
+    public void PlayAnimation()
+    {
+        Animator animator = gameObject.transform.Find("Model").GetComponent<Animator>();
+        if (attacking)
+        {
+            animator.Play("Attack"); //This is playing the Attacking animation on the model
+        }
+        else if (running)
+        {
+            animator.Play("Run"); //This is playing the run animation on the model
+        }
+        else if (moving)
+        {
+            animator.Play("Walk"); //This is playing the walk animation on the model
+        }
+        else
+        {
+            animator.Play("Idle_A"); //This is playing the Idle animation on the model
+        }
     }
 
     //On trigger enter and on trigger exit toggling in range on and off
@@ -89,6 +119,7 @@ public class AnimalController : MonoBehaviour
 
     public void Scared(Vector3 playerPos)
     {
+        running = true;
         //set pos to 1/4 of the planet away from the player. This is a lot of algebra I don't fully understand and got to through trial and error. However it works
         Vector3 AB = transform.position - playerPos;
         Vector3 AC = playerPos - new Vector3(0, 0, 0);

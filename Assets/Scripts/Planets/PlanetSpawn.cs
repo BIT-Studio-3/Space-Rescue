@@ -26,7 +26,6 @@ public class PlanetSpawn : MonoBehaviour
 
     void Awake()
     {
-        GameSettings.planetPrefabs = Resources.LoadAll<GameObject>("Planets");
         planetParent = GameObject.Find("Planet Parent");
         SpawningPlanet();
     }

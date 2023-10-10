@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 895199829d3d5554d98e97c54c7be6b6
+labels:
+- Shader
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _CityLightMap: {instanceID: 0}
+  - _CityLightUVMap: {instanceID: 0}
+  - _CityLightMaskMap: {instanceID: 0}
+  - _ScatterMap: {instanceID: 0}
+  - _NormalMap: {instanceID: 0}
+  - _HeightMap: {instanceID: 0}
+  - _LandMask: {instanceID: 0}
+  - _Gradient: {instanceID: 0}
+  - _CloudsTop: {instanceID: 0}
+  - _CloudsMiddle: {instanceID: 0}
+  - _texcoord: {instanceID: 0}
+  - unity_Lightmaps: {instanceID: 0}
+  - unity_LightmapsInd: {instanceID: 0}
+  - unity_ShadowMasks: {instanceID: 0}
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
