@@ -18,7 +18,7 @@ public static class GameSettings
     //Need to add -- to this variable when planet is saved
     public static int PlanetDanger = 0;
 
-    //Global Array that will be populated with the variety of planet prefabs in the resources folder
+    //Global Array that will be populated with the variety of planet prefabs in the resources folder. This is loaded in PlanetTextureGenerator.cs
     public static GameObject[] planetPrefabs;
 
     //Volume from 0 to .8 for the sound effects
