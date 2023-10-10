@@ -33,7 +33,7 @@ public class PlanetRotation : MonoBehaviour
             float mouseY = Input.GetAxis("Mouse Y") * sensitivityY;
 
             player.Rotate(Vector3.up * mouseX);
-            player.Rotate(Vector3.left * mouseY);
+            player.Rotate(Vector3.down * mouseY);
 
             rotationX -= mouseY;
             rotationY -= mouseX;
