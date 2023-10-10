@@ -33,17 +33,18 @@ public class PlanetRotation : MonoBehaviour
             float mouseY = Input.GetAxis("Mouse Y") * sensitivityY;
 
             player.Rotate(Vector3.up * mouseX);
-            player.Rotate(Vector3.down * mouseY);
+            player.Rotate(Vector3.left * mouseY);
 
             rotationX -= mouseY;
             rotationY -= mouseX;
 
             rotationX = Mathf.Clamp(rotationX, 70f, 90f);
+            rotationY = Mathf.Clamp(rotationY, -70f, 90f);
 
             Camera.main.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         }
 
-        // Check for pause input (e.g., you can use the "Escape" key)
+        // Check for pause input
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             isGamePaused = !isGamePaused; // Toggle pause state
