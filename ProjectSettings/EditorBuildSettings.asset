@@ -16,7 +16,7 @@ EditorBuildSettings:
     guid: 23d42cd4553f5b742b7810e89f06b771
   - enabled: 1
     path: Assets/Scenes/Planet.unity
-    guid: 3197ebe40f7f6f94ba39a5ff02d59b49
+    guid: b2cf1135699212b49baf9d93bf757fba
   - enabled: 1
     path: Assets/Scenes/Game End.unity
     guid: ac3bf1db81269e04fae298e8dd8c8904

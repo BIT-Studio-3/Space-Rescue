@@ -121,6 +121,31 @@ We extend our heartfelt gratitude to our dedicated team members and mentors who 
 - Player Model: [3D Model Astronaut](https://www.turbosquid.com/3d-models/3d-model-astronaut-1813269)
 - Animals: [Quirky Series](https://assetstore.unity.com/packages/3d/characters/animals/quirky-series-free-animals-pack-178235)
 - Black hole icon: [Black hole icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/black-hole)
+- Planet visuals: [Planets](https://assetstore.unity.com/packages/3d/environments/sci-fi/planets-26903)
 
 
-<!-- Add music credits when available -->
+### Music
+
+"New Direction" Kevin MacLeod (incompetech.com)  
+Licensed under Creative Commons: By Attribution 4.0 License  
+http://creativecommons.org/licenses/by/4.0/
+
+"Phantom from Space" Kevin MacLeod (incompetech.com)  
+Licensed under Creative Commons: By Attribution 4.0 License  
+http://creativecommons.org/licenses/by/4.0/
+
+"Jellyfish in Space" Kevin MacLeod (incompetech.com)  
+Licensed under Creative Commons: By Attribution 4.0 License   
+http://creativecommons.org/licenses/by/4.0/
+
+"Space 1990" Kevin MacLeod (incompetech.com)   
+Licensed under Creative Commons: By Attribution 4.0 License   
+http://creativecommons.org/licenses/by/4.0/
+
+### Sound Effects
+
+- https://assetstore.unity.com/packages/audio/sound-fx/sci-fi-small-sound-pack-262068
+- https://assetstore.unity.com/packages/audio/sound-fx/free-casual-soundfx-pack-164843
+- [Main Menu Click](https://pixabay.com/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=124464) by UNIVERSFIELD from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=124464)
+- [Landing](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=105883) from [Pixabay](https://pixabay.com)
+- [Take off](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=85216) from [Pixabay](https://pixabay.com)

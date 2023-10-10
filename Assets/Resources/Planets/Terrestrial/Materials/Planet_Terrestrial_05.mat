@@ -1,0 +1,208 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Planet_Terrestrial_05
+  m_Shader: {fileID: 4800000, guid: 895199829d3d5554d98e97c54c7be6b6, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CityLightMap:
+        m_Texture: {fileID: 2800000, guid: 8593b4284c28d3c4b9e513a660f9a25e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CityLightMaskMap:
+        m_Texture: {fileID: 2800000, guid: 5439aa3fab957804e8e6dcbfe9673565, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CityLightUVMap:
+        m_Texture: {fileID: 2800000, guid: dc0dd71494dd9be4eaea94bd77403c6b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudsMiddle:
+        m_Texture: {fileID: 2800000, guid: 91c73062559ff1745907c91f6aa95327, type: 3}
+        m_Scale: {x: 2, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudsTop:
+        m_Texture: {fileID: 2800000, guid: 0ffd9795af9fe2841bcaafc084343e75, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Gradient:
+        m_Texture: {fileID: 2800000, guid: 20fb3fab602c05c44a31867aee0cfe1d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMap:
+        m_Texture: {fileID: 2800000, guid: 703ad1f54530b494fa59331d8940d70d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LandMask:
+        m_Texture: {fileID: 2800000, guid: 855697aa395d2b349bbb352fa35dd423, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: f99c657009446504d8dcb50eae8398b4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OceanMask:
+        m_Texture: {fileID: 2800000, guid: 1744fab73973e9347836cd337c5a59d6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ScatterMap:
+        m_Texture: {fileID: 2800000, guid: 60a52cb5d6d63394c80627589e692c6a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: 855697aa395d2b349bbb352fa35dd423, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaCutoff: 0.5
+    - _BumpScale: 1
+    - _CityLightPopulation: 0.63
+    - _CloudShadows: 0.086
+    - _CloudsBlendWeight: 0.485
+    - _CloudsBoost: 1
+    - _CloudsHeight: 0.02
+    - _CloudsMiddleSpeed: 0.0008
+    - _CloudsOutput: 1
+    - _CloudsSmoothnessLerp: 1
+    - _CloudsSpecularLerp: 1
+    - _CloudsTopSpeed: -0.0023
+    - _Cutoff: 0.5
+    - _DesertCoverage: 0.055
+    - _DesertFactors: 10.2
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EnvironmentReflections: 1
+    - _Float0: 0.005
+    - _FrenselLandMult: 2.33
+    - _FresnelLandPower: 7.4
+    - _FresnelNormalScale: 0
+    - _FresnelWaterMult: 0.83
+    - _FresnelWaterPower: 6.4
+    - _GlobalBoost: 2.34
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HeightTiling: 4
+    - _LandSmoothness: 1
+    - _LandSpecular: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _MountainCoverage: 0.1
+    - _MountainFactors: 50
+    - _NormalFresnelScale: 1
+    - _NormalScale: 0.63
+    - _NormalTiling: 2
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _QueueControl: -1
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _ScatterBoost: 1
+    - _ScatterCenterShift: 0
+    - _ScatterIndirect: 1
+    - _ScatterStretch: 1
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _VegetationCoverage: 0.064
+    - _VegetationFactors: 11.71
+    - _WaterDetailBoost: 6.48
+    - _WaterDetailFactor: 0.76
+    - _WaterShoreFactor: 0.15
+    - _WaterSmoothness: 0.503
+    - _WaterSpecular: 1
+    - _ZWrite: 1
+    - __dirty: 0
+    m_Colors:
+    - _BaseColor: {r: 0.6102941, g: 0.79036516, b: 1, a: 0}
+    - _CityLightColor: {r: 0.9411765, g: 0.84190416, b: 0.66435987, a: 0}
+    - _CloudsTint: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DesertColor: {r: 0.88235295, g: 0.7778463, b: 0.59039795, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FresnelLandColor: {r: 0.47794116, g: 0.46315697, b: 0.2635705, a: 1}
+    - _FresnelWaterColor: {r: 0.5955882, g: 0.4958, b: 0.47296712, a: 1}
+    - _MountainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ScatterColor: {r: 1, g: 1, b: 1, a: 0}
+    - _VegetationColor: {r: 0.44852942, g: 0.44852942, b: 0.44852942, a: 1}
+    - _WaterDeepColor: {r: 0.27205884, g: 0.24281113, b: 0.2320502, a: 0}
+    - _WaterShallowColor: {r: 0.19831318, g: 0.33019632, b: 0.9632353, a: 0}
+    - _WaterShoreColor: {r: 0.30882353, g: 0.24524221, b: 0.30706957, a: 0}
+    - _WaterSpecularColor: {r: 0.51139194, g: 0.6415094, b: 0.5499875, a: 1}
+  m_BuildTextureStacks: []

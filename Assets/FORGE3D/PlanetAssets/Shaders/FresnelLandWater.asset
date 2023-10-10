@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: FresnelLandWater
+  m_EditorClassIdentifier: 
+  m_functionInfo: "// Made with Amplify Shader Editor\n// Available at the Unity
+    Asset Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=18935\n1920;0;1920;1179;864.1467;639.5074;1;True;False\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;18;671.3989,-364.2993;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.RangedFloatNode;7;338.6997,-273.0999;Float;False;Property;_FrenselLandMult;Frensel
+    Land Mult;2;0;Create;True;0;0;0;False;0;False;0;0;0;10;0;1;FLOAT;0\nNode;AmplifyShaderEditor.SaturateNode;23;501.7079,-360.8376;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.ViewDirInputsCoordNode;13;-926.8989,-468.8998;Float;False;Tangent;False;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3\nNode;AmplifyShaderEditor.NormalizeNode;5;-922.8989,-279.8999;Inherit;False;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.SaturateNode;15;-394.8998,-377.0999;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;35;1582.853,-10.00735;Inherit;False;2;2;0;FLOAT3;0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0\nNode;AmplifyShaderEditor.SaturateNode;36;1733.853,-80.00735;Inherit;False;1;0;COLOR;0,0,0,0;False;1;COLOR;0\nNode;AmplifyShaderEditor.RangedFloatNode;29;341.9701,133.3097;Float;False;Property;_FresnelWaterMult;Fresnel
+    Water Mult;5;0;Create;True;0;0;0;False;0;False;0;0;0;10;0;1;FLOAT;0\nNode;AmplifyShaderEditor.PowerNode;17;342.0995,-374.5998;Inherit;False;False;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;20;914.0987,-208.6001;Inherit;False;2;2;0;FLOAT;0;False;1;COLOR;0,0,0,0;False;1;COLOR;0\nNode;AmplifyShaderEditor.LightColorNode;34;1255.241,-199.6269;Inherit;False;0;3;COLOR;0;FLOAT3;1;FLOAT;2\nNode;AmplifyShaderEditor.DotProductOpNode;14;-697.8994,-383.8998;Inherit;False;2;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;26;917.3687,197.8094;Inherit;False;2;2;0;FLOAT;0;False;1;COLOR;0,0,0,0;False;1;COLOR;0\nNode;AmplifyShaderEditor.ColorNode;30;556.4688,220.7093;Float;False;Property;_FresnelWaterColor;Fresnel
+    Water Color;3;0;Create;True;0;0;0;False;0;False;0.4558824,0.4558824,0.4558824,1;0.4558824,0.4558824,0.4558824,1;False;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;28;674.6689,42.11018;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SaturateNode;27;504.9777,45.57187;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;24;896.0065,55.16177;Inherit;False;LandWater
+    Mask;1;0;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.OneMinusNode;16;-560.8995,-377.8998;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.RangedFloatNode;8;22.29985,-254.8;Float;False;Property;_FresnelLandPower;Fresnel
+    Land Power;1;0;Create;True;0;0;0;False;0;False;0.003;0;0.003;25;0;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;22;-1247.901,-410.8998;Inherit;False;Normal;3;1;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.RangedFloatNode;31;25.57071,151.6096;Float;False;Property;_FresnelWaterPower;Fresnel
+    Water Power;4;0;Create;True;0;0;0;False;0;False;0.003;0;0.003;25;0;1;FLOAT;0\nNode;AmplifyShaderEditor.LerpOp;32;1192.013,12.26105;Inherit;False;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0\nNode;AmplifyShaderEditor.ColorNode;9;553.199,-185.7002;Float;False;Property;_FresnelLandColor;Fresnel
+    Land Color;0;0;Create;True;0;0;0;False;0;False;0.4558824,0.4558824,0.4558824,1;0.4558824,0.4558824,0.4558824,1;False;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4\nNode;AmplifyShaderEditor.PowerNode;25;345.3699,31.80969;Inherit;False;False;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMaxOpNode;37;-178.1467,-330.5074;Inherit;False;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionOutput;0;1973.501,-77;Inherit;False;True;-1;Output;0;False;1;0;COLOR;0,0,0,0;False;1;COLOR;0\nWireConnection;18;0;23;0\nWireConnection;18;1;7;0\nWireConnection;23;0;17;0\nWireConnection;5;0;22;0\nWireConnection;15;0;16;0\nWireConnection;35;0;34;1\nWireConnection;35;1;32;0\nWireConnection;36;0;35;0\nWireConnection;17;0;37;0\nWireConnection;17;1;8;0\nWireConnection;20;0;18;0\nWireConnection;20;1;9;0\nWireConnection;14;0;13;0\nWireConnection;14;1;5;0\nWireConnection;26;0;28;0\nWireConnection;26;1;30;0\nWireConnection;28;0;27;0\nWireConnection;28;1;29;0\nWireConnection;27;0;25;0\nWireConnection;16;0;14;0\nWireConnection;32;0;20;0\nWireConnection;32;1;26;0\nWireConnection;32;2;24;0\nWireConnection;25;0;37;0\nWireConnection;25;1;31;0\nWireConnection;37;1;15;0\nWireConnection;0;0;36;0\nASEEND*/\n//CHKSM=BC69223E1EA17F303102C02D976AC8F3BD730EB0"
+  m_functionName: 
+  m_description: 
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 0
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_customEdited: 0
+    m_additionalDirectives: []
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesIndex: -1
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems: []
+  m_nodeCategory: 3
+  m_customNodeCategory: 
+  m_previewPosition: 0
+  m_hidden: 0
+  m_url: 

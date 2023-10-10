@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class HudBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static HudBehaviour instance;
+    public static HudBehaviour Instance;
     public GameObject planetStatus,
         objectName,
         distFromPlayer,
@@ -19,7 +19,7 @@ public class HudBehaviour : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
+        Instance = this;
         HideInfoPanel();
     }
 

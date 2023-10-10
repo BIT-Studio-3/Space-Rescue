@@ -14,6 +14,8 @@ public class GameEndManager : MonoBehaviour
     //Game objects for saved numbers and the text above it
     public GameObject savedTextGO; //Animals saved
     public GameObject statusTextGO; //Win or lose status
+    private AudioSource audioSource;
+    public AudioClip menuHover;
 
     void Start()
     {
@@ -23,6 +25,7 @@ public class GameEndManager : MonoBehaviour
         //Enable cursor
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        audioSource = GetComponent<AudioSource>();
         // if (GameSettings.Tutorial)
         //     GameObject.Find("Restart").GetComponent<Text>().text = "Continue";
     }
@@ -74,5 +77,14 @@ public class GameEndManager : MonoBehaviour
         GameSettings.Tutorial = false;
         PlanetStates.Instance.ResetPlanets();
         SceneManager.LoadScene("Title Screen");
+    }
+
+    public void PlayHoverSound(Button button)
+    {
+        if (button.interactable) //This makes sure the button isn't already selected
+        {
+            audioSource.Stop();
+            SoundEffectsSetting.SoundMenuSetting(audioSource, menuHover);
+        }
     }
 }
