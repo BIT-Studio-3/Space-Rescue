@@ -8,8 +8,8 @@ public class PlanetTextureGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(GameSettings.planetPrefabs.Length == 0)
-                GameSettings.planetPrefabs = Resources.LoadAll<GameObject>("Planets"); //Loading all planets into the global array
+        if (GameSettings.planetPrefabs.Length == 0)
+            GameSettings.planetPrefabs = Resources.LoadAll<GameObject>("Planets"); //Loading all planets into the global array
 
         GenerateTexture();
     }
