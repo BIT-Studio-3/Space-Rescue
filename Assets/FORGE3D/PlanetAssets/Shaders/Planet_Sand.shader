@@ -221,7 +221,7 @@ Shader "FORGE3D/Planets HD/Sand"
 			#define _NORMAL_DROPOFF_TS 1
 			#pragma multi_compile_instancing
 			#pragma instancing_options renderinglayer
-			#pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+			//#pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
 			#define _NORMALMAP 1
@@ -250,7 +250,7 @@ Shader "FORGE3D/Planets HD/Sand"
 			#pragma multi_compile _ LIGHTMAP_ON
 			#pragma multi_compile _ DYNAMICLIGHTMAP_ON
 			#pragma multi_compile_fragment _ DEBUG_DISPLAY
-			#pragma multi_compile_fragment _ _WRITE_RENDERING_LAYERS
+			//#pragma multi_compile_fragment _ _WRITE_RENDERING_LAYERS
 
 			#pragma vertex vert
 			#pragma fragment frag
@@ -268,9 +268,9 @@ Shader "FORGE3D/Planets HD/Sand"
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DBuffer.hlsl"
 			#include "Packages/com.unity.render-pipelines.universal/Editor/ShaderGraph/Includes/ShaderPass.hlsl"
 
-			#if defined(LOD_FADE_CROSSFADE)
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/LODCrossFade.hlsl"
-            #endif
+			// #if defined(LOD_FADE_CROSSFADE)
+            // #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/LODCrossFade.hlsl"
+            // #endif
 
 			#if defined(UNITY_INSTANCING_ENABLED) && defined(_TERRAIN_INSTANCED_PERPIXEL_NORMAL)
 				#define ENABLE_TERRAIN_PERPIXEL_NORMAL
@@ -971,7 +971,7 @@ Shader "FORGE3D/Planets HD/Sand"
 			#define _SPECULAR_SETUP 1
 			#define _NORMAL_DROPOFF_TS 1
 			#pragma multi_compile_instancing
-			#pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+			//#pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
 			#define ASE_FOG 1
 			#define _NORMALMAP 1
 			#define ASE_SRP_VERSION 140008
@@ -993,9 +993,9 @@ Shader "FORGE3D/Planets HD/Sand"
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/ShaderGraphFunctions.hlsl"
 			#include "Packages/com.unity.render-pipelines.universal/Editor/ShaderGraph/Includes/ShaderPass.hlsl"
 
-			#if defined(LOD_FADE_CROSSFADE)
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/LODCrossFade.hlsl"
-            #endif
+			// #if defined(LOD_FADE_CROSSFADE)
+            // #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/LODCrossFade.hlsl"
+            // #endif
 
 			
 
@@ -1319,7 +1319,7 @@ Shader "FORGE3D/Planets HD/Sand"
 			#define _SPECULAR_SETUP 1
 			#define _NORMAL_DROPOFF_TS 1
 			#pragma multi_compile_instancing
-			#pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+			//#pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
 			#define ASE_FOG 1
 			#define _NORMALMAP 1
 			#define ASE_SRP_VERSION 140008
@@ -1339,9 +1339,9 @@ Shader "FORGE3D/Planets HD/Sand"
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/ShaderGraphFunctions.hlsl"
 			#include "Packages/com.unity.render-pipelines.universal/Editor/ShaderGraph/Includes/ShaderPass.hlsl"
 			
-			#if defined(LOD_FADE_CROSSFADE)
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/LODCrossFade.hlsl"
-            #endif
+			// #if defined(LOD_FADE_CROSSFADE)
+            // #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/LODCrossFade.hlsl"
+            // #endif
 
 			
 
@@ -2530,7 +2530,7 @@ Shader "FORGE3D/Planets HD/Sand"
 			#define _SPECULAR_SETUP 1
 			#define _NORMAL_DROPOFF_TS 1
 			#pragma multi_compile_instancing
-			#pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+			//#pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
 			#define ASE_FOG 1
 			#define _NORMALMAP 1
 			#define ASE_SRP_VERSION 140008
@@ -2539,7 +2539,7 @@ Shader "FORGE3D/Planets HD/Sand"
 			#pragma vertex vert
 			#pragma fragment frag
 
-			#pragma multi_compile_fragment _ _WRITE_RENDERING_LAYERS
+			//#pragma multi_compile_fragment _ _WRITE_RENDERING_LAYERS
 
 			#define SHADERPASS SHADERPASS_DEPTHNORMALSONLY
 
@@ -2552,9 +2552,9 @@ Shader "FORGE3D/Planets HD/Sand"
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/ShaderGraphFunctions.hlsl"
 			#include "Packages/com.unity.render-pipelines.universal/Editor/ShaderGraph/Includes/ShaderPass.hlsl"
 
-			#if defined(LOD_FADE_CROSSFADE)
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/LODCrossFade.hlsl"
-            #endif
+			// #if defined(LOD_FADE_CROSSFADE)
+            // #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/LODCrossFade.hlsl"
+            // #endif
 
 			#define ASE_NEEDS_FRAG_WORLD_POSITION
 			#define ASE_NEEDS_FRAG_WORLD_NORMAL
@@ -2923,7 +2923,7 @@ Shader "FORGE3D/Planets HD/Sand"
 			#define _NORMAL_DROPOFF_TS 1
 			#pragma multi_compile_instancing
 			#pragma instancing_options renderinglayer
-			#pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+			//#pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
 			#define _NORMALMAP 1
@@ -2947,7 +2947,7 @@ Shader "FORGE3D/Planets HD/Sand"
 			#pragma multi_compile _ LIGHTMAP_ON
 			#pragma multi_compile _ DYNAMICLIGHTMAP_ON
 			#pragma multi_compile_fragment _ _GBUFFER_NORMALS_OCT
-			#pragma multi_compile_fragment _ _WRITE_RENDERING_LAYERS
+			//#pragma multi_compile_fragment _ _WRITE_RENDERING_LAYERS
 
 			#pragma vertex vert
 			#pragma fragment frag
@@ -2965,9 +2965,9 @@ Shader "FORGE3D/Planets HD/Sand"
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DBuffer.hlsl"
 			#include "Packages/com.unity.render-pipelines.universal/Editor/ShaderGraph/Includes/ShaderPass.hlsl"
 
-			#if defined(LOD_FADE_CROSSFADE)
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/LODCrossFade.hlsl"
-            #endif
+			// #if defined(LOD_FADE_CROSSFADE)
+            // #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/LODCrossFade.hlsl"
+            // #endif
 			
 			#if defined(UNITY_INSTANCING_ENABLED) && defined(_TERRAIN_INSTANCED_PERPIXEL_NORMAL)
 				#define ENABLE_TERRAIN_PERPIXEL_NORMAL
