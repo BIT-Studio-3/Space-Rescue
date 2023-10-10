@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03257911, g: 0.004022466, b: 0.04088818, a: 1}
+  m_IndirectSpecularColor: {r: 0.032488257, g: 0.004014846, b: 0.040772725, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2190,6 +2190,10 @@ PrefabInstance:
       propertyPath: attractor
       value: 
       objectReference: {fileID: 1736528026}
+    - target: {fileID: 2436886062122212702, guid: f662ff3b072ce5d4f915c0407999f4c5, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3247349489904952341, guid: f662ff3b072ce5d4f915c0407999f4c5, type: 3}
       propertyPath: m_Name
       value: Astronaut

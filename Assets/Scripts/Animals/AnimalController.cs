@@ -66,8 +66,10 @@ public class AnimalController : MonoBehaviour
 
             Destroy(gameObject);
         }
+  
         if (attacking && Vector3.Distance(transform.position, pos) < 2) //This will now kick you out of the planet if you get caught. I want to make this more interesting in the future but it works for the moment
         {
+
             PlanetManager.Instance.Death();
         }
         Movement();
