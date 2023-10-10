@@ -47,7 +47,6 @@ public class PlanetRotation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             isGamePaused = !isGamePaused; // Toggle pause state
-            // You can also do additional pause-related actions here, such as showing/hiding menus, freezing time, etc.
         }
 
     }
