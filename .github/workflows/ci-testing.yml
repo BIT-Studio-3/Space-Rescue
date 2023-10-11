@@ -6,9 +6,9 @@ on:
 
 jobs:
   TestAllModes:
-  name: Testing ${{ matrix.testMode }}
-  runs-on: ubuntu-latest
-      strategy:
+    name: Testing ${{ matrix.testMode }}
+    runs-on: ubuntu-latest
+    strategy:
       fail-fast: false
       matrix:
         projectPath:
