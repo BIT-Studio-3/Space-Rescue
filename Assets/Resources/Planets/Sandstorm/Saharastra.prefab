@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33947215911939658}
   - component: {fileID: 23873147175788398}
   m_Layer: 0
-  m_Name: Planet_Sand_04
+  m_Name: Saharastra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
