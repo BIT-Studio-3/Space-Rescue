@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,7 +33,7 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
 
 
     //public SpawningManager spawningManager;
-    public static PlanetAnimalCountTEMP	Instance;
+    public static PlanetAnimalCountTEMP Instance;
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +75,7 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
 
     public void SpawnUIAnimal(GameObject type)
     {
-        GameObject uiAnimal = Instantiate(type, new Vector3(panels[collectedAnimals.Count].transform.position.x + 10, panels[collectedAnimals.Count].transform.position.y - 30, panels[collectedAnimals.Count].transform.position.z + 6), Quaternion.Euler(0,180,0), panels[0].transform);
+        GameObject uiAnimal = Instantiate(type, new Vector3(panels[collectedAnimals.Count].transform.position.x + 10, panels[collectedAnimals.Count].transform.position.y - 30, panels[collectedAnimals.Count].transform.position.z + 6), Quaternion.Euler(0, 180, 0), panels[0].transform);
         collectedAnimals.Add(uiAnimal);
         uiAnimal.layer = 5;
         GameObject model = uiAnimal.transform.Find("Model").gameObject;
