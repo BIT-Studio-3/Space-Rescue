@@ -102,17 +102,11 @@ Some of the most important changes for each update are as follows:
 | v1.7.0    | 15/08/2023   | Planet orbit improved, more HUD improvements, new pause screen, planet gameplay rework  |
 | v1.8.0    | 29/08/2023   | New End Screen Menu, animal behaviour improvements, wider variety of planet textures |
 | v1.9.0    | 12/09/2023   | Boost speed increased, on planet UI, new planet scanning info |
+| v1.10.0   | 10/10/2023   | Expanded planet visuals, correct visuals in planet exploration, music and sound effects, new in planet models, improved planet info panel |
 
 ## Roadmap
 
 Upcoming features can be seen in the [issues page](https://github.com/BIT-Studio-3/Space-Rescue/issues).
-
-Some of the features currently on the roadmap are:
-- Further improvements to on planet gameplay
-- Improved new player experience
-- Diverse models for on-planet gameplay
-- Expansive range of planets and animals
-- Quality settings, music, and sound effects
 
 ## Acknowledgements
 
@@ -124,8 +118,11 @@ We extend our heartfelt gratitude to our dedicated team members and mentors who 
 - Ship model: [Oxar Light Freighter](https://assetstore.unity.com/packages/3d/vehicles/space/oxar-light-freighter-82240)
 - Planet lander model: [Mars Pod](https://assetstore.unity.com/packages/3d/vehicles/space/mars-pod-121710)
 - HUD Elements: [Off Screen Target Indicator](https://assetstore.unity.com/packages/tools/gui/off-screen-target-indicator-71799)
-- Planet visuals: [Planets](https://assetstore.unity.com/packages/3d/environments/sci-fi/planets-26903)
+- Player Model: [3D Model Astronaut](https://www.turbosquid.com/3d-models/3d-model-astronaut-1813269)
+- Animals: [Quirky Series](https://assetstore.unity.com/packages/3d/characters/animals/quirky-series-free-animals-pack-178235)
 - Black hole icon: [Black hole icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/black-hole)
+- Planet visuals: [Planets](https://assetstore.unity.com/packages/3d/environments/sci-fi/planets-26903)
+
 
 ### Music
 
@@ -150,6 +147,5 @@ http://creativecommons.org/licenses/by/4.0/
 - https://assetstore.unity.com/packages/audio/sound-fx/sci-fi-small-sound-pack-262068
 - https://assetstore.unity.com/packages/audio/sound-fx/free-casual-soundfx-pack-164843
 - [Main Menu Click](https://pixabay.com/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=124464) by UNIVERSFIELD from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=124464)
-- [Landing](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=105883) from Pixabay
-- [Take off](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=85216) from Pixabay
-- [Charging](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=81968) rom Pixabay
+- [Landing](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=105883) from [Pixabay](https://pixabay.com)
+- [Take off](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=85216) from [Pixabay](https://pixabay.com)

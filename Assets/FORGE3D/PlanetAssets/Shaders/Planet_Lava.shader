@@ -264,7 +264,7 @@ Shader "FORGE3D/Planets HD/Lava"
 			#pragma multi_compile _ LIGHTMAP_ON
 			#pragma multi_compile _ DYNAMICLIGHTMAP_ON
 			#pragma multi_compile_fragment _ DEBUG_DISPLAY
-			#pragma multi_compile_fragment _ _WRITE_RENDERING_LAYERS
+			//#pragma multi_compile_fragment _ _WRITE_RENDERING_LAYERS
 
 			#pragma vertex vert
 			#pragma fragment frag
@@ -995,7 +995,8 @@ Shader "FORGE3D/Planets HD/Lava"
 					SUM_LIGHT_TRANSMISSION( GetMainLight( inputData.shadowCoord ) );
 
 					#if defined(_ADDITIONAL_LIGHTS)
-						uint meshRenderingLayers = GetMeshRenderingLayer();
+						MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+						int renderingLayers = meshRenderer.renderingLayerMask.value;
 						uint pixelLightCount = GetAdditionalLightsCount();
 						#if USE_FORWARD_PLUS
 							for (uint lightIndex = 0; lightIndex < min(URP_FP_DIRECTIONAL_LIGHTS_COUNT, MAX_VISIBLE_LIGHTS); lightIndex++)
@@ -1044,7 +1045,8 @@ Shader "FORGE3D/Planets HD/Lava"
 					SUM_LIGHT_TRANSLUCENCY( GetMainLight( inputData.shadowCoord ) );
 
 					#if defined(_ADDITIONAL_LIGHTS)
-						uint meshRenderingLayers = GetMeshRenderingLayer();
+                                        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+					int renderingLayers = meshRenderer.renderingLayerMask.value;
 						uint pixelLightCount = GetAdditionalLightsCount();
 						#if USE_FORWARD_PLUS
 							for (uint lightIndex = 0; lightIndex < min(URP_FP_DIRECTIONAL_LIGHTS_COUNT, MAX_VISIBLE_LIGHTS); lightIndex++)
@@ -2560,7 +2562,7 @@ Shader "FORGE3D/Planets HD/Lava"
 			#pragma vertex vert
 			#pragma fragment frag
 
-			#pragma multi_compile_fragment _ _WRITE_RENDERING_LAYERS
+			//#pragma multi_compile_fragment _ _WRITE_RENDERING_LAYERS
 
 			#define SHADERPASS SHADERPASS_DEPTHNORMALSONLY
 

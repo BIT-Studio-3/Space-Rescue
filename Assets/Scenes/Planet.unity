@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03257911, g: 0.004022466, b: 0.04088818, a: 1}
+  m_IndirectSpecularColor: {r: 0.032488257, g: 0.004014846, b: 0.040772725, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &15328479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3247349489904952341, guid: f662ff3b072ce5d4f915c0407999f4c5, type: 3}
+  m_PrefabInstance: {fileID: 1066328610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &105569682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,6 +1460,11 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!4 &794170123 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7145471160980768938, guid: f662ff3b072ce5d4f915c0407999f4c5, type: 3}
+  m_PrefabInstance: {fileID: 1066328610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &827230694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,15 +1885,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d35d1ca9d534874b8d2cb6390bd2a36, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.01
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d35d1ca9d534874b8d2cb6390bd2a36, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.01
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d35d1ca9d534874b8d2cb6390bd2a36, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.01
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d35d1ca9d534874b8d2cb6390bd2a36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2176,6 +2186,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1058196546}
     m_Modifications:
+    - target: {fileID: 2432193285936331991, guid: f662ff3b072ce5d4f915c0407999f4c5, type: 3}
+      propertyPath: attractor
+      value: 
+      objectReference: {fileID: 1736528026}
+    - target: {fileID: 2436886062122212702, guid: f662ff3b072ce5d4f915c0407999f4c5, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3247349489904952341, guid: f662ff3b072ce5d4f915c0407999f4c5, type: 3}
       propertyPath: m_Name
       value: Astronaut
@@ -2248,6 +2266,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7895209669380099377, guid: f662ff3b072ce5d4f915c0407999f4c5, type: 3}
   m_PrefabInstance: {fileID: 1066328610}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1066328616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15328479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77bad9317bb548c439719211a5fc97f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 794170123}
+  sensitivityX: 2
+  sensitivityY: 2
+  movementSpeed: 5
 --- !u!1 &1079402224
 GameObject:
   m_ObjectHideFlags: 0

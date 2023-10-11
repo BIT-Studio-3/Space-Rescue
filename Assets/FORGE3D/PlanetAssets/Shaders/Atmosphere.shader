@@ -189,7 +189,7 @@ Shader "FORGE3D/Planets/Atmosphere"
 			#pragma multi_compile_fragment _ _DBUFFER_MRT1 _DBUFFER_MRT2 _DBUFFER_MRT3
         	#pragma multi_compile_fragment _ DEBUG_DISPLAY
         	#pragma multi_compile_fragment _ _SCREEN_SPACE_OCCLUSION
-        	#pragma multi_compile_fragment _ _WRITE_RENDERING_LAYERS
+        	//#pragma multi_compile_fragment _ _WRITE_RENDERING_LAYERS
 
 			#pragma vertex vert
 			#pragma fragment frag
@@ -1170,7 +1170,7 @@ Shader "FORGE3D/Planets/Atmosphere"
 			#pragma vertex vert
 			#pragma fragment frag
 
-			#pragma multi_compile_fragment _ _WRITE_RENDERING_LAYERS
+			//#pragma multi_compile_fragment _ _WRITE_RENDERING_LAYERS
         	#pragma multi_compile_fragment _ _GBUFFER_NORMALS_OCT
 
 			#define ATTRIBUTES_NEED_NORMAL
