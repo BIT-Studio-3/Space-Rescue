@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33570141832200252}
   - component: {fileID: 23974946874403536}
   m_Layer: 0
-  m_Name: Moon_03
+  m_Name: Phobion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

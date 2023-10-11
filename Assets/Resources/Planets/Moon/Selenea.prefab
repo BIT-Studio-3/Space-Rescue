@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33926459161997576}
   - component: {fileID: 23179052624462808}
   m_Layer: 0
-  m_Name: Moon_02
+  m_Name: Selenea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
