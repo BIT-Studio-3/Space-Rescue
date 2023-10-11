@@ -2,7 +2,7 @@ name: Run Tests
 
 on:
   push:
-    branches-ignore: [master, main]
+    branches: [staging, ci-automated-tests]
 
 jobs:
   TestAllModes:
