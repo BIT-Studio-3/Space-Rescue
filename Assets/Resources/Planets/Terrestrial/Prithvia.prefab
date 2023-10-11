@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33621264829875060}
   - component: {fileID: 23228518158901730}
   m_Layer: 0
-  m_Name: Planet_Terrestrial_04
+  m_Name: Prithvia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
