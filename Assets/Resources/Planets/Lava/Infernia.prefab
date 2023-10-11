@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33008333054737044}
   - component: {fileID: 23870514248108600}
   m_Layer: 0
-  m_Name: Planet_Lava_02
+  m_Name: Infernia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
