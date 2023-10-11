@@ -13,6 +13,7 @@ public class ShipMovement : MonoBehaviour
     float mouseInputX;
     float mouseInputY;
     float tiltInput;
+    public float mouseSensitivity = 0.3f;
 
     //speed
     float speedMult = 1;
@@ -59,8 +60,8 @@ public class ShipMovement : MonoBehaviour
         horizontalMove = Input.GetAxis("Horizontal");
         tiltInput = Input.GetAxis("Roll");
 
-        mouseInputX = Input.GetAxis("Mouse X");
-        mouseInputY = Input.GetAxis("Mouse Y");
+        mouseInputX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        mouseInputY = Input.GetAxis("Mouse Y") * mouseSensitivity;
                 
         if(Input.GetKey(Keybinds.Boost)) //If boosting
         {
