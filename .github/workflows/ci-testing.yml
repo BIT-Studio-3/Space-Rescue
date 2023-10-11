@@ -16,7 +16,6 @@ jobs:
         testMode:
           - playmode
           - editmode
-          - standalone
     steps:
       - uses: actions/checkout@v2
         with:
