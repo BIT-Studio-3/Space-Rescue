@@ -1,7 +1,7 @@
 ﻿// Description: This script is used to manage the planet scene. It is also used to reset the ships boost when the player leaves the planet scene and deposit the animals into the score.
 // Author: Palin Wiseman
-// Last Updated: 10/08/2023
-// Last Updated By: Palin Wiseman
+// Last Updated: 08/10/2023
+// Last Updated By: Chase Bennett-Hill
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -116,7 +116,29 @@ public class PlanetManager : MonoBehaviour
 
     public void LeavePlanet()
     {
+        //Gets all game objects with the name MenuClickSound, iterates through them, and deletes any ones with sfx manager script isSettings = true.
+        GameObject[] menuClickSounds = GameObject.FindGameObjectsWithTag("MenuClickSound");
+        foreach (GameObject menuClickSound in menuClickSounds)
+        {
+            if (menuClickSound.GetComponent<SFXManager>().isPlanet)
+            {
+                Destroy(menuClickSound);
+            }
+        }
         ShipMovement.Instance.ResetBoost(); //This resets the ships boost before it goes back to the main scene
+
         GameMenuManager.Instance.ReturntoScene("More Planet Info");
+
+    }
+
+    private IEnumerator PlayerDeath()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Death();
+        yield return new WaitForSeconds(1.5f);
+        LeavePlanet();
+    }
+    public void Death()
+    {
+        StartCoroutine(PlayerDeath());
     }
 }

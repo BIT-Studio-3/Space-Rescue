@@ -124,5 +124,32 @@ We extend our heartfelt gratitude to our dedicated team members and mentors who 
 - Ship model: [Oxar Light Freighter](https://assetstore.unity.com/packages/3d/vehicles/space/oxar-light-freighter-82240)
 - Planet lander model: [Mars Pod](https://assetstore.unity.com/packages/3d/vehicles/space/mars-pod-121710)
 - HUD Elements: [Off Screen Target Indicator](https://assetstore.unity.com/packages/tools/gui/off-screen-target-indicator-71799)
+- Planet visuals: [Planets](https://assetstore.unity.com/packages/3d/environments/sci-fi/planets-26903)
+- Black hole icon: [Black hole icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/black-hole)
 
-<!-- Add music credits and license information when available -->
+### Music
+
+"New Direction" Kevin MacLeod (incompetech.com)  
+Licensed under Creative Commons: By Attribution 4.0 License  
+http://creativecommons.org/licenses/by/4.0/
+
+"Phantom from Space" Kevin MacLeod (incompetech.com)  
+Licensed under Creative Commons: By Attribution 4.0 License  
+http://creativecommons.org/licenses/by/4.0/
+
+"Jellyfish in Space" Kevin MacLeod (incompetech.com)  
+Licensed under Creative Commons: By Attribution 4.0 License   
+http://creativecommons.org/licenses/by/4.0/
+
+"Space 1990" Kevin MacLeod (incompetech.com)   
+Licensed under Creative Commons: By Attribution 4.0 License   
+http://creativecommons.org/licenses/by/4.0/
+
+### Sound Effects
+
+- https://assetstore.unity.com/packages/audio/sound-fx/sci-fi-small-sound-pack-262068
+- https://assetstore.unity.com/packages/audio/sound-fx/free-casual-soundfx-pack-164843
+- [Main Menu Click](https://pixabay.com/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=124464) by UNIVERSFIELD from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=124464)
+- [Landing](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=105883) from Pixabay
+- [Take off](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=85216) from Pixabay
+- [Charging](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=81968) rom Pixabay

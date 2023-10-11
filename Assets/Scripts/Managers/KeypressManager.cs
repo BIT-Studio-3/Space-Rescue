@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -25,11 +25,11 @@ public class KeypressManager : MonoBehaviour
         {
             Time.timeScale = 1;
             if (GameSettings.Tutorial)
-            {         
-                if (GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Escaping" || GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Complete" )
+            {
+                if (GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Escaping" || GameObject.Find("TutorialManager").GetComponent<TutorialManager>().toolTips[0].name == "Complete")
                 {
                     EscapeScene();
-                }           
+                }
             }
             else
             {
@@ -43,10 +43,19 @@ public class KeypressManager : MonoBehaviour
             {
                 pauseMenu.SetActive(false);
 
-                if(SceneManager.GetSceneByName("Settings").isLoaded){ //gets the settings scene and checks if its loaded
+                if (SceneManager.GetSceneByName("Settings").isLoaded)
+                { //gets the settings scene and checks if its loaded
                     SceneManager.UnloadSceneAsync("Settings"); //then unloads it if the player presses escape in the settings menu
                 }
-
+                //Gets all game objects with the name MenuClickSound, iterates through them, and deletes any ones with sfx manager script isSettings = true.
+                GameObject[] menuClickSounds = GameObject.FindGameObjectsWithTag("MenuClickSound");
+                foreach (GameObject menuClickSound in menuClickSounds)
+                {
+                    if (menuClickSound.GetComponent<SFXManager>().isSettings)
+                    {
+                        Destroy(menuClickSound);
+                    }
+                }
                 Play();
             }
             else

@@ -25,7 +25,7 @@ public class FindingPlanets : MonoBehaviour
     void Start()
     {
         //Hides the planet info panel;
-        HudBehaviour.instance.HideInfoPanel();
+        HudBehaviour.Instance.HideInfoPanel();
         distanceText.text = "";
         GameObject[] allPlanets = GameObject.FindGameObjectsWithTag("Planet"); //have to do this inside  update for now
 
@@ -103,7 +103,7 @@ public class FindingPlanets : MonoBehaviour
                         {
                             if (playerhits[0].transform.name == "SphereHitbox") //Because of the gravity feature changing some aspects of the black hole this will be later changed to the physcial game object of the black hole hit box
                             {
-                                HudBehaviour.instance.ShowBlackholeInfo(
+                                HudBehaviour.Instance.ShowBlackholeInfo(
                                     Mathf.Round(playerhits[0].distance)
                                 );
                             }
@@ -121,7 +121,7 @@ public class FindingPlanets : MonoBehaviour
                                             .gameObject.name.Length - 7
                                     )
                                 ];
-                                HudBehaviour.instance.ShowPlanetInfo(
+                                HudBehaviour.Instance.ShowPlanetInfo(
                                     playerhits[0].transform.GetComponent<PlanetDetection>(),
                                     Mathf.Round(playerhits[0].distance),
                                     distBlackHole,
@@ -134,7 +134,7 @@ public class FindingPlanets : MonoBehaviour
             }
             else
             {
-                HudBehaviour.instance.HideInfoPanel();
+                HudBehaviour.Instance.HideInfoPanel();
             }
         }
 
