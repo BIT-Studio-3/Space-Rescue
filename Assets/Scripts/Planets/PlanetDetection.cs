@@ -88,7 +88,7 @@ public class PlanetDetection : MonoBehaviour
                                 }
                  */
                 PlanetStates.Instance.activePlanet = planetID;
-                GameMenuManager.Instance.LoadNewScene("More Planet Info");
+                GameMenuManager.Instance.LoadNewScene("Planet Animal Info");
             }
         }
     }

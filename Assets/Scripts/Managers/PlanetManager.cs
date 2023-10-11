@@ -29,8 +29,8 @@ public class PlanetManager : MonoBehaviour
     void Start()
     {
         Instance = this;
-        //pauseMenu = GameObject.Find("Pause Menu");
-        //pauseMenu.SetActive(false);
+        pauseMenu = GameObject.Find("Pause Menu");
+        pauseMenu.SetActive(false);
         planetParent = GameObject.Find("PlanetParent");
         held = 0;
         scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text =
@@ -127,7 +127,7 @@ public class PlanetManager : MonoBehaviour
         }
         ShipMovement.Instance.ResetBoost(); //This resets the ships boost before it goes back to the main scene
 
-        GameMenuManager.Instance.ReturntoScene("More Planet Info");
+        GameMenuManager.Instance.ReturntoScene("Planet Animal Info");
 
     }
 
