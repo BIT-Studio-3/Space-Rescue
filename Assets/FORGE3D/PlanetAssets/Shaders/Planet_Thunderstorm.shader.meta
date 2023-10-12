@@ -4,8 +4,18 @@ labels:
 - Shader
 ShaderImporter:
   externalObjects: {}
-  defaultTextures: []
+  defaultTextures:
+  - _NormalMap: {instanceID: 0}
+  - _DistortionMap: {instanceID: 0}
+  - _DistortionUVMap: {instanceID: 0}
+  - _ScatterMap: {instanceID: 0}
+  - _LightingMaskMap: {instanceID: 0}
+  - _LightingMap: {instanceID: 0}
+  - unity_Lightmaps: {instanceID: 0}
+  - unity_LightmapsInd: {instanceID: 0}
+  - unity_ShadowMasks: {instanceID: 0}
   nonModifiableTextures: []
+  preprocessorOverride: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

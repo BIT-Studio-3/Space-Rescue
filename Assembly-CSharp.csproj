@@ -58,6 +58,7 @@
     <Compile Include="Assets\Scripts\ToolTip.cs" />
     <Compile Include="Assets\Scripts\Animals\Animal.cs" />
     <Compile Include="Assets\Scripts\Shared\Keybinds.cs" />
+    <Compile Include="Assets\Scripts\Sound\Sound Effects Setting.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Black Hole\BlackHoleGravity.cs" />
     <Compile Include="Assets\Scripts\Managers\MenuManager.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Assets\Scripts\Planets\PlanetSpawn.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\Scripts\PlanetRotation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\Scripts\Planets\PlanetTextureGenerator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="Assets\Scripts\Managers\SpawningManager.cs" />
     <Compile Include="Assets\Scripts\HUD off screen indicators\OffScreenIndicatorCore.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+    <Compile Include="Assets\Scripts\Managers\SFXManager.cs" />
     <Compile Include="Assets\Scripts\Managers\DropShipManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\HUD off screen indicators\Target.cs" />
@@ -130,6 +133,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\HUD off screen indicators\Indicator.cs" />
     <Compile Include="Assets\Scripts\User Interface\CameraSize.cs" />
+    <Compile Include="Assets\Scripts\Managers\MusicManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\WarningOverlay.cs" />
@@ -138,7 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\FORGE3D\PlanetAssets\Shaders\Planet_Sand.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\FORGE3D\PlanetAssets\Shaders\Planet_Gas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Shaders\Animals\SoftSurface.shader" />
     <None Include="Assets\ConeCollider\readme_en.txt" />
@@ -147,20 +153,32 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\FORGE3D\PlanetAssets\Shaders\SunCorona.shader" />
+    <None Include="Assets\FORGE3D\PlanetAssets\Shaders\Planet_Thunderstorm.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\FORGE3D\PlanetAssets\Shaders\Sun.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\FORGE3D\PlanetAssets\Shaders\Planet_Ice.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\FORGE3D\PlanetAssets\Shaders\Planet_Oceanic.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\FORGE3D\PlanetAssets\Shaders\Planet_Lava.shader" />
+    <None Include="Assets\FORGE3D\PlanetAssets\Shaders\Planet_Terrestrial.shader" />
+    <None Include="Assets\FORGE3D\PlanetAssets\Shaders\Moon.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\FORGE3D\PlanetAssets\Shaders\Planet_Ring_Opaque.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\FORGE3D\PlanetAssets\Shaders\Atmosphere.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\FORGE3D\PlanetAssets\Shaders\Planet_Ring_Transparent.shader" />
     <None Include="Assets\Shaders\Animals\ToonRamp.shader" />
+    <None Include="Assets\FORGE3D\PlanetAssets\Shaders\Planet_Ring_Shadow.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
