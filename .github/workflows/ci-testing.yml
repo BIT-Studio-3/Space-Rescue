@@ -17,16 +17,10 @@ jobs:
           - playmode
           - editmode
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           lfs: true
-      - uses: actions/cache@v2
-        with:
-          path: ./Library
-          key: Library-Space-Rescue-StandaloneWindows
-          restore-keys: |
-            Library-Space-Rescue-
-            Library-
+
       - uses: game-ci/unity-test-runner@v3.0.0
         id: tests
         env:
@@ -36,7 +30,7 @@ jobs:
           artifactsPath: ${{ matrix.testMode }}-artifacts
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           checkName: ${{ matrix.testMode }} Test Results
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: Test results for ${{ matrix.testMode }}
