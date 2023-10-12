@@ -58,7 +58,7 @@ public class AnimalController : MonoBehaviour
                 PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].hostileCount--;
                 PlanetManager.Instance.UpdateHeldAnimals("Hostile");
                 AnimalCountTEMP.SpawnUIAnimal(gameObject);
-                
+
             }
             else if (gameObject.name.Contains("Scared"))
             {

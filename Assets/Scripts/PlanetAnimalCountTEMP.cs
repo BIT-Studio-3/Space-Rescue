@@ -15,7 +15,7 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
 
     //private int hostileCaught = 0;
     //private int hostileSpawned;
-   // private TMPro.TextMeshProUGUI hostileUI;
+    // private TMPro.TextMeshProUGUI hostileUI;
 
     //private int scaredCaught = 0;
     //private int scaredSpawned;
@@ -49,30 +49,30 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         }
 
     }
-/*
-    public void AnimalCount(string name) //Sent from AnimalController.cs
-    {
-        if (name.Contains("Neutral"))
+    /*
+        public void AnimalCount(string name) //Sent from AnimalController.cs
         {
-            calmCaught += 1;
-            calmUI.text = "Calm Caught: " + calmCaught;
-            SpawnUIAnimal(SpawningManager.Instance.neutralPrefab);
-        }
-        else if (name.Contains("Hostile"))
-        {
-            hostileCaught += 1;
-            hostileUI.text = "Hostile Caught: " + hostileCaught;
-            SpawnUIAnimal(SpawningManager.Instance.hostilePrefab);
+            if (name.Contains("Neutral"))
+            {
+                calmCaught += 1;
+                calmUI.text = "Calm Caught: " + calmCaught;
+                SpawnUIAnimal(SpawningManager.Instance.neutralPrefab);
+            }
+            else if (name.Contains("Hostile"))
+            {
+                hostileCaught += 1;
+                hostileUI.text = "Hostile Caught: " + hostileCaught;
+                SpawnUIAnimal(SpawningManager.Instance.hostilePrefab);
 
+            }
+            else if (name.Contains("Scared"))
+            {
+                scaredCaught += 1;
+                scaredUI.text = "Scared Caught: " + scaredCaught;
+                SpawnUIAnimal(SpawningManager.Instance.scaredPrefab);
+            }
         }
-        else if (name.Contains("Scared"))
-        {
-            scaredCaught += 1;
-            scaredUI.text = "Scared Caught: " + scaredCaught;
-            SpawnUIAnimal(SpawningManager.Instance.scaredPrefab);
-        }
-    }
-    */
+        */
 
     public void SpawnUIAnimal(GameObject type)
     {
