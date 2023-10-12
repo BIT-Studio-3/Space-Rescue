@@ -47,18 +47,24 @@ public class FindingPlanets : MonoBehaviour
         {
             foreach (GameObject planet in planetsNotRescued) //finds the closest planet to the player that hasn't already been rescued.
             {
-                Vector3 directionToTarget = planet.transform.position - currentPos;
-                float dist = directionToTarget.sqrMagnitude;
-                if (dist < minDist)
+                if (planet != null) //This was throwing a missing reference exception when the closest planet was destroyed 
                 {
-                    closestPlanet = planet;
-                    minDist = dist;
+                    Vector3 directionToTarget = planet.transform.position - currentPos;
+                    float dist = directionToTarget.sqrMagnitude;
+                    if (dist < minDist)
+                    {
+                        closestPlanet = planet;
+                        minDist = dist;
+                    }
                 }
 
                 if (planet == null || PlanetStates.Instance.planetInfo[planet.GetComponent<PlanetDetection>().planetID].totalAnimals == 0)
                 {
                     planetsNotRescued.Remove(planet); //Remove saved planets from the list
-                    planet.GetComponent<Target>().enabled = false;
+                    if(planet != null) //Also null reference exceptions
+                    {
+                        planet.GetComponent<Target>().enabled = false;
+                    }
                     break;
                 }
             }
