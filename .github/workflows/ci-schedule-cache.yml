@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repo #Checkouts to the Repository
         uses: actions/checkout@v3
         with:
-          lfs: true # Whether to download Git-LFS files 
+          lfs: false # Whether to download Git-LFS files 
 
       # Cache 
       - name: Cache Files #Cache un-needed files, significantly reduces build time
