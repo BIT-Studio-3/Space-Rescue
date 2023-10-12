@@ -15,15 +15,7 @@ jobs:
         with:
           lfs: false # Whether to download Git-LFS files 
 
-      # Cache 
-      - name: Cache Files #Cache un-needed files, significantly reduces build time
-        uses: actions/cache@v3
-        with:
-          path: Library
-          key: Library-Space-Rescue-StandaloneWindows
-          restore-keys: |
-              Library-Space-Rescue-
-              Library-
+
         # Build
       - name: Build Project #Builds the unity Project
         uses: game-ci/unity-builder@v2
