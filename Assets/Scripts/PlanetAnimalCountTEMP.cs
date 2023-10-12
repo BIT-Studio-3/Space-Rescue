@@ -9,17 +9,17 @@ using UnityEngine.UI;
 
 public class PlanetAnimalCountTEMP : MonoBehaviour
 {
-    private int calmCaught = 0;
-    private int calmSpawned;
-    private TMPro.TextMeshProUGUI calmUI;
+    //private int calmCaught = 0;
+    //private int calmSpawned;
+    //private TMPro.TextMeshProUGUI calmUI;
 
-    private int hostileCaught = 0;
-    private int hostileSpawned;
-    private TMPro.TextMeshProUGUI hostileUI;
+    //private int hostileCaught = 0;
+    //private int hostileSpawned;
+   // private TMPro.TextMeshProUGUI hostileUI;
 
-    private int scaredCaught = 0;
-    private int scaredSpawned;
-    private TMPro.TextMeshProUGUI scaredUI;
+    //private int scaredCaught = 0;
+    //private int scaredSpawned;
+    //private TMPro.TextMeshProUGUI scaredUI;
 
     //private GameObject[,] collectedAnimals; //= new GameObject[2,5]; //[row, col]
     private List<GameObject> panels = new List<GameObject>(); //the grid of panels that the animals will spawn as a child on
@@ -27,9 +27,9 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
     private int lastSpace;
 
     //prefabs
-    public GameObject neutral;
-    public GameObject hostile;
-    public GameObject scared;
+    private GameObject neutral;
+    private GameObject hostile;
+    private GameObject scared;
 
 
     //public SpawningManager spawningManager;
@@ -39,9 +39,9 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
     void Start()
     {
         Instance = this;
-        calmUI = GameObject.Find("Calm Caught").GetComponent<TMPro.TextMeshProUGUI>();
-        hostileUI = GameObject.Find("Hostile Caught").GetComponent<TMPro.TextMeshProUGUI>();
-        scaredUI = GameObject.Find("Scared Caught").GetComponent<TMPro.TextMeshProUGUI>();
+        //calmUI = GameObject.Find("Calm Caught").GetComponent<TMPro.TextMeshProUGUI>();
+        //hostileUI = GameObject.Find("Hostile Caught").GetComponent<TMPro.TextMeshProUGUI>();
+        //scaredUI = GameObject.Find("Scared Caught").GetComponent<TMPro.TextMeshProUGUI>();
 
         for (int i = 0; i < 25; i++)
         {
@@ -49,34 +49,36 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         }
 
     }
-
+/*
     public void AnimalCount(string name) //Sent from AnimalController.cs
     {
         if (name.Contains("Neutral"))
         {
             calmCaught += 1;
             calmUI.text = "Calm Caught: " + calmCaught;
-            SpawnUIAnimal(neutral);
+            SpawnUIAnimal(SpawningManager.Instance.neutralPrefab);
         }
         else if (name.Contains("Hostile"))
         {
             hostileCaught += 1;
             hostileUI.text = "Hostile Caught: " + hostileCaught;
-            SpawnUIAnimal(hostile);
+            SpawnUIAnimal(SpawningManager.Instance.hostilePrefab);
 
         }
         else if (name.Contains("Scared"))
         {
             scaredCaught += 1;
             scaredUI.text = "Scared Caught: " + scaredCaught;
-            SpawnUIAnimal(scared);
+            SpawnUIAnimal(SpawningManager.Instance.scaredPrefab);
         }
     }
+    */
 
     public void SpawnUIAnimal(GameObject type)
     {
         GameObject uiAnimal = Instantiate(type, new Vector3(panels[collectedAnimals.Count].transform.position.x + 10, panels[collectedAnimals.Count].transform.position.y - 30, panels[collectedAnimals.Count].transform.position.z + 6), Quaternion.Euler(0, 180, 0), panels[0].transform);
         collectedAnimals.Add(uiAnimal);
+        Debug.Log(collectedAnimals.Count);
         uiAnimal.layer = 5;
         GameObject model = uiAnimal.transform.Find("Model").gameObject;
         model.gameObject.layer = 5;

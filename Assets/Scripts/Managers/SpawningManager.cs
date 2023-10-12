@@ -27,9 +27,9 @@ public class SpawningManager : MonoBehaviour
 
     //The prefabs that are being spawned. This is assigned in the editor
     [Header("Prefabs")]
-    private GameObject hostilePrefab; //The prefab that will be used for the hostile animal
-    private GameObject neutralPrefab; //The prefab that will be used for the neutral animal
-    private GameObject scaredPrefab; //The prefab that will be used for the Scared animal
+    [HideInInspector] public GameObject hostilePrefab; //The prefab that will be used for the hostile animal
+    [HideInInspector] public GameObject neutralPrefab; //The prefab that will be used for the neutral animal
+    [HideInInspector] public GameObject scaredPrefab; //The prefab that will be used for the Scared animal
     private GameObject foliagePrefab; //The prefab that will be used for the foliage
 
     //The amount of objects that are being spawned. This is gotten from the planet info script for the planet entered
@@ -43,8 +43,11 @@ public class SpawningManager : MonoBehaviour
     private Vector3 area;
     private Collider[] hitColliders;
 
+    public static SpawningManager Instance;
+
     void Start()
     {
+        //Instance = this;
         //The current planet and planetinfo
         planet = GameObject.Find("Planet");
         planetInfo = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet];
