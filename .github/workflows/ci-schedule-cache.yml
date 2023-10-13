@@ -14,7 +14,8 @@ jobs:
         uses: actions/checkout@v3
         with:
           lfs: false # Whether to download Git-LFS files 
-
+      - name: Check Available Storage Space
+        run: df -h
 
         # Build
       - name: Build Project #Builds the unity Project
