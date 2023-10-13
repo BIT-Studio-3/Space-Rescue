@@ -13,7 +13,18 @@ jobs:
       - name: Checkout Repo #Checkouts to the Repository
         uses: actions/checkout@v3
         with:
-          lfs: false # Whether to download Git-LFS files 
+          lfs: true # Whether to download Git-LFS files 
+      - name: Check Available Storage Space
+        run: df -h
+      # Cache 
+      - name: Cache Files #Cache un-needed files, significantly reduces build time
+        uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-Space-Rescue-StandaloneWindows
+          restore-keys: |
+              Library-Space-Rescue-
+              Library-
       - name: Check Available Storage Space
         run: df -h
       - name: Create Additional Disk space
