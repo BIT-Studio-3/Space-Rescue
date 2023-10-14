@@ -43,11 +43,16 @@ public class HudBehaviour : MonoBehaviour
                 "Animals: "
                 + PlanetStates.Instance.planetInfo[status.planetID].totalAnimals.ToString();
             animalDetails.GetComponent<Text>().text =
-                "Hostile: "
+                PlanetStates.Instance.planetInfo[status.planetID].hostileName.ToString() +
+                ": "
                 + PlanetStates.Instance.planetInfo[status.planetID].hostileCount.ToString()
-                + " Neutral: "
+                + "\n"
+                + PlanetStates.Instance.planetInfo[status.planetID].neutralName.ToString() +
+                ":"
                 + PlanetStates.Instance.planetInfo[status.planetID].neutralCount.ToString()
-                + " Scared: "
+                + "\n"
+                + PlanetStates.Instance.planetInfo[status.planetID].scaredName.ToString() + 
+                ":"
                 + PlanetStates.Instance.planetInfo[status.planetID].scaredCount.ToString();
 
         }

@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000019520521, y: -127}
-  m_SizeDelta: {x: 1000, y: 100}
+  m_AnchoredPosition: {x: 0.000019520521, y: -238}
+  m_SizeDelta: {x: 1000, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &134361370
 MonoBehaviour:
@@ -194,7 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5 Snakes 4 Deer 3 Lizards
+  m_Text: "5 Snakes \n4 Deer \n3 Lizards"
 --- !u!222 &134361371
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1779,11 +1779,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 331209983296113085, guid: 39ecca6e5d11f754887f8a8e700dc595, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.3250061
+      value: -0.93499386
       objectReference: {fileID: 0}
     - target: {fileID: 331209983865777158, guid: 39ecca6e5d11f754887f8a8e700dc595, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.725
+      value: -1.3349879
       objectReference: {fileID: 0}
     - target: {fileID: 331209984495688838, guid: 39ecca6e5d11f754887f8a8e700dc595, type: 3}
       propertyPath: animalDetails
@@ -1791,7 +1791,7 @@ PrefabInstance:
       objectReference: {fileID: 134361368}
     - target: {fileID: 331209984837927786, guid: 39ecca6e5d11f754887f8a8e700dc595, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0749878
+      value: -0.535
       objectReference: {fileID: 0}
     - target: {fileID: 933962706211514306, guid: 39ecca6e5d11f754887f8a8e700dc595, type: 3}
       propertyPath: m_Pivot.x
