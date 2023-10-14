@@ -10,5 +10,7 @@ public class Animal : MonoBehaviour
     public int Probability { get => probability; set => probability = value; }
     [SerializeField] private string species;
     public string Species { get => species; set => species = value; }
+    [SerializeField] private string temperament;
+    public string Temperament { get => temperament; set => temperament = value; }
 
 }
