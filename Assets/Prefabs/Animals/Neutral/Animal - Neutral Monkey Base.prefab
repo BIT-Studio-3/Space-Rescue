@@ -154,7 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability: 75
-  species: Normal Monkey (Neutral)
+  species: Monkey
+  temperament: Neutral
 --- !u!1001 &2242454589269922049
 PrefabInstance:
   m_ObjectHideFlags: 0
