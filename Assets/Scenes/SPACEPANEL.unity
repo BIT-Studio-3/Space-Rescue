@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000019520521, y: -238}
-  m_SizeDelta: {x: 1000, y: 300}
+  m_AnchoredPosition: {x: 0.000019520521, y: -279}
+  m_SizeDelta: {x: 1000, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &134361370
 MonoBehaviour:
@@ -183,7 +183,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: bb9ae992b580a3842819c625ce63d6da, type: 3}
-    m_FontSize: 65
+    m_FontSize: 90
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1779,11 +1779,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 331209983296113085, guid: 39ecca6e5d11f754887f8a8e700dc595, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.93499386
+      value: 0.3909937
       objectReference: {fileID: 0}
     - target: {fileID: 331209983865777158, guid: 39ecca6e5d11f754887f8a8e700dc595, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.3349879
+      value: -0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 331209984171215345, guid: 39ecca6e5d11f754887f8a8e700dc595, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 331209984171215345, guid: 39ecca6e5d11f754887f8a8e700dc595, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.431
       objectReference: {fileID: 0}
     - target: {fileID: 331209984495688838, guid: 39ecca6e5d11f754887f8a8e700dc595, type: 3}
       propertyPath: animalDetails
@@ -1791,7 +1799,7 @@ PrefabInstance:
       objectReference: {fileID: 134361368}
     - target: {fileID: 331209984837927786, guid: 39ecca6e5d11f754887f8a8e700dc595, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.535
+      value: 0.79098755
       objectReference: {fileID: 0}
     - target: {fileID: 933962706211514306, guid: 39ecca6e5d11f754887f8a8e700dc595, type: 3}
       propertyPath: m_Pivot.x
