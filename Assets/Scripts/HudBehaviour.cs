@@ -42,10 +42,19 @@ public class HudBehaviour : MonoBehaviour
             planetStatus.GetComponent<Text>().text =
                 "Animals: "
                 + PlanetStates.Instance.planetInfo[status.planetID].totalAnimals.ToString();
+            animalDetails.GetComponent<Text>().text =
+                "Hostile: "
+                + PlanetStates.Instance.planetInfo[status.planetID].hostileCount.ToString()
+                + " Neutral: "
+                + PlanetStates.Instance.planetInfo[status.planetID].neutralCount.ToString()
+                + " Scared: "
+                + PlanetStates.Instance.planetInfo[status.planetID].scaredCount.ToString();
+
         }
         else
         {
             planetStatus.GetComponent<Text>().text = "All animals rescued!";
+            animalDetails.GetComponent<Text>().text = ""; 
         }
         distFromPlayer.GetComponent<Text>().text = "Distance: " + dist.ToString();
         blackHolePlanetDist.GetComponent<Text>().text = "Black Hole: " + distBlackHole.ToString();
