@@ -42,4 +42,6 @@ jobs:
           targetPlatform: StandaloneWindows
           allowDirtyBuild: true #Allows the build to modify the repo, I had to enable this for the workflow to run
           buildName: SpaceRescue
+      - name: Check Available Storage Space After Build
+        run: df -h
         
