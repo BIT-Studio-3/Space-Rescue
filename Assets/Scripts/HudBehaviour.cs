@@ -11,7 +11,9 @@ public class HudBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     public static HudBehaviour Instance;
-    public GameObject planetStatus,
+    public GameObject 
+        planetStatus,
+        animalDetails,
         objectName,
         distFromPlayer,
         blackHolePlanetDist,
@@ -90,6 +92,7 @@ public class HudBehaviour : MonoBehaviour
     {
         gameObject.GetComponent<Image>().enabled = visible; //show or hide the panel sprite
         planetStatus.GetComponent<Text>().enabled = visible;
+        animalDetails.GetComponent<Text>().enabled = visible;
         objectName.GetComponent<Text>().enabled = visible;
         distFromPlayer.GetComponent<Text>().enabled = visible;
         blackHolePlanetDist.GetComponent<Text>().enabled = visible;
