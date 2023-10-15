@@ -49,30 +49,7 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         }
 
     }
-    /*
-        public void AnimalCount(string name) //Sent from AnimalController.cs
-        {
-            if (name.Contains("Neutral"))
-            {
-                calmCaught += 1;
-                calmUI.text = "Calm Caught: " + calmCaught;
-                SpawnUIAnimal(SpawningManager.Instance.neutralPrefab);
-            }
-            else if (name.Contains("Hostile"))
-            {
-                hostileCaught += 1;
-                hostileUI.text = "Hostile Caught: " + hostileCaught;
-                SpawnUIAnimal(SpawningManager.Instance.hostilePrefab);
-
-            }
-            else if (name.Contains("Scared"))
-            {
-                scaredCaught += 1;
-                scaredUI.text = "Scared Caught: " + scaredCaught;
-                SpawnUIAnimal(SpawningManager.Instance.scaredPrefab);
-            }
-        }
-        */
+    
 
     public void SpawnUIAnimal(GameObject type)
     {
@@ -84,10 +61,10 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         model.gameObject.layer = 5;
 
         //every child object of the animal needs to have the layer set, as they don't inherit layers from parent
-        //foreach(Transform child in uiAnimal.transform.GetChild(1)) //0 is collider, 1 is the animal body
-        //{
-        //    child.gameObject.layer = 5; //UI layer
-        //}
+        foreach(Transform child in model.GetComponent<Transform>()) //0 is collider, 1 is the animal body
+        {
+           child.gameObject.layer = 5; //UI layer
+        }
 
         uiAnimal.transform.localScale = new Vector3(40, 40, 40);
         Destroy(uiAnimal.GetComponent<Rigidbody>()); //gets rid of the rigidbody
