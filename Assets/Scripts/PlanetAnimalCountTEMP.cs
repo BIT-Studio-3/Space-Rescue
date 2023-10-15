@@ -49,7 +49,7 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         }
 
     }
-    
+
 
     public void SpawnUIAnimal(GameObject type)
     {
@@ -61,9 +61,9 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         model.gameObject.layer = 5;
 
         //every child object of the animal needs to have the layer set, as they don't inherit layers from parent
-        foreach(Transform child in model.GetComponent<Transform>()) //0 is collider, 1 is the animal body
+        foreach (Transform child in model.GetComponent<Transform>()) //0 is collider, 1 is the animal body
         {
-           child.gameObject.layer = 5; //UI layer
+            child.gameObject.layer = 5; //UI layer
         }
 
         uiAnimal.transform.localScale = new Vector3(40, 40, 40);
