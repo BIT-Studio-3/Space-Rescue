@@ -55,7 +55,7 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         Destroy(uiAnimal.GetComponent<AnimalController>());
         Destroy(uiAnimal.GetComponent<GravityBody>());
         //animalController.Instance.animator.Play("Idle_A");
-        
+
         //Destroy(uiAnimal.GetComponent<SphereCollider>());
     }
 
