@@ -13,7 +13,7 @@ public class ShipMovement : MonoBehaviour
     float mouseInputX;
     float mouseInputY;
     float tiltInput;
-    public float mouseSensitivity = 0.3f;
+    public float mouseSensitivity = 0.4f;
 
 
     //speed
