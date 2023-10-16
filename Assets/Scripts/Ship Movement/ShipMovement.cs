@@ -14,8 +14,6 @@ public class ShipMovement : MonoBehaviour
     float mouseInputY;
     float tiltInput;
     public float mouseSensitivity = 0.3f;
-    public float rotationSensitivity = 0.1f;
-    private float spinSpeed = 100.0f; // You can adjust this value as needed
 
 
     //speed
