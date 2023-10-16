@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +15,8 @@ public class ShipMovement : MonoBehaviour
     float tiltInput;
     public float mouseSensitivity = 0.3f;
     public float rotationSensitivity = 0.1f;
+    private float spinSpeed = 100.0f; // You can adjust this value as needed
+
 
     //speed
     float speedMult = 1;
@@ -77,18 +79,6 @@ public class ShipMovement : MonoBehaviour
             RechargeBoost();
         }
 
-        // Check for Q and E keys for ship rotation
-        if (Input.GetKey("q"))
-        {
-            // Rotate counter-clockwise (left) when Q is pressed
-            spaceshipRB.AddTorque(Vector3.up * rotationSensitivity, ForceMode.VelocityChange);
-        }
-        else if (Input.GetKey("e"))
-        {
-            // Rotate clockwise (right) when E is pressed
-            spaceshipRB.AddTorque(Vector3.up * -rotationSensitivity, ForceMode.VelocityChange);
-        }
-
         EnergyBar(boostDuration/cap); //Gives a value of boost left between 0 and 1
     }
 
@@ -147,5 +137,7 @@ public class ShipMovement : MonoBehaviour
 
         spaceshipRB.AddTorque(-1 * mouseInputY * speedMultAngle * spaceshipRB.transform.right, ForceMode.VelocityChange);
         spaceshipRB.AddTorque(mouseInputX * speedMultAngle * spaceshipRB.transform.up, ForceMode.VelocityChange);
+
+        spaceshipRB.AddTorque(speedtiltMultiAngle * tiltInput * spaceshipRB.transform.forward, ForceMode.VelocityChange);
     }
 }

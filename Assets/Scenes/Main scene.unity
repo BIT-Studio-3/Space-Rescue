@@ -2312,7 +2312,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: efbbdb00181cad94c866d68285175635, type: 3}
     - target: {fileID: 8476803455249810064, guid: 0ec627f363295e644872f77860511ab8, type: 3}
       propertyPath: mouseSensitivity
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8476803455249810064, guid: 0ec627f363295e644872f77860511ab8, type: 3}
       propertyPath: bars.Array.data[4]
