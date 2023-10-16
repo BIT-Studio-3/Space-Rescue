@@ -43,6 +43,8 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         uiAnimal.layer = 5;
         GameObject model = uiAnimal.transform.Find("Model").gameObject;
         model.gameObject.layer = 5;
+        Animator animator = uiAnimal.transform.Find("Model").GetComponent<Animator>();
+
 
         //every child object of the animal needs to have the layer set, as they don't inherit layers from parent
         foreach (Transform child in model.GetComponent<Transform>()) //0 is collider, 1 is the animal body
@@ -54,7 +56,7 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         Destroy(uiAnimal.GetComponent<Rigidbody>()); //gets rid of the rigidbody
         Destroy(uiAnimal.GetComponent<AnimalController>());
         Destroy(uiAnimal.GetComponent<GravityBody>());
-        //animalController.Instance.animator.Play("Idle_A");
+        animator.enabled = false;
         
         //Destroy(uiAnimal.GetComponent<SphereCollider>());
     }
