@@ -36,6 +36,7 @@ public class PlanetManager : MonoBehaviour
         scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text =
             "Temp Score Display: " + GameSettings.Score.ToString();
         //This is very temporary. Will have a better system in the next increment.
+        AnimalCountTEMP = GameObject.Find("TempAnimalCountManager").GetComponent<PlanetAnimalCountTEMP>();
     }
 
     void Update()
@@ -112,6 +113,7 @@ public class PlanetManager : MonoBehaviour
             Destroy(animal);
         }
         AnimalCountTEMP.collectedAnimals.Clear();
+        Debug.Log("Cleared list");
     }
 
     public void LeavePlanet()

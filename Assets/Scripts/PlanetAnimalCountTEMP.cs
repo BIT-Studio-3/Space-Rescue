@@ -9,19 +9,6 @@ using UnityEngine.UI;
 
 public class PlanetAnimalCountTEMP : MonoBehaviour
 {
-    //private int calmCaught = 0;
-    //private int calmSpawned;
-    //private TMPro.TextMeshProUGUI calmUI;
-
-    //private int hostileCaught = 0;
-    //private int hostileSpawned;
-    // private TMPro.TextMeshProUGUI hostileUI;
-
-    //private int scaredCaught = 0;
-    //private int scaredSpawned;
-    //private TMPro.TextMeshProUGUI scaredUI;
-
-    //private GameObject[,] collectedAnimals; //= new GameObject[2,5]; //[row, col]
     private List<GameObject> panels = new List<GameObject>(); //the grid of panels that the animals will spawn as a child on
     public List<GameObject> collectedAnimals = new List<GameObject>();
     private int lastSpace;
@@ -34,14 +21,12 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
 
     //public SpawningManager spawningManager;
     public static PlanetAnimalCountTEMP Instance;
+    public static AnimalController animalController;
 
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
-        //calmUI = GameObject.Find("Calm Caught").GetComponent<TMPro.TextMeshProUGUI>();
-        //hostileUI = GameObject.Find("Hostile Caught").GetComponent<TMPro.TextMeshProUGUI>();
-        //scaredUI = GameObject.Find("Scared Caught").GetComponent<TMPro.TextMeshProUGUI>();
 
         for (int i = 0; i < 25; i++)
         {
@@ -49,7 +34,6 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         }
 
     }
-
 
     public void SpawnUIAnimal(GameObject type)
     {
@@ -70,6 +54,8 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         Destroy(uiAnimal.GetComponent<Rigidbody>()); //gets rid of the rigidbody
         Destroy(uiAnimal.GetComponent<AnimalController>());
         Destroy(uiAnimal.GetComponent<GravityBody>());
+        //animalController.Instance.animator.Play("Idle_A");
+        
         //Destroy(uiAnimal.GetComponent<SphereCollider>());
     }
 
