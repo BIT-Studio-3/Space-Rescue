@@ -14,7 +14,6 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
     private GameObject hostile;
     private GameObject scared;
 
-
     //public SpawningManager spawningManager;
     public static PlanetAnimalCountTEMP Instance;
     public static AnimalController animalController;

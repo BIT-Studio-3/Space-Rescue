@@ -10,8 +10,7 @@ using TMPro;
 
 public class PlanetManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject animalDisplay;
+    //private GameObject animalDisplay;
 
     [SerializeField]
     private GameObject scoreDisplay;
@@ -33,7 +32,7 @@ public class PlanetManager : MonoBehaviour
         pauseMenu.SetActive(false);
         planetParent = GameObject.Find("PlanetParent");
         held = 0;
-        //scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "Temp Score Display: " + GameSettings.Score.ToString();
+        scoreDisplay.GetComponent<TextMeshProUGUI>().text = GameSettings.Score.ToString();
         //This is very temporary. Will have a better system in the next increment.
         AnimalCountTEMP = GameObject.Find("TempAnimalCountManager").GetComponent<PlanetAnimalCountTEMP>();
     }
@@ -101,7 +100,7 @@ public class PlanetManager : MonoBehaviour
         GameSettings.Score += held;
         held = 0;//was 0
         //animalDisplay.GetComponent<TMPro.TextMeshPro>().text = held.ToString();
-        //scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text ="Temp Score Display: " + GameSettings.Score.ToString();
+        scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = GameSettings.Score.ToString();
         //This is very temporary. Will have a better system in the next increment.
 
         //delete from list in planetanimalcount
