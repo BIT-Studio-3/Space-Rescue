@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability: 75
-  species: Brown Sparrow
+  species: Klakloren
   temperament: Scared
 --- !u!1001 &2589702077522580201
 PrefabInstance:

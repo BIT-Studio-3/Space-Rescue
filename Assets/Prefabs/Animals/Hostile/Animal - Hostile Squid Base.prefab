@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability: 75
-  species: Blue Squid
+  species: Vrokorian
   temperament: Hostile
 --- !u!1001 &288684013666084054
 PrefabInstance:

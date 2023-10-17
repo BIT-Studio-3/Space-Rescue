@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability: 75
-  species: Deer
+  species: Tomois
   temperament: Neutral
 --- !u!1001 &2385126478613368181
 PrefabInstance:

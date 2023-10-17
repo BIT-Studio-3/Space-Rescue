@@ -19,7 +19,7 @@ public class HudBehaviour : MonoBehaviour
         blackHolePlanetDist,
         planetLand; //The HUD Text Objects
 
-    private string[] animalCounts;
+    [SerializeField] private string[] animalCounts;
 
     void Awake()
     {
