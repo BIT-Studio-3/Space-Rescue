@@ -45,36 +45,9 @@ public class HudBehaviour : MonoBehaviour
         );
         if (PlanetStates.Instance.planetInfo[status.planetID].totalAnimals > 0)
         {
-            if (PlanetStates.Instance.planetInfo[status.planetID].hostileCount > 0)
-            {
-                animalCounts[0] = PlanetStates.Instance.planetInfo[status.planetID].hostileName.ToString() +
-                    ": "
-                    + PlanetStates.Instance.planetInfo[status.planetID].hostileCount.ToString() + "\n";
-            }
-            else
-            {
-                animalCounts[0] = "";
-            }
-            if (PlanetStates.Instance.planetInfo[status.planetID].neutralCount > 0)
-            {
-                animalCounts[1] = PlanetStates.Instance.planetInfo[status.planetID].neutralName.ToString() +
-                    ": "
-                    + PlanetStates.Instance.planetInfo[status.planetID].neutralCount.ToString() + "\n";
-            }
-            else
-            {
-                animalCounts[1] = "";
-            }
-            if (PlanetStates.Instance.planetInfo[status.planetID].scaredCount > 0)
-            {
-                animalCounts[2] = PlanetStates.Instance.planetInfo[status.planetID].scaredName.ToString() +
-                    ": "
-                    + PlanetStates.Instance.planetInfo[status.planetID].scaredCount.ToString();
-            }
-            else
-            {
-                animalCounts[2] = "";
-            }
+            animalCounts[0] =  PlanetStates.Instance.planetInfo[status.planetID].hostileCount > 0 ?  $"{PlanetStates.Instance.planetInfo[status.planetID].hostileName}: {PlanetStates.Instance.planetInfo[status.planetID].hostileCount}\n" : "";
+            animalCounts[1] =  PlanetStates.Instance.planetInfo[status.planetID].scaredCount > 0 ?  $"{PlanetStates.Instance.planetInfo[status.planetID].scaredName}: {PlanetStates.Instance.planetInfo[status.planetID].scaredCount}\n" : "";
+            animalCounts[2] =  PlanetStates.Instance.planetInfo[status.planetID].neutralCount > 0 ?  $"{PlanetStates.Instance.planetInfo[status.planetID].neutralName}: {PlanetStates.Instance.planetInfo[status.planetID].neutralCount}\n" : "";
 
             planetStatus.GetComponent<Text>().text =
                 "Animals: "
