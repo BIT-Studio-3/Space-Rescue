@@ -68,7 +68,6 @@ public class AnimalController : MonoBehaviour
             }
             else if (gameObject.name.Contains("Neutral"))
             {
-                Debug.Log(gameObject.name);
                 PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].neutralCount--;
                 PlanetManager.Instance.UpdateHeldAnimals("Neutral");
                 AnimalCountTEMP.SpawnUIAnimal(gameObject);

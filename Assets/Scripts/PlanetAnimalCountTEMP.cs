@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//bugs:
-// . neutral not showing on ui
-// . temp drop ship counter goes down but cs110pm obj not set to instance
-
 public class PlanetAnimalCountTEMP : MonoBehaviour
 {
     private List<GameObject> panels = new List<GameObject>(); //the grid of panels that the animals will spawn as a child on
@@ -37,14 +33,12 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
 
     public void SpawnUIAnimal(GameObject type)
     {
-        GameObject uiAnimal = Instantiate(type, new Vector3(panels[collectedAnimals.Count].transform.position.x + 10, panels[collectedAnimals.Count].transform.position.y - 30, panels[collectedAnimals.Count].transform.position.z + 6), Quaternion.Euler(0, 180, 0), panels[0].transform);
+        GameObject uiAnimal = Instantiate(type, new Vector3(panels[collectedAnimals.Count].transform.position.x + 10, panels[collectedAnimals.Count].transform.position.y - 30, panels[collectedAnimals.Count].transform.position.z + 20f), Quaternion.Euler(0, 210, 0), panels[0].transform);
         collectedAnimals.Add(uiAnimal);
-        Debug.Log(collectedAnimals.Count);
-        uiAnimal.layer = 5;
+        uiAnimal.layer = 5; //the ui layer
         GameObject model = uiAnimal.transform.Find("Model").gameObject;
         model.gameObject.layer = 5;
         Animator animator = uiAnimal.transform.Find("Model").GetComponent<Animator>();
-
 
         //every child object of the animal needs to have the layer set, as they don't inherit layers from parent
         foreach (Transform child in model.GetComponent<Transform>()) //0 is collider, 1 is the animal body
@@ -56,7 +50,8 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         Destroy(uiAnimal.GetComponent<Rigidbody>()); //gets rid of the rigidbody
         Destroy(uiAnimal.GetComponent<AnimalController>());
         Destroy(uiAnimal.GetComponent<GravityBody>());
-        animator.enabled = false;
+        //animator.enabled = false;
+        animator.Play("Idle_A");
     }
 
 }

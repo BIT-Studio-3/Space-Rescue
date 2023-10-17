@@ -113,7 +113,6 @@ public class PlanetManager : MonoBehaviour
             Destroy(animal);
         }
         AnimalCountTEMP.collectedAnimals.Clear();
-        Debug.Log("Cleared list");
     }
 
     public void LeavePlanet()
