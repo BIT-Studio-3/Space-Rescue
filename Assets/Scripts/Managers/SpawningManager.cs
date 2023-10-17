@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpawningManager : MonoBehaviour
 {
@@ -43,6 +44,8 @@ public class SpawningManager : MonoBehaviour
     private Vector3 area;
     private Collider[] hitColliders;
 
+    private TextMeshProUGUI planetName;
+
     public static SpawningManager Instance;
 
     void Start()
@@ -51,6 +54,9 @@ public class SpawningManager : MonoBehaviour
         //The current planet and planetinfo
         planet = GameObject.Find("Planet");
         planetInfo = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet];
+
+        planetName = GameObject.Find("Planet Name").GetComponent<TextMeshProUGUI>();
+        planetName.text = planetInfo.planetMaterial.name.ToString();
 
         //Setting the material of the planet
         planet.GetComponent<Renderer>().material = planetInfo.planetMaterial;

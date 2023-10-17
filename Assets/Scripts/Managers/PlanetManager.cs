@@ -33,8 +33,7 @@ public class PlanetManager : MonoBehaviour
         pauseMenu.SetActive(false);
         planetParent = GameObject.Find("PlanetParent");
         held = 0;
-        scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text =
-            "Temp Score Display: " + GameSettings.Score.ToString();
+        //scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "Temp Score Display: " + GameSettings.Score.ToString();
         //This is very temporary. Will have a better system in the next increment.
         AnimalCountTEMP = GameObject.Find("TempAnimalCountManager").GetComponent<PlanetAnimalCountTEMP>();
     }
@@ -95,15 +94,14 @@ public class PlanetManager : MonoBehaviour
         //TODO: Use animal name to keep track of what animals are held
         //The held display is EXTREMELY temporary. It is just to show the number and get it functional for now.
         held++;
-        animalDisplay.GetComponent<TMPro.TextMeshPro>().text = held.ToString();
     }
 
     private void DepositHeldAnimals()
     {
         GameSettings.Score += held;
         held = 0;//was 0
-        animalDisplay.GetComponent<TMPro.TextMeshPro>().text = held.ToString();
-        scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text =
+        //animalDisplay.GetComponent<TMPro.TextMeshPro>().text = held.ToString();
+        //scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text =
             "Temp Score Display: " + GameSettings.Score.ToString();
         //This is very temporary. Will have a better system in the next increment.
 
