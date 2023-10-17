@@ -11,15 +11,15 @@ public class HudBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     public static HudBehaviour Instance;
-    public GameObject 
+    public GameObject
         planetStatus,
         animalDetails,
         objectName,
         distFromPlayer,
         blackHolePlanetDist,
         planetLand; //The HUD Text Objects
-        
-        private string[] animalCounts;
+
+    private string[] animalCounts;
 
     void Awake()
     {
@@ -86,7 +86,7 @@ public class HudBehaviour : MonoBehaviour
         else
         {
             planetStatus.GetComponent<Text>().text = "All animals rescued!";
-            animalDetails.GetComponent<Text>().text = ""; 
+            animalDetails.GetComponent<Text>().text = "";
         }
         distFromPlayer.GetComponent<Text>().text = "Distance: " + dist.ToString();
         blackHolePlanetDist.GetComponent<Text>().text = "Black Hole: " + distBlackHole.ToString();
