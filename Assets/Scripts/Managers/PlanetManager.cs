@@ -101,8 +101,7 @@ public class PlanetManager : MonoBehaviour
         GameSettings.Score += held;
         held = 0;//was 0
         //animalDisplay.GetComponent<TMPro.TextMeshPro>().text = held.ToString();
-        //scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text =
-            "Temp Score Display: " + GameSettings.Score.ToString();
+        //scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text ="Temp Score Display: " + GameSettings.Score.ToString();
         //This is very temporary. Will have a better system in the next increment.
 
         //delete from list in planetanimalcount
