@@ -18,11 +18,17 @@ public class HudBehaviour : MonoBehaviour
         distFromPlayer,
         blackHolePlanetDist,
         planetLand; //The HUD Text Objects
+        
+        private string[] animalCounts;
 
     void Awake()
     {
         Instance = this;
         HideInfoPanel();
+    }
+    void Start()
+    {
+        animalCounts = new string[3];
     }
 
     //Displays the Planet Info Panel with information about the planet
@@ -39,21 +45,42 @@ public class HudBehaviour : MonoBehaviour
         );
         if (PlanetStates.Instance.planetInfo[status.planetID].totalAnimals > 0)
         {
+            if (PlanetStates.Instance.planetInfo[status.planetID].hostileCount > 0)
+            {
+                animalCounts[0] = PlanetStates.Instance.planetInfo[status.planetID].hostileName.ToString() +
+                    ": "
+                    + PlanetStates.Instance.planetInfo[status.planetID].hostileCount.ToString() + "\n";
+            }
+            else
+            {
+                animalCounts[0] = "";
+            }
+            if (PlanetStates.Instance.planetInfo[status.planetID].neutralCount > 0)
+            {
+                animalCounts[1] = PlanetStates.Instance.planetInfo[status.planetID].neutralName.ToString() +
+                    ": "
+                    + PlanetStates.Instance.planetInfo[status.planetID].neutralCount.ToString() + "\n";
+            }
+            else
+            {
+                animalCounts[1] = "";
+            }
+            if (PlanetStates.Instance.planetInfo[status.planetID].scaredCount > 0)
+            {
+                animalCounts[2] = PlanetStates.Instance.planetInfo[status.planetID].scaredName.ToString() +
+                    ": "
+                    + PlanetStates.Instance.planetInfo[status.planetID].scaredCount.ToString();
+            }
+            else
+            {
+                animalCounts[2] = "";
+            }
+
             planetStatus.GetComponent<Text>().text =
                 "Animals: "
                 + PlanetStates.Instance.planetInfo[status.planetID].totalAnimals.ToString();
-            animalDetails.GetComponent<Text>().text =
-                PlanetStates.Instance.planetInfo[status.planetID].hostileName.ToString() +
-                ": "
-                + PlanetStates.Instance.planetInfo[status.planetID].hostileCount.ToString()
-                + "\n"
-                + PlanetStates.Instance.planetInfo[status.planetID].neutralName.ToString() +
-                ":"
-                + PlanetStates.Instance.planetInfo[status.planetID].neutralCount.ToString()
-                + "\n"
-                + PlanetStates.Instance.planetInfo[status.planetID].scaredName.ToString() + 
-                ":"
-                + PlanetStates.Instance.planetInfo[status.planetID].scaredCount.ToString();
+
+            animalDetails.GetComponent<Text>().text = animalCounts[0] + animalCounts[1] + animalCounts[2];
 
         }
         else
