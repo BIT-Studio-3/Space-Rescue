@@ -125,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
                 case PlayerState.DEATH:
                     animator.Play("Death");
                     break;
-                //I dont include Idle because the other animations are directed to play idle immediately after they are done
+                    //I dont include Idle because the other animations are directed to play idle immediately after they are done
             }
         }
     }
