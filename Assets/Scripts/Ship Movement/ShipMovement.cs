@@ -48,7 +48,6 @@ public class ShipMovement : MonoBehaviour
         ResetBoost(); //Sets boost to Cap
         initialVelocity = spaceshipRB.velocity;
         audioSource = GetComponent<AudioSource>();
-        Debug.Log("Mouse Sensitivity: " + mouseSensitivity);
     }
     // Update is called once per frame
     void Update()

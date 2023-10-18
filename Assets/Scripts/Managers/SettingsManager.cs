@@ -125,6 +125,5 @@ public class SettingsManager : MonoBehaviour
     public void MouseSensitivitySlider()
     {
         ShipMovement.Instance.mouseSensitivity = mouseSensitivitySlider.value;
-        Debug.Log("Mouse Sensitivity Updated: " + ShipMovement.Instance.mouseSensitivity);
     }
 }
