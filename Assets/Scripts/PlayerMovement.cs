@@ -25,11 +25,17 @@ public class PlayerMovement : MonoBehaviour
     private bool isMoving;
     private Animator animator;
     private PlayerState animationState;
+    public static PlayerMovement Instance;
 
     public PlayerState AnimationState
     {
         get => animationState;
         set => animationState = value;
+    }
+
+    void Awake()
+    {
+        Instance = this;
     }
 
     // Start is called before the first frame update
