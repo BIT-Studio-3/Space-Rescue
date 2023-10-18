@@ -80,6 +80,11 @@ public class PlayerMovement : MonoBehaviour
 
             PlayAnimation();
         }
+        else
+        {
+            direction = Vector3.zero;
+            moveAmo = Vector3.zero;
+        }
     }
 
     void FixedUpdate()
