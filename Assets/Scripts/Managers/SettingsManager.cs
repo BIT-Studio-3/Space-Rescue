@@ -19,6 +19,7 @@ public class SettingsManager : MonoBehaviour
     private GameObject musicNumber;
     private GameObject soundEffectsNumber;
     private Toggle muteToggle;
+    private Slider mouseSensitivitySlider;
     [SerializeField]
     private AudioClip menuHover;
     private AudioSource audioSource;
@@ -36,6 +37,10 @@ public class SettingsManager : MonoBehaviour
         musicNumber = GameObject.Find("Music Number");
         soundEffectsNumber = GameObject.Find("Sound Effects Number");
         muteToggle = GameObject.Find("Mute Toggle").GetComponent<Toggle>();
+
+        mouseSensitivitySlider = GameObject.Find("Mouse Sensitivity Slider").GetComponent<Slider>();
+        mouseSensitivitySlider.value = ShipMovement.Instance.mouseSensitivity;
+
 
         //Setting everything to the current volume whenever settings is opened
         musicSlider.value = GameSettings.MusicVolume;
@@ -115,5 +120,11 @@ public class SettingsManager : MonoBehaviour
             audioSource.Stop();
             SoundEffectsSetting.SoundMenuSetting(audioSource, menuHover);
         }
+    }
+
+    public void MouseSensitivitySlider()
+    {
+        ShipMovement.Instance.mouseSensitivity = mouseSensitivitySlider.value;
+        Debug.Log("Mouse Sensitivity Updated: " + ShipMovement.Instance.mouseSensitivity);
     }
 }
