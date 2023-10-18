@@ -169,7 +169,7 @@ public class PlanetManager : MonoBehaviour
 
     public int RemainingAnimals()
     {
-        remainingAnimals= GameObject.FindGameObjectsWithTag("Animal");
+        remainingAnimals = GameObject.FindGameObjectsWithTag("Animal");
         remainingAmount = remainingAnimals.Length - 1;
         // for (int i = 1; i < remainingAnimals.Length; i++)
         // {
