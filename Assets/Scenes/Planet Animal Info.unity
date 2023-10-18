@@ -678,7 +678,6 @@ Transform:
   - {fileID: 897433051}
   - {fileID: 445254553}
   - {fileID: 1162563206}
-  - {fileID: 1945542966}
   m_Father: {fileID: 1058196546}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4006,68 +4005,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0, y: 1}
---- !u!1 &1945542965
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1945542966}
-  - component: {fileID: 1945542967}
-  m_Layer: 0
-  m_Name: PlanetInfo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1945542966
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945542965}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 225632729}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1945542967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945542965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e33fcae1b24ed343bf8679b954bc487, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hostileCount: 0
-  scaredCount: 0
-  neutralCount: 0
-  treeCount: 0
-  totalAnimals: 0
-  planetMaterial: {fileID: 0}
-  rings: 0
-  hostilePrefabs: []
-  selectedHostile: 0
-  neutralPrefabs: []
-  selectedNeutral: 0
-  scaredPrefabs: []
-  selectedScared: 0
-  foliagePrefabs: []
-  selectedFoliage: 0
-  hostileName: 
-  scaredName: 
-  neutralName: 
 --- !u!1 &1950031763
 GameObject:
   m_ObjectHideFlags: 0

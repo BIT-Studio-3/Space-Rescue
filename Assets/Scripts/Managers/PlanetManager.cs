@@ -25,8 +25,7 @@ public class PlanetManager : MonoBehaviour
     public bool dropShipRange;
     private GameObject pauseMenu;
 
-    private GameObject[] remainingAnimals;
-    private int remainingAmount;
+    private int remainingAnimals;
 
     public static PlanetAnimalCountTEMP AnimalCountTEMP;
 
@@ -78,6 +77,7 @@ public class PlanetManager : MonoBehaviour
                 Pause();
             }
         }
+        remainingDisplay.GetComponent<TextMeshProUGUI>().text = "Remaining: " + RemainingAnimals().ToString();
     }
 
     public void Play()
@@ -101,7 +101,6 @@ public class PlanetManager : MonoBehaviour
     {
         //TODO: Use animal name to keep track of what animals are held
         //The held display is EXTREMELY temporary. It is just to show the number and get it functional for now.
-        remainingDisplay.GetComponent<TextMeshProUGUI>().text = "Remaining: " + RemainingAnimals().ToString();
         held++;
         Debug.Log(held);
     }
@@ -169,14 +168,9 @@ public class PlanetManager : MonoBehaviour
 
     public int RemainingAnimals()
     {
-        remainingAnimals = GameObject.FindGameObjectsWithTag("Animal");
-        remainingAmount = remainingAnimals.Length - 1;
-        // for (int i = 1; i < remainingAnimals.Length; i++)
-        // {
-        //     remainingAmount = i;
-        // }
-        return remainingAmount + 1;
-        //return remaining.Length - 1;
+        remainingAnimals = GameObject.FindGameObjectsWithTag("Animal").Length;
+        
+        return remainingAnimals;
 
     }
 }
