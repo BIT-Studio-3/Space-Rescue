@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability: 5
-  species: Grogan X'zon
+  species: Grogan
   temperament: Hostile
 --- !u!1001 &288684013666084054
 PrefabInstance:

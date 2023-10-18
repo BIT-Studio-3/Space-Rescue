@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability: 40
-  species: Vrokorian X
+  species: Vrokorian
   temperament: Hostile
 --- !u!1001 &288684013666084054
 PrefabInstance:
