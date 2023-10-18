@@ -6,7 +6,7 @@
 
 Welcome to **Space Rescue**, an exciting space adventure game where you embark on a daring mission to save stranded animals from distant planets while racing against time and a looming black hole.
 
-This project is no longer in regular development. Please see the [Roadmap](#team-info) section for more details
+This project is no longer in regular development. Please see the [Roadmap](#roadmap) section for more details
 
 ## Features
 
