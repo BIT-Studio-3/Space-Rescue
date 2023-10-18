@@ -38,7 +38,7 @@ public class PlanetManager : MonoBehaviour
         pauseMenu.SetActive(false);
         planetParent = GameObject.Find("PlanetParent");
         held = 0;
-        scoreDisplay.GetComponent<TextMeshProUGUI>().text = GameSettings.Score.ToString();
+        scoreDisplay.GetComponent<TextMeshProUGUI>().text = "Score: " + GameSettings.Score.ToString();
         remainingDisplay.GetComponent<TextMeshProUGUI>().text = "Remaining: " + RemainingAnimals().ToString();
 
         AnimalCountTEMP = GameObject.Find("TempAnimalCountManager").GetComponent<PlanetAnimalCountTEMP>();
@@ -99,22 +99,16 @@ public class PlanetManager : MonoBehaviour
 
     public void UpdateHeldAnimals(string animalName)
     {
-        //TODO: Use animal name to keep track of what animals are held
-        //The held display is EXTREMELY temporary. It is just to show the number and get it functional for now.
         held++;
-        Debug.Log(held);
     }
 
     private void DepositHeldAnimals()
     {
         GameSettings.Score += held;
         held = 0;//was 0
-        //animalDisplay.GetComponent<TMPro.TextMeshPro>().text = held.ToString();
-        scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = GameSettings.Score.ToString();
-        //This is very temporary. Will have a better system in the next increment.
+        scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "Score: " + GameSettings.Score.ToString();
 
-        //delete from list in planetanimalcount
-        foreach (GameObject animal in AnimalCountTEMP.collectedAnimals)
+        foreach (GameObject animal in AnimalCountTEMP.collectedAnimals)//delete from list in planetanimalcount
         {
             Destroy(animal);
         }
@@ -171,6 +165,5 @@ public class PlanetManager : MonoBehaviour
         remainingAnimals = GameObject.FindGameObjectsWithTag("Animal").Length;
 
         return remainingAnimals;
-
     }
 }
