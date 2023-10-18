@@ -1155,7 +1155,7 @@ GameObject:
   - component: {fileID: 445254553}
   - component: {fileID: 445254554}
   m_Layer: 0
-  m_Name: TempAnimalCountManager
+  m_Name: UIAnimalsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

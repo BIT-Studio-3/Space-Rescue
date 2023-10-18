@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlanetAnimalCountTEMP : MonoBehaviour
+public class UIAnimals : MonoBehaviour
 {
     private List<GameObject> panels = new List<GameObject>(); //the grid of panels that the animals will spawn as a child on
     public List<GameObject> collectedAnimals = new List<GameObject>();
@@ -15,7 +15,7 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
     private GameObject scared;
 
     //public SpawningManager spawningManager;
-    public static PlanetAnimalCountTEMP Instance;
+    public static UIAnimals Instance;
     public static AnimalController animalController;
 
     // Start is called before the first frame update
@@ -40,17 +40,17 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         Animator animator = uiAnimal.transform.Find("Model").GetComponent<Animator>();
 
         //every child object of the animal needs to have the layer set, as they don't inherit layers from parent
-        foreach (Transform child in model.GetComponent<Transform>()) //0 is collider, 1 is the animal body
+        foreach (Transform child in model.GetComponent<Transform>())
         {
             child.gameObject.layer = 5; //UI layer
         }
 
         uiAnimal.transform.localScale = new Vector3(40, 40, 40);
-        Destroy(uiAnimal.GetComponent<Rigidbody>()); //gets rid of the rigidbody
+        //Removing scripts and components so they don't conflict with the game and stay static on the panel
+        Destroy(uiAnimal.GetComponent<Rigidbody>());
         Destroy(uiAnimal.GetComponent<AnimalController>());
         Destroy(uiAnimal.GetComponent<GravityBody>());
         uiAnimal.tag = "Untagged";
-        //animator.enabled = false;
         animator.Play("Idle_A");
     }
 

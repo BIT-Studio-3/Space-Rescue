@@ -10,8 +10,6 @@ using TMPro;
 
 public class PlanetManager : MonoBehaviour
 {
-    //private GameObject animalDisplay;
-
     [SerializeField]
     private GameObject scoreDisplay;
 
@@ -27,7 +25,7 @@ public class PlanetManager : MonoBehaviour
 
     private int remainingAnimals;
 
-    public static PlanetAnimalCountTEMP AnimalCountTEMP;
+    public static UIAnimals uiAnimals;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +39,7 @@ public class PlanetManager : MonoBehaviour
         scoreDisplay.GetComponent<TextMeshProUGUI>().text = "Score: " + GameSettings.Score.ToString();
         remainingDisplay.GetComponent<TextMeshProUGUI>().text = "Remaining: " + RemainingAnimals().ToString();
 
-        AnimalCountTEMP = GameObject.Find("TempAnimalCountManager").GetComponent<PlanetAnimalCountTEMP>();
+        uiAnimals = GameObject.Find("UIAnimalsManager").GetComponent<UIAnimals>();
 
     }
 
@@ -108,11 +106,11 @@ public class PlanetManager : MonoBehaviour
         held = 0;//was 0
         scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "Score: " + GameSettings.Score.ToString();
 
-        foreach (GameObject animal in AnimalCountTEMP.collectedAnimals)//delete from list in planetanimalcount
+        foreach (GameObject animal in uiAnimals.collectedAnimals)//delete from list in planetanimalcount
         {
             Destroy(animal);
         }
-        AnimalCountTEMP.collectedAnimals.Clear();
+        uiAnimals.collectedAnimals.Clear();
     }
 
     public void LeavePlanet()
