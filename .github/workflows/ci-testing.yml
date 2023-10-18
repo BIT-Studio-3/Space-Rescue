@@ -2,11 +2,11 @@ name: Run Tests
 
 on:
   push:
-    branches: [staging, ci-automated-tests]
+    branches: [staging]
 
 jobs:
   TestAllModes:
-    name: Testing ${{ matrix.testMode }}
+    name: Testing ${{ matrix.testMode }} #
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
