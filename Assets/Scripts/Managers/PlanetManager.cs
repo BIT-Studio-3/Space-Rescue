@@ -15,6 +15,9 @@ public class PlanetManager : MonoBehaviour
     [SerializeField]
     private GameObject scoreDisplay;
 
+    [SerializeField]
+    private GameObject remainingDisplay;
+
     private GameObject planetParent;
     private GameObject dropShip;
     public static PlanetManager Instance;
@@ -22,19 +25,25 @@ public class PlanetManager : MonoBehaviour
     public bool dropShipRange;
     private GameObject pauseMenu;
 
+    private GameObject[] remainingAnimals;
+    private int remainingAmount;
+
     public static PlanetAnimalCountTEMP AnimalCountTEMP;
 
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
+
         pauseMenu = GameObject.Find("Pause Menu");
         pauseMenu.SetActive(false);
         planetParent = GameObject.Find("PlanetParent");
         held = 0;
         scoreDisplay.GetComponent<TextMeshProUGUI>().text = GameSettings.Score.ToString();
-        //This is very temporary. Will have a better system in the next increment.
+        remainingDisplay.GetComponent<TextMeshProUGUI>().text = "Remaining: " + RemainingAnimals().ToString();
+
         AnimalCountTEMP = GameObject.Find("TempAnimalCountManager").GetComponent<PlanetAnimalCountTEMP>();
+
     }
 
     void Update()
@@ -92,7 +101,9 @@ public class PlanetManager : MonoBehaviour
     {
         //TODO: Use animal name to keep track of what animals are held
         //The held display is EXTREMELY temporary. It is just to show the number and get it functional for now.
+        remainingDisplay.GetComponent<TextMeshProUGUI>().text = "Remaining: " + RemainingAnimals().ToString();
         held++;
+        Debug.Log(held);
     }
 
     private void DepositHeldAnimals()
@@ -130,7 +141,6 @@ public class PlanetManager : MonoBehaviour
 
     private IEnumerator PlayerDeath()
     {
-
         GameObject player = null;
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject obj in objs)
@@ -155,5 +165,18 @@ public class PlanetManager : MonoBehaviour
     public void Death()
     {
         StartCoroutine(PlayerDeath());
+    }
+
+    public int RemainingAnimals()
+    {
+        remainingAnimals= GameObject.FindGameObjectsWithTag("Animal");
+        remainingAmount = remainingAnimals.Length - 1;
+        // for (int i = 1; i < remainingAnimals.Length; i++)
+        // {
+        //     remainingAmount = i;
+        // }
+        return remainingAmount + 1;
+        //return remaining.Length - 1;
+
     }
 }

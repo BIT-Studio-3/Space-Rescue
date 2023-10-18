@@ -49,6 +49,7 @@ public class PlanetAnimalCountTEMP : MonoBehaviour
         Destroy(uiAnimal.GetComponent<Rigidbody>()); //gets rid of the rigidbody
         Destroy(uiAnimal.GetComponent<AnimalController>());
         Destroy(uiAnimal.GetComponent<GravityBody>());
+        uiAnimal.tag = "Untagged";
         //animator.enabled = false;
         animator.Play("Idle_A");
     }

@@ -33,7 +33,7 @@ public class PlanetInfo : MonoBehaviour
     private const int TREEMAX = 20;
 
     [HideInInspector]
-    public int totalAnimals;
+    public int totalAnimals; //!!!!!!!
 
     [HideInInspector]
     public Material planetMaterial; //The material of the texture of the planet

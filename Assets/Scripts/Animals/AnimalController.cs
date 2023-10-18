@@ -51,7 +51,6 @@ public class AnimalController : MonoBehaviour
             PlayAnimation();
         if (inRange && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0)
         {
-            //PlanetAnimalCountTEMP.Instance.AnimalCount(gameObject.name); //sends the name of the game object to planetanimalcountTemp
             //This checks if the name of the gameobject contains a keyword of it's type and then updates the count of that animal and passes a string to the planet manager to update the UI
             if (gameObject.name.Contains("Hostile"))
             {
