@@ -36,6 +36,10 @@ jobs:
                 restore-keys: |
                     Library-Space-Rescue-
                     Library-
+            - name: Create Additional Disk space
+              run: sudo rm -rf /usr/share/dotnet && sudo rm -rf /opt/ghc && sudo rm -rf "/usr/local/share/boost" && sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+            - name: Check If Storage Space was increased
+              run: df -h
       
             # Build
             - name: Build Project #Builds the unity Project
