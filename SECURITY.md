@@ -9,4 +9,4 @@
 
 ## Reporting a Vulnerability
 
-If you find any security issues please [add an issue](https://github.com/BIT-Studio-3/Space-Rescue/issues/new/choose) or create a post in [discussions](https://github.com/BIT-Studio-3/Space-Rescue/discussions/new/choose).
+If you find any security issues please [report it privately](https://github.com/BIT-Studio-3/Space-Rescue/security), [add an issue](https://github.com/BIT-Studio-3/Space-Rescue/issues/new/choose) or create a post in [discussions](https://github.com/BIT-Studio-3/Space-Rescue/discussions/new/choose).
