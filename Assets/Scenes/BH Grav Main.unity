@@ -2252,11 +2252,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2333569641422922419, guid: 0ec627f363295e644872f77860511ab8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 250
+      value: 356
       objectReference: {fileID: 0}
     - target: {fileID: 2333569641422922419, guid: 0ec627f363295e644872f77860511ab8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -250
+      value: -335
       objectReference: {fileID: 0}
     - target: {fileID: 2333569641422922419, guid: 0ec627f363295e644872f77860511ab8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3399,6 +3399,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 935375956}
     m_Modifications:
+    - target: {fileID: 62058543, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
+      propertyPath: playerGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643828742465134357, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
+      propertyPath: playerGravity
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306235338226730024, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
+      propertyPath: playerGravity
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7775607799929779950, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
       propertyPath: shipWarning
       value: 
@@ -3458,6 +3470,10 @@ PrefabInstance:
     - target: {fileID: 8616284537789148559, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
       propertyPath: m_Name
       value: Black Hole
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052486008628307628, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
+      propertyPath: playerGravity
+      value: 0.08
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
