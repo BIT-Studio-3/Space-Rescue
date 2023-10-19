@@ -17,12 +17,14 @@ public class UIAnimals : MonoBehaviour
     public static UIAnimals Instance;
     public static AnimalController animalController;
 
+    public const int MAXPANELS = 25;
+
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
 
-        for (int i = 0; i < 25; i++)
+        for (int i = 0; i < MAXPANELS; i++)
         {
             panels.Add(GameObject.Find("Panel " + i));
         }
