@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetGravity: 0.001
-  playerGravity: 0.1
+  playerGravity: 1
 --- !u!1 &270369289285038385
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetGravity: 0.00005
-  playerGravity: 0.02
+  playerGravity: 0.1
 --- !u!1 &4740637488430976033
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetGravity: 0.00008
-  playerGravity: 0.04
+  playerGravity: 0.2
 --- !u!1 &5243003069589164154
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetGravity: 0.00005
-  playerGravity: 0.02
+  playerGravity: 0.08
 --- !u!1 &8616284536444373871
 GameObject:
   m_ObjectHideFlags: 0
