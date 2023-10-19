@@ -14,7 +14,6 @@ public class UIAnimals : MonoBehaviour
     private GameObject hostile;
     private GameObject scared;
 
-    //public SpawningManager spawningManager;
     public static UIAnimals Instance;
     public static AnimalController animalController;
 
@@ -27,7 +26,6 @@ public class UIAnimals : MonoBehaviour
         {
             panels.Add(GameObject.Find("Panel " + i));
         }
-
     }
 
     public void SpawnUIAnimal(GameObject type)
@@ -46,6 +44,7 @@ public class UIAnimals : MonoBehaviour
         }
 
         uiAnimal.transform.localScale = new Vector3(40, 40, 40);
+        
         //Removing scripts and components so they don't conflict with the game and stay static on the panel
         Destroy(uiAnimal.GetComponent<Rigidbody>());
         Destroy(uiAnimal.GetComponent<AnimalController>());

@@ -9,7 +9,6 @@ using TMPro;
 
 public class SpawningManager : MonoBehaviour
 {
-
     //The current planet and planet info
     private GameObject planet;
     private PlanetInfo planetInfo;
@@ -46,11 +45,8 @@ public class SpawningManager : MonoBehaviour
 
     private TextMeshProUGUI planetName;
 
-    public static SpawningManager Instance;
-
     void Start()
     {
-        //Instance = this;
         //The current planet and planetinfo
         planet = GameObject.Find("Planet");
         planetInfo = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet];
