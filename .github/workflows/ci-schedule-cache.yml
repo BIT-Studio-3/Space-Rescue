@@ -14,7 +14,8 @@ jobs:
         uses: actions/checkout@v3
         with:
           lfs: true # Whether to download Git-LFS files 
-
+      - name: Check Available Storage Space
+        run: df -h
       # Cache 
       - name: Cache Files #Cache un-needed files, significantly reduces build time
         uses: actions/cache@v3
@@ -24,7 +25,13 @@ jobs:
           restore-keys: |
               Library-Space-Rescue-
               Library-
-        # Build
+      - name: Check Available Storage Space
+        run: df -h
+      - name: Create Additional Disk space
+        run: sudo rm -rf /usr/share/dotnet && sudo rm -rf /opt/ghc && sudo rm -rf "/usr/local/share/boost" && sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+      - name: Check If Storage Space was increased
+        run: df -h
+                # Build
       - name: Build Project #Builds the unity Project
         uses: game-ci/unity-builder@v2
         env:
@@ -35,4 +42,6 @@ jobs:
           targetPlatform: StandaloneWindows
           allowDirtyBuild: true #Allows the build to modify the repo, I had to enable this for the workflow to run
           buildName: SpaceRescue
+      - name: Check Available Storage Space After Build
+        run: df -h
         
