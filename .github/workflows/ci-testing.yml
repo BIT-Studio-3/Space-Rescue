@@ -1,0 +1,37 @@
+name: Run Tests
+
+on:
+  push:
+    branches: [staging]
+
+jobs:
+  TestAllModes:
+    name: Testing ${{ matrix.testMode }} #
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        projectPath:
+          - test-project
+        testMode:
+          - playmode
+          - editmode
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          lfs: true
+
+      - uses: game-ci/unity-test-runner@v3.0.0
+        id: tests
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          testMode: ${{ matrix.testMode }}
+          artifactsPath: ${{ matrix.testMode }}-artifacts
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          checkName: ${{ matrix.testMode }} Test Results
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: Test results for ${{ matrix.testMode }}
+          path: ${{ steps.tests.outputs.artifactsPath }}
