@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using UnityEditor;
 
 public class OnPlanetTests
 {
     public GameObject animalParent;
     public GameObject animal;
+    private GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Animals/Neutral/Animal - Neutral Deer Base.prefab");
+
+    
 
     // A Test behaves as an ordinary method
     [Test]
@@ -26,5 +30,12 @@ public class OnPlanetTests
         animal.transform.parent = animalParent.transform;
 
         Assert.Greater(animalParent.transform.childCount, 0);
+    }
+
+    [Test]
+    public void InstantiatingAnimal()
+    {
+        animal = GameObject.Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
+        Assert.AreEqual("Animal - Neutral Deer Base(Clone)", animal.name);
     }
 }

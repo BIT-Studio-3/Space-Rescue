@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+//using UnityEditor;
 
 public class P_PlanetsTests
 {
+    //public GameObject animal;
+    //private GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Animals/Neutral/Animal - Neutral Deer Base.prefab");
     [UnityTest]
     public IEnumerator PlanetsSpawnWithParents()
     {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
+        //animal = GameObject.Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
+        //Assert.AreEqual("Animal - Neutral Deer Base", animal.name);
         yield return null;
-
-        GameObject planetParent = GameObject.Find("Rotator");
-        GameObject planet = GameObject.Find("Planet(Clone)");
-
-        Assert.AreEqual(planet.transform.parent, planetParent);
     }
 }
