@@ -61,7 +61,7 @@ public class FindingPlanets : MonoBehaviour
                 if (planet == null || PlanetStates.Instance.planetInfo[planet.GetComponent<PlanetDetection>().planetID].totalAnimals == 0)
                 {
                     planetsNotRescued.Remove(planet); //Remove saved planets from the list
-                    if(planet != null) //Also null reference exceptions
+                    if (planet != null) //Also null reference exceptions
                     {
                         planet.GetComponent<Target>().enabled = false;
                     }
