@@ -46,10 +46,10 @@ public class HudBehaviour : MonoBehaviour
         );
         if (PlanetStates.Instance.planetInfo[status.planetID].totalAnimals > 0)
         {
-            if(PlanetStates.Instance.planetInfo[status.planetID].hostileCount > 0)
+            if (PlanetStates.Instance.planetInfo[status.planetID].hostileCount > 0)
             {
                 animalCounts[0] = $"{PlanetStates.Instance.planetInfo[status.planetID].hostileName}: {PlanetStates.Instance.planetInfo[status.planetID].hostileCount}\n";
-            animalHostileWarning.GetComponent<Text>().text = "<Hostile Creature>";
+                animalHostileWarning.GetComponent<Text>().text = "<Hostile Creature>";
 
             }
             else
