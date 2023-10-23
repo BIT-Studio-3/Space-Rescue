@@ -46,6 +46,18 @@ public class HudBehaviour : MonoBehaviour
         );
         if (PlanetStates.Instance.planetInfo[status.planetID].totalAnimals > 0)
         {
+            if(PlanetStates.Instance.planetInfo[status.planetID].hostileCount > 0)
+            {
+                animalCounts[0] = $"{PlanetStates.Instance.planetInfo[status.planetID].hostileName}: {PlanetStates.Instance.planetInfo[status.planetID].hostileCount}\n";
+            animalHostileWarning.GetComponent<Text>().text = "<Hostile Creature>";
+
+            }
+            else
+            {
+                animalCounts[0] = "";
+                animalHostileWarning.GetComponent<Text>().text = "";
+
+            }
             animalCounts[0] = PlanetStates.Instance.planetInfo[status.planetID].hostileCount > 0 ? $"{PlanetStates.Instance.planetInfo[status.planetID].hostileName}: {PlanetStates.Instance.planetInfo[status.planetID].hostileCount}\n" : "";
             animalCounts[1] = PlanetStates.Instance.planetInfo[status.planetID].scaredCount > 0 ? $"{PlanetStates.Instance.planetInfo[status.planetID].scaredName}: {PlanetStates.Instance.planetInfo[status.planetID].scaredCount}\n" : "";
             animalCounts[2] = PlanetStates.Instance.planetInfo[status.planetID].neutralCount > 0 ? $"{PlanetStates.Instance.planetInfo[status.planetID].neutralName}: {PlanetStates.Instance.planetInfo[status.planetID].neutralCount}\n" : "";
@@ -55,12 +67,12 @@ public class HudBehaviour : MonoBehaviour
                 + PlanetStates.Instance.planetInfo[status.planetID].totalAnimals.ToString();
 
             animalDetails.GetComponent<Text>().text = animalCounts[0] + animalCounts[1] + animalCounts[2];
-
         }
         else
         {
             planetStatus.GetComponent<Text>().text = "All animals rescued!";
             animalDetails.GetComponent<Text>().text = "";
+            animalHostileWarning.GetComponent<Text>().text = "";
         }
         distFromPlayer.GetComponent<Text>().text = "Distance: " + dist.ToString();
         blackHolePlanetDist.GetComponent<Text>().text = "Black Hole: " + distBlackHole.ToString();
