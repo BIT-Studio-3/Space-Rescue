@@ -14,10 +14,16 @@ public class AnimalController : MonoBehaviour
 {
     private float radius;
     private bool inRange;
-    [SerializeField] private bool moving;
+
+    [SerializeField]
+    private bool moving;
     private Vector3 pos;
-    [SerializeField] private bool attacking;
-    [SerializeField] private bool running;
+
+    [SerializeField]
+    private bool attacking;
+
+    [SerializeField]
+    private bool running;
     private Vector3 normalizedDirection;
     private Vector3 quarterRadiusOffset;
 
@@ -35,7 +41,7 @@ public class AnimalController : MonoBehaviour
         pos = transform.position; //Sets initial movement to the animals spawn point
         inRange = false;
         attacking = false;
-        StartCoroutine(wait());
+        StartCoroutine(Wait());
     }
 
     // Update is called once per frame
@@ -43,7 +49,12 @@ public class AnimalController : MonoBehaviour
     {
         if (gameObject.transform.Find("Model"))
             PlayAnimation();
-        if (inRange && Input.GetKeyDown(Keybinds.Interact) && Time.timeScale != 0)
+        if (
+            inRange
+            && Input.GetKeyDown(Keybinds.Interact)
+            && Time.timeScale != 0
+            && PlayerMovement.Instance.AnimationState != PlayerState.DEATH
+        ) //Checks that the player is not in the death animation state.
         {
             PlanetAnimalCountTEMP.Instance.AnimalCount(gameObject.name); //sends the name of the game object to planetanimalcountTemp
             //This checks if the name of the gameobject contains a keyword of it's type and then updates the count of that animal and passes a string to the planet manager to update the UI
@@ -69,11 +80,9 @@ public class AnimalController : MonoBehaviour
 
         if (attacking && Vector3.Distance(transform.position, pos) < 2) //This will now kick you out of the planet if you get caught. I want to make this more interesting in the future but it works for the moment
         {
-
             PlanetManager.Instance.Death();
         }
         Movement();
-
 
         attacking = false; //This will stop the attacking until it gets another command from the hostile animal script. If the attack is still going on then that will be right away
         running = false; //This will stop the running until it gets another command from the scared animal script. If the animal is still scared then that will be right away
@@ -121,11 +130,11 @@ public class AnimalController : MonoBehaviour
     {
         running = true;
         //set pos to 1/4 of the planet away from the player. This is a lot of algebra I don't fully understand and got to through trial and error. However it works
-        Vector3 AB = transform.position - playerPos;
-        Vector3 AC = playerPos - new Vector3(0, 0, 0);
-        Vector3 BC = Vector3.Cross(AB, AC); //This is getting the three points of the triangle and then getting the cross product of two of the sides
-        BC.Normalize(); //Normalizing the vector so it is a unit vector
-        pos = new Vector3(0, 0, 0) + BC * radius; //Setting the position to new point on the surface of the planet
+        Vector3 ab = transform.position - playerPos;
+        Vector3 ac = playerPos - new Vector3(0, 0, 0);
+        Vector3 bc = Vector3.Cross(ab, ac); //This is getting the three points of the triangle and then getting the cross product of two of the sides
+        bc.Normalize(); //Normalizing the vector so it is a unit vector
+        pos = new Vector3(0, 0, 0) + bc * radius; //Setting the position to new point on the surface of the planet
         speed = 15; //Animal gets scared and runs away faster
         LookAtMovement();
     }
@@ -137,7 +146,7 @@ public class AnimalController : MonoBehaviour
         attacking = true;
     }
 
-    IEnumerator wait()
+    IEnumerator Wait()
     {
         while (true)
         {
