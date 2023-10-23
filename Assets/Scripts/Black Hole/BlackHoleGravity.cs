@@ -5,9 +5,9 @@ using UnityEngine;
 public class BlackHoleGravity : MonoBehaviour
 {
     [SerializeField]
-    private float planetGravity = .00005f;
+    private float planetGravity; //This will be set for each distance in the editor
     [SerializeField]
-    private float playerGravity = .03f;
+    private float playerGravity; //This will be set for each distance in the editor
     private float radius;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +29,10 @@ public class BlackHoleGravity : MonoBehaviour
             else if (!SpeedEffect.Instance.boosters) // If boosters are off. This is so that the gravity can be threatening but also able to escape it with boosters
             {
                 other.attachedRigidbody.AddForce((transform.position - other.transform.position) * gravityIntensity * other.attachedRigidbody.mass * playerGravity * Time.smoothDeltaTime);
+            }
+            else //If boosters are on
+            {
+                other.attachedRigidbody.AddForce((transform.position - other.transform.position) * (gravityIntensity * 0.5f) * other.attachedRigidbody.mass * playerGravity * Time.smoothDeltaTime);
             }
         }
     }
