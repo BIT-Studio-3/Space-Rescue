@@ -1595,6 +1595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuHover: {fileID: 8300000, guid: 6ad9e650bb5ad2f4096fd144ef421764, type: 3}
+  shipMovement: {fileID: 0}
 --- !u!82 &408757485
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7419,7 +7420,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 408757484}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: MusicSlider
+        m_MethodName: MouseSensitivitySlider
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7428,7 +7429,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!1 &2063533591
 GameObject:
   m_ObjectHideFlags: 0
