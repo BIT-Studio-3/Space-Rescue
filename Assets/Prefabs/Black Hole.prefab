@@ -233,7 +233,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2004005290}
   - component: {fileID: 2246950311176472731}
-  - component: {fileID: 2004005293}
   - component: {fileID: 62058543}
   m_Layer: 2
   m_Name: InnerGravity
@@ -268,25 +267,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2004005293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004005289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 0
-  priority: 3
-  blendDistance: 100
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: f535c957bf6610141bbbbaaa5462ee6a, type: 2}
 --- !u!114 &62058543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,8 +281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df82535d53108d4bbfd6b1ae752e7f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetGravity: 0.0001
-  playerGravity: 0.06
+  planetGravity: 0.001
+  playerGravity: 1
 --- !u!1 &270369289285038385
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +294,6 @@ GameObject:
   - component: {fileID: 7048315853041935208}
   - component: {fileID: 4237285120978172367}
   - component: {fileID: 7775607799929779950}
-  - component: {fileID: 1110470385507685133}
   - component: {fileID: 3643828742465134357}
   m_Layer: 2
   m_Name: OuterGravity
@@ -394,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetGravity: 0.00005
-  playerGravity: 0.002
+  playerGravity: 0.1
 --- !u!1 &4740637488430976033
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +386,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4747011861239322253}
   - component: {fileID: 388386949355037270}
-  - component: {fileID: 5529188775719723766}
   - component: {fileID: 4306235338226730024}
   m_Layer: 2
   m_Name: MiddleGravity
@@ -440,25 +420,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.5
+  m_Radius: 6
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5529188775719723766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4740637488430976033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 0
-  priority: 1
-  blendDistance: 100
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 68cb0d9d28a7bb541ab115c4dba28595, type: 2}
 --- !u!114 &4306235338226730024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,7 +435,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetGravity: 0.00008
-  playerGravity: 0.04
+  playerGravity: 0.2
+--- !u!1 &5243003069589164154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4712735120427419039}
+  - component: {fileID: 3032240130795883949}
+  - component: {fileID: 9052486008628307628}
+  m_Layer: 2
+  m_Name: MassiveGravity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4712735120427419039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243003069589164154}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8616284537789148552}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3032240130795883949
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243003069589164154}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 30
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9052486008628307628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243003069589164154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df82535d53108d4bbfd6b1ae752e7f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetGravity: 0.00005
+  playerGravity: 0.08
 --- !u!1 &8616284536444373871
 GameObject:
   m_ObjectHideFlags: 0
@@ -5432,6 +5455,7 @@ Transform:
   - {fileID: 2004005290}
   - {fileID: 4747011861239322253}
   - {fileID: 7048315853041935208}
+  - {fileID: 4712735120427419039}
   - {fileID: 583193609}
   m_Father: {fileID: 0}
   m_RootOrder: 0
