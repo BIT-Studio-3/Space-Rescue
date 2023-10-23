@@ -156,7 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability: 40
-  species: Green Squid (Hostile)
+  species: Vrokorian
+  temperament: Hostile
 --- !u!1001 &288684013666084054
 PrefabInstance:
   m_ObjectHideFlags: 0
