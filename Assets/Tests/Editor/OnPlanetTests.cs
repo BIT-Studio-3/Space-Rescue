@@ -25,7 +25,6 @@ public class OnPlanetTests
      public void AnimalParentHasChildren()
     {
         animalParent = GameObject.Find("AnimalParent");
-        //cant instantiate without a prefab but also cant drag a prefab into the test
         animal = new GameObject("Animal");
         animal.transform.parent = animalParent.transform;
 
