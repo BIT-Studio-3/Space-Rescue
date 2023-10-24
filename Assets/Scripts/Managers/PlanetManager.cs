@@ -11,10 +11,10 @@ using TMPro;
 public class PlanetManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject animalDisplay;
+    private GameObject scoreDisplay;
 
     [SerializeField]
-    private GameObject scoreDisplay;
+    private GameObject remainingDisplay;
 
     private GameObject planetParent;
     private GameObject dropShip;
@@ -23,17 +23,24 @@ public class PlanetManager : MonoBehaviour
     public bool dropShipRange;
     private GameObject pauseMenu;
 
+    private int remainingAnimals;
+
+    public static UIAnimals uiAnimals;
+
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
+
         pauseMenu = GameObject.Find("Pause Menu");
         pauseMenu.SetActive(false);
         planetParent = GameObject.Find("PlanetParent");
         held = 0;
-        scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text =
-            "Temp Score Display: " + GameSettings.Score.ToString();
-        //This is very temporary. Will have a better system in the next increment.
+        scoreDisplay.GetComponent<TextMeshProUGUI>().text = "Score: " + GameSettings.Score.ToString();
+        remainingDisplay.GetComponent<TextMeshProUGUI>().text = "Remaining: " + RemainingAnimals().ToString();
+
+        uiAnimals = GameObject.Find("UIAnimalsManager").GetComponent<UIAnimals>();
+
     }
 
     void Update()
@@ -68,6 +75,7 @@ public class PlanetManager : MonoBehaviour
                 Pause();
             }
         }
+        remainingDisplay.GetComponent<TextMeshProUGUI>().text = "Remaining: " + RemainingAnimals().ToString();
     }
 
     public void Play()
@@ -89,20 +97,20 @@ public class PlanetManager : MonoBehaviour
 
     public void UpdateHeldAnimals(string animalName)
     {
-        //TODO: Use animal name to keep track of what animals are held
-        //The held display is EXTREMELY temporary. It is just to show the number and get it functional for now.
         held++;
-        animalDisplay.GetComponent<TMPro.TextMeshPro>().text = held.ToString();
     }
 
     private void DepositHeldAnimals()
     {
         GameSettings.Score += held;
-        held = 0;
-        animalDisplay.GetComponent<TMPro.TextMeshPro>().text = held.ToString();
-        scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text =
-            "Temp Score Display: " + GameSettings.Score.ToString();
-        //This is very temporary. Will have a better system in the next increment.
+        held = 0;//was 0
+        scoreDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "Score: " + GameSettings.Score.ToString();
+
+        foreach (GameObject animal in uiAnimals.collectedAnimals)//delete from list in planetanimalcount
+        {
+            Destroy(animal);
+        }
+        uiAnimals.collectedAnimals.Clear();
     }
 
     public void LeavePlanet()
@@ -117,13 +125,13 @@ public class PlanetManager : MonoBehaviour
             }
         }
         ShipMovement.Instance.ResetBoost(); //This resets the ships boost before it goes back to the main scene
+
         GameMenuManager.Instance.ReturntoScene("Planet");
 
     }
 
     private IEnumerator PlayerDeath()
     {
-
         GameObject player = null;
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject obj in objs)
@@ -148,5 +156,12 @@ public class PlanetManager : MonoBehaviour
     public void Death()
     {
         StartCoroutine(PlayerDeath());
+    }
+
+    public int RemainingAnimals()
+    {
+        remainingAnimals = GameObject.FindGameObjectsWithTag("Animal").Length;
+
+        return remainingAnimals;
     }
 }

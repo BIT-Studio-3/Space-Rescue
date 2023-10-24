@@ -156,7 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability: 40
-  species: Green Snake (Hostile)
+  species: Grogan
+  temperament: Hostile
 --- !u!1001 &288684013666084054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -278,6 +279,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Model
       objectReference: {fileID: 0}
+    - target: {fileID: 4807929556901506227, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186593717914452053, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5442504493887559991, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -285,6 +294,10 @@ PrefabInstance:
     - target: {fileID: 5442504493887559991, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950655511589643476, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8319246735976726104, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
       propertyPath: m_Materials.Array.data[0]

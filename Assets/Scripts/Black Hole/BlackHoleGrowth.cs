@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class BlackHoleGrowth : MonoBehaviour
 {
-    // Update is called once per frame
-    void Update()
+    private const float GROWTHRATE = 1f; //Black hole grows this amount every second
+    private const float STEPRATE = 0.1f; //How many times it updates per second
+
+    //Start BH Growth when enabled. This means it will also start it when leaving planet
+    void OnEnable()
     {
-        //Increases every frame if not paused
-        if (Time.timeScale == 1)
+        StartCoroutine(Growth());
+    }
+
+    IEnumerator Growth() //Grow this amount
+    {
+        float StepGrowth = GROWTHRATE * STEPRATE; //This is so that you can change the growth rate and the step rate independently and it will work out the growth per step
+        while (true)
         {
-            transform.localScale = new Vector3(transform.localScale.x * 1.00005f, transform.localScale.y * 1.00005f, transform.localScale.z * 1.00005f); 
+            if (Time.timeScale != 0)
+            {
+                transform.localScale = new Vector3(transform.localScale.x + StepGrowth, transform.localScale.y + StepGrowth, transform.localScale.z + StepGrowth); 
+            }
+            yield return new WaitForSeconds(STEPRATE); //pause for half a second
         }
     }
 }

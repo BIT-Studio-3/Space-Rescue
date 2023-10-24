@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +13,7 @@ public class ShipMovement : MonoBehaviour
     float mouseInputX;
     float mouseInputY;
     float tiltInput;
+
 
     //speed
     float speedMult = 1;
@@ -41,7 +42,7 @@ public class ShipMovement : MonoBehaviour
     void Start()
     {
         Instance = this;
-        Cursor.lockState = CursorLockMode.Locked; //keep mouse in the game
+        Cursor.lockState = CursorLockMode.Locked; //keeps mouse inside the game
         spaceshipRB = GetComponent<Rigidbody>();
         ResetBoost(); //Sets boost to Cap
         initialVelocity = spaceshipRB.velocity;
@@ -59,8 +60,9 @@ public class ShipMovement : MonoBehaviour
         horizontalMove = Input.GetAxis("Horizontal");
         tiltInput = Input.GetAxis("Roll");
 
-        mouseInputX = Input.GetAxis("Mouse X");
-        mouseInputY = Input.GetAxis("Mouse Y");
+        mouseInputX = Input.GetAxis("Mouse X") * GameSettings.mouseSensitivity;
+        mouseInputY = Input.GetAxis("Mouse Y") * GameSettings.mouseSensitivity;
+
                 
         if(Input.GetKey(Keybinds.Boost)) //If boosting
         {
@@ -135,6 +137,5 @@ public class ShipMovement : MonoBehaviour
         spaceshipRB.AddTorque(mouseInputX * speedMultAngle * spaceshipRB.transform.up, ForceMode.VelocityChange);
 
         spaceshipRB.AddTorque(speedtiltMultiAngle * tiltInput * spaceshipRB.transform.forward, ForceMode.VelocityChange);
-
     }
 }
