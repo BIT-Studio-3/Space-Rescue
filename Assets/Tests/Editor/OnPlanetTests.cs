@@ -11,12 +11,16 @@ public class OnPlanetTests
     public GameObject animal;
     private GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Animals/Neutral/Animal - Neutral Deer Base.prefab");
 
-    
-
     // A Test behaves as an ordinary method
     [Test]
     public void FindsAnimalParent()
     {
+        // Tests run like as if they are in an empty scene.
+        // so gameobjects need to be created
+        // other scripts that create and set objects could be
+        // referenced but due to the monobehaviour restriction, it is more difficult
+
+        animalParent = new GameObject("AnimalParent");
         animalParent = GameObject.Find("AnimalParent");
         Assert.AreEqual("AnimalParent", animalParent.name);
     }
@@ -24,6 +28,7 @@ public class OnPlanetTests
    [Test]
      public void AnimalParentHasChildren()
     {
+        animalParent = new GameObject("AnimalParent");
         animalParent = GameObject.Find("AnimalParent");
         animal = new GameObject("Animal");
         animal.transform.parent = animalParent.transform;

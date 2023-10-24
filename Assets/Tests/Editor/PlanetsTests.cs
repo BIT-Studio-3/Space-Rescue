@@ -6,17 +6,22 @@ using UnityEngine.TestTools;
 
 public class PlanetsTests
 {
-    public GameObject planetParent;
+    public GameObject rotator;
     public GameObject planet;
 
     // A Test behaves as an ordinary method
     [Test]
     public void PlanetsSpawnInParent()
     {
-        planetParent = GameObject.Find("Rotator");
-        planet = GameObject.Find("Planet(Clone)");
+        rotator = new GameObject("Rotator");
+        planet = new GameObject("Planet");
 
-        Assert.AreEqual(planet.transform.parent, planetParent);
+        rotator = GameObject.Find("Rotator");
+        planet = GameObject.Find("Planet");
+
+        planet.transform.parent = rotator.transform;
+
+        Assert.AreEqual(rotator.transform, planet.transform.parent);
         
     }
     
