@@ -42,6 +42,7 @@ public class ShipMovement : MonoBehaviour
     void Start()
     {
         Instance = this;
+        Cursor.lockState = CursorLockMode.Locked; //keeps mouse inside the game
         spaceshipRB = GetComponent<Rigidbody>();
         ResetBoost(); //Sets boost to Cap
         initialVelocity = spaceshipRB.velocity;

@@ -129,7 +129,6 @@ public class SettingsManager : MonoBehaviour
     {
         float newSensitivity = mouseSensitivitySlider.value;
         GameSettings.mouseSensitivity = newSensitivity;
-        Debug.Log("Mouse Sensitivity Set to: " + newSensitivity);
         SensitivityNumber.GetComponent<TMPro.TextMeshProUGUI>().text = (mouseSensitivitySlider.value * 10).ToString("0");
     }
 
