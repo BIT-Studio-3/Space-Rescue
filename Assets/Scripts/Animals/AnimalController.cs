@@ -32,11 +32,17 @@ public class AnimalController : MonoBehaviour
     private const int MAXWAIT = 30;
 
     public static AnimalController Instance;
+    public static UIAnimals uiAnimals;
+    public static SpawningManager spawningManager;
+    public static PlanetInfo planetInfo;
 
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
+        spawningManager = GameObject.Find("SpawningManager").GetComponent<SpawningManager>();
+        planetInfo = GameObject.Find("Planet").GetComponent<PlanetInfo>();
+        uiAnimals = GameObject.Find("UIAnimalsManager").GetComponent<UIAnimals>();
         radius = GameObject.Find("Planet").transform.localScale.x / 2 + 1;
         pos = transform.position; //Sets initial movement to the animals spawn point
         inRange = false;
@@ -56,22 +62,25 @@ public class AnimalController : MonoBehaviour
             && PlayerMovement.Instance.AnimationState != PlayerState.DEATH
         ) //Checks that the player is not in the death animation state.
         {
-            PlanetAnimalCountTEMP.Instance.AnimalCount(gameObject.name); //sends the name of the game object to planetanimalcountTemp
             //This checks if the name of the gameobject contains a keyword of it's type and then updates the count of that animal and passes a string to the planet manager to update the UI
             if (gameObject.name.Contains("Hostile"))
             {
                 PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].hostileCount--;
                 PlanetManager.Instance.UpdateHeldAnimals("Hostile");
+                uiAnimals.SpawnUIAnimal(gameObject);
+
             }
             else if (gameObject.name.Contains("Scared"))
             {
                 PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].scaredCount--;
                 PlanetManager.Instance.UpdateHeldAnimals("Scared");
+                uiAnimals.SpawnUIAnimal(gameObject);
             }
             else if (gameObject.name.Contains("Neutral"))
             {
                 PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].neutralCount--;
                 PlanetManager.Instance.UpdateHeldAnimals("Neutral");
+                uiAnimals.SpawnUIAnimal(gameObject);
             }
             PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet].totalAnimals--;
 
