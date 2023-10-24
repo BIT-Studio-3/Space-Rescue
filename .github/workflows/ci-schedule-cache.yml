@@ -11,7 +11,7 @@ jobs:
     steps:
       # Checkout
       - name: Checkout Repo #Checkouts to the Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           lfs: true # Whether to download Git-LFS files 
       - name: Check Available Storage Space
