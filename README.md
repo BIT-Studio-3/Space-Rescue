@@ -6,6 +6,8 @@
 
 Welcome to **Space Rescue**, an exciting space adventure game where you embark on a daring mission to save stranded animals from distant planets while racing against time and a looming black hole.
 
+This project is no longer in regular development. Please see the [Roadmap](#roadmap) section for more details
+
 ## Features
 
 - **Engaging Gameplay:** Take on the role of a heroic space rescuer, navigating treacherous environments to rescue adorable animals and ensure their safe return to the lander.
@@ -101,12 +103,13 @@ Some of the most important changes for each update are as follows:
 | v1.6.0    | 01/08/2023   | Gravity added, planet orbit, new HUD, new title screen  |
 | v1.7.0    | 15/08/2023   | Planet orbit improved, more HUD improvements, new pause screen, planet gameplay rework  |
 | v1.8.0    | 29/08/2023   | New End Screen Menu, animal behaviour improvements, wider variety of planet textures |
-| v1.9.0    | 12/09/2023   | Boost speed increased, on planet UI, new planet scanning info |
-| v1.10.0   | 10/10/2023   | Expanded planet visuals, correct visuals in planet exploration, music and sound effects, new in planet models, improved planet info panel |
+| v1.9.0    | 12/09/2023   | Boost speed increased, on planet UI, new planet scanning information |
+| v1.10.0   | 10/10/2023   | Expanded planet visuals, correct visuals in planet exploration, music and sound effects, new in planet models, improved planet information panel |
+| v2.0.0    | 24/10/2023   | More threatening black hole, new names for planets and animals, improved information panels  |
 
 ## Roadmap
 
-Upcoming features can be seen in the [issues page](https://github.com/BIT-Studio-3/Space-Rescue/issues).
+The 2.0.0 update is the last regular one as the school year has now finished. There may be infrequent fixes and improvements in the future. If you want to continue the development of the game feel free to make a fork or request access to make a branch!
 
 ## Acknowledgements
 

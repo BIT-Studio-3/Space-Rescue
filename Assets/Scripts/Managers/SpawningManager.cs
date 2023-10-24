@@ -5,10 +5,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpawningManager : MonoBehaviour
 {
-
     //The current planet and planet info
     private GameObject planet;
     private PlanetInfo planetInfo;
@@ -27,9 +27,9 @@ public class SpawningManager : MonoBehaviour
 
     //The prefabs that are being spawned. This is assigned in the editor
     [Header("Prefabs")]
-    private GameObject hostilePrefab; //The prefab that will be used for the hostile animal
-    private GameObject neutralPrefab; //The prefab that will be used for the neutral animal
-    private GameObject scaredPrefab; //The prefab that will be used for the Scared animal
+    [HideInInspector] public GameObject hostilePrefab; //The prefab that will be used for the hostile animal
+    [HideInInspector] public GameObject neutralPrefab; //The prefab that will be used for the neutral animal
+    [HideInInspector] public GameObject scaredPrefab; //The prefab that will be used for the Scared animal
     private GameObject foliagePrefab; //The prefab that will be used for the foliage
 
     //The amount of objects that are being spawned. This is gotten from the planet info script for the planet entered
@@ -43,11 +43,16 @@ public class SpawningManager : MonoBehaviour
     private Vector3 area;
     private Collider[] hitColliders;
 
+    private TextMeshProUGUI planetName;
+
     void Start()
     {
         //The current planet and planetinfo
         planet = GameObject.Find("Planet");
         planetInfo = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet];
+
+        planetName = GameObject.Find("Planet Name").GetComponent<TextMeshProUGUI>();
+        planetName.text = planetInfo.planetMaterial.name.ToString();
 
         //Setting the material of the planet
         planet.GetComponent<Renderer>().material = planetInfo.planetMaterial;
@@ -106,7 +111,7 @@ public class SpawningManager : MonoBehaviour
             } while (hitColliders.Length != 0); //If something is already there, it will keep trying to spawn until it finds an empty spot
             newSpawn = Instantiate(prefab, area, Quaternion.identity);
             if (prefab.GetComponent<Animal>() != null)
-                newSpawn.name = prefab.GetComponent<Animal>().Species; //Sets the name of the object to the species of the animal
+                newSpawn.name = prefab.GetComponent<Animal>().Species + " " + prefab.GetComponent<Animal>().Temperament; //Sets the name of the object to the species of the animal
             newSpawn.transform.rotation = Quaternion.FromToRotation(
                 Vector3.up,
                 newSpawn.transform.position
