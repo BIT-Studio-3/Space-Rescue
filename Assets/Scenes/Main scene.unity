@@ -2251,9 +2251,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: efbbdb00181cad94c866d68285175635, type: 3}
     - target: {fileID: 8476803455249810064, guid: 0ec627f363295e644872f77860511ab8, type: 3}
+      propertyPath: mouseSensitivity
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8476803455249810064, guid: 0ec627f363295e644872f77860511ab8, type: 3}
       propertyPath: bars.Array.data[4]
       value: 
       objectReference: {fileID: 593594237}
+    - target: {fileID: 8476803455249810064, guid: 0ec627f363295e644872f77860511ab8, type: 3}
+      propertyPath: rotationSensitivity
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ec627f363295e644872f77860511ab8, type: 3}
 --- !u!4 &1349442011 stripped
