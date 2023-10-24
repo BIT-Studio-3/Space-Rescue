@@ -156,7 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability: 40
-  species: Red Gecko (Scared)
+  species: Jadazon Bosil
+  temperament: Scared
 --- !u!1001 &2176362264717397662
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -156,7 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability: 75
-  species: Normal Muskrat (Scared)
+  species: Darlit
+  temperament: Scared
 --- !u!1001 &165598766031282916
 PrefabInstance:
   m_ObjectHideFlags: 0
