@@ -15,12 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main scene.unity
     guid: 23d42cd4553f5b742b7810e89f06b771
   - enabled: 1
-    path: Assets/Scenes/Planet Animal Info.unity
-    guid: 6327b36d1fa003b429bfc0540bfcb1bc
-  - enabled: 0
-    path: Assets/Scenes/More Planet Info.unity
-    guid: 4c02b6affba04684c98fdae0b012ac04
-  - enabled: 0
     path: Assets/Scenes/Planet.unity
     guid: b2cf1135699212b49baf9d93bf757fba
   - enabled: 1
