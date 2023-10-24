@@ -52,7 +52,7 @@ public class SpawningManager : MonoBehaviour
         planetInfo = PlanetStates.Instance.planetInfo[PlanetStates.Instance.activePlanet];
 
         planetName = GameObject.Find("Planet Name").GetComponent<TextMeshProUGUI>();
-        planetName.text = planetInfo.planetMaterial.name.ToString();
+        planetName.text = planetInfo.planetName;
 
         //Setting the material of the planet
         planet.GetComponent<Renderer>().material = planetInfo.planetMaterial;

@@ -30,6 +30,7 @@ public class PlanetTextureGenerator : MonoBehaviour
         p.transform.localPosition = new Vector3(0, 0, 0);
         p.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
         gameObject.GetComponent<PlanetInfo>().planetMaterial = GameSettings.planetPrefabs[r].GetComponent<MeshRenderer>().sharedMaterial; //Assigns the material of the prefab to the planetinfo script
+        gameObject.GetComponent<PlanetInfo>().planetName = GameSettings.planetPrefabs[r].name; //Assigns the name of the prefab to the planetinfo script
         //If the planet prefab contains a gameobject named Planet_Ring then assign it to the rings variable in planetinfo
         if (GameSettings.planetPrefabs[r].transform.Find("Planet_Ring") != null)
         {

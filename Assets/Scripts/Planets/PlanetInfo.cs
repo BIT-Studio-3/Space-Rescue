@@ -39,6 +39,9 @@ public class PlanetInfo : MonoBehaviour
     public Material planetMaterial; //The material of the texture of the planet
 
     [HideInInspector]
+    public string planetName; //The name of the planet
+
+    [HideInInspector]
     public bool rings; //As there is only one ring this simply is true if they exist
 
     [Tooltip("The list of available prefabs that can be used for the hostile animal")]
