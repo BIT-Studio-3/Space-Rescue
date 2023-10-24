@@ -13,7 +13,6 @@ public class ShipMovement : MonoBehaviour
     float mouseInputX;
     float mouseInputY;
     float tiltInput;
-    public float mouseSensitivity = 0.4f;
 
 
     //speed
@@ -43,7 +42,6 @@ public class ShipMovement : MonoBehaviour
     void Start()
     {
         Instance = this;
-        Cursor.lockState = CursorLockMode.Locked; //keep mouse in the game
         spaceshipRB = GetComponent<Rigidbody>();
         ResetBoost(); //Sets boost to Cap
         initialVelocity = spaceshipRB.velocity;
@@ -61,8 +59,8 @@ public class ShipMovement : MonoBehaviour
         horizontalMove = Input.GetAxis("Horizontal");
         tiltInput = Input.GetAxis("Roll");
 
-        mouseInputX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        mouseInputY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        mouseInputX = Input.GetAxis("Mouse X") * GameSettings.mouseSensitivity;
+        mouseInputY = Input.GetAxis("Mouse Y") * GameSettings.mouseSensitivity;
 
                 
         if(Input.GetKey(Keybinds.Boost)) //If boosting
