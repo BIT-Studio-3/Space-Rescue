@@ -29,4 +29,6 @@ public static class GameSettings
 
     //Mute variable for sound effects
     public static bool Mute = false;
+
+    public static float mouseSensitivity = 1.0f;
 }

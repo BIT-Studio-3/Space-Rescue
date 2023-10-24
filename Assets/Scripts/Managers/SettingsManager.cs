@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
+    private GameObject SensitivityNumber;
     private GameObject controlsMenu;
     private GameObject otherMenu;
     private GameObject credits;
@@ -19,9 +20,11 @@ public class SettingsManager : MonoBehaviour
     private GameObject musicNumber;
     private GameObject soundEffectsNumber;
     private Toggle muteToggle;
+    private Slider mouseSensitivitySlider;
     [SerializeField]
     private AudioClip menuHover;
     private AudioSource audioSource;
+
 
     void Start()
     {
@@ -36,6 +39,10 @@ public class SettingsManager : MonoBehaviour
         musicNumber = GameObject.Find("Music Number");
         soundEffectsNumber = GameObject.Find("Sound Effects Number");
         muteToggle = GameObject.Find("Mute Toggle").GetComponent<Toggle>();
+        mouseSensitivitySlider = GameObject.Find("Mouse Sensitivity Slider").GetComponent<Slider>();
+        SensitivityNumber = GameObject.Find("Mouse Sensitivity Number");
+
+
 
         //Setting everything to the current volume whenever settings is opened
         musicSlider.value = GameSettings.MusicVolume;
@@ -45,6 +52,7 @@ public class SettingsManager : MonoBehaviour
         //This needs to be done as set without notify otherwise it triggers itself
         muteToggle.SetIsOnWithoutNotify(GameSettings.Mute);
         audioSource = GetComponent<AudioSource>();
+        mouseSensitivitySlider.value = GameSettings.mouseSensitivity;
 
         credits.SetActive(false);
         settings.SetActive(false);
@@ -116,4 +124,12 @@ public class SettingsManager : MonoBehaviour
             SoundEffectsSetting.SoundMenuSetting(audioSource, menuHover);
         }
     }
+
+    public void MouseSensitivitySlider()
+    {
+        float newSensitivity = mouseSensitivitySlider.value;
+        GameSettings.mouseSensitivity = newSensitivity;
+        SensitivityNumber.GetComponent<TMPro.TextMeshProUGUI>().text = (mouseSensitivitySlider.value * 10).ToString("0");
+    }
+
 }
