@@ -3423,6 +3423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black Hole
       objectReference: {fileID: 0}
+    - target: {fileID: 8616284538405635717, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0f843d2b947e614f994a09d5a2dcde2, type: 3}
 --- !u!4 &8616284537842477893 stripped
